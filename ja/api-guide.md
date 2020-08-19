@@ -1,6 +1,6 @@
 ## Analytics > Log & Crash Search > APIガイド
 
-HTTPプロトコルを使用して、Log & Crash収集サーバーにログを転送でき、下記のようなJSON形式で使用します。
+HTTPプロトコルを使用してLog & Crash収集サーバーにログを転送できます。下記のようなJSON形式を使用します。
 
 ```
 {
@@ -17,13 +17,13 @@ HTTPプロトコルを使用して、Log & Crash収集サーバーにログを�
 [基本パラメータ]
 
 ```
-Log Searchのためのパラメータ。
+Log Searchのためのパラメータ
 
 projectName: string、必須
 	[in]アプリケーションキー。
 
 projectVersion：string、必須
-	[in]バージョン。ユーザーが指定できる。"A～Z、a～z、0～9、-、_"のみ使用できる。
+	[in]バージョン。ユーザー指定可能。"A~Z, a~z, 0~9,-._"のみ使用できる。
 
 body：string、オプション
 	[in]ログメッセージ。
@@ -32,52 +32,54 @@ logVersion：string、必須
 	[in]ログフォーマットバージョン。 "v2"。
 
 logSource：string、オプション
-	[in]ログソース。Log Searchでフィルタリングのために使用される。定義されていない場合は"http"。
+	[in]ログソース。Log Searchでフィルタリングのために使用。定義されていなければ"http"。
 
 logType：string、オプション
-	[in]ログタイプ。 Log Searchでフィルタリングのために使用される。定義されていない場合は"log"
+	[in]ログタイプ。Log Searchでフィルタリングのために使用。定義されていなければ"log"。
 
 host：string、オプション
-	[in]ログを送る端末のアドレス。定義されていない場合は、収集サーバーでpeer-addressを使用して自動的に埋める。
+	[in]ログを送る端末のアドレス。定義されていなければ収集サーバーでpeer-addressを使用して自動的に埋める。
 ```
 
 [その他のパラメータ]
 
 ```
 sendTime;string、オプション
-	[in]端末が転送した時間。入力時、Unix Timestampで入力
+	[in]端末が送った時間。Unix timestampで入力。
 
 logLevel; string、オプション
-	[in] Syslog event用。
+	[in] Syslogイベント用。
 
 UserBinaryData; string、オプション
 	[in]ログ検索画面で[ダウンロード|参照]リンク表示、base64エンコードされた値を入れて転送。
 
 UserTxtData; string、オプション
-  [in]ログ検索画面で[ダウンロード|参照]リンク表示、base64エンコードされた値を入れて転送。
+    [in]ログ検索画面で[ダウンロード|表示]リンク表示、 base64エンコードされた値を入れて転送。
 
 txt*; string、オプション
-	[in]フィールド名がtxtで始まるフィールド(txtMessage、txt_descriptionなど)は、分析(analyzed)フィールドに保存されます。ログ検索画面でフィールド値の一部の文字列で検索ができます。
+	[in]フィールド名がtxtで始まるフィールド(txtMessage, txt_descriptionなど)はtextフィールドに保存。ログ検索画面でフィールド値の一部の文字列で検索(full text search)可能。フィールドのサイズは1MBに制限される。
 
 long*; long、オプション
-    [in]フィールド名がlongで始まるフィールド(longElapsedTime、long_elapsed_timeなど)は、longタイプフィールドに保存されます。ログ検索画面でlongタイプのRange検索ができます。
+    [in]フィールド名がlongで始まるフィールド(longElapsedTime、long_elapsed_timeなど)はlongタイプフィールドに保存される。ログ検索画面でlongタイプrange検索可能。
 
 double*; double、オプション
-    [in]フィールド名がdoubleで始まるフィールド(doubleAvgScore、double_avg_scoreなど)は、doubleタイプのフィールドに保存されます。ログ検索画面でdoubleタイプのRange検索ができます。
+    [in]フィールド名がdoubleで始まるフィールド(doubleAvgScore, double_avg_scoreなど)はdoubleタイプフィールドに保存される。ログ検索画面でdoubleタイプrange検索可能。
 ```
 
 [カスタムフィールド]
 
 ```
-カスタムフィールド名は、"A-Z、a-z"で始まり、"A-Z、a-z、0-9、-、_"を使用できます。
+カスタムフィールド名は"A-Z, a-z"で始まり、"A-Z, a-z, 0-9, -, _"を使用できます。
 
 上の基本パラメータ、 Crashパラメータと名前が重複してはいけません。
 
-カスタムフィールドの長さは2kbyteに制限され、2kbyte以上を転送すると、txt* prefixを付けてフィールドを作成する必要があります。
+カスタムフィールドはフィールド文字列と完全に一致する検索のみ可能です(exact match)。
+
+カスタムフィールドの長さは1KBに制限されます。1KB以上転送したり、フィールド値の一部の文字列を検索する必要がある時はtxt* prefixをつけてフィールドを作成する必要があります。
 ```
 
 [戻り値]  
-収集サーバーから次のように返されます。
+収集サーバーから次のように返します。
 
 ```
 Content-Type: application/json
@@ -97,11 +99,11 @@ resultCode: int
 	[out]成功時は0、失敗時はエラーコード
 
 resultMessage: string
-	[out]成功すると"Success"、失敗するとエラーメッセージ
+	[out]成功時は"Success"、失敗時はエラーメッセージ
 ```
 
 [Bulk転送]
-Bulk転送のためには、JSON array形式で収集サーバーに転送します。
+Bulkで転送するにはJSON array形式で転送します。
 
 ```
 [
@@ -126,11 +128,9 @@ Bulk転送のためには、JSON array形式で収集サーバーに転送しま
 ]
 ```
 
-* Note
-		* webでは受信時間基準でログをソートして表示しますが、bulk転送の場合、同じ時間に受信したとみなされてユーザーが
-		  転送した順序が維持されません。
-		* Bulkで転送するログの順序関係を維持するためには、ログにlncBulkIndexフィールドを追加して、integer値を指定して転送すると
-		サーバーではこの値を基準に、降順で表示します。
+* 参考
+    * webでは受信時間基準でログをソートして表示しますが、bulk転送の場合、同じ時間に受信したとみなされてユーザーが転送した順序が維持されません。
+    * Bulkで転送するログの順序を維持するには、各ログにlncBulkIndexフィールドを追加してInteger値を指定した後に転送します。サーバーではこの値を基準に降順で表示します。
 
 ```
 [
@@ -195,24 +195,26 @@ resultList: array
 ```
 
 > 注意 
-> 1. JSON/HTTPでLog & Crash収集サーバーにログを転送する時、次のアドレスを使用する必要があります。
+> 1. JSON/HTTPでLog & Crash収集サーバーにログを転送する時は、次のアドレスを使用する必要があります。  
 > Log & Crash: api-logncrash.cloud.toast.com  
 >
-> 転送方式：POST  
+> 転送方式：POST
 >
-> URI: /v2/log  
+> URI: /v2/log
 >
-> Content-Type: "application/json"  
-> 2. ログを転送する前に、Log & Crashにプロジェクトを登録したか確認する。
-> 3. "logTime"は、Log & Crashシステムで使用する。該当キーを使用した時、Log & Crashでは無視する。
-> 4. キー名にスペースが入らないように注意する必要がある。例えば"UserID"と"UserID "は別々のキーとして認識される。
+> Content-Type: "application/json"
+> 2. ログを転送する前に、Log & Crashにプロジェクトを登録したか確認します。  
+> 3. "logTime"は、Log & Crashシステムで使用します。該当キーを使用した時、Log & Crashでは無視します。
+> 4. キー名にスペースが入らないように注意します。例えば"UserID"と"UserID "は別々のキーとして認識されます。
+> 5. HTTPリクエスト1つの最大サイズは52MBです。
+> 6. ログ(JSON)1つの最大サイズは2MB(2097152バイト)です。
 
 ## サンプル
 
 [curlを使用して正常にログを転送した場合]
 
 ```
-//POSTメソッドを使用してログを転送
+//POSTメソッドを使用してログ転送
 $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '{
 	"projectName": "__アプリケーションキー__",
 	"projectVersion": "1.0.0",
@@ -251,10 +253,10 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.c
 カスタムキーは"A～Z、a～z、0～9、-_"を含め、アルファベットで始まる必要があります。
 ```
 
-[curlを使用してbulkログを転送した場合]
+[curlを使用してログをBulk転送した場合]
 
 ```
-//POSTメソッドを使用してログを転送
+//POSTメソッドを使用してログ転送
 $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '[
     {
         "projectName": "__アプリケーションキー__",
