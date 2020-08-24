@@ -1,24 +1,24 @@
 ## Analytics > Log & Crash Search > Release Notes
 
-### 2020. 08. 25.
-#### 기능 개선/변경
-* [Console] 알람 콜백/웹훅(webhook)에서 다수 대상을 입력, 수행할 수 있도록 개선
+### August 25, 2020 
+#### Feature Changes
+* [Console] Updated to enter and execute multiple objects for alarm callback/webhook
 
-### 2020. 07. 28.
-#### 기능 개선/변경
-* [Console] 외부 보관 로그에 대한 무결성 검증 기능 추가
-    * [Console 사용 가이드 참고](/Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
+### July 28, 2020
+#### Feature Updates
+* [Console] Added the feature of integrity validation for logs that are externally stored 
+    * [See Console User Guide](/Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
 
-### 2020. 06. 23.
-#### 기능 개선/변경
-* [Console] Object, Array 타입에 대한 쿼리 방식 변경
-    * 문자열 검색과 동일한 방법으로 쿼리를 전달해야 합니다.
-    * [Lucene 쿼리 가이드 참고](/Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
+### 2020. 06. 23. June 23, 2020
+#### Feature Updates
+* [Console] Changed the query method for Object and Array types
+    * Query delivery method must be same as the search of character strings
+    * [See Guide for Lucene Query](/Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
 
-### 2020. 05. 26.
-#### 기능 개선/변경
-* [Console] Bitcode를 적용한 iOS 앱 크래시 분석 지원
-    * 동일한 버전 내에서 아키텍처별 심벌 파일을 업로드하여 분석할 수 있도록 수정
+### May 26, 2020
+#### Feature Updates
+* [Console] Support analyzing iOS app crashes applied with Bitcode  
+    * Modified to upload and analyze symbol files for each architecture within same version
 
 ### April 28, 2020
 #### Feature Updates
