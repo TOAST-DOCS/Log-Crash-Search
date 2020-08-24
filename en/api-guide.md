@@ -1,6 +1,6 @@
 ## Analytics > Log & Crash Search > API Guide
 
-Logs can be sent to the Log & Crash Collector server by using HTTP protocol, in the JSON format as below:
+HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다. 아래와 같은 JSON 형식을 사용합니다.
 
 ```
 {
@@ -17,13 +17,13 @@ Logs can be sent to the Log & Crash Collector server by using HTTP protocol, in 
 [Default Parameters]
 
 ```
-Parameters for Log Search
+Log Search를 위한 파라미터
 
 projectName: string, required
 	[in] Appkey
 
 projectVersion: string, required
-	[in] Verwion. User can specify: include "A~Z, a~z, 0~9,-._" only.
+	[in] 버전. 사용자 지정 가능. "A~Z, a~z, 0~9,-._"만 포함.
 
 body: string, optional
 	[in] Log messages.
@@ -32,52 +32,54 @@ logVersion: string, required
 	[in] Log format version. "v2".
 
 logSource: string, optional
-	[in] Log source. Used to filter at Log Search. "http", if not defined.
+	[in] 로그 소스. Log Search에서 필터링을 위해 사용. 정의되지 않으면 "http".
 
 logType: string, optional
-	[in] Log type. Used to filter at Log Search. "log", if not defined.
+	[in] 로그 타입. Log Search에서 필터링을 위해 사용. 정의되지 않으면 "log".
 
 host: string, optional
-	[in] Address of the device sending logs: if not defined, fill automatically with peer-address of the collector server.
+	[in] 로그를 보내는 단말의 주소. 정의되지 않으면 수집 서버에서 peer-address를 사용해 자동으로 채움.
 ```
 
 [Other Parameters]
 
 ```
 sendTime; string, optional
-	[in] Sending time of a device. Enter in Unix Timestamp
+	[in] 단말이 보낸 시간. 입력 시 Unix timestamp로 입력.
 
 logLevel; string, optional
-	[in] For Syslog events.
+	[in] Syslog 이벤트용.
 
 UserBinaryData; string, optional
 	[in] Display [Download|Show] link on the log search screen, and send with values encoded with base64.
 
 UserTxtData; string, optional
-  [in] Display [Download|Show] link on the log search screen, and send with values encoded with base64.
+	[in] 로그 검색 화면에서 [다운로드|보기] 링크 표시, base64 인코딩된 값을 담아 전송.
 
 txt*; string, optional
-	[in] Save fields starting with txt (such as txtMessage and txt description) in analyzed fields. Search is available with a part of character strings of the field value on the log search screen.
+	[in] 필드 이름이 txt로 시작하는 필드(txtMessage, txt_description 등)는 text 필드로 저장. 로그 검색 화면에서 필드값의 일부 문자열로 검색(full text search) 가능. 필드의 크기는 1MB로 제한됨.
 
 long*; long, optional
-    [in] Save fields starting with long (such as longElapsedTime and long elapsed time) in the long-type fields. Search of long-type range is available on the log search screen.
+    [in] 필드 이름이 long으로 시작하는 필드(longElapsedTime, long_elapsed_time 등)는 long 타입 필드로 저장됨. 로그 검색 화면에서 long 타입 range 검색 가능.
 
 double*; double, optional
-    [in] Save fields starting with double (such as doubleAvgScore and double avg score) in the double-type fields. Search of double-type range is available on the log search screen.
+    [in] 필드 이름이 double로 시작하는 필드(doubleAvgScore, double_avg_score 등)는 double 타입 필드로 저장됨. 로그 검색 화면에서 double 타입 range 검색 가능.
 ```
 
 [Custom Fields]
 
 ```
-A custom field can be named with "A-Z, a-z, 0-9, -, _", starting with "A-Z, a-z".
+커스텀 필드 이름은 "A-Z, a-z"로 시작하고 "A-Z, a-z, 0-9, -, _" 문자를 사용할 수 있습니다.
 
-Cannot be redundantly named with default parameters of the above or crash parameters.
+위의 기본 파라미터, Crash 파라미터와 이름이 중복되면 안 됩니다.
 
-The length of a custom field is limited to 2kbytes, and if it exceeds 2kbytes, the field must be created with txt* prefix.
+커스텀 필드는 필드 전체 문자열과 일치하는 검색만 가능합니다(exact match).
+
+커스텀 필드의 길이는 1KB로 제한됩니다. 1KB 이상 전송하거나, 필드값의 일부 문자열을 검색해야 할 때는 txt* prefix를 붙여 필드를 생성해야 합니다.
 ```
 
 [Return Value]
-Return as below in the collector server:
+수집 서버에서 다음과 같이 반환합니다.
 
 ```
 Content-Type: application/json
@@ -91,17 +93,17 @@ Content-Type: application/json
 }
 
 isSuccessful: boolean
-	[out] true if successful, false if failed
+	[out] 성공 시 true, 실패 시 false
 
 resultCode: int
-	[out] 0 if successful, error code if failed
+	[out] 성공 시 0, 실패 시 오류 코드
 
 resultMessage: string
-	[out] "Success" if successful, error message if failed
+	[out] 성공 시 "Success", 실패 시 오류 메시지
 ```
 
 [Bulk Delivery]
-For bulk delivery, send in the JSON array format to the collector server.
+Bulk로 전송하려면 JSON array 형태로 전송합니다.
 
 ```
 [
@@ -126,9 +128,9 @@ For bulk delivery, send in the JSON array format to the collector server.
 ]
 ```
 
-* Note
-	* In the web, logs are arrayed in the order of receiving time. However, for bulk delivery, the receiving time is considered the same for all logs, and the user’s sending time cannot be maintained.
-	* To maintain the order of sending time of logs for bulk delivery, add the IncBulkIndex field to each log and specify the integer value before delivery. Then, the server shall show them in the descending order based on such value.  
+* 참고
+    * 웹에서는 수신 시간 기준으로 로그를 정렬해 표시하는데, Bulk 전송의 경우 동일한 시간에 수신한 것으로 간주되어 사용자가 전송한 순서가 유지되지 않습니다.
+        * Bulk로 전송하는 로그들의 순서를 유지하려면 각 로그에 lncBulkIndex 필드를 추가해 Integer값을 지정한 후 전송하면 서버에서는 이 값을 기준으로 내림차순으로 표시합니다.
 
 ```
 [
@@ -154,9 +156,9 @@ For bulk delivery, send in the JSON array format to the collector server.
     }
 ]
 ```
-	* For deliveries like the above, the server shows in the order of second message -> first message.
+	* 위 예시와 같이 전송한 경우 서버에서는 second message -> first message 순서로 표시합니다.
 
-In the collector server, each result value is returned in the JSON array format in the order of delivery.
+수집 서버에서는 전송된 순서에 따라 각각의 결괏값을 JSON array 형태로 다시 반환합니다.
 
 ```
 Content-Type: application/json
@@ -193,7 +195,7 @@ resultList: array
 ```
 
 > Caution
-> 1. To send logs in JSON/HTTP to the Log & Crash Collector server, use the address as follows:
+> 1. JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
 > Log & Crash: api-logncrash.cloud.toast.com
 >
 > Method of Delivery: POST
@@ -201,16 +203,18 @@ resultList: array
 > URI: /v2/log
 >
 > Content-Type: "application/json"
-> 2. Check, before log delivery, if a project has been registered to Log & Crash Search.
-> 3. Field name "logTime" is occupied by Log & Crash Search system. User cannot set "logTime" field.
-> 4. Keep note that a key name has no whitespace character. For example, “UserID” and “UserID ” are considered two different keys.
+> 2. 로그를 전송하기 전에 Log & Crash에 프로젝트를 등록했는지 확인합니다.  
+> 3. "logTime"은 Log & Crash 시스템에서 사용합니다. 해당 키를 사용하면 Log & Crash에서는 무시합니다.  
+> 4. 키 이름에 공백 문자가 들어가지 않게 주의합니다. 예를 들어 "UserID"와 "UserID "는 서로 다른 키로 인식됩니다. 
+> 5. HTTP 요청 하나의 최대 크기는 52MB입니다.
+> 6. 로그(JSON) 하나의 최대 크기는 2MB(2097152바이트)입니다.
 
 ## Samples
 
-[Normal log delivery by using curl]
+[curl을 사용해 정상적으로 로그를 전송한 경우]
 
 ```
-//Deliver logs by using POST method
+//POST 메서드을 사용해 로그 전송
 $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '{
 	"projectName": "__Appkey__",
 	"projectVersion": "1.0.0",
@@ -221,7 +225,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.to
 }'
 ```
 
-[Failed log delivery]
+[로그 전송에 실패하는 경우]
 
 ```
 //When URL is incorrect (log -> loggg)
@@ -245,14 +249,14 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.c
 	"logType": "nelo2-http",
 	"_xxx": "this is a invalid key"
 	}'
-The custom key must include "A~Z, a~z, 0~9, -_" and start with an alphabet.
-The custom key must include "A~Z, a~z, 0~9, -_" and start with an alphabet.
+커스텀 키는 "A~Z, a~z, 0~9, -_"를 포함하고 알파벳으로 시작해야 합니다.
+커스텀 키는 "A~Z, a~z, 0~9, -_"를 포함하고 알파벳으로 시작해야 합니다.
 ```
 
 [Bulk log delivery using curl]
 
 ```
-//Deliver logs by using POST method
+//POST 메서드을 사용해 로그 전송
 $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '[
     {
         "projectName": "__Appkey__",

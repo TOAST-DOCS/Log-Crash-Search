@@ -364,6 +364,32 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 - 設定したOBSにログが保存されます。
 - [TOAST OBS API案内ガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
 
+### ログデータ完全性チェックの設定方法
+
+ログデータ完全性チェックを設定する方法は次のとおりです。
+
+* ログデータ完全性チェックを設定する前に**必ずログ外部保管設定**を行う必要があります。
+* Object Storageに保存されたログが改ざん(削除または修正)された場合、**ログ外部保管設定**で指定したメールアドレスへ通知が転送されます。
+1. **ログ外部保管設定**で**外部ログ改ざん通知**を選択します。
+![lcs_3-_20200727](https://static.toastoven.net/prod_logncrash/lcs_30_20200727.png)
+
+2. Object Storage認証トークンを取得します([TOAST Object Storage APIガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)参考)。
+認証トークンを使用してObject Storageに改ざんを確認するためのWebフック(webhook) URLを設定します。
+```
+curl -X POST {Object-Store Endpoint}/{container} -H "X-Auth-Token: {token}" -H 'X-Webhook: {webhook-url}'
+```
+| 項目 | 説明 | 値 |
+| --- | --- | --- |
+| Object-Store Endpoint | Object Storageを管理するためのエンドポイント | [TOAST Object Storage APIガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)参考 |
+| container | Object Storageコンテナ名 | [TOAST Object Storage APIガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)参考 |
+| token | Object Storage認証トークンの値 |  |
+| webhook-url | Object Storageアップロード/削除時に受け取るWebhook URL | http://api-gw.cloud.toast.com/tclcs-integrity-validator/integrity/${appkey} |
+| appkey | 保存対象Log&Crash Search Appkey |  |
+
+* 改ざんの確認および通知は30分単位で実行されます。
+* 改ざんされたログがあると判断した場合、下記のようなメールを送信します。
+![lcs_31_20200727](https://static.toastoven.net/prod_logncrash/lcs_31_20200727.png)
+
 ## ネットワークインサイト
 
 Log & Crash Search SDKから転送した遅延時間とエラー率をタイムラインチャートとURLリスト、マップに表示します。

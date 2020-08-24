@@ -1,5 +1,9 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### 2020. 08. 25.
+#### 기능 개선/변경
+* [Console] 알람 콜백/웹훅(webhook)에서 다수 대상을 입력, 수행할 수 있도록 개선
+
 ### 2020. 07. 28.
 #### 기능 개선/변경
 * [Console] 외부 보관 로그에 대한 무결성 검증 기능 추가
