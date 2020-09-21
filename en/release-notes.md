@@ -1,5 +1,9 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### September 22, 2020 
+#### Feature Changes
+* [Console] Supports IAM console from access link for TOAST Log & Search, attached to notifications of email, or Dooray!  
+
 ### August 25, 2020 
 #### Feature Changes
 * [Console] Updated to enter and execute multiple objects for alarm callback/webhook
@@ -9,7 +13,7 @@
 * [Console] Added the feature of integrity validation for logs that are externally stored 
     * [See Console User Guide](/Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
 
-### 2020. 06. 23. June 23, 2020
+### June 23, 2020
 #### Feature Updates
 * [Console] Changed the query method for Object and Array types
     * Query delivery method must be same as the search of character strings
@@ -31,7 +35,7 @@
 #### Feature Updates 
 * [Console] Edited the error message for failure in deleting saved queries 
 
-### Feb. 25, 2020
+### February 25, 2020
 #### Feature Updates
 * [Console] Modified tooltip messages on the setting page of SDK log delivery. 
 * [Console] Added, in query saving, the validity authetication process for Lucene query.
@@ -40,13 +44,12 @@
     * Due to many builds, if the age of Windows PDB exceeds 11, symbol files that are extracted afterwards may contain a guid which has more than 34 characters. The limit of 33 characters for a guid field has been lifted. 
 * [Console] Fixed bugs, in which fields that are saved with the search of logs older than 30 days are not properoly exposed.
 
-
-### Jan. 21, 2020
+### January 21, 2020
 #### Feature Updates
 * [Console] Changed how to locate the occurrence of iOS crashes. 
 * [Console] Allows additional display of information on iOS crashes (on TOAST SDK iOS 0.21.0 or higher versions).
 
-### Oct. 29, 2010
+### October 29, 2019
 #### Feature Updates
 * [Console] Added the feature of S3 uploading. 
 * [Console] Changed the error message for alarms activated due to invalid query of alarm. 
@@ -85,7 +88,7 @@
 * [Console] Added the feature of reverting status before registration, after issue tracker is registered. 
 * [Console] Emphasize actual symbol names applied for symbolication on the symbolic file management page. 
 
-### Novermber 27, 2018.11.27
+### Novermber 27, 2018
 #### Feature Updates 
 * [Console] Fixed an issue in which exception type is not properly judged when an Android crash occurs for Unity and the crash type is recorded as 'java.lang.Error'.
     * Fixed an issue in which access is unavailable to detail page from Web Console > Crash > Query Issues.
@@ -109,7 +112,7 @@
 #### Feature Updates
 * [Console] Share query for saving 
 
-### September 04, 2018 
+### September 4, 2018 
 #### Feature Updates
 * [SDK][[logback-3.0.2](/Download/#analytics-log-crash-search)]
     * Updated not to add reservation items, when Logncrash Appender has empty or null for non-default items of reservation words.
@@ -131,7 +134,7 @@
 * [SDK][[iOS-2.7.1](/Download/#analytics-log-crash-search)]
     * Fixed bugs in which crash occurred during initialization in duplicates. 
 
-### June 05, 2018
+### June 5, 2018
 
 #### Feature Updates
 * [SDK][[Android-2.6.7](/Download/#analytics-log-crash-search)]
@@ -159,7 +162,7 @@
     * Roll back crash logtype occurred at Unity Script
         * Rolls back with crash occurred at Unity Script processed as Handled. 
 
-### May 02, 2018 
+### May 2, 2018 
 
 #### Feature Updates
 
@@ -345,7 +348,7 @@
 * [SDK] Restrict the size of log duplicate queue to be no more than 1,000
     * Updated Version: Android-2.4.3, Android-NDK-2.4.5, iOS-2.4.1, unity-android-2.5.1, unity-ios-2.5.1
 
-### December 08, 2016
+### December 8, 2016
 #### Feature Updates
 * When a user, who registered content for Query Issue > Issue Details > Comment, History, has been deleted from project members, the user is identified as "[Deleted Member]" on email.
 
@@ -357,7 +360,7 @@
 * [SDK] Changed the setting to get a host from internal thread, since the getaddrinfo function applied to get a host field hangs on some devices   
   * Updated Version: Android-NDK 2.4.4
 
-### November 04, 2016
+### November 4, 2016
 #### Bug Fixes
 * [SDK] Changed logic to Thread, since Android 2.4.1 has a bug preventing AsyncTask from cancelled 
   * Updated Version: Android 2.4.2
@@ -418,7 +421,7 @@
 * [Console] Fixed the speed issue of loading crash details  
 
 
-### August 04, 2016
+### August 4, 2016
 #### Feature Updates
 * [SDK][Unity] Updated to 2.2.6 
     * Changed the format of saving SaveToFile

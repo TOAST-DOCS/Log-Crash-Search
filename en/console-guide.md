@@ -70,7 +70,7 @@ Search conditions of user configuration are reflected on the search query window
 
 Crash information of Android and iOS devices can be retrieved through **Analytics > Log & Crash Search > App Crash Search**.
 
-### Retrieve Issues
+### Query of Issues
 
 Select **Crashes** on **Error Type** of **Query Issues**, to check issues.
 
@@ -120,7 +120,7 @@ Monitors real-time occurrences of app crashes for about five minutes.
 |Time Condition| Set time conditions for statistics. (e.g. 7 days, 2 weeks, or 30 days)|
 |Trend Graph| Show various trend graphs. <br/> - Crash Counts <br/> - Device Experiencing Crash <br/> - Statistics of All Errors <br/> - Statistics of Unresolved Errors <br/> - Issue Statistics by App Version <br/> - Issue Statistics by OS version <br/> - Issue Statistics by Device <br/> - Issue Statistics by Country <br/> |
 
-### App Crash Indicator
+### App Crash Indicators
 
 ![lcs_08_201812_en](https://static.toastoven.net/prod_logncrash/lcs_08_201812_en.png)
 
@@ -173,7 +173,7 @@ Provide crash occurrence information per user.
 Set alarms of log and crash, and check history of alarm delivery.
 Click **Analytics > Log & Crash Search > Alarms**.
 
-### Set Log Alarms
+### Log Alarm Setting
 
 ![lcs_13_201812_en](https://static.toastoven.net/prod_logncrash/lcs_13_201812_en.png)
 
@@ -218,14 +218,14 @@ Send alarms by the increase/decrease rate of occurrences of a log type you choos
 	- Alarm messages: Enter SMS messages to send alarms with  
 	- Callback URL: Enter URL to call when an alarm is sent. http(s)://, Email, and Dooray hook are supported.
 
-### Retrieve Log Alarm History
+### Query of Log Alarm History
 
 ![lcs_16_201812_en](https://static.toastoven.net/prod_logncrash/lcs_16_201812_en.png)
 
 - Retrieve logs (Lucene Query) for an alarm.  
 - Check history of alarm occurrences.
 
-### Set Crash Alarms
+### Crash Alarm Setting
 
 ![lcs_17_201812_en](https://static.toastoven.net/prod_logncrash/lcs_17_201812_en.png)
 
@@ -242,7 +242,7 @@ To set an alarm:
 - Alarm Recipients: Select email or SMS of users who decide to receive alarms from the list of project members.
 
 
-### Retrieve Crash Alarm History
+### Query of Crash Alarm History
 
 ![lcs_18_201812_en](https://static.toastoven.net/prod_logncrash/lcs_18_201812_en.png)
 
@@ -252,7 +252,7 @@ Retrieves the history of crash alarm occurrences.
 - Set time condition to control viewing range
 - Information on alarm time, platform, crash type, threshold, event count, and delivery method/status is provided.
 
-### Set User-defined Alarms
+### User-defined Alarm Setting
 
 ![lcs_19_201812_en](https://static.toastoven.net/prod_logncrash/lcs_19_201812_en.png)
 
@@ -266,7 +266,7 @@ To set an alarm:
 - Use Alternative SMS Message: When enabled, custom alarm messages will be delivered via SMS, in place of default error messages,
 - Alarm Recipients: Select email or SMS of users who decide to receive alarms from the list of project members.
 
-### Retrieve Crash Alarm History
+### Query of Crash Alarm History
 
 ![lcs_20_201812_en](https://static.toastoven.net/prod_logncrash/lcs_20_201812_en.png)
 
@@ -276,7 +276,7 @@ Retrieves the history of user-defined alarm occurrences.
 - Set time condition to control viewing range
 - Information on alarm time, platform, crash type, threshold, event count, and delivery method/status is provided.
 
-## Setting Up
+## Setting
 
 Manage required service setting, such as search field, issue tracker, and symbol file.
 
@@ -328,13 +328,31 @@ Set the period of log retention.
 - Select the period among 1month, 2months, 3months, 6months, or 1year, which can be modified once every month.
 - Expired data are to be deleted early next morning.  
 
-### Set Log Delivery
+### Log Delivery Setting
 Set whether to send logs per service.
 
 ![lcs_25_201812_en](https://static.toastoven.net/prod_logncrash/lcs_25_201812_en.png)
 
 - Set delivery for each of the general logs, session logs, and crash logs.
 - Save and restart app, so as to apply the setting.
+
+### External Log Storage Setting  
+
+Set information for external log storage. 
+
+![lcs_29_20200612](https://static.toastoven.net/prod_logncrash/lcs_29_20200612.png)
+
+- Logs can be stored at an external OBS. 
+
+1. Visit [AMZ S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1) and register/query credential to import access key and secret key. 
+2. From the **External Log Storage** setting, click **Add**.
+3. Enter data, including access key and secret key. 
+4. To save to another OBS, click **Add** and enter information. 
+5. After all data entered for OBS, click Save to save data. 
+
+- Logs are saved at OBS as configured. 
+- [Guide for TOAST OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
+
 
 ## Network Insights
 

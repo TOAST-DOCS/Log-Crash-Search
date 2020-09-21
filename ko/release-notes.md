@@ -1,5 +1,9 @@
 ## Analytics > Log & Crash Search > 릴리스 노트
 
+### 2020. 09. 22.
+#### 기능 개선/변경
+* [Console] 메일, Dooray! 알람에 첨부된 TOAST Log & Crash Search 접근 링크에서 IAM 콘솔 지원
+
 ### 2020. 08. 25.
 #### 기능 개선/변경
 * [Console] 알람 콜백/웹훅(webhook)에서 다수 대상을 입력, 수행할 수 있도록 개선

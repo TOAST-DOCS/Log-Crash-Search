@@ -1,5 +1,9 @@
 ## Analytics > Log & Crash Search > リリースノート
 
+### 2020. 09. 22.
+#### 機能改善/変更
+* [Console]メール、Doorayアラームにおいて、添付されたToast Log & Crash SearchアクセスリンクでIAMコンソールをサポート
+
 ### 2020. 08. 25
 #### 機能改善/変更
 * [Console]アラームコールバック/Webフック(webhook)から複数の対象を入力して実行できるように改善
