@@ -1,5 +1,9 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### 2020. 10. 13.
+#### 기능 개선/변경
+* 로그(일반 로그, 크래시 로그) 단건의 용량 제한을 2MB에서 8MB로 변경
+
 ### September 22, 2020 
 #### Feature Changes
 * [Console] Supports IAM console from access link for TOAST Log & Search, attached to notifications of email, or Dooray!  

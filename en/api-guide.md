@@ -1,6 +1,19 @@
 ## Analytics > Log & Crash Search > API Guide
 
-HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다. 아래와 같은 JSON 형식을 사용합니다.
+HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다. 
+
+> - JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
+>     - Log & Crash: api-logncrash.cloud.toast.com
+>     - Method of Delivery: POST
+>     - URI: /v2/log
+>     - Content-Type: "application/json"
+> - 로그를 전송하기 전에 Log & Crash에 프로젝트를 등록했는지 확인합니다.  
+> - "logTime"은 Log & Crash 시스템에서 사용합니다. 해당 키를 사용하면 Log & Crash에서는 무시합니다.  
+> -  키 이름에 공백 문자가 들어가지 않게 주의합니다. 예를 들어 "UserID"와 "UserID "는 서로 다른 키로 인식됩니다. 
+> -  HTTP 요청 하나의 최대 크기는 52MB입니다.
+> -  로그(JSON) 하나의 최대 크기는 8MB(8388608바이트)입니다.
+
+아래와 같은 JSON 형식을 사용합니다.
 
 ```
 {
@@ -193,21 +206,6 @@ errors: int
 resultList: array
     [out] Result value of each delivered log
 ```
-
-> Caution
-> 1. JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
-> Log & Crash: api-logncrash.cloud.toast.com
->
-> Method of Delivery: POST
->
-> URI: /v2/log
->
-> Content-Type: "application/json"
-> 2. 로그를 전송하기 전에 Log & Crash에 프로젝트를 등록했는지 확인합니다.  
-> 3. "logTime"은 Log & Crash 시스템에서 사용합니다. 해당 키를 사용하면 Log & Crash에서는 무시합니다.  
-> 4. 키 이름에 공백 문자가 들어가지 않게 주의합니다. 예를 들어 "UserID"와 "UserID "는 서로 다른 키로 인식됩니다. 
-> 5. HTTP 요청 하나의 최대 크기는 52MB입니다.
-> 6. 로그(JSON) 하나의 최대 크기는 2MB(2097152바이트)입니다.
 
 ## Samples
 
