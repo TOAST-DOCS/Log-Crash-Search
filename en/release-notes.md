@@ -1,8 +1,8 @@
 ## Analytics > Log & Crash Search > Release Notes
 
-### 2020. 10. 13.
-#### 기능 개선/변경
-* 로그(일반 로그, 크래시 로그) 단건의 용량 제한을 2MB에서 8MB로 변경
+### October 13, 2020
+#### Feature Updates
+* Changed the capacity limit for a single log (general or crash) from 2MB to 8MB 
 
 ### September 22, 2020 
 #### Feature Changes
