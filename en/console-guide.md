@@ -353,6 +353,31 @@ Set information for external log storage.
 - Logs are saved at OBS as configured. 
 - [Guide for TOAST OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
 
+### Log Integrity Inspection Setting 
+
+Set inspection for log integrity. 
+
+* The setting must be preceded by **Setting for External Log Storage**.
+* If there's a change in the log (deleted or modified) stored at OBS, alarm is sent to the email address specified at **Setting for External Log Storage**.  
+1. **Setting for External Log Storage** checks notification for change in external log.  
+![lcs_3-_20200727](https://static.toastoven.net/prod_logncrash/lcs_30_20200727.png)
+
+2. Get an authentication token of OBS. (See [Guide for TOAST OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)
+Use the token to set webhook url at OBS to check changes. 
+```
+curl -X POST {Object-Store Endpoint}/{container} -H "X-Auth-Token: {token}" -H 'X-Webhook: {webhook-url}'
+```
+| Item | Description | Value |
+| --- | --- | --- |
+| Object-Store Endpoint | Endpoint to manage OBS | See [Guide for TOAST OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2) |
+| container | Name of OBS container | See [Guide for TOAST OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2) |
+| token | Authentication token value of OBS |  |
+| webhook-url | Webhook url to get when uploading/deleting OBS | http://api-gw.cloud.toast.com/tclcs-integrity-validator/integrity/${appkey} |
+| appkey | Target of storage Log&Crash Search Appkey |  |
+
+* Execute checks and notifiation of change at every 30 minutes. 
+* When there's a changed log, email is sent as below: 
+![lcs_31_20200727](https://static.toastoven.net/prod_logncrash/lcs_31_20200727.png)
 
 ## Network Insights
 
