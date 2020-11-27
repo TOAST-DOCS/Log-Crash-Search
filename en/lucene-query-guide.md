@@ -64,7 +64,7 @@ The NOT operator `-` also serves as AND NOT.
 
 *replaces many letters.
 
-* e.g.) body:performance*
+* e.g.) body:performance\*
 * Search logs that have a body starting with performance.
 
 ? replaces only one letter.

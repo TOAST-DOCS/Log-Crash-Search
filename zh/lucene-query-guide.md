@@ -63,7 +63,7 @@ NOT 연산자인 `-`의 경우 AND NOT의 의미로도 사용됩니다.
 ## 와일드카드 검색
 
 *는 하나 이상의 임의의 문자들에 대응하여 검색합니다.
-* ex) body:performance*
+* ex) body:performance\*
 * performance로 시작하는 body가 있는 로그를 검색합니다.
 
 ?는 하나의 임의의 문자만 대응하여 검색합니다.
