@@ -1,5 +1,11 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### December 15, 2020
+#### Feature Updates
+* [Console] 알람 설정 중 제목과 설명에 대한 최대 입력 글자 수 표시 및 제한
+* [Console] 크래시 알람 중 임계치를 0으로 수정하는 경우 저장되지 않는 버그 수정
+* [Console] 로그 보관 기간 6개월, 1년 항목 삭제, 4개월 추가
+
 ### October 13, 2020
 #### Feature Updates
 * Changed the capacity limit for a single log (general or crash) from 2MB to 8MB 
