@@ -64,7 +64,7 @@ NOT演算子`-`の場合、AND NOTの意味で使います。
 
 *は、任意の0文字以上の文字列を検索します。
 
-* 例) body:performance*
+* 例) body:performance\*
 * performanceで始まるbodyがあるログを検索します。
 
 ?は、任意の1文字を検索します。
