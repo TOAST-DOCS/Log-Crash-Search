@@ -344,7 +344,7 @@ Set information for external log storage.
 
 - Logs can be stored at an external OBS. 
 
-1. Visit [AMZ S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1) and register/query credential to import access key and secret key. 
+1. Visit [AWS S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1) and register/query credential to import access key and secret key. 
 2. From the **External Log Storage** setting, click **Add**.
 3. Enter data, including access key and secret key. 
 4. To save to another OBS, click **Add** and enter information. 

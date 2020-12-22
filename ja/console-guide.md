@@ -355,7 +355,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 
 - 外部OBSにログを保管できます。
 
-1. [AMZ S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1)を利用して資格証明の登録および照会を行い、アクセスキー(accessKey)とシークレットキー(secretKey)を取得します。
+1. [AWS S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1)を利用して資格証明の登録および照会を行い、アクセスキー(accessKey)とシークレットキー(secretKey)を取得します。
 2. **ログ外部保管**設定で**追加**ボタンをクリック
 3. アクセスキーとシークレットキーなどのデータを入力します。
 4. 他のOBSに追加して保存する場合は、**追加**ボタンを押して情報を入力します。
