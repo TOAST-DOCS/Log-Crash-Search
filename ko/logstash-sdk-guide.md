@@ -107,7 +107,7 @@ output {
   }
 }
 - url에 전송할 Log & Crash Collector 주소로 수정해야 합니다.
-- Toast Cloud Log & Crash Collector 주소: https://api-logncrash.cloud.toast.com/v2/log
+- NHN Cloud Log & Crash Collector 주소: https://api-logncrash.cloud.toast.com/v2/log
 - URI는 반드시 /v2/log 이어야 합니다.
 ```
 
