@@ -18,7 +18,7 @@ Log & Crash Search SDK를 통해서 로그 전송을 시작합니다.
 콘솔에 접속하여 왼쪽 메뉴를 이용하여 조직(Organization)과 프로젝트(Project)를 선택합니다. 조직이나 프로젝트가 없다면 새로 만들어야 합니다.
 - 왼쪽 메뉴에서 **ORGANIZATION > PROJECT**를 클릭합니다.
 
-조직과 프로젝트를 만드는 자세한 방법은 [TOAST 콘솔 사용 가이드](https://docs.toast.com/ko/TOAST/ko/console-guide/)를 참고하세요.
+조직과 프로젝트를 만드는 자세한 방법은 [NHN Cloud 콘솔 사용 가이드](https://docs.toast.com/ko/TOAST/ko/console-guide/)를 참고하세요.
 
 ## 서비스 활성화
 
@@ -39,7 +39,7 @@ Log & Crash Search가 활성화되면 왼쪽 메뉴에 **Analytics > Log & Crash
 ## 로그 전송
 
 로그를 전송하려면 Log & Crash Search SDK가 필요합니다.
-SDK는 [TOAST Downloads](https://docs.toast.com/ko/Download/) 페이지의 **Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
+SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 **Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
 
 > [참고]  
 > 로그량이 적은 경우에는 약 5분 후, 로그 전송 결과가 반영됩니다.
@@ -362,7 +362,7 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 5. 모든 OBS 정보를 입력했다면 저장 버튼을 눌러 저장합니다.
 
 - 설정한 OBS로 로그가 저장됩니다.
-- [TOAST OBS API 안내 가이드](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
+- [NHN Cloud OBS API 안내 가이드](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
 
 ## 네트워크 인사이트
 
