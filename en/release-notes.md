@@ -12,7 +12,7 @@
 
 ### September 22, 2020 
 #### Feature Changes
-* [Console] Supports IAM console from access link for NHN Cloud Log & Search, attached to notifications of email, or Dooray!  
+* [Console] Supports IAM console from access link for TOAST Log & Search, attached to notifications of email, or Dooray!  
 
 ### August 25, 2020 
 #### Feature Changes
@@ -57,7 +57,7 @@
 ### January 21, 2020
 #### Feature Updates
 * [Console] Changed how to locate the occurrence of iOS crashes. 
-* [Console] Allows additional display of information on iOS crashes (on NHN Cloud SDK iOS 0.21.0 or higher versions).
+* [Console] Allows additional display of information on iOS crashes (on TOAST SDK iOS 0.21.0 or higher versions).
 
 ### October 29, 2019
 #### Feature Updates
