@@ -18,7 +18,7 @@ Start sending logs via Log & Crash Search SDK.
 Access console and select an organization and project from menu on the left. When there is no organization or project available, create one.
 - Select **ORGANIZATION > PROJECT** from the menu on the left.
 
-See the [TOAST Console Guide](https://docs.toast.com/en/TOAST/en/console-guide/) for how to create an organization and a project
+See the [NHN Cloud Console Guide](https://docs.toast.com/en/TOAST/en/console-guide/) for how to create an organization and a project
 
 ## Enable Services
 
@@ -39,7 +39,7 @@ To send logs, it is required to check Appkey.
 ## Send Logs
 
 To send a log, Log & Crash Search SDK is required.
-You can download an SDK from **Analytics > Log & Crash Search** of [TOAST Downloads](https://docs.toast.com/en/Download/)
+You can download an SDK from **Analytics > Log & Crash Search** of [NHN Cloud Downloads](https://docs.toast.com/en/Download/)
 
 > [Note]  
 > When the log volume is small, the result can be applied in about five minutes.  
@@ -351,7 +351,7 @@ Set information for external log storage.
 5. After all data entered for OBS, click Save to save data. 
 
 - Logs are saved at OBS as configured. 
-- [Guide for TOAST OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
+- [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
 
 ### Log Integrity Inspection Setting 
 
@@ -362,15 +362,15 @@ Set inspection for log integrity.
 1. **Setting for External Log Storage** checks notification for change in external log.  
 ![lcs_3-_20200727](https://static.toastoven.net/prod_logncrash/lcs_30_20200727.png)
 
-2. Get an authentication token of OBS. (See [Guide for TOAST OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)
+2. Get an authentication token of OBS. (See [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)
 Use the token to set webhook url at OBS to check changes. 
 ```
 curl -X POST {Object-Store Endpoint}/{container} -H "X-Auth-Token: {token}" -H 'X-Webhook: {webhook-url}'
 ```
 | Item | Description | Value |
 | --- | --- | --- |
-| Object-Store Endpoint | Endpoint to manage OBS | See [Guide for TOAST OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2) |
-| container | Name of OBS container | See [Guide for TOAST OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2) |
+| Object-Store Endpoint | Endpoint to manage OBS | See [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2) |
+| container | Name of OBS container | See [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2) |
 | token | Authentication token value of OBS |  |
 | webhook-url | Webhook url to get when uploading/deleting OBS | http://api-gw.cloud.toast.com/tclcs-integrity-validator/integrity/${appkey} |
 | appkey | Target of storage Log&Crash Search Appkey |  |

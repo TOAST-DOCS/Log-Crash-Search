@@ -18,7 +18,7 @@ Log & Crash Search SDKを通して、ログの転送を開始します。
 コンソールに接続し、左側メニューを利用して組織(Organization)とプロジェクト(Project)を選択します。組織やプロジェクトがない場合は、作成する必要があります。
 - 左側メニューから**ORGANIZATION > PROJECT**をクリックします。
 
-組織とプロジェクトの作成方法は[TOASTコンソール使用ガイド](https://docs.toast.com/ko/TOAST/ko/console-guide/)を参照してください。
+組織とプロジェクトの作成方法は[NHN Cloudコンソール使用ガイド](https://docs.toast.com/ko/TOAST/ko/console-guide/)を参照してください。
 
 ## サービス有効化
 
@@ -39,7 +39,7 @@ Log & Crash Searchが有効になると、左側メニューに**Analytics > Log
 ## ログ転送
 
 ログを転送するには、Log & Crash Search SDKが必要です。
-SDKは[TOAST Downloads](https://docs.toast.com/ko/Download/)ページの**Analytics > Log & Crash Search**でダウンロードできます。
+SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**Analytics > Log & Crash Search**でダウンロードできます。
 
 > [参考]  
 > ログの量が少ない場合は、約5分後にログ転送の結果が反映されます。
@@ -362,7 +362,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 5. すべてのOBS情報を入力したら、保存ボタンを押して保存します。
 
 - 設定したOBSにログが保存されます。
-- [TOAST OBS API案内ガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
+- [NHN Cloud OBS API案内ガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
 
 ### ログデータ完全性チェックの設定方法
 
@@ -373,15 +373,15 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 1. **ログ外部保管設定**で**外部ログ改ざん通知**を選択します。
 ![lcs_3-_20200727](https://static.toastoven.net/prod_logncrash/lcs_30_20200727.png)
 
-2. Object Storage認証トークンを取得します([TOAST Object Storage APIガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)参考)。
+2. Object Storage認証トークンを取得します([NHN Cloud Object Storage APIガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)参考)。
 認証トークンを使用してObject Storageに改ざんを確認するためのWebフック(webhook) URLを設定します。
 ```
 curl -X POST {Object-Store Endpoint}/{container} -H "X-Auth-Token: {token}" -H 'X-Webhook: {webhook-url}'
 ```
 | 項目 | 説明 | 値 |
 | --- | --- | --- |
-| Object-Store Endpoint | Object Storageを管理するためのエンドポイント | [TOAST Object Storage APIガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)参考 |
-| container | Object Storageコンテナ名 | [TOAST Object Storage APIガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)参考 |
+| Object-Store Endpoint | Object Storageを管理するためのエンドポイント | [NHN Cloud Object Storage APIガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)参考 |
+| container | Object Storageコンテナ名 | [NHN Cloud Object Storage APIガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)参考 |
 | token | Object Storage認証トークンの値 |  |
 | webhook-url | Object Storageアップロード/削除時に受け取るWebhook URL | http://api-gw.cloud.toast.com/tclcs-integrity-validator/integrity/${appkey} |
 | appkey | 保存対象Log&Crash Search Appkey |  |

@@ -107,7 +107,7 @@ output {
   }
 }
 - Modify URL to the address of Log & Crash Collector to send 
-- Address of Toast Cloud Log & Crash Collector: https://api-logncrash.cloud.toast.com/v2/log
+- Address of NHN Cloud Log & Crash Collector: https://api-logncrash.cloud.toast.com/v2/log
 - The URI must be /v2/log.
 ```
 

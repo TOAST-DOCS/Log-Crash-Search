@@ -14,7 +14,7 @@ Start sending logs via Log & Crash Search SDK.
 Access console and select an organization and project from menu on the left. When there is no organization or project available, create one.
 - Select **ORGANIZATION > PROJECT** from the menu on the left.
 
-See the [TOAST Console Guide](https://docs.toast.com/zh/TOAST/zh/console-guide/) for how to create an organization and a project
+See the [NHN Cloud Console Guide](https://docs.toast.com/zh/TOAST/zh/console-guide/) for how to create an organization and a project
 
 ## Enable Services
 
@@ -35,7 +35,7 @@ To send logs, it is required to check Appkey.
 ## Send Logs
 
 To send a log, Log & Crash Search SDK is required.
-You can download an SDK from **Analytics > Log & Crash Search** of [TOAST Downloads](https://docs.toast.com/zh/Download/)
+You can download an SDK from **Analytics > Log & Crash Search** of [NHN Cloud Downloads](https://docs.toast.com/zh/Download/)
 
 > [Note]  
 > When the log volume is small, the result can be applied in about five minutes.  

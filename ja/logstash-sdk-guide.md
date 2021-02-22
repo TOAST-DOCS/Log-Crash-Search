@@ -107,7 +107,7 @@ output {
   }
 }
 - urlに転送するLog & Crash Collectorアドレスに修正する必要があります。
-- Toast Cloud Log & Crash Collectorアドレス：https://api-logncrash.cloud.toast.com/v2/log
+- NHN Cloud Log & Crash Collectorアドレス：https://api-logncrash.cloud.toast.com/v2/log
 - URIは/v2/logである必要があります。
 ```
 
