@@ -6,6 +6,12 @@
 * [Console] 크래시 알람 중 임계치를 0으로 수정하는 경우 저장되지 않는 버그 수정
 * [Console] 로그 보관 기간 6개월, 1년 항목 삭제, 4개월 추가
 
+### October 27, 2020
+#### Feature Updates
+* Supports the event history page for events that can be accessed without [Console] session
+  *  Supports the event history page link replacing the previous console link when a log alarm is triggered
+  *  Added the event history page link to SMS as well
+
 ### October 13, 2020
 #### Feature Updates
 * Changed the capacity limit for a single log (general or crash) from 2MB to 8MB 
