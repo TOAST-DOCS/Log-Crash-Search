@@ -285,6 +285,9 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.to
 ```
 API Endpoint: https://lncs-api.cloud.toast.com
 ```
+```
+검색은 최근 90일 이내의 로그만 가능하며, 시작 시간과 종료 시간의 범위는 31일을 초과할 수 없습니다.
+```
 
 ### Search API
 Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 페이징을 적용하여 조회할 수 있습니다.
@@ -303,8 +306,8 @@ Content-Type: application/json
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
 | query | String | Lucene 쿼리 | O |  |
-| from | String | 시작 시간 | O | ISO8601 형식 날짜 |
-| to | String | 종료 시간 | O | ISO8601 형식 날짜 |
+| from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
 | pageNumber | Number | 페이지 번호 |  | 기본값 0 |
 | pageSize | Number | 페이지 크기 |  | 기본값 100 |
 | sort | Object | 정렬 기준 |  | 필드 별 오름차순(ASC) 및 내림차순(DESC) 설정 |
@@ -379,8 +382,8 @@ Content-Type: application/json
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
 | query | String | Lucene 쿼리 | O |  |
-| from | String | 시작 시간 | O | ISO8601 형식 날짜 |
-| to | String | 종료 시간 | O | ISO8601 형식 날짜 |
+| from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
 | pageSize | Number | 페이지 크기 |  | 기본값 100 |
 | sort | Object | 정렬 기준 |  | 필드 별 오름차순(ASC) 및 내림차순(DESC) 설정 |
 
