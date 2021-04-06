@@ -1,13 +1,22 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### April 27, 2020
+#### Feature Updates
+* [Console] 로그 검색 API 제공
+* [Console] 로그 다운로드 시 운영 관리자가 프로젝트에 설정한 필드에 대해 마스킹 적용
+
+#### Bug Fixes
+* [Console] 로그 검색 페이지 중 본문에 html이 포함된 경우 html의 내용이 해석되어 표시되던 현상 수정
+* [Console] 다수의 크래시 이슈 상태를 동시에 변경할 경우에 발생하는 에러 수정
+
 ### 2020. 12. 15.
-#### 기능 개선/변경
+#### Feature Updates
 * [Console] 알람 설정 중 제목과 설명에 대한 최대 입력 글자 수 표시 및 제한
 * [Console] 크래시 알람 중 임계치를 0으로 수정하는 경우 저장되지 않는 버그 수정
 * [Console] 로그 보관 기간 6개월, 1년 항목 삭제, 4개월 추가
 
 ### 2020. 10. 13.
-#### 기능 개선/변경
+#### Feature Updates
 * 로그(일반 로그, 크래시 로그) 단건의 용량 제한을 2MB에서 8MB로 변경
 
 ### September 22, 2020
