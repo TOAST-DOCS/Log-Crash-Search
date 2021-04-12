@@ -2,12 +2,12 @@
 
 ### April 27, 2020
 #### Feature Updates
-* [Console] 로그 검색 API 제공
-* [Console] 로그 다운로드 시 운영 관리자가 프로젝트에 설정한 필드에 대해 마스킹 적용
+* [Console] Provided the API for searching logs
+* [Console] Applied masking to the fields that are configured by an administrator in the project while downloading logs
 
 #### Bug Fixes
-* [Console] 로그 검색 페이지 중 본문에 html이 포함된 경우 html의 내용이 해석되어 표시되던 현상 수정
-* [Console] 다수의 크래시 이슈 상태를 동시에 변경할 경우에 발생하는 에러 수정
+* [Console] Fixed an issue in which HTML strings were parsed and displayed when they were included in the body of the log search page
+* [Console] Fixed an issue in which a problem would occur when the status of multiple crash issues were changed at the same time
 
 ### December 15, 2020
 #### Feature Updates
