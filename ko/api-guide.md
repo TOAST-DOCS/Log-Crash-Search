@@ -309,7 +309,7 @@ Content-Type: application/json
 | from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
 | to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
 | pageNumber | Number | 페이지 번호 |  | 기본값 0 |
-| pageSize | Number | 페이지 크기 |  | 기본값 10, 최대값 100 |
+| pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
 | sort | Object | 정렬 기준 |  | 필드 별 오름차순(ASC) 및 내림차순(DESC) 설정 |
 
 <details>
@@ -384,7 +384,7 @@ Content-Type: application/json
 | query | String | Lucene 쿼리 | O |  |
 | from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
 | to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
-| pageSize | Number | 페이지 크기 |  | 기본값 10, 최대값 100 |
+| pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
 | sort | Object | 정렬 기준 |  | 필드 별 오름차순(ASC) 및 내림차순(DESC) 설정 |
 
 <details>
