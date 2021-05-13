@@ -289,7 +289,7 @@ Only logs created in past 90 days can be searched. The range of start time and e
 ```
 
 ### Search API
-Searches the logs within the time frame specified by the Lucene query. The number of items to be displayed in the result screen can be adjusted.
+You can view logs within the specified time frame using the Lucene query. Phasing is used to view them, which allows you to search for up to 100,000 logs.
 ```
 POST /api/v1/search/{appkey}
 Content-Type: application/json
@@ -307,7 +307,7 @@ Content-Type: application/json
 | from | String | Start time | O | Date in ISO8601 format (YYYY-MM-DDThh:mm:ss.sTZD) |
 | to | String | End time | O | Date in ISO8601 format (YYYY-MM-DDThh:mm:ss.sTZD) |
 | pageNumber | Number | Page number |  | Default 0 |
-| pageSize | Number | Page size |  | Default 100 |
+| pageSize | Number | Page size |  | Min 10, Max 100. |
 | sort | Object | Sort by |  | Ascending (ASC) and descending (DESC) setting per field |
 
 <details>
@@ -381,7 +381,7 @@ Content-Type: application/json
 | query | String | Lucene query | O |  |
 | from | String | Start time | O | Date in ISO8601 format (YYYY-MM-DDThh:mm:ss.sTZD) |
 | to | String | End time | O | Date in ISO8601 format (YYYY-MM-DDThh:mm:ss.sTZD) |
-| pageSize | Number | Page size |  | Default 100 |
+| pageSize | Number | Page size |  | Min 10, Max 100. |
 | sort | Object | Sort by |  | Ascending (ASC) and descending (DESC) setting per field |
 
 <details>
