@@ -290,7 +290,7 @@ API Endpoint: https://lncs-api.cloud.toast.com
 ```
 
 ### Search API
-Luceneクエリーを使用して、指定した時間範囲のログを照会します。ページングを適用して照会できます。
+Luceneクエリーを使用して、指定した時間範囲のログを照会します。ページングを適用して照会することができ、最大100,000件のログを検索できます。
 ```
 POST /api/v1/search/{appkey}
 Content-Type: application/json
@@ -308,7 +308,7 @@ Content-Type: application/json
 | from | String | 開始時間 | O | ISO8601形式の日付(YYYY-MM-DDThh:mm:ss.sTZD) |
 | to | String | 終了時間 | O | ISO8601形式の日付(YYYY-MM-DDThh:mm:ss.sTZD) |
 | pageNumber | Number | ページ番号 |  | デフォルト値0 |
-| pageSize | Number | ページサイズ |  | デフォルト値100 |
+| pageSize | Number | ページサイズ |  | デフォルト値10，最大値100 |
 | sort | Object | ソート基準 |  | フィールドごとに昇順(ASC)および降順(DESC)設定 |
 
 <details>
@@ -382,7 +382,7 @@ Content-Type: application/json
 | query | String | Luceneクエリー | O |  |
 | from | String | 開始時間 | O | ISO8601形式の日付(YYYY-MM-DDThh:mm:ss.sTZD) |
 | to | String | 終了時間 | O | ISO8601形式の日付(YYYY-MM-DDThh:mm:ss.sTZD) |
-| pageSize | Number | ページサイズ |  | デフォルト値100 |
+| pageSize | Number | ページサイズ |  | デフォルト値10，最大値100 |
 | sort | Object | ソート基準 |  | フィールドごとに昇順(ASC)および降順(DESC)設定 |
 
 <details>
