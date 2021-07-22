@@ -70,11 +70,11 @@ SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**An
 ## ログ検索(NEW)
 
 以下のリンクから改善されたLog&Crash Searchコンソールを利用できます。
-![lcs_02_202107](https://static.toastoven.net/prod_logncrash/lcs_02_202107.png)
+![lcs_02_202107](https://static.toastoven.net/prod_logncrash/lcs_02_202107_ja.png)
 基本的な機能は従来のページと同じです。
 変更点は以下の通りです。
 
-![lcs_03_202107](https://static.toastoven.net/prod_logncrash/lcs_03_202107.png)
+![lcs_03_202107](https://static.toastoven.net/prod_logncrash/lcs_03_202107_ja.png)
 1. クエリ作成後、右側のxボタンでクエリを一括削除する機能が追加されました。
 2. リアルタイム検索の提供を終了します。
 3. ダウンロードボタンが別のボタンに分離されました。クラッシュダンプはlogType：「CRASH」で検索しないでダウンロードが可能です。
@@ -131,11 +131,11 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 ログ検索ページから改善されたLog&Crash Searchコンソールを利用できます。
 基本的な機能は既存のページと同じです。
 変更点は以下の通りです。
-![lcs_04_202107](https://static.toastoven.net/prod_logncrash/lcs_04_202107.png)
+![lcs_04_202107](https://static.toastoven.net/prod_logncrash/lcs_04_202107_ja.png)
 1. Chart内のExport機能を使用できます。
 2. テーブルのカラムごとに昇順/降順ソートを適用できます。
 
-![lcs_05_202107](https://static.toastoven.net/prod_logncrash/lcs_05_202107.png)
+![lcs_05_202107](https://static.toastoven.net/prod_logncrash/lcs_05_202107_ja.png)
 * 既存の「意見」、「ヒストリー」タブを「意見およびヒストリー」タブに統合し、ユーザーの利便性を高めました。
 
 ### リアルタイムモニタリング
@@ -157,7 +157,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 ログ検索ページから改善されたLog&Crash Searchコンソールを利用できます。
 基本的な機能は既存の**トレンド**ページと同じです。
 変更点は以下の通りです。
-![lcs_06_202107](https://static.toastoven.net/prod_logncrash/lcs_06_202107.png)
+![lcs_06_202107](https://static.toastoven.net/prod_logncrash/lcs_06_202107_ja.png)
 * 既存の複雑な指標を整理して以下の重要指標だけで構成するように変更しました。
     * クラッシュ数
     * クラッシュが発生した機器
