@@ -72,7 +72,7 @@ SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 *
 아래 링크를 통해 개선된 Log&Crash Search 콘솔 이용이 가능합니다.
 ![lcs_02_202107](https://static.toastoven.net/prod_logncrash/lcs_02_202107.png)
 기본적인 기능은 기존 페이지와 동일합니다.
-변경점은 아래와 같습니다.
+변경 사항은 아래와 같습니다.
 
 ![lcs_03_202107](https://static.toastoven.net/prod_logncrash/lcs_03_202107.png)
 1. 쿼리 작성 후, 우측의 x 버튼으로 쿼리 일괄 삭제 기능이 추가되었습니다.
@@ -82,7 +82,7 @@ SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 *
 5. 집계 count는 이제 선택한 필드를 클릭 시, 별도 모달로 보여줍니다.
 6. 테이블 형태로 노출이 변경되었습니다. 선택한 필드에 따라 기본 노출 데이터가 달라지며, 다른 필드까지 함께 보고 싶으신 경우, 맨 우측 펼치기 버튼을 통해 가능합니다.
 
-* 그 외 변경점들
+* 그 외 변경 사항들
     * 검색 소요시간은 제공하지 않습니다.
     * 세션 로그는 기본 off 고정으로 제공됩니다.
     * 저장한 로그 페이지가 별도 탭으로 분리되어 제공됩니다.
@@ -130,7 +130,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 ### 이슈조회(NEW)
 로그 검색 페이지를 통해 개선된 Log&Crash Search 콘솔 이용이 가능합니다.
 기본적인 기능은 기존 페이지와 동일합니다.
-변경점은 아래와 같습니다.
+변경 사항은 아래와 같습니다.
 ![lcs_04_202107](https://static.toastoven.net/prod_logncrash/lcs_04_202107.png)
 1. Chart 내의 Export 기능 사용이 가능합니다.
 2. 테이블의 컬럼 별 오름차순/내림차순 정렬을 적용할 수 있습니다.
@@ -156,7 +156,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 ### 이슈 트랜드(NEW)
 로그 검색 페이지를 통해 개선된 Log&Crash Search 콘솔 이용이 가능합니다.
 기본적인 기능은 기존 **트랜드** 페이지와 동일합니다.
-변경점은 아래와 같습니다.
+변경 사항은 아래와 같습니다.
 ![lcs_06_202107](https://static.toastoven.net/prod_logncrash/lcs_06_202107.png)
 * 기존 복잡한 지표들을 정리하고 아래 중요 지표들로만 구성하도록 변경하였습니다.
     * 크래시 수
