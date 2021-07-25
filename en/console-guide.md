@@ -66,6 +66,27 @@ Details of the **Log Search** screen are as below.
 
 Search conditions of user configuration are reflected on the search query window, and you may save this query ([Save Queries]), or search by saved queries ([Select Saved Queries]).
 
+## Search Log(NEW)
+
+Click the link to use the improved Log&Crash Search console.
+![lcs_02_202107](https://static.toastoven.net/prod_logncrash/lcs_02_202107.png)
+The basic features are same as the previous page.
+Changes made are as follows:
+
+![lcs_03_202107](https://static.toastoven.net/prod_logncrash/lcs_03_202107.png)
+1. A feature to delete all queries by clicking the x button on the right after writing the query was added.
+2. Real-time search is no longer available.
+3. Download button has been separated. Crash dump can be now downloaded without searching logType:"CRASH”.
+4. Data can be saved through the Chart’s Export feature.
+5. Aggregate count now shows the selected field as a separate modal when clicked.
+6. The exposure has been changed into a table form. The basic exposure data differs according to the selected field. Click the open button at the end of the right side to view other fields as well.
+
+* Other changes made
+    * Time required for search is no longer available.
+    * Session log is set at off as default.
+    * The saved log page is separated as an additional tab.
+
+
 ## Retrieve App Crash
 
 Crash information of Android and iOS devices can be retrieved through **Analytics > Log & Crash Search > App Crash Search**.
@@ -105,6 +126,17 @@ Click an issue on the list to find its details.
 |History Graph| Trace the number of issue occurrences on a timeline chart and a world map.|
 |Matrix Data| Display information such as network, OS version, device, operator, and nation.|
 
+### Search issue(NEW)
+The improved Log&Crash Search console is available through the log search page.
+The basic features are same as the previous page.
+Changes made are as follows:
+![lcs_04_202107](https://static.toastoven.net/prod_logncrash/lcs_04_202107.png)
+1. Export feature is available in the Chart.
+2. User can apply ascending/descending sort by column of table.
+
+![lcs_05_202107](https://static.toastoven.net/prod_logncrash/lcs_05_202107.png)
+* The user convenience has been improved by merging the existing **Comments** and **History** tabs into one **Comments and History**.
+
 ### Real-time Monitoring
 
 ![lcs_06_201812_en](https://static.toastoven.net/prod_logncrash/lcs_06_201812_en.png)
@@ -119,6 +151,18 @@ Monitors real-time occurrences of app crashes for about five minutes.
 |---|---|
 |Time Condition| Set time conditions for statistics. (e.g. 7 days, 2 weeks, or 30 days)|
 |Trend Graph| Show various trend graphs. <br/> - Crash Counts <br/> - Device Experiencing Crash <br/> - Statistics of All Errors <br/> - Statistics of Unresolved Errors <br/> - Issue Statistics by App Version <br/> - Issue Statistics by OS version <br/> - Issue Statistics by Device <br/> - Issue Statistics by Country <br/> |
+
+### Issue Trend(NEW)
+The improved Log&Crash Search console is available through the log search psage.
+The basic features are same as the previous **trend** page.
+Changes made are as follows:
+![lcs_06_202107](https://static.toastoven.net/prod_logncrash/lcs_06_202107.png)
+* The exiting complex indicators have been organized and changed to consist only of the important indicators below.
+    * Number of crash
+    * Device with crash
+    * Issue by OS version
+    * Issue by device
+    * Issue by country
 
 ### App Crash Indicators
 
