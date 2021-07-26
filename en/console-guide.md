@@ -69,11 +69,11 @@ Search conditions of user configuration are reflected on the search query window
 ## Search Log(NEW)
 
 Click the link to use the improved Log&Crash Search console.
-![lcs_02_202107](https://static.toastoven.net/prod_logncrash/lcs_02_202107.png)
+![lcs_02_202107](https://static.toastoven.net/prod_logncrash/lcs_02_202107_en.png)
 The basic features are same as the previous page.
 Changes made are as follows:
 
-![lcs_03_202107](https://static.toastoven.net/prod_logncrash/lcs_03_202107.png)
+![lcs_03_202107](https://static.toastoven.net/prod_logncrash/lcs_03_202107_en.png)
 1. A feature to delete all queries by clicking the x button on the right after writing the query was added.
 2. Real-time search is no longer available.
 3. Download button has been separated. Crash dump can be now downloaded without searching logType:"CRASH”.
@@ -130,11 +130,11 @@ Click an issue on the list to find its details.
 The improved Log&Crash Search console is available through the log search page.
 The basic features are same as the previous page.
 Changes made are as follows:
-![lcs_04_202107](https://static.toastoven.net/prod_logncrash/lcs_04_202107.png)
+![lcs_04_202107](https://static.toastoven.net/prod_logncrash/lcs_04_202107_en.png)
 1. Export feature is available in the Chart.
 2. User can apply ascending/descending sort by column of table.
 
-![lcs_05_202107](https://static.toastoven.net/prod_logncrash/lcs_05_202107.png)
+![lcs_05_202107](https://static.toastoven.net/prod_logncrash/lcs_05_202107_en.png)
 * The user convenience has been improved by merging the existing **Comments** and **History** tabs into one **Comments and History**.
 
 ### Real-time Monitoring
@@ -156,7 +156,7 @@ Monitors real-time occurrences of app crashes for about five minutes.
 The improved Log&Crash Search console is available through the log search psage.
 The basic features are same as the previous **trend** page.
 Changes made are as follows:
-![lcs_06_202107](https://static.toastoven.net/prod_logncrash/lcs_06_202107.png)
+![lcs_06_202107](https://static.toastoven.net/prod_logncrash/lcs_06_202107_en.png)
 * The exiting complex indicators have been organized and changed to consist only of the important indicators below.
     * Number of crash
     * Device with crash
