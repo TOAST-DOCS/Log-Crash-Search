@@ -1,5 +1,9 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### 2021. 07. 27.
+#### Feature Updates
+* [Console] Improve/change the entire UI/UX of web console
+
 ### April 27, 2020
 #### Feature Updates
 * [Console] Provided the API for searching logs
