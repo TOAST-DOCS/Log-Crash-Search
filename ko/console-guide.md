@@ -184,6 +184,16 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 크래시 맵은 사용자가 지정한 기간 내 발생 크래시 수를 지도상에 표시합니다.
 
+### 크래시 리포트(신규)
+
+개선한 Log&Crash Search 콘솔에서는 **앱 크래시 지표 메뉴**를 **크래시 리포트 메뉴**로 변경했습니다.
+
+![lcs_07_202107](https://static.toastoven.net/prod_logncrash/lcs_07_202107.png)
+
+1. 지표 유형 메뉴는 **앱 크래시 추이** 만 제공하도록 변경하고, 실제 보여주는 지표를 다음 2, 3번과 같이 변경하여 사용자 편의성을 높였습니다.
+2. 기존 **앱 크래시 추이** 지표 유형에서 제공하던 그래프와 동일한 지표를 보여줍니다.
+3. 기존 **앱 크래시 지표** 유형에서 제공하던 테이블의 데이터를 보여줍니다.
+
 
 ### 크래시 사용자
 
@@ -203,9 +213,22 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 |시간 조건| 사용자별 크래시 조회 시간 조건을 설정할 수 있습니다.|
 |앱 버전| 앱 버전별로 검색합니다.|
 
+### 사용자별 이슈 조회(신규)
+
+개선한 Log&Crash Search 콘솔에서는 **크래시 사용자 메뉴**를 **사용자별 이슈 조회**로 메뉴 명칭을 변경했습니다.
+기본 기능은 기존 **크래시 사용자** 페이지와 동일합니다.
+
+![lcs_08_202107](https://static.toastoven.net/prod_logncrash/lcs_08_202107.png)
+
+
 ### 이슈통계
 
+* 기존 페이지
 ![lcs_12_201812](https://static.toastoven.net/prod_logncrash/lcs_12_201812.png)
+
+* 개선한 콘솔 페이지
+![lcs_09_202107](https://static.toastoven.net/prod_logncrash/lcs_09_202107.png)
+
 
 |항목|설명|
 |---|---|
@@ -224,7 +247,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 ### 로그 알람 설정
 
-![lcs_13_201812](https://static.toastoven.net/prod_logncrash/lcs_13_201812.png)
+![lcs_13_202108](https://static.toastoven.net/prod_logncrash/lcs_13_202108.png)
 
 로그 알람에 대한 모든 기능을 수행할 수 있는 페이지입니다.
 
@@ -233,50 +256,35 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 - [발생 수], [증감률] 두 가지 유형의 알람이 있습니다.
 - **알람 추가** 버튼을 누르면 알람을 등록할 수 있습니다.
 
-#### 발생 수 알람
+![lcs_14_202108](https://static.toastoven.net/prod_logncrash/lcs_14_202108.png)
 
-![lcs_14_201812](https://static.toastoven.net/prod_logncrash/lcs_14_201812.png)
-
-- 발생 수 알람 설정 방법은 다음과 같습니다.
+- 알람 설정 방법은 다음과 같습니다.
     - 알람 제목: 알람 설정 목록에 표시될 이름을 입력합니다.
     - 알람 쿼리: 알람 수신을 원하는 로그유형을 Lucene 쿼리로 입력합니다.
     - 설명: 알람 설명을 입력합니다.
-    - 알람 유형: 발생 수 알람 유형으로 설정합니다.
-    - 알람 규칙: **임곗값**에 적용될 부등호를 선택합니다.
-    - 임곗값: '검색 조건'에 해당하는 로그가 '알람 규칙' 부등호에 따라 '임곗값' 개수만큼 발생하면 알람을 발송합니다.
-    - 발생 주기: 분 단위로 입력하며, 입력한 시간 값 내에 로그가 '임곗값'만큼 발생해야 알람을 발송합니다.
+    - 알람 유형: 발생 수 또는 증감률로 알람 유형을 설정합니다.
+    - 알람 유형이 발생 수일 경우
+        - 알람 규칙: **임곗값**에 적용될 부등호를 선택합니다.
+        - 임곗값: '검색 조건'에 해당하는 로그가 '알람 규칙' 부등호에 따라 '임곗값' 개수만큼 발생하면 알람을 발송합니다.
+        - 발생 주기: 분 단위로 입력하며, 입력한 시간 값 내에 로그가 '임곗값'만큼 발생해야 알람을 발송합니다.
+    - 알람 유형이 증감률일 경우
+        - 임곗값: '검색 조건'에 해당하는 로그의 증감률입니다. 양수는 로그가 이전 간격 대비 증가한 비율, 0은 이전 간격과 로그 양이 동일, 음수는 이전 간격보다 로그 양이 감소한 비율입니다.
+        - 비교 시간: 시간 단위로 입력하며, 입력한 시간 간격과 그 이전 간격 사이의 로그양을 '임곗값'에 맞춰 비교합니다. '비교 시간'동안 발생한 로그의 증감률이 '임곗값'을 만족하면, 알람을 발송합니다.
     - 스누즈: 분 단위로 입력하며, 최소 1분~최대 1,440분(24시간) 사이의 값을 설정합니다.(0이면 꺼짐)
     - 수신자: 알람을 수신할 수신자를 입력합니다. 각 수신자마다 이메일과 SMS를 선택할 수 있습니다.
     - SMS 알람 문구: 알람 발송 시 SMS로 보낼 문구를 입력합니다.
     - 콜백 수신지: 알람 발송 시 호출될 URL을 입력합니다. http(s)://와 이메일, 그리고 두레이 훅을 지원합니다.
 
-#### 증감률 알람
-
-![lcs_15_201812](https://static.toastoven.net/prod_logncrash/lcs_15_201812.png)
-
-원하는 로그 유형(Lucene 쿼리)의 발생 증감률에 따라 알람을 발송합니다.
-
-- 증감률 알람 설정 방법은 다음과 같습니다.
-    - 알람 제목: 알람 설정 목록에 표시될 이름을 입력합니다.
-    - 알람 쿼리: 알람 수신을 원하는 로그유형을 Lucene 쿼리로 입력합니다.
-    - 설명: 알람 설명을 입력합니다.
-    - 알람 유형: 증감률 알람 유형으로 설정합니다.
-    - 임곗값: '검색 조건'에 해당하는 로그의 증감률입니다. 양수는 로그가 이전 간격 대비 증가한 비율, 0은 이전 간격과 로그 양이 동일, 음수는 이전 간격보다 로그 양이 감소한 비율입니다.
-    - 비교 시간: 시간 단위로 입력하며, 입력한 시간 간격과 그 이전 간격 사이의 로그양을 '임곗값'에 맞춰 비교합니다. '비교 시간'동안 발생한 로그의 증감률이 '임곗값'을 만족하면, 알람을 발송합니다.
-    - 스누즈: 분 단위로 입력하며, 최소 1분~최대 1,440분(24시간) 사이의 값을 설정합니다.(0이면 꺼짐)
-    - 수신자: 알람을 수신할 수신자를 입력합니다. 각 수신자마다 이메일과 SMS를 선택할 수 있습니다.
-    - SMS 알람 문구: 알람 발송 시 SMS로 보낼 문구를 입력합니다.
-    - 콜백 수신지: 알람 발송 시 호출될 URL을 입력합니다. http(s)://와 이메일, 그리고 두레이 훅을 지원합니다.
 ### 로그 알람 이력
 
-![lcs_16_201812](https://static.toastoven.net/prod_logncrash/lcs_16_201812.png)
+![lcs_15_202108](https://static.toastoven.net/prod_logncrash/lcs_15_202108.png)
 
 - 설정한 알람 목록들이 표시됩니다.
 - 목록 클릭시 해당 알람 발생 내역을 확인할 수 있습니다.
 
 ### 크래시 알람 설정
 
-![lcs_17_201812](https://static.toastoven.net/prod_logncrash/lcs_17_201812.png)
+![lcs_16_202108](https://static.toastoven.net/prod_logncrash/lcs_16_202108.png)
 
 크래시 로그에 대한 알람을 별도로 설정하는 기능으로 플랫폼(iOS, Android, Windows, WebGL)별로 각각 하나씩 등록할 수 있습니다.
 
@@ -292,7 +300,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 ### 크래시 알람 이력
 
-![lcs_18_201812](https://static.toastoven.net/prod_logncrash/lcs_18_201812.png)
+![lcs_17_202108](https://static.toastoven.net/prod_logncrash/lcs_17_202108.png)
 
 크래시 로그 알람이 발생한 이력을 조회합니다.
 
@@ -302,7 +310,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 ### 사용자 기반 알람 설정
 
-![lcs_19_201812](https://static.toastoven.net/prod_logncrash/lcs_19_201812.png)
+![lcs_18_202108](https://static.toastoven.net/prod_logncrash/lcs_18_202108.png)
 
 크래시를 겪은 사용자 비율이 임계치(%) 이상인 경우 지정된 사용자의 휴대폰 또는 이메일로 알람을 전송하는 기능을 제공합니다.
 
@@ -316,7 +324,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 ### 사용자 기반 알람 이력
 
-![lcs_20_201812](https://static.toastoven.net/prod_logncrash/lcs_20_201812.png)
+![lcs_19_202108](https://static.toastoven.net/prod_logncrash/lcs_19_202108.png)
 
 사용자 기반 알람이  발생한 이력을 조회합니다.
 
@@ -335,7 +343,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 로그 검색 시 사용되는 검색 필드를 조회하는 기능으로 시스템 필드인 기본 필드 목록 외에 사용자 전송 필드인 사용자 지정 필드(커스텀 필드)를 확인할 수 있습니다.
 
-![lcs_21_201812](https://static.toastoven.net/prod_logncrash/lcs_21_201812.png)
+![lcs_20_202108](https://static.toastoven.net/prod_logncrash/lcs_20_202108.png)
 
 1. 로그 전송 시 필드 이름이 txt로 시작하는 경우 분석 여부가 true로 설정되고, 그 외에는 분석 여부가 false로 설정됩니다. 분석 여부가 false인 경우 로그 검색의 검색 필드로 등록하여 사용할 수 있습니다.
 2. 로그 파일이나 바이너리 파일을 전송하고 **로그 검색** 화면에서 **다운로드 > 보기** 링크를 이용하고자 하는 경우, UserBinaryData 혹은 UserTxtData라는 이름의 필드에 base64 인코딩된 값을 담아 전송하시기 바랍니다.
@@ -344,7 +352,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 이슈 트래커를 설정하면 **앱 크래시 검색 > 이슈 조회** 탭에서 이슈 목록을 클릭하면 나타나는 Error Detail 페이지에서, 해당 오류를 이슈 트래커에 등록하여 관리할 수 있습니다.
 
-![lcs_22_201812](https://static.toastoven.net/prod_logncrash/lcs_22_201812.png)
+![lcs_21_202108](https://static.toastoven.net/prod_logncrash/lcs_21_202108.png)
 
 - 플랫폼: iOS, Android, Unity 중 하나의 플랫폼을 선택합니다. 이슈 트래커는 플랫폼별로 각각 하나씩 설정 가능합니다.
 - 이슈 트래커: GitHub, GitLab 중 하나를 선택합니다.
@@ -359,7 +367,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 있습니다. 이 메뉴에서는 Symbolication file을 업로드, 다운로드하고 삭제할 수 있습니다.
 
-![lcs_23_201812](https://static.toastoven.net/prod_logncrash/lcs_23_201812.png)
+![lcs_22_202108](https://static.toastoven.net/prod_logncrash/lcs_22_202108.png)
 
 **[파일 선택]** 을 클릭하여 심벌 파일을 업로드 합니다.
 
@@ -375,7 +383,7 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 
 로그 보관 기간을 설정합니다.
 
-![lcs_24_201812](https://static.toastoven.net/prod_logncrash/lcs_24_201812.png)
+![lcs_23_202108](https://static.toastoven.net/prod_logncrash/lcs_23_202108.png)
 
 - 로그 보관 기간은 1개월, 2개월, 3개월, 6개월, 1년 중에서 선택할 수 있으며 월 1회에 한해 변경할 수 있습니다.
 - 로그 보관 기간이 지난 데이터는 다음날 새벽에 삭제됩니다.
@@ -384,7 +392,7 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 
 서비스별 로그 전송 여부를 설정합니다.
 
-![lcs_25_201812](https://static.toastoven.net/prod_logncrash/lcs_25_201812.png)
+![lcs_24_202108](https://static.toastoven.net/prod_logncrash/lcs_24_202108.png)
 
 - 일반 로그, 크래시 로그, Network Insights 로그 각각에 대해 전송 여부를 설정할 수 있습니다.
 - TOASK SDK에 대해 전송 여부를 설정 할 수 있습니다.
@@ -395,7 +403,7 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 
 로그 외부 보관 정보를 설정합니다.
 
-![lcs_29_20200612](https://static.toastoven.net/prod_logncrash/lcs_29_20200612.png)
+![lcs_25_202108](https://static.toastoven.net/prod_logncrash/lcs_25_202108.png)
 
 - 외부 OBS에 로그를 보관할 수 있습니다.
 
@@ -421,7 +429,7 @@ Log & Crash Search SDK에서 전송한 지연 시간과 오류율을 타임라�
 
 - 지연 시간과 오류율을 타임라인 차트와 URL 목록으로 표시합니다.
 
-![lcs_26_201812](https://static.toastoven.net/prod_logncrash/lcs_26_201812.png)
+![lcs_26_202108](https://static.toastoven.net/prod_logncrash/lcs_26_202108.png)
 
 |항목| 설명|
 |---|---|
@@ -433,7 +441,7 @@ Log & Crash Search SDK에서 전송한 지연 시간과 오류율을 타임라�
 
 - 지연 시간과 오류율을 지도상에 표시합니다.
 
-![lcs_27_201812](https://static.toastoven.net/prod_logncrash/lcs_27_201812.png)
+![lcs_27_202108](https://static.toastoven.net/prod_logncrash/lcs_27_202108.png)
 
 |항목| 설명|
 |---|---|
@@ -445,7 +453,7 @@ Log & Crash Search SDK에서 전송한 지연 시간과 오류율을 타임라�
 
 - 지연 시간과 오류율을 측정할 웹사이트의 URL을 설정할 수 있습니다.
 
-![lcs_28_201812](https://static.toastoven.net/prod_logncrash/lcs_28_201812.png)
+![lcs_28_202108](https://static.toastoven.net/prod_logncrash/lcs_28_202108.png)
 
 |항목|설명|
 |---|---|
