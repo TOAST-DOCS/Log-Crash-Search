@@ -184,6 +184,16 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 
 クラッシュマップは、ユーザーが指定した期間内の発生クラッシュ数をマップ上に表示します。
 
+### クラッシュレポート(新規)
+
+改善したLog&Crash Searchコンソールでは、**アプリクラッシュ指標メニュー**を**クラッシュレポートメニュー**に変更しました。
+
+![lcs_07_202107](https://static.toastoven.net/prod_logncrash/lcs_07_202107.png)
+
+1. 指標タイプメニューは**アプリクラッシュ推移**のみ提供するように変更し、実際に表示する指標を次の2、3番のように変更してユーザーの利便性を高めました。
+2. 従来の**アプリクラッシュ推移**指標タイプで提供していたグラフと同じ指標を表示します。
+3. 従来の**アプリクラッシュ指標**タイプで提供していたテーブルのデータを表示します。
+
 
 ### クラッシュユーザー
 
@@ -203,9 +213,22 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 |時間条件| ユーザー別クラッシュ照会時間条件を設定できます。|
 |アプリバージョン| アプリバージョン別に検索します。|
 
+### ユーザー別イシュー照会(新規)
+
+改善したLog&Crash Searchコンソールでは、メニュー名称を**クラッシュユーザーメニュー**から**ユーザー別イシュー照会**に変更しました。
+基本機能は従来の**クラッシュユーザー**ページと同じです。
+
+![lcs_08_202107](https://static.toastoven.net/prod_logncrash/lcs_08_202107.png)
+
+
 ### イシュー統計
 
+* 従来のページ
 ![lcs_12_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_12_ja_20200602.png)
+
+* 改善したコンソールページ
+![lcs_09_202107](https://static.toastoven.net/prod_logncrash/lcs_09_202107.png)
+
 
 |項目|説明|
 |---|---|
@@ -224,7 +247,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 
 ### ログアラーム設定
 
-![lcs_13_ja_20200602.png](https://static.toastoven.net/prod_logncrash/lcs_13_ja_20200602.png)
+![lcs_13_202108](https://static.toastoven.net/prod_logncrash/lcs_13_202108.png)
 
 ログアラームに対するすべての機能を実行できるページです。
 
@@ -233,50 +256,35 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 - [発生数]、[増減率]の2つのタイプのアラームがあります。
 - **アラーム追加**ボタンを押すと、アラームを登録できます。
 
-#### 発生数アラーム
+![lcs_14_202108](https://static.toastoven.net/prod_logncrash/lcs_14_202108.png)
 
-![lcs_14_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_14_ja_20200602.png)
-
-- 発生数アラーム設定方法は次のとおりです。
+- アラームの設定方法は次のとおりです。
     - アラームタイトル：アラーム設定リストに表示される名前を入力します。
     - アラームクエリー：アラームを受信したいログタイプをLuceneクエリーで入力します。
     - 説明：アラームの説明を入力します。
-    - アラームタイプ：発生数アラームタイプに設定します。
-    - アラームルール：**しきい値**に適用される不等号を選択します。
-    - しきい値： '検索条件'に該当するログが'アラームルール'の不等号に応じて'しきい値'の数発生すると、アラームを送信します。
-    - 発生周期：分単位で入力し、入力した時間値内にログが'しきい値'の数発生するとアラームを送信します。
+    - アラームタイプ：発生数または増減率でアラームタイプを設定します。
+    - アラームタイプが発生数の場合
+        - アラームルール：**しきい値**に適用される不等号を選択します。
+        - しきい値：「検索条件」を満たすログが「アラームルール」不等号に応じて「しきい値」と同数発生したらアラームを送信します。
+        - 発生周期：分単位で入力します。入力した時間値内にログが「しきい値」と同数発生したらアラームを送信します。
+    - アラームタイプが増減率の場合
+        - しきい値：「検索条件」を満たすログの増減率です。正の値はログが以前の間隔に比べて増加した比率。0は以前の間隔とログ量が同じ。負の値は以前の間隔よりログ量が減少した比率です。
+        - 比較時間：時間単位で入力し、入力した時間間隔とそれ以前の間隔の間のログ量を「しきい値」に合わせて比較します。 「比較時間」中に発生したログの増減率が「しきい値」を満たすと、アラームを送信します。
     - スヌーズ：分単位で入力し、最小1分～最大1,440分(24時間)の間の値を設定します。(0は消える)
     - 受信者：アラームを受信する受信者を入力します。受信者ごとにメールとSMSを選択できます。
     - SMSアラーム文言：アラーム送信時にSMSで送信する文言を入力します。
     - コールバックURL：アラーム送信時に呼び出されるURLを入力します。 http(s)://とメール、Doorayフックをサポートします。
 
-#### 増減率アラーム
-
-![lcs_15_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_15_ja_20200602.png)
-
-希望するログタイプ(Luceneクエリー)の発生増減率に応じて、アラームを送信します。
-
-- 増減率アラーム設定方法は次のとおりです。
-    - アラームタイトル：アラーム設定リストに表示される名前を入力します。
-    - アラームクエリー：アラームを受信したいログタイプをLuceneクエリーで入力します。
-    - 説明：アラームの説明を入力します。
-    - アラームタイプ：増減率アラームタイプに設定します。
-    - しきい値：'検索条件'に該当するログの増減率です。正の値のログが、以前の間隔に比べて増加した比率、0は以前の間隔とログ量が同じ。負の値は、以前の間隔に比べてログ量が減少した比率です。
-    - 比較時間：時間単位で入力し、入力した時間間隔とそれ以前の間隔の間のログ量を'しきい値'に合わせて比較します。 '比較時間'の間に発生したログの増減率が'しきい値'を満たすと、アラームを送信します。
-    - スヌーズ：分単位で入力し、最小1分～最大1,440分(24時間)の間の値を設定します。(0は消える)
-    - 受信者：アラームを受信する受信者を入力します。受信者ごとにメールとSMSを選択できます。
-    - SMSアラーム文言：アラーム送信時にSMSで送信する文言を入力します。
-    - コールバックURL：アラーム送信時に呼び出されるURLを入力します。 http(s)://とメール、Doorayフックをサポートします。
 ### ログアラーム履歴
 
-![lcs_16_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_16_ja_20200602.png)
+![lcs_15_202108](https://static.toastoven.net/prod_logncrash/lcs_15_202108.png)
 
 - 設定したアラームリストが表示されます。
 - リストをクリックすると、該当アラーム発生内容を確認できます。
 
 ### クラッシュアラーム設定
 
-![lcs_17_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_17_ja_20200602.png)
+![lcs_16_202108](https://static.toastoven.net/prod_logncrash/lcs_16_202108.png)
 
 クラッシュログに対するアラームを別途設定する機能です。プラットフォーム(iOS、Android、Windows、WebGL)別にそれぞれ1つずつ登録できます。
 
@@ -292,7 +300,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 
 ### クラッシュアラーム履歴
 
-![lcs_18_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_18_ja_20200602.png)
+![lcs_17_202108](https://static.toastoven.net/prod_logncrash/lcs_17_202108.png)
 
 クラッシュログアラームが発生した履歴を照会します。
 
@@ -302,7 +310,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 
 ### ユーザーべースのアラーム設定
 
-![lcs_19_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_19_ja_20200602.png)
+![lcs_18_202108](https://static.toastoven.net/prod_logncrash/lcs_18_202108.png)
 
 クラッシュが発生したユーザー比率がしきい値(%)以上の場合、指定されたユーザーの携帯電話またはメールにアラームを送信する機能を提供します。
 
@@ -335,7 +343,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 
 ログ検索時に使用される検索フィールドを照会する機能です。システムフィールドである基本フィールドリストの他に、ユーザー転送フィールドであるユーザー指定フィールド(カスタムフィールド)を確認できます。
 
-![lcs_21_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_21_ja_20200602.png)
+![lcs_20_202108](https://static.toastoven.net/prod_logncrash/lcs_20_202108.png)
 
 1. ログ転送時、フィールド名がtxtで始まる場合、分析するかどうかがtrueに設定され、それ以外のフィールドは分析するかどうかがfalseに設定されます。分析するかどうかがfalseの場合、ログ検索の検索フィールドに登録して使用できます。
 2. ログファイルやバイナリファイルを転送して、**ログ検索**画面で**ダウンロード > 参照**リンクを利用したい場合、 UserBinaryDataまたはUserTxtDataという名前のフィールドにbase64エンコードされた値を入れて転送してください。
@@ -344,7 +352,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 
 課題トラッカーを設定すると、**アプリクラッシュ検索 > イシュー照会**タブでイシューリストをクリックした時に表示されるError Detailページで、該当エラーを課題トラッカーに登録して管理できます。
 
-![lcs_22_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_22_ja_20200602.png)
+![lcs_21_202108](https://static.toastoven.net/prod_logncrash/lcs_21_202108.png)
 
 - プラットフォーム： iOS、Android、Unityのうち1つのプラットフォームを選択します。課題トラッカーはプラットフォーム別にそれぞれ設定可能です。
 - 課題トラッカー： GitHub、GitLabのうち1つを選択します。
@@ -359,7 +367,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 
 Symbolication fileが登録されていると、クラッシュログを確認できます。このメニューではSymbolication fileをアップロード、ダウンロードして削除できます。
 
-![lcs_23_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_23_ja_20200602.png)
+![lcs_22_202108](https://static.toastoven.net/prod_logncrash/lcs_22_202108.png)
 
 **[ファイル選択]**をクリックして、シンボルファイルをアップロードします。
 
@@ -375,7 +383,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 
 ログ保管期間を設定します。
 
-![lcs_24_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_24_ja_20200602.png)
+![lcs_23_202108](https://static.toastoven.net/prod_logncrash/lcs_23_202108.png)
 
 - ログ保管期間は1ヶ月、2ヶ月、3ヶ月、6ヶ月、1年の中から選択でき、ひと月に1回のみ変更できます。
 - ログ保管期間ではないデータは、翌日に削除されます。
@@ -384,7 +392,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 
 サービスごとに、ログを転送するかを設定します。
 
-![lcs_25_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_25_ja_20200602.png)
+![lcs_24_202108](https://static.toastoven.net/prod_logncrash/lcs_24_202108.png)
 
 - 一般ログ、クラッシュログ、 Network Insightsログ、それぞれに対して転送するかを設定できます。
 - TOASK SDKに対して転送するかどうかを設定できます。
@@ -395,7 +403,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 
 ログ外部保管情報を設定します。
 
-![lcs_29_20200612](https://static.toastoven.net/prod_logncrash/lcs_29_20200612.png)
+![lcs_25_202108](https://static.toastoven.net/prod_logncrash/lcs_25_202108.png)
 
 - 外部OBSにログを保管できます。
 
@@ -447,7 +455,7 @@ Log & Crash Search SDKから転送した遅延時間とエラー率をタイム�
 
 - 遅延時間とエラー率を、タイムラインチャートとURLリストに表示します。
 
-![lcs_26_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_26_ja_20200602.png)
+![lcs_26_202108](https://static.toastoven.net/prod_logncrash/lcs_26_202108.png)
 
 |項目| 説明|
 |---|---|
@@ -459,7 +467,7 @@ Log & Crash Search SDKから転送した遅延時間とエラー率をタイム�
 
 - 遅延時間とエラー率をマップ上に表示します。
 
-![lcs_27_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_27_ja_20200602.png)
+![lcs_27_202108](https://static.toastoven.net/prod_logncrash/lcs_27_202108.png)
 
 |項目| 説明|
 |---|---|
@@ -471,7 +479,7 @@ Log & Crash Search SDKから転送した遅延時間とエラー率をタイム�
 
 - 遅延時間とエラー率を測定するWebサイトのURLを設定できます。
 
-![lcs_28_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_28_ja_20200602.png)
+![lcs_28_202108](https://static.toastoven.net/prod_logncrash/lcs_28_202108.png)
 
 |項目|説明|
 |---|---|
