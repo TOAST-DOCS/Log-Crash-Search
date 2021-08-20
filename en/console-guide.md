@@ -182,6 +182,15 @@ App Crash Trend provides the number of occurrences during user-defined period
 
 Crash Map displays crash counts during user-defined period on a map
 
+### Crash report (New)
+
+In the improved Log & Crash Search console, the **App Crash Metrics** menu has been changed to the **Crash Reports** menu.
+
+![lcs_07_202107](https://static.toastoven.net/prod_logncrash/lcs_07_202107.png)
+
+1. Improved user convenience by making the indicator type menu provide only the **App crash trend** and changing the actual indicators as shown in no. 2 and 3 below.
+2. It shows the same indicators as the graph provided by the previous **App crash trend** indicator type.
+3. It shows the data of the table provided by the previous **App crash indicator** type.
 
 ### Crash User
 
@@ -200,9 +209,21 @@ Provide crash occurrence information per user.
 |Time Condition|Set time conditions for user-specific crash retrieval.|
 |App Version|Filtered by app version|
 
+### View issues by user (New)
+
+In the improved Log & Crash Search console, the name of **Crash user** menu has been changed to **View issues by user**.
+The basic feature is the same as the previous **Crash user** page.
+
+![lcs_08_202107](https://static.toastoven.net/prod_logncrash/lcs_08_202107.png)
+
 ### Issue Statistics
 
+* Previous page
 ![lcs_12_201812_en](https://static.toastoven.net/prod_logncrash/lcs_12_201812_en.png)
+
+* Improved console page
+![lcs_09_202107](https://static.toastoven.net/prod_logncrash/lcs_09_202107.png)
+
 
 |Item|Description|
 |---|---|
@@ -228,18 +249,20 @@ Provide all log alarm functions:
 - Alarms exist in two types: **Number of Occurrences**, and **Rate of Increase/Decrease**.
 - Click **Add Alarms** to register an alarm.
 
-### Alarm by Number of Occurrences
-
 ![lcs_14_201812_en](https://static.toastoven.net/prod_logncrash/lcs_14_201812_en.png)
 
-- Here is how to set an alarm:
+-  The following describes how to set an alarm.
 	- Alarm Title: Enter name to show on the list of alarm setting.
 	- Alarm Query: Enter a log type to receive alarms for in Lucene Query.
 	- Description: Enter a description of the alarm.
-	- Alarm Type: Set it as Number of Occurrences type.
-	- Alarm Rule: Select a sign of inequality to be applied for **threshold**
-	- Threshold: Send an alarm when logs of ‘search conditions’ occur as much as ‘threshold value’, according to the ‘alarm rule’ inequality sign.
-	- Occurrence Cycle: Enter by the minute, and send alarms when a log occurs as much as ‘threshold’ within time input.
+	- Alarm type: Set the alarm type by the number of occurrence or increase/decrease rate
+	- When the alarm type is the number of occurrence
+        - Alarm Rule: Select the inequality sign to be applied to the **Threshold**.
+            - Threshold: An alarm is sent when the number of generated logs corresponding to 'Search Condition' matches the number of 'Threshold' in relation to the 'Alarm Rule' inequality sign.
+            - Occurrence Cycle: Enter the value in minutes. An alarm is sent only when the number of generated logs matches 'Threshold' within the entered time value.
+	- When the alarm type is increase/decrease rate
+            - Threshold: Increase/decrease rate of the logs corresponding to the 'Search Condition'. A positive number is the increase rate of logs compared to the previous interval, 0 means that the number of logs is equal to the previous interval, and a negative number is the decrease rate of logs compared to the previous interval.
+            - Comparison Time: Enter the value in minutes. The number of logs between the entered time interval and the previous interval is compared based on the 'Threshold Value'. An alarm is sent if the increase/decrease rate of the logs generated during the 'Comparison Time' satisfies the 'Threshold'.
 	- Snooze: Enter by the minute, between 1 and 1,440 (24 hours); off for 0.  
 	- Recipient: Enter recipients to send an alarm to; choose email or SMS for each recipient.
 	- SMS Alarm Messages: Enter SMS messages to send alarms with.
