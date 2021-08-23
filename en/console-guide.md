@@ -182,6 +182,15 @@ App Crash Trend provides the number of occurrences during user-defined period
 
 Crash Map displays crash counts during user-defined period on a map
 
+### Crash report (New)
+
+In the improved Log & Crash Search console, the **App Crash Metrics** menu has been changed to the **Crash Reports** menu.
+
+![lcs_07_202107](https://static.toastoven.net/prod_logncrash/lcs_07_202107_en.png)
+
+1. Improved user convenience by making the indicator type menu provide only the **App crash trend** and changing the actual indicators as shown in no. 2 and 3 below.
+2. It shows the same indicators as the graph provided by the previous **App crash trend** indicator type.
+3. It shows the data of the table provided by the previous **App crash indicator** type.
 
 ### Crash User
 
@@ -200,9 +209,21 @@ Provide crash occurrence information per user.
 |Time Condition|Set time conditions for user-specific crash retrieval.|
 |App Version|Filtered by app version|
 
+### View issues by user (New)
+
+In the improved Log & Crash Search console, the name of **Crash user** menu has been changed to **View issues by user**.
+The basic feature is the same as the previous **Crash user** page.
+
+![lcs_08_202107](https://static.toastoven.net/prod_logncrash/lcs_08_202107_en.png)
+
 ### Issue Statistics
 
+* Previous page
 ![lcs_12_201812_en](https://static.toastoven.net/prod_logncrash/lcs_12_201812_en.png)
+
+* Improved console page
+![lcs_09_202107](https://static.toastoven.net/prod_logncrash/lcs_09_202107_en.png)
+
 
 |Item|Description|
 |---|---|
@@ -219,7 +240,7 @@ Click **Analytics > Log & Crash Search > Alarms**.
 
 ### Log Alarm Setting
 
-![lcs_13_201812_en](https://static.toastoven.net/prod_logncrash/lcs_13_201812_en.png)
+![lcs_13_202108](https://static.toastoven.net/prod_logncrash/lcs_13_202108_en.png)
 
 Provide all log alarm functions:  
 
@@ -228,18 +249,20 @@ Provide all log alarm functions:
 - Alarms exist in two types: **Number of Occurrences**, and **Rate of Increase/Decrease**.
 - Click **Add Alarms** to register an alarm.
 
-### Alarm by Number of Occurrences
+![lcs_14_202108](https://static.toastoven.net/prod_logncrash/lcs_14_202108_en.png)
 
-![lcs_14_201812_en](https://static.toastoven.net/prod_logncrash/lcs_14_201812_en.png)
-
-- Here is how to set an alarm:
+-  The following describes how to set an alarm.
 	- Alarm Title: Enter name to show on the list of alarm setting.
 	- Alarm Query: Enter a log type to receive alarms for in Lucene Query.
 	- Description: Enter a description of the alarm.
-	- Alarm Type: Set it as Number of Occurrences type.
-	- Alarm Rule: Select a sign of inequality to be applied for **threshold**
-	- Threshold: Send an alarm when logs of ‘search conditions’ occur as much as ‘threshold value’, according to the ‘alarm rule’ inequality sign.
-	- Occurrence Cycle: Enter by the minute, and send alarms when a log occurs as much as ‘threshold’ within time input.
+	- Alarm type: Set the alarm type by the number of occurrence or increase/decrease rate
+	- When the alarm type is the number of occurrence
+        - Alarm Rule: Select the inequality sign to be applied to the **Threshold**.
+            - Threshold: An alarm is sent when the number of generated logs corresponding to 'Search Condition' matches the number of 'Threshold' in relation to the 'Alarm Rule' inequality sign.
+            - Occurrence Cycle: Enter the value in minutes. An alarm is sent only when the number of generated logs matches 'Threshold' within the entered time value.
+	- When the alarm type is increase/decrease rate
+            - Threshold: Increase/decrease rate of the logs corresponding to the 'Search Condition'. A positive number is the increase rate of logs compared to the previous interval, 0 means that the number of logs is equal to the previous interval, and a negative number is the decrease rate of logs compared to the previous interval.
+            - Comparison Time: Enter the value in minutes. The number of logs between the entered time interval and the previous interval is compared based on the 'Threshold Value'. An alarm is sent if the increase/decrease rate of the logs generated during the 'Comparison Time' satisfies the 'Threshold'.
 	- Snooze: Enter by the minute, between 1 and 1,440 (24 hours); off for 0.  
 	- Recipient: Enter recipients to send an alarm to; choose email or SMS for each recipient.
 	- SMS Alarm Messages: Enter SMS messages to send alarms with.
@@ -264,14 +287,14 @@ Send alarms by the increase/decrease rate of occurrences of a log type you choos
 
 ### Query of Log Alarm History
 
-![lcs_16_201812_en](https://static.toastoven.net/prod_logncrash/lcs_16_201812_en.png)
+![lcs_15_202108](https://static.toastoven.net/prod_logncrash/lcs_15_202108_en.png)
 
 - Retrieve logs (Lucene Query) for an alarm.  
 - Check history of alarm occurrences.
 
 ### Crash Alarm Setting
 
-![lcs_17_201812_en](https://static.toastoven.net/prod_logncrash/lcs_17_201812_en.png)
+![lcs_16_202108](https://static.toastoven.net/prod_logncrash/lcs_16_202108_en.png)
 
 Set alarm for each crash log: one for each platform (iOS, Android, Windows, and WebGL).
 
@@ -288,7 +311,7 @@ To set an alarm:
 
 ### Query of Crash Alarm History
 
-![lcs_18_201812_en](https://static.toastoven.net/prod_logncrash/lcs_18_201812_en.png)
+![lcs_17_202108](https://static.toastoven.net/prod_logncrash/lcs_17_202108_en.png)
 
 Retrieves the history of crash alarm occurrences.
 
@@ -298,7 +321,7 @@ Retrieves the history of crash alarm occurrences.
 
 ### User-defined Alarm Setting
 
-![lcs_19_201812_en](https://static.toastoven.net/prod_logncrash/lcs_19_201812_en.png)
+![lcs_18_202108](https://static.toastoven.net/prod_logncrash/lcs_18_202108_en.png)
 
 When the rate of users experiencing crash exceeds threshold (%), alarm is sent to specified phone or email of the users.
 
@@ -312,7 +335,7 @@ To set an alarm:
 
 ### Query of Crash Alarm History
 
-![lcs_20_201812_en](https://static.toastoven.net/prod_logncrash/lcs_20_201812_en.png)
+![lcs_19_202108](https://static.toastoven.net/prod_logncrash/lcs_19_202108_en.png)
 
 Retrieves the history of user-defined alarm occurrences.
 
@@ -329,7 +352,7 @@ Click **Analytics > Log & Crash Search > Setting**.
 ### Search Field
 Can retrieve search fields for log search: customized fields can be added, to default system fields.
 
-![lcs_21_201812_en](https://static.toastoven.net/prod_logncrash/lcs_21_201812_en.png)
+![lcs_20_202108](https://static.toastoven.net/prod_logncrash/lcs_20_202108_en.png)
 
 1. If a field name starts with txt for log delivery, it is set true for whether to analyze or not, while other cases are set false. If it is false, it can be registered as a search field of log search.
 2. In case you want to deliver a log or binary file and use the **Download > View** link on the log search page, include base 64-encoded values to UserBinaryData or UserTxtData fields.
@@ -338,7 +361,7 @@ Can retrieve search fields for log search: customized fields can be added, to de
 
 By setting up an issue tracker, errors can be registered and managed on the **Error Detail** page with the click of issue list of **App Crash Search > Retrieve Issues**.
 
-![lcs_22_201812_en](https://static.toastoven.net/prod_logncrash/lcs_22_201812_en.png)
+![lcs_21_202108](https://static.toastoven.net/prod_logncrash/lcs_21_202108_en.png)
 
 - Platform: Choose a platform among iOS, Android, and Unity. Can set an issue tracker for each platform.
 - Issue Tracker: Choose GitHub or GitLab.
@@ -353,7 +376,7 @@ By setting up an issue tracker, errors can be registered and managed on the **Er
 
 It is required to register a symbol file to check a crash log. This menu helps upload/download/delete symbol files.
 
-![lcs_23_201812_en](https://static.toastoven.net/prod_logncrash/lcs_23_201812_en.png)
+![lcs_22_202108](https://static.toastoven.net/prod_logncrash/lcs_22_202108_en.png)
 
 Click **[Select Files]** to upload a symbol file.
 
@@ -366,7 +389,7 @@ A symbol file must be at most 200MB in size.
 
 ### Log Retention Period
 
-![lcs_24_201812_en](https://static.toastoven.net/prod_logncrash/lcs_24_201812_en.png)
+![lcs_23_202108](https://static.toastoven.net/prod_logncrash/lcs_23_202108_en.png)
 
 Set the period of log retention.  
 - Select the period among 1month, 2months, 3months, 6months, or 1year, which can be modified once every month.
@@ -375,7 +398,7 @@ Set the period of log retention.
 ### Log Delivery Setting
 Set whether to send logs per service.
 
-![lcs_25_201812_en](https://static.toastoven.net/prod_logncrash/lcs_25_201812_en.png)
+![lcs_24_202108](https://static.toastoven.net/prod_logncrash/lcs_24_202108_en.png)
 
 - Set delivery for each of the general logs, session logs, and crash logs.
 - Save and restart app, so as to apply the setting.
@@ -384,7 +407,7 @@ Set whether to send logs per service.
 
 Set information for external log storage. 
 
-![lcs_29_20200612](https://static.toastoven.net/prod_logncrash/lcs_29_20200612.png)
+![lcs_25_202108](https://static.toastoven.net/prod_logncrash/lcs_25_202108_en.png)
 
 - Logs can be stored at an external OBS. 
 
@@ -436,7 +459,7 @@ Click **Analytics > Log & Crash Search > Network Insights**.
 
 - Display latency and error rate on a timeline chart and URL list.
 
-![lcs_26_201812_en](https://static.toastoven.net/prod_logncrash/lcs_26_201812_en.png)
+![lcs_26_202108](https://static.toastoven.net/prod_logncrash/lcs_26_202108_en.png)
 
 |Item|	Description|
 |---|---|
@@ -448,7 +471,7 @@ Click **Analytics > Log & Crash Search > Network Insights**.
 
 - Display latency and error rate on a map.
 
-![lcs_27_201812_en](https://static.toastoven.net/prod_logncrash/lcs_27_201812_en.png)
+![lcs_27_202108](https://static.toastoven.net/prod_logncrash/lcs_27_202108_en.png)
 
 |Item|	Description|
 |---|---|
@@ -460,7 +483,7 @@ Click **Analytics > Log & Crash Search > Network Insights**.
 
 - Add or remove URLs for latency and error rate monitoring. 
 
-![lcs_28_201812_en](https://static.toastoven.net/prod_logncrash/lcs_28_201812_en.png)
+![lcs_28_202108](https://static.toastoven.net/prod_logncrash/lcs_28_202108_en.png)
 
 | Item|Description|
 |---|---|
