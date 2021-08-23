@@ -240,7 +240,7 @@ Click **Analytics > Log & Crash Search > Alarms**.
 
 ### Log Alarm Setting
 
-![lcs_13_201812_en](https://static.toastoven.net/prod_logncrash/lcs_13_201812_en.png)
+![lcs_13_202108](https://static.toastoven.net/prod_logncrash/lcs_13_202108.png)
 
 Provide all log alarm functions:  
 
@@ -249,7 +249,7 @@ Provide all log alarm functions:
 - Alarms exist in two types: **Number of Occurrences**, and **Rate of Increase/Decrease**.
 - Click **Add Alarms** to register an alarm.
 
-![lcs_14_201812_en](https://static.toastoven.net/prod_logncrash/lcs_14_201812_en.png)
+![lcs_14_202108](https://static.toastoven.net/prod_logncrash/lcs_14_202108.png)
 
 -  The following describes how to set an alarm.
 	- Alarm Title: Enter name to show on the list of alarm setting.
@@ -287,14 +287,14 @@ Send alarms by the increase/decrease rate of occurrences of a log type you choos
 
 ### Query of Log Alarm History
 
-![lcs_16_201812_en](https://static.toastoven.net/prod_logncrash/lcs_16_201812_en.png)
+![lcs_15_202108](https://static.toastoven.net/prod_logncrash/lcs_15_202108.png)
 
 - Retrieve logs (Lucene Query) for an alarm.  
 - Check history of alarm occurrences.
 
 ### Crash Alarm Setting
 
-![lcs_17_201812_en](https://static.toastoven.net/prod_logncrash/lcs_17_201812_en.png)
+![lcs_16_202108](https://static.toastoven.net/prod_logncrash/lcs_16_202108.png)
 
 Set alarm for each crash log: one for each platform (iOS, Android, Windows, and WebGL).
 
@@ -311,7 +311,7 @@ To set an alarm:
 
 ### Query of Crash Alarm History
 
-![lcs_18_201812_en](https://static.toastoven.net/prod_logncrash/lcs_18_201812_en.png)
+![lcs_17_202108](https://static.toastoven.net/prod_logncrash/lcs_17_202108.png)
 
 Retrieves the history of crash alarm occurrences.
 
@@ -321,7 +321,7 @@ Retrieves the history of crash alarm occurrences.
 
 ### User-defined Alarm Setting
 
-![lcs_19_201812_en](https://static.toastoven.net/prod_logncrash/lcs_19_201812_en.png)
+![lcs_18_202108](https://static.toastoven.net/prod_logncrash/lcs_18_202108.png)
 
 When the rate of users experiencing crash exceeds threshold (%), alarm is sent to specified phone or email of the users.
 
@@ -335,7 +335,7 @@ To set an alarm:
 
 ### Query of Crash Alarm History
 
-![lcs_20_201812_en](https://static.toastoven.net/prod_logncrash/lcs_20_201812_en.png)
+![lcs_19_202108](https://static.toastoven.net/prod_logncrash/lcs_19_202108.png)
 
 Retrieves the history of user-defined alarm occurrences.
 
@@ -352,7 +352,7 @@ Click **Analytics > Log & Crash Search > Setting**.
 ### Search Field
 Can retrieve search fields for log search: customized fields can be added, to default system fields.
 
-![lcs_21_201812_en](https://static.toastoven.net/prod_logncrash/lcs_21_201812_en.png)
+![lcs_20_202108](https://static.toastoven.net/prod_logncrash/lcs_20_202108.png)
 
 1. If a field name starts with txt for log delivery, it is set true for whether to analyze or not, while other cases are set false. If it is false, it can be registered as a search field of log search.
 2. In case you want to deliver a log or binary file and use the **Download > View** link on the log search page, include base 64-encoded values to UserBinaryData or UserTxtData fields.
@@ -361,7 +361,7 @@ Can retrieve search fields for log search: customized fields can be added, to de
 
 By setting up an issue tracker, errors can be registered and managed on the **Error Detail** page with the click of issue list of **App Crash Search > Retrieve Issues**.
 
-![lcs_22_201812_en](https://static.toastoven.net/prod_logncrash/lcs_22_201812_en.png)
+![lcs_21_202108](https://static.toastoven.net/prod_logncrash/lcs_21_202108.png)
 
 - Platform: Choose a platform among iOS, Android, and Unity. Can set an issue tracker for each platform.
 - Issue Tracker: Choose GitHub or GitLab.
@@ -376,7 +376,7 @@ By setting up an issue tracker, errors can be registered and managed on the **Er
 
 It is required to register a symbol file to check a crash log. This menu helps upload/download/delete symbol files.
 
-![lcs_23_201812_en](https://static.toastoven.net/prod_logncrash/lcs_23_201812_en.png)
+![lcs_22_202108](https://static.toastoven.net/prod_logncrash/lcs_22_202108.png)
 
 Click **[Select Files]** to upload a symbol file.
 
@@ -389,7 +389,7 @@ A symbol file must be at most 200MB in size.
 
 ### Log Retention Period
 
-![lcs_24_201812_en](https://static.toastoven.net/prod_logncrash/lcs_24_201812_en.png)
+![lcs_23_202108](https://static.toastoven.net/prod_logncrash/lcs_23_202108.png)
 
 Set the period of log retention.  
 - Select the period among 1month, 2months, 3months, 6months, or 1year, which can be modified once every month.
@@ -398,7 +398,7 @@ Set the period of log retention.
 ### Log Delivery Setting
 Set whether to send logs per service.
 
-![lcs_25_201812_en](https://static.toastoven.net/prod_logncrash/lcs_25_201812_en.png)
+![lcs_24_202108](https://static.toastoven.net/prod_logncrash/lcs_24_202108.png)
 
 - Set delivery for each of the general logs, session logs, and crash logs.
 - Save and restart app, so as to apply the setting.
@@ -407,7 +407,7 @@ Set whether to send logs per service.
 
 Set information for external log storage. 
 
-![lcs_29_20200612](https://static.toastoven.net/prod_logncrash/lcs_29_20200612.png)
+![lcs_25_202108](https://static.toastoven.net/prod_logncrash/lcs_25_202108.png)
 
 - Logs can be stored at an external OBS. 
 
@@ -459,7 +459,7 @@ Click **Analytics > Log & Crash Search > Network Insights**.
 
 - Display latency and error rate on a timeline chart and URL list.
 
-![lcs_26_201812_en](https://static.toastoven.net/prod_logncrash/lcs_26_201812_en.png)
+![lcs_26_202108](https://static.toastoven.net/prod_logncrash/lcs_26_202108.png)
 
 |Item|	Description|
 |---|---|
@@ -471,7 +471,7 @@ Click **Analytics > Log & Crash Search > Network Insights**.
 
 - Display latency and error rate on a map.
 
-![lcs_27_201812_en](https://static.toastoven.net/prod_logncrash/lcs_27_201812_en.png)
+![lcs_27_202108](https://static.toastoven.net/prod_logncrash/lcs_27_202108.png)
 
 |Item|	Description|
 |---|---|
@@ -483,7 +483,7 @@ Click **Analytics > Log & Crash Search > Network Insights**.
 
 - Add or remove URLs for latency and error rate monitoring. 
 
-![lcs_28_201812_en](https://static.toastoven.net/prod_logncrash/lcs_28_201812_en.png)
+![lcs_28_202108](https://static.toastoven.net/prod_logncrash/lcs_28_202108.png)
 
 | Item|Description|
 |---|---|
