@@ -1,6 +1,14 @@
 ## Analytics > Log & Crash Search > Release Notes
 
-### 2021. 07. 27.
+### November 23, 2021
+#### Feature Updates
+* [Console] Made the web console with new UI/UX the default and removed the feature for switching to the previous web console
+* [Console] Improved log search page UX
+    * Moved the expand column in the log search result table to the leftmost column
+    * Added a feature to display the number of value types of the field to the right side of the field name in the "Selected Fields" area
+    * In the modal window that appears when clicking on the field name in the "Selected Fields" area, added a feature to display the correct number when the number of value types in the field exceeds 100
+
+### July 27, 2021
 #### Feature Updates
 * [Console] Improve/change the entire UI/UX of web console
 
@@ -15,9 +23,9 @@
 
 ### December 15, 2020
 #### Feature Updates
-* [Console] 알람 설정 중 제목과 설명에 대한 최대 입력 글자 수 표시 및 제한
-* [Console] 크래시 알람 중 임계치를 0으로 수정하는 경우 저장되지 않는 버그 수정
-* [Console] 로그 보관 기간 6개월, 1년 항목 삭제, 4개월 추가
+* [Console] Added a feature to display and limit the maximum number of input characters for title and description during alarm setting
+* [Console] Fixed a bug where the crash alarm was not saved when the threshold was modified to 0
+* [Console] For the log retention period, deleted 6 months and 1 year, and added 4 months
 
 ### October 27, 2020
 #### Feature Updates
@@ -437,7 +445,7 @@
 
 ### August 18, 2016
 #### Feature Updates
-* Allows ON/OFF for Log Transfers 
+* Added a feature to set on or off Log Transfers 
     * User can set On/Off for logs transferred via Log & Crash Search (General/Crash/Session Logs) and decide whether to collect on console.
     * Non-collected logs are not displayed on the screen and excluded from API or Storage charges. 
     * Updated SDK by adding the Log On/Off feature. 
