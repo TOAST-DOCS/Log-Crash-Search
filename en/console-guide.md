@@ -25,7 +25,7 @@ See the [NHN Cloud Console Guide](https://docs.toast.com/en/TOAST/en/console-gui
 While a project is selected, click **Service** on top of the screen and go to **Log & Crash Search** under **Analytics** and enable it. When a service is enabled, (v) is displayed by the service name.
 
 > [Note]
-> Delivery becomes available in about five minutes after service is enabled.
+> You can send logs in about five minutes after service is enabled.
 
 When Log & Crash Search is enabled, **Analytics > Log & Crash Search** shows on the menu, with the Appkey created.
 
@@ -51,191 +51,110 @@ Logs can be searched by using Log Search.
 1. Click **Analytics > Log & Crash Search > Log Search**.
 2. **Log Search** provides around-the-clock log-volume graphs with details.
 
-![lcs_01_201812_en](https://static.toastoven.net/prod_logncrash/lcs_01_201812_en.png)
-
 Details of the **Log Search** screen are as below.
-![lcs_02_201812_en](https://static.toastoven.net/prod_logncrash/lcs_02_201812_en.png)
+
+![lcs_03_202107](https://static.toastoven.net/prod_logncrash/lcs_03_202107.png)
 
 | Item | Description |
 |---|---|
-| Search Query Input | Can apply Lucene grammar for the search of query field. <br/> (note: http://lucene.apache.org/core/2_9_4/queryparsersyntax.html)|
+| Search Query Input | Can apply Lucene grammar for the search of query field. <br/> (Reference: https://docs.toast.com/ko/Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)|
 | Time Conditions for Search Query | Configure time conditions for search queries. |
-| Log Search Result > Chart View | Print log search results in a bar graph; with a click, it shows the period to fit the unit on the right (e.g. 1Bar=1hour). |
-| Field Search Conditions | - host: Apply query to select one or more hosts when selecting a host which belongs to a project. <br/> - logLevel: Classified by log level (FATAL / ERROR / WARN / INFO / DEBUG) <br/> - logSource: Classified by user-defined log source. <br/> - logType: Classified by user-defined project name. <br/> - projectVersion: Classified by user-defined project version. <br/> - Click Show All Fields to apply other fields as search conditions |
+| Log Search Result > Chart | The log search result is output as a bar graph. If you click a bar of the bar graph, you can check the log by re-searching for the log period of the bar. |
+| Log Result Download | You can download log search results in a format you want. Also, you can download only crash dump data separately. |
+| Selected Fields | You can change the result table column on the right side according to the log field. You can use the **Add** button to add or delete other fields. |
 | Log Search Result > Log Records | Show details of a searched log. Click each item of a log output to change search queries. |
 
-Search conditions of user configuration are reflected on the search query window, and you may save this query ([Save Queries]), or search by saved queries ([Select Saved Queries]).
+The search condition set by the user is reflected in the search query input window. If it is a frequently used query, you can save it using the Save Query button and retrieve it later. You can check and manage the saved queries in **Saved Query List**.
 
-## Search Log(NEW)
-
-Click the link to use the improved Log&Crash Search console.
-![lcs_02_202107](https://static.toastoven.net/prod_logncrash/lcs_02_202107_en.png)
-The basic features are same as the previous page.
-Changes made are as follows:
-
-![lcs_03_202107](https://static.toastoven.net/prod_logncrash/lcs_03_202107_en.png)
-1. A feature to delete all queries by clicking the x button on the right after writing the query was added.
-2. Real-time search is no longer available.
-3. Download button has been separated. Crash dump can be now downloaded without searching logType:"CRASH”.
-4. Data can be saved through the Chart’s Export feature.
-5. Aggregate count now shows the selected field as a separate modal when clicked.
-6. The exposure has been changed into a table form. The basic exposure data differs according to the selected field. Click the open button at the end of the right side to view other fields as well.
-
-* Other changes made
-    * Time required for search is no longer available.
-    * Session log is set at off as default.
-    * The saved log page is separated as an additional tab.
-
-
-## Retrieve App Crash
+## Query App Crashes
 
 Crash information of Android and iOS devices can be retrieved through **Analytics > Log & Crash Search > App Crash Search**.
 
-### Query of Issues
+### Query Issues
 
-Select **Crashes** on **Error Type** of **Query Issues**, to check issues.
+Select **Crashes** on **Error Type** of **Query Issues** to check issues.
 
-![lcs_03_201812_en](https://static.toastoven.net/prod_logncrash/lcs_03_201812_en.png)
+![lcs_03_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-01-20211028.png)
 
 Select **Handled** on **Error Type** of **Query Issues**, to check handled issues.
 
-![lcs_04_201812_en](https://static.toastoven.net/prod_logncrash/lcs_04_201812_en.png)
+![lcs_04_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-02-20211028.png)
 
 |Item |	Description|
 |---|---|
-|Error Type| Classified into Crash occurred at a system and user-induced Handled at an exception block.|
-| Filter Conditions|	Status –Processing status of crash issues <br/> Recent – Retrieving filter of crash logs collected for the recent N days <br/> App Version – App version <br/> Tag – Tags <br/> Minimum Number of Occurrences – Retrieving filter of crashes with at least more than N times of occurrences <br/> Exception Type – Recent filter for each exception type <br/> Location – Retrieving filter for each location of crash occurrence |
 |Chart| Display the number of crash occurrences on a timeline chart.|
+|Error Type| Classified into Crash occurred at a system and user-induced Handled at an exception block.|
+| Filter Conditions| Platform - Select app platform<br/>Status - Crash issue handling status <br/> App Version - App version <br/> OS Version - OS version <br/> Tag – Tags <br/> Minimum Number of Occurrences – Retrieving filter of crashes with at least more than N times of occurrences <br/> Exception Type – Recent filter for each exception type <br/> Location – Retrieving filter for each location of crash occurrence |
 |List of Issues| Print the list of issues. The order can be changed by using the list box in the upper right; the status can be changed by clicking the checkbox on the left.|
 
 Click an issue on the list to find its details.
 
-![lcs_05_201812_en](https://static.toastoven.net/prod_logncrash/lcs_05_201812_en.png)
+![lcs_05_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-03-20211028.png)
 
 |Item|	Description|
 |---|---|
 |Status|	Set issue status as unresolved, resolved, re-open, or completed.|
 |Issue Tracker Setup|	Register issues by setting up external issue trackers, such as GitHub or GitLab.|
+|View on Search Page| Click to go to the log search page|
 |Tag|	Add tags, or modify/delete them afterwards.|
-|ETC - Show Search Page|	A click can move to a log search page.|
 |Stack Trace|	Show the type and cause of exception for crash occurrence as well as the stack trace.|
 |Error Instance|	Show the list of error instances.|
 |User| Show the list of users who have occurred issues.|
-|Comment|	Write comments of an issue and show the list of comments written by project members.|
-|History|	Show management history of an issue (status change, tags added, comments written, and etc.) on a timeline schedule.|
+|Comment and History| You can write comments on the issue. This area displays the list of comments written by project members and shows management history of an issue (status change, tags added, comments added, etc.) on a timeline.|
 |History Graph| Trace the number of issue occurrences on a timeline chart and a world map.|
 |Matrix Data| Display information such as network, OS version, device, operator, and nation.|
 
-### Search issue(NEW)
-The improved Log&Crash Search console is available through the log search page.
-The basic features are same as the previous page.
-Changes made are as follows:
-![lcs_04_202107](https://static.toastoven.net/prod_logncrash/lcs_04_202107_en.png)
-1. Export feature is available in the Chart.
-2. User can apply ascending/descending sort by column of table.
+### Issue Trend
 
-![lcs_05_202107](https://static.toastoven.net/prod_logncrash/lcs_05_202107_en.png)
-* The user convenience has been improved by merging the existing **Comments** and **History** tabs into one **Comments and History**.
+![lcs_07_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-04-20211028.png)
 
-### Real-time Monitoring
-
-![lcs_06_201812_en](https://static.toastoven.net/prod_logncrash/lcs_06_201812_en.png)
-
-Monitors real-time occurrences of app crashes for about five minutes.
-
-### Trend
-
-![lcs_07_201812_en](https://static.toastoven.net/prod_logncrash/lcs_07_201812_en.png)
-
-|Item|	Description|
+| Item | Description |
 |---|---|
-|Time Condition| Set time conditions for statistics. (e.g. 7 days, 2 weeks, or 30 days)|
-|Trend Graph| Show various trend graphs. <br/> - Crash Counts <br/> - Device Experiencing Crash <br/> - Statistics of All Errors <br/> - Statistics of Unresolved Errors <br/> - Issue Statistics by App Version <br/> - Issue Statistics by OS version <br/> - Issue Statistics by Device <br/> - Issue Statistics by Country <br/> |
+|Time Condition| You can set the time condition for statistics. |
+|Search Criteria| Error Type - Select between Crashes / Handled <br/> Platform - Select app platform |
+|Trend Graph| You can see various trend graphs. <br/> - Number of crashes <br/> - Device where a crash occurred<br/>- Issues by OS version <br/> - Issues by device <br/> - Issues by country|
 
-### Issue Trend(NEW)
-The improved Log&Crash Search console is available through the log search psage.
-The basic features are same as the previous **trend** page.
-Changes made are as follows:
-![lcs_06_202107](https://static.toastoven.net/prod_logncrash/lcs_06_202107_en.png)
-* The exiting complex indicators have been organized and changed to consist only of the important indicators below.
-    * Number of crash
-    * Device with crash
-    * Issue by OS version
-    * Issue by device
-    * Issue by country
+### Crash Report
 
-### App Crash Indicators
+![lcs_08_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-05-20211028.png)
 
-![lcs_08_201812_en](https://static.toastoven.net/prod_logncrash/lcs_08_201812_en.png)
+| Item | Description |
+|---|---|
+|Time Condition| You can set the time condition for statistics. |
+|Query Option| You can adjust the number of searches. |
+|Search Criteria| Metrics Type - Currently only "App Crash Trend" is provided <br/> Platform - Select app platform <br/> Statistics Time Unit - Select time unit for graph metrics (daily / weekly) |
+|Crash Graph| Shows the number of crashes within the search period. |
+|Crash Metrics| Provides information on the session count/crash count/occurrence rate (%)/crash count in the previous period/increase rate (%) by app version within the search period.|
 
-App Crash Indicator provides session/crash files/occurrence rate (%)/crashes of previous period/increase rate (%)
-1.	Click the link for app crash indicator to switch into an app crash trend screen.
-2.	Choose a platform (iOS, Android or Windows) to search filtering.
-3.	Adjust the period and number of search.
-4.	Check results of each version by table.
-
-![lcs_09_201812_en](https://static.toastoven.net/prod_logncrash/lcs_09_201812_en.png)
-
-App Crash Trend provides the number of occurrences during user-defined period
-
-![lcs_10_201812_en](https://static.toastoven.net/prod_logncrash/lcs_10_201812_en.png)
-
-Crash Map displays crash counts during user-defined period on a map
-
-### Crash report (New)
-
-In the improved Log & Crash Search console, the **App Crash Metrics** menu has been changed to the **Crash Reports** menu.
-
-![lcs_07_202107](https://static.toastoven.net/prod_logncrash/lcs_07_202107_en.png)
-
-1. Improved user convenience by making the indicator type menu provide only the **App crash trend** and changing the actual indicators as shown in no. 2 and 3 below.
-2. It shows the same indicators as the graph provided by the previous **App crash trend** indicator type.
-3. It shows the data of the table provided by the previous **App crash indicator** type.
-
-### Crash User
+### Query Issues by User
 
 Provide crash occurrence information per user.
-1.	Available when user_id is defined in an SDK: if not saved, all users are viewed as ‘-‘.
+
+1.	Available when user_id is defined in an SDK: if not saved, all users are viewed as '-'.
 2.	A user is identified by the combination of a user ID and a device name: users of a same user ID but on different devices are considered different users.
 
-![lcs_11_201812_en](https://static.toastoven.net/prod_logncrash/lcs_11_201812_en.png)
+![lcs_11_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-06-20211028.png)
 
 
 |Item|	Description|
 |---|---|
-|Error Type|Classified into Crash statistics occurred at a system and user-induced Handled at an exception block.|
-|User|Set user ID, specified as user_id in an SDK, as a search condition.  |
-|Device|Set a device name as a search condition. |
-|Time Condition|Set time conditions for user-specific crash retrieval.|
-|App Version|Filtered by app version|
-
-### View issues by user (New)
-
-In the improved Log & Crash Search console, the name of **Crash user** menu has been changed to **View issues by user**.
-The basic feature is the same as the previous **Crash user** page.
-
-![lcs_08_202107](https://static.toastoven.net/prod_logncrash/lcs_08_202107_en.png)
+|Time Condition| You can set the time condition for statistics. |
+|Search Criteria| Error Type - Crash: statistics of crashes generated by the system, Handled: statistics of crashes generated by user in Exception block <br/> Platform - App platform <br/> App Version - App version <br/> User - User ID specified by user_id in SDK <br/> Device - Device Name|
+|User Information| Shows information about the app crash user (device, app version, etc.). |
 
 ### Issue Statistics
-
-* Previous page
-![lcs_12_201812_en](https://static.toastoven.net/prod_logncrash/lcs_12_201812_en.png)
-
-* Improved console page
-![lcs_09_202107](https://static.toastoven.net/prod_logncrash/lcs_09_202107_en.png)
-
+![lcs_12_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-07-20211028.png)
 
 |Item|Description|
 |---|---|
-|Error Type|Classified into crash statistics occurred at a system and user-induced Handled at an exception block.|
 |Time Condition|Set time conditions for statistics. |
-|App Version|Filtered by app version.|
+|Search Criteria| Error Type - Crash: statistics of crashes generated by the system, Handled: statistics of crashes generated by user in Exception block <br/> Platform - App platform <br/> App Version - App version <br/> Country - Country of the user who experienced the issue < br/> OS version - OS version of the device where the issue occurred|
 |Pie Chart for Frequency of Crash Occurrence|Show frequency of each crash occurrence.|
 |Ranking Table for Frequency of Crash Occurrence |Show the ranks of frequency of crash occurrence.|
 
 ## Alarm
 
-Set alarms of log and crash, and check history of alarm delivery.
+Set alarms for log and crash, and check history of alarm delivery.
 Click **Analytics > Log & Crash Search > Alarms**.
 
 ### Log Alarm Setting
@@ -268,29 +187,12 @@ Provide all log alarm functions:
 	- SMS Alarm Messages: Enter SMS messages to send alarms with.
 	- Callback URL: Enter URL to call when an alarm is sent. http(s)://, Email, and Dooray hook are supported.
 
-### Alarm by Rate of Increase/Decrease
-
-![lcs_15_201812_en](https://static.toastoven.net/prod_logncrash/lcs_15_201812_en.png)
-
-Send alarms by the increase/decrease rate of occurrences of a log type you choose (Lucene Query).  
-- Here is how to set an alarm:
-	- Alarm Title: Enter a name to show on the list of alarm setting.
-	- Alarm Query: Enter a log type to receive alarms for in Lucene Query.
-	- Description: Enter a description of the alarm.
-	- Alarm Type: Set is as Rate of Increase/Decrease type.
-	- Threshold: Increase/decrease rate of logs of ‘search conditions’: positive number means an increase; 0 is for no log changes; negative number means a decrease.
-	- Comparison Time: Enter by the minute; compare the log volume between time input and previous interval with threshold. If the increase/decrease rate during ‘comparison time’ satisfies ‘threshold’, an alarm is sent.  
-	- Snooze: Enter by the minute between 1 and 1,440 (off for o).
-	- Recipient: Enter recipients to send alarms to; choose email or SMS for each recipient.
-	- Alarm messages: Enter SMS messages to send alarms with  
-	- Callback URL: Enter URL to call when an alarm is sent. http(s)://, Email, and Dooray hook are supported.
-
-### Query of Log Alarm History
+### Log Alarm History
 
 ![lcs_15_202108](https://static.toastoven.net/prod_logncrash/lcs_15_202108_en.png)
 
-- Retrieve logs (Lucene Query) for an alarm.  
-- Check history of alarm occurrences.
+- A list of configured alarms is displayed.
+- Click the list to check the alarm occurrence history.
 
 ### Crash Alarm Setting
 
@@ -309,14 +211,14 @@ To set an alarm:
 - Alarm Recipients: Select email or SMS of users who decide to receive alarms from the list of project members.
 
 
-### Query of Crash Alarm History
+### Crash Alarm History
 
 ![lcs_17_202108](https://static.toastoven.net/prod_logncrash/lcs_17_202108_en.png)
 
 Retrieves the history of crash alarm occurrences.
 
-- View by platform
-- Set time condition to control viewing range
+- You can view the alarm history by platform.
+- You can set time condition to adjust query period.
 - Information on alarm time, platform, crash type, threshold, event count, and delivery method/status is provided.
 
 ### User-defined Alarm Setting
@@ -333,7 +235,7 @@ To set an alarm:
 - Use Alternative SMS Message: When enabled, custom alarm messages will be delivered via SMS, in place of default error messages,
 - Alarm Recipients: Select email or SMS of users who decide to receive alarms from the list of project members.
 
-### Query of Crash Alarm History
+### User-defined Crash Alarm History
 
 ![lcs_19_202108](https://static.toastoven.net/prod_logncrash/lcs_19_202108_en.png)
 
@@ -350,12 +252,13 @@ Manage required service setting, such as search field, issue tracker, and symbol
 Click **Analytics > Log & Crash Search > Setting**.
 
 ### Search Field
+
 Can retrieve search fields for log search: customized fields can be added, to default system fields.
 
 ![lcs_20_202108](https://static.toastoven.net/prod_logncrash/lcs_20_202108_en.png)
 
-1. If a field name starts with txt for log delivery, it is set true for whether to analyze or not, while other cases are set false. If it is false, it can be registered as a search field of log search.
-2. In case you want to deliver a log or binary file and use the **Download > View** link on the log search page, include base 64-encoded values to UserBinaryData or UserTxtData fields.
+1. During log transfer, if a field name starts with txt, whether to analyze or not is set to true. Otherwise, it is set to false. If it is false, it can be registered as a search field of log search.
+2. If you want to send a log or binary file and use the **Download > View** link on the **Log Search** page, include base64-encoded values in the UserBinaryData or UserTxtData field.
 
 ### Issue Tracking
 
@@ -381,27 +284,32 @@ It is required to register a symbol file to check a crash log. This menu helps u
 Click **[Select Files]** to upload a symbol file.
 
 - iOS: When uploading an iOS symbol file, it is necessary to compress your BundleName.app.dSYM file using ZIP compression method.
-- Android: When uploading an Android symbol file, it is necessary to upload your mapping.txt.file.    
+- Android: When uploading an Android symbol file, it is necessary to upload your mapping.txt file.
 - Android-NDK: When uploading an Android NDK symbol file, it is necessary to compress your lib.so file using ZIP compression method.
 - Windows: When uploading a Windows symbol file, it is necessary to compress your BundleName.sym file using - ZIP compression method.
 A symbol file must be at most 200MB in size.
 - In case of Android NDK, when a symbol file size exceeds the maximum size permitted, it is possible to upload a ZIP file which contains a single ‘lib.so.sym’ file that contains the text-format symbols of the original ‘lib.so’ binary file.
+- In case of Android Unity, registration of a symbol file is not required. However, when ProGuard is applied, it is necessary to upload your mapping.txtfile.
 
 ### Log Retention Period
 
+Set the period of log retention. 
+
 ![lcs_23_202108](https://static.toastoven.net/prod_logncrash/lcs_23_202108_en.png)
 
-Set the period of log retention.  
-- Select the period among 1month, 2months, 3months, 6months, or 1year, which can be modified once every month.
+- Select the period among 1 month, 2 months, 3 months, or 4 months, which can be modified once every month.
 - Expired data are to be deleted early next morning.  
 
-### Log Delivery Setting
-Set whether to send logs per service.
+### Log Transfer Configuration
+
+Set whether to send logs for each service.
 
 ![lcs_24_202108](https://static.toastoven.net/prod_logncrash/lcs_24_202108_en.png)
 
-- Set delivery for each of the general logs, session logs, and crash logs.
-- Save and restart app, so as to apply the setting.
+- You can set whether to send logs for general logs, crash logs, and Network Insights logs, respectively.
+- You can set whether or not to send logs for TOASK SDK.
+    - You can filter by duplicate log, log level, and log type.
+- After saving the settings, restart the app to apply the setting.
 
 ### External Log Storage Setting  
 
@@ -419,32 +327,6 @@ Set information for external log storage.
 
 - Logs are saved at OBS as configured. 
 - [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
-
-### Log Integrity Inspection Setting 
-
-Set inspection for log integrity. 
-
-* The setting must be preceded by **Setting for External Log Storage**.
-* If there's a change in the log (deleted or modified) stored at OBS, alarm is sent to the email address specified at **Setting for External Log Storage**.  
-1. **Setting for External Log Storage** checks notification for change in external log.  
-![lcs_3-_20200727](https://static.toastoven.net/prod_logncrash/lcs_30_20200727.png)
-
-2. Get an authentication token of OBS. (See [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2)
-Use the token to set webhook url at OBS to check changes. 
-```
-curl -X POST {Object-Store Endpoint}/{container} -H "X-Auth-Token: {token}" -H 'X-Webhook: {webhook-url}'
-```
-| Item | Description | Value |
-| --- | --- | --- |
-| Object-Store Endpoint | Endpoint to manage OBS | See [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2) |
-| container | Name of OBS container | See [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_2) |
-| token | Authentication token value of OBS |  |
-| webhook-url | Webhook url to get when uploading/deleting OBS | http://api-gw.cloud.toast.com/tclcs-integrity-validator/integrity/${appkey} |
-| appkey | Target of storage Log&Crash Search Appkey |  |
-
-* Execute checks and notifiation of change at every 30 minutes. 
-* When there's a changed log, email is sent as below: 
-![lcs_31_20200727](https://static.toastoven.net/prod_logncrash/lcs_31_20200727.png)
 
 ## Network Insights
 
@@ -487,5 +369,4 @@ Click **Analytics > Log & Crash Search > Network Insights**.
 
 | Item|Description|
 |---|---|
-| Date Modified | Date of most recent URL list modification.|
 | URL Table| Shows the list of URLs for latency and error rate monitoring.<br/>You can add an URL from the top-right corner. <br/>To remove from the list, check the checkbox and click **[Delete Selected Items]**. |
