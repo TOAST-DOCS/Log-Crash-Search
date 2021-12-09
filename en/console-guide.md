@@ -8,23 +8,23 @@ Log & Crash Search can be applied in the following order:
 
 - Enable Service
 Create a project on the console and enable Log & Crash Search.
-- Send Logs
+- Send Logs  
 Start sending logs via Log & Crash Search SDK.
-- Check Logs
-  Go to **Log Search** or **App Crash Search** to find logs in many ways, like a chart or search function.
+- Check Logs  
+Go to **Log Search** or **App Crash Search** to find logs in many ways, like a chart or search function.
 
-## Select Projects
+## Select a Project
 
 Access console and select an organization and project from menu on the left. When there is no organization or project available, create one.
 - Select **ORGANIZATION > PROJECT** from the menu on the left.
 
-See the [NHN Cloud Console Guide](https://docs.toast.com/en/TOAST/en/console-guide/) for how to create an organization and a project
+See the [NHN Cloud Console Guide](https://docs.toast.com/en/TOAST/en/console-guide/) for how to create an organization and a project.
 
-## Enable Services
+## Enable the Service
 
 While a project is selected, click **Service** on top of the screen and go to **Log & Crash Search** under **Analytics** and enable it. When a service is enabled, (v) is displayed by the service name.
 
-> [Note]
+> [Note]  
 > You can send logs in about five minutes after service is enabled.
 
 When Log & Crash Search is enabled, **Analytics > Log & Crash Search** shows on the menu, with the Appkey created.
@@ -42,7 +42,8 @@ To send a log, Log & Crash Search SDK is required.
 You can download an SDK from **Analytics > Log & Crash Search** of [NHN Cloud Downloads](https://docs.toast.com/en/Download/)
 
 > [Note]  
-> When the log volume is small, the result can be applied in about five minutes.  
+> When using the SDK, session logs sent along with crash logs are not exposed on the search screen.</br>
+> When sending session logs, the count is added to and reflected in the number of daily log capacity of [Resource Provision Policy](https://docs.toast.com/en/TOAST/en/resource-policy/#log-crash-search) in the same way as other logs. However, it is not reflected in the API call charges.
 
 ## Search Logs
 
@@ -130,8 +131,8 @@ Click an issue on the list to find its details.
 
 Provide crash occurrence information per user.
 
-1.	Available when user_id is defined in an SDK: if not saved, all users are viewed as '-'.
-2.	A user is identified by the combination of a user ID and a device name: users of a same user ID but on different devices are considered different users.
+1. Available when user_id is defined in an SDK: if not saved, all users are viewed as '-'.
+2. A user is identified by the combination of a user ID and a device name: users of a same user ID but on different devices are considered different users.
 
 ![lcs_11_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-06-20211028.png)
 
@@ -161,7 +162,7 @@ Click **Analytics > Log & Crash Search > Alarms**.
 
 ![lcs_13_202108](https://static.toastoven.net/prod_logncrash/lcs_13_202108_en.png)
 
-Provide all log alarm functions:  
+Provide all log alarm functions:
 
 - Alarms are classified by the number of occurrences and by the rate of increase/decrease.
 - Register a log type (Lucene query) to receive alarms and send alarms depending on the conditions when a log occurs.
@@ -170,22 +171,22 @@ Provide all log alarm functions:
 
 ![lcs_14_202108](https://static.toastoven.net/prod_logncrash/lcs_14_202108_en.png)
 
--  The following describes how to set an alarm.
-	- Alarm Title: Enter name to show on the list of alarm setting.
-	- Alarm Query: Enter a log type to receive alarms for in Lucene Query.
-	- Description: Enter a description of the alarm.
-	- Alarm type: Set the alarm type by the number of occurrence or increase/decrease rate
-	- When the alarm type is the number of occurrence
+- The following describes how to set an alarm.
+    - Alarm Title: Enter name to show on the list of alarm setting.
+    - Alarm Query: Enter a log type to receive alarms for in Lucene Query.
+    - Description: Enter a description of the alarm.
+    - Alarm type: Set the alarm type by the number of occurrence or increase/decrease rate
+    - When the alarm type is the number of occurrence
         - Alarm Rule: Select the inequality sign to be applied to the **Threshold**.
-            - Threshold: An alarm is sent when the number of generated logs corresponding to 'Search Condition' matches the number of 'Threshold' in relation to the 'Alarm Rule' inequality sign.
-            - Occurrence Cycle: Enter the value in minutes. An alarm is sent only when the number of generated logs matches 'Threshold' within the entered time value.
-	- When the alarm type is increase/decrease rate
-            - Threshold: Increase/decrease rate of the logs corresponding to the 'Search Condition'. A positive number is the increase rate of logs compared to the previous interval, 0 means that the number of logs is equal to the previous interval, and a negative number is the decrease rate of logs compared to the previous interval.
-            - Comparison Time: Enter the value in minutes. The number of logs between the entered time interval and the previous interval is compared based on the 'Threshold Value'. An alarm is sent if the increase/decrease rate of the logs generated during the 'Comparison Time' satisfies the 'Threshold'.
-	- Snooze: Enter by the minute, between 1 and 1,440 (24 hours); off for 0.  
-	- Recipient: Enter recipients to send an alarm to; choose email or SMS for each recipient.
-	- SMS Alarm Messages: Enter SMS messages to send alarms with.
-	- Callback URL: Enter URL to call when an alarm is sent. http(s)://, Email, and Dooray hook are supported.
+        - Threshold: An alarm is sent when the number of generated logs corresponding to 'Search Condition' matches the number of 'Threshold' in relation to the 'Alarm Rule' inequality sign.
+        - Occurrence Cycle: Enter the value in minutes. An alarm is sent only when the number of generated logs matches 'Threshold' within the entered time value.
+    - When the alarm type is increase/decrease rate
+        - Threshold: Increase/decrease rate of the logs corresponding to the 'Search Condition'. A positive number is the increase rate of logs compared to the previous interval, 0 means that the number of logs is equal to the previous interval, and a negative number is the decrease rate of logs compared to the previous interval.
+        - Comparison Time: Enter the value in minutes. The number of logs between the entered time interval and the previous interval is compared based on the 'Threshold Value'. An alarm is sent if the increase/decrease rate of the logs generated during the 'Comparison Time' satisfies the 'Threshold'.
+    - Snooze: Enter by the minute, between 1 and 1,440 (24 hours); off for 0.
+    - Recipient: Enter recipients to send an alarm to; choose email or SMS for each recipient.
+    - SMS Alarm Messages: Enter SMS messages to send alarms with.
+    - Callback URL: Enter URL to call when an alarm is sent. http(s)://, Email, and Dooray hook are supported.
 
 ### Log Alarm History
 
@@ -205,8 +206,8 @@ To set an alarm:
 - Platform: Specify a platform to send alarms among iOS, Android, Windows, or WebGL.
 - New Crash Alarm Setting: Set On/Off for alarm occurrences.
 - Threshold-based Crash Alarm Setting: Select frequency of crash occurrence or average frequency to enter threshold. The detection cycle is 10 minutes.
-	- Alarm Type: There are two types: Number of Crash Occurrences and Rate of Increase/Decrease.
-	- Threshold: Set number of logs for 'Number of Crash Occurrences' type and percentage for 'Rate of Increase/Decrease'.
+    - Alarm Type: There are two types: Number of Crash Occurrences and Rate of Increase/Decrease.
+    - Threshold: Set number of logs for 'Number of Crash Occurrences' type and percentage for 'Rate of Increase/Decrease'.
 - Use Alternative SMS Message: When enabled, custom alarm messages will be delivered via SMS, in place of default error messages,
 - Alarm Recipients: Select email or SMS of users who decide to receive alarms from the list of project members.
 
@@ -289,7 +290,7 @@ Click **[Select Files]** to upload a symbol file.
 - Windows: When uploading a Windows symbol file, it is necessary to compress your BundleName.sym file using - ZIP compression method.
 A symbol file must be at most 200MB in size.
 - In case of Android NDK, when a symbol file size exceeds the maximum size permitted, it is possible to upload a ZIP file which contains a single ‘lib.so.sym’ file that contains the text-format symbols of the original ‘lib.so’ binary file.
-- In case of Android Unity, registration of a symbol file is not required. However, when ProGuard is applied, it is necessary to upload your mapping.txtfile.
+- In case of Android Unity, registration of a symbol file is not required. However, when ProGuard is applied, it is necessary to upload your mapping.txt file.
 
 ### Log Retention Period
 
@@ -298,7 +299,7 @@ Set the period of log retention.
 ![lcs_23_202108](https://static.toastoven.net/prod_logncrash/lcs_23_202108_en.png)
 
 - Select the period among 1 month, 2 months, 3 months, or 4 months, which can be modified once every month.
-- Expired data are to be deleted early next morning.  
+- Expired data are to be deleted early next morning.
 
 ### Log Transfer Configuration
 
@@ -307,11 +308,11 @@ Set whether to send logs for each service.
 ![lcs_24_202108](https://static.toastoven.net/prod_logncrash/lcs_24_202108_en.png)
 
 - You can set whether to send logs for general logs, crash logs, and Network Insights logs, respectively.
-- You can set whether or not to send logs for TOASK SDK.
+- You can set whether or not to send logs for TOAST SDK.
     - You can filter by duplicate log, log level, and log type.
 - After saving the settings, restart the app to apply the setting.
 
-### External Log Storage Setting  
+### External Log Storage Setting
 
 Set information for external log storage. 
 
