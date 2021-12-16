@@ -42,7 +42,8 @@ Log & Crash Search가 활성화되면 왼쪽 메뉴에 **Analytics > Log & Crash
 SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 **Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
 
 > [참고]  
-> 로그량이 적은 경우에는 약 5분 후, 로그 전송 결과가 반영됩니다.
+> SDK 사용 시 크래시 로그와 함께 전송되는 세션 로그는 검색 화면에 노출되지 않습니다.</br>
+> 세션 로그 전송 시 [리소스 제공 정책](https://docs.toast.com/ko/TOAST/ko/resource-policy/#log-crash-search)의 일일 로그 건수 제공량에는 다른 로그와 동일하게 합산하여 반영되지만, API 호출 요금에는 반영되지 않습니다.
 
 ## 로그 검색
 
