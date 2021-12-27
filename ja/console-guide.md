@@ -42,7 +42,8 @@ Log & Crash Searchが有効になると、左側メニューに**Analytics > Log
 SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**Analytics > Log & Crash Search**でダウンロードできます。
 
 > [参考]  
-> ログの量が少ない場合は、約5分後にログ転送の結果が反映されます。
+> SDK使用時に、クラッシュログと一緒に送信されるセッションログは検索画面に表示されません。</br>
+> セッションログの送信時、[リソース提供ポリシー](https://docs.toast.com/ko/TOAST/ko/resource-policy/#log-crash-search)の日次ログ件数提供量には他のログと同じように合算して反映されますが、API呼び出し料金には反映されません。
 
 ## ログ検索
 
