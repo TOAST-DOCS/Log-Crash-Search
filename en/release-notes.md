@@ -1,5 +1,11 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### January 25, 2022
+#### Feature Updates
+* [Console] Improved log search page UX
+    * Made the log search result table header fixed
+    * Changed the form of the pop-up window displayed when clicking the field name in 'Selected Fields'
+
 ### November 23, 2021
 #### Feature Updates
 * [Console] Made the web console with new UI/UX the default and removed the feature for switching to the previous web console

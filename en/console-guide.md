@@ -1,9 +1,5 @@
 ## Analytics > Log & Crash Search > Console User Guide
 
-> [Notice]
-> Crash logs from new devices using the arm64e architecture (iPhone XS, XR, XS Max, and iPad Pros 3rd) can only count the number of occurrences, and analysis of crash content is not yet supported.
-> We will provide analysis capabilities for new devices in the near future.
-
 Log & Crash Search can be applied in the following order:
 
 - Enable Service
