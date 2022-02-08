@@ -1,5 +1,11 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### February 22, 2022
+#### Feature Updates
+* [Console] Improved log search page UI/UX
+    * Changed the display format when expanding the log search results
+    * For crash logs, added the **View Issue** button to the Log Search page
+
 ### January 25, 2022
 #### Feature Updates
 * [Console] Improved log search page UX
@@ -35,7 +41,7 @@
 
 ### October 27, 2020
 #### Feature Updates
-* Supports the event history page for events that can be accessed without [Console] session
+* [Console] Supports the event history page for events that can be accessed without session
   *  Supports the event history page link replacing the previous console link when a log alarm is triggered
   *  Added the event history page link to SMS as well
 
@@ -85,7 +91,7 @@
 #### Bug Fixes 
 * [Console] Fixed bugs in which particular Windows symbol files cannot be processed in uploading symbol files. 
     * Due to many builds, if the age of Windows PDB exceeds 11, symbol files that are extracted afterwards may contain a guid which has more than 34 characters. The limit of 33 characters for a guid field has been lifted. 
-* [Console] Fixed bugs, in which fields that are saved with the search of logs older than 30 days are not properoly exposed.
+* [Console] Fixed bugs, in which fields that are saved with the search of logs older than 30 days are not properly exposed.
 
 ### January 21, 2020
 #### Feature Updates
@@ -222,7 +228,7 @@
     * Fixed filter error in removing duplicates 
 
 * [SDK][[iOS-2.6.10](/Download/#analytics-log-crash-search)]
-    * Fixed the occurrence of crash during initialiation, when userID was nil
+    * Fixed the occurrence of crash during initialization, when userID was nil
     * Fixed the CPU usage rate raised up to 100% when enableSyncStart was YES
 
 ### April 24, 2018
@@ -269,7 +275,7 @@
     * Updated Version: [toast-logncrash-android-2.6.4](/Download/#analytics-log-crash-search) / [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
 * [SDK] Modified to include 'EMPTY CRASH FILE' to DmpData for transfer, if PLCrashReporter fails to create crash files. 
     * Updated Version: [toast-logncrash-ios-mac-sdk-2.6.7](/Download/#analytics-log-crash-search) [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
-* [SDK] Fixed wrong display of CrashStyle and SymMethod, when navitve crash occurs on iOS SDK 
+* [SDK] Fixed wrong display of CrashStyle and SymMethod, when native crash occurs on iOS SDK 
 * [SDK] Fixed failed settings of userID on WeGL
 * [SDK] Fixed an issue in which https protocol was not specified by the Unity ios wrapper class
     * Updated Version: [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
@@ -294,14 +300,14 @@
     * Updated Version: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search)
 * [SDK] Fixed missing of some fields (country code, platform information, and etc.)
     * Updated Version: [toast-logncrash-android-2.6.2](/Download/#analytics-log-crash-search)
-* [SDK] Errors are contained in errorCode and txterrorCode filds to be transferred 
+* [SDK] Errors are contained in errorCode and txterrorCode fields to be transferred 
     * Updated Version: [toast-logncrash-logback-sdk-2.2.7](/Download/#analytics-log-crash-search) / [toast-logncrash-log4j-sdk-2.2.7](/Download/#analytics-log-crash-search)
 
 ### June 19, 2017
 #### Bug Fixes
 * [SDK] Fixed an issue in which CPU usage rate reaches 99% since sleep is not available for SendThread 
 * [SDK] Fixed failed release of a memory when 100 logs are sent per second  
-    * Udated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.6.1](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.6.1](/Download/#analytics-log-crash-search)
 
 ### May 25, 2017
 #### Feature Updates
@@ -361,14 +367,14 @@
     * In sending REST API logs, fields starting with long or double can be saved in long or double type. 
     * Range search is available for long or double type on the log search page. 
 * [SDK] Added CrashCallback 
-    * [Windwos csharp SDK 2.5.2.1](/Download/#analytics-log-crash-search) / [Windows cpp SDK 2.5.2.1](/Download/#analytics-log-crash-search)
+    * [Windows csharp SDK 2.5.2.1](/Download/#analytics-log-crash-search) / [Windows cpp SDK 2.5.2.1](/Download/#analytics-log-crash-search)
 
 #### Bug Fixes
 * [WEB] Fixed unavailability of deleting query on View Saved Queries 
 * [WEB] Updated pagination so that a back button on issue details does not return to page 1 on the list
 * [SDK] Fixed conflicts between threads 
     * [unity-android-sdk 2.5.6.0](/Download/#analytics-log-crash-search)
-* [SDK] Fixed error in the binaryimagesort duplicate symbol, occurred when building external libray along with logncrash   
+* [SDK] Fixed error in the binaryimagesort duplicate symbol, occurred when building external library along with logncrash   
     * [unity-ios-sdk-2.5.2.6](/Download/#analytics-log-crash-search)
 * [SDK] Fixed forced closure, on some devices, of an application before breakpad is completed
     * [androidndk-sdk 2.4.7.0](/Download/#analytics-log-crash-search)
