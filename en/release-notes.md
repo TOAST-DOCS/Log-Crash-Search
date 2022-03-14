@@ -1,5 +1,11 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### March 29, 2022
+#### Feature Updates
+* [Console] Improved log search page UI/UX
+	* Changed the position of the button displayed when expanding the log search results
+    * Changed to enable keyboard selection of query auto-completion items when searching logs
+
 ### February 22, 2022
 #### Feature Updates
 * [Console] Improved log search page UI/UX
