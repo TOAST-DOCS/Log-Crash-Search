@@ -1,5 +1,10 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### April 26, 2022
+#### Feature Updates
+* [Console] Improved log search page UI/UX
+    * Fixed a bug where the screen was not displayed properly when changing **Alarm Type** from **Number of Occurrences** to **Rate of Increase/Decrease** in the **Add Alarm Configuration** dialog box
+
 ### March 29, 2022
 #### Feature Updates
 * [Console] Improved log search page UI/UX
@@ -28,7 +33,7 @@
 
 ### July 27, 2021
 #### Feature Updates
-* [Console] Improve/change the entire UI/UX of web console
+* [Console] Improved and changed the entire UI/UX of web console
 
 ### April 27, 2020
 #### Feature Updates
