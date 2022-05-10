@@ -63,6 +63,10 @@ Details of the **Log Search** screen are as below.
 
 The search condition set by the user is reflected in the search query input window. If it is a frequently used query, you can save it using the Save Query button and retrieve it later. You can check and manage the saved queries in **Saved Query List**.
 
+> [Note]
+Logs containing fields with a data length greater than 2,000,000 characters are not searchable. For logs that cannot be queried due to the issue, please use the log download function to retrieve the logs until the issue is resolved.
+>
+
 ## Query App Crashes
 
 Crash information of Android and iOS devices can be retrieved through **Analytics > Log & Crash Search > App Crash Search**.
