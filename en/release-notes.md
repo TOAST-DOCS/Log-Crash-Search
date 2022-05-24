@@ -1,32 +1,40 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### May 24, 2022
+#### Feature Updates
+* [Console] Improved the UI/UX of the web console
+    * Unified the method of displaying the time in the web console
+    * Added a loading image in the web console
+* [Console] Bug fixes
+    * Fixed an error where the list of error instances is not displayed when the data has a specific value in the Error Instance menu of the app crash issue details
+
 ### April 26, 2022
 #### Feature Updates
-* [Console] Improved log search page UI/UX
+* [Console] Improved the UI/UX of the log alarm setting page
     * Fixed a bug where the screen was not displayed properly when changing **Alarm Type** from **Number of Occurrences** to **Rate of Increase/Decrease** in the **Add Alarm Configuration** dialog box
 
 ### March 29, 2022
 #### Feature Updates
-* [Console] Improved log search page UI/UX
+* [Console] Improved the UI/UX of the log search page
     * Changed the position of the button displayed when expanding the log search results
     * Changed to enable keyboard selection of query auto-completion items when searching logs
 
 ### February 22, 2022
 #### Feature Updates
-* [Console] Improved log search page UI/UX
+* [Console] Improved the UI/UX of the log search page
     * Changed the display format when expanding the log search results
     * For crash logs, added the **View Issue** button to the Log Search page
 
 ### January 25, 2022
 #### Feature Updates
-* [Console] Improved log search page UX
+* [Console] Improved the UX of the log search page
     * Made the log search result table header fixed
     * Changed the form of the pop-up window displayed when clicking the field name in 'Selected Fields'
 
 ### November 23, 2021
 #### Feature Updates
-* [Console] Made the web console with new UI/UX the default and removed the feature for switching to the previous web console
-* [Console] Improved log search page UX
+* [Console] Made the web console with the new UI/UX the default and removed the feature for switching to the previous web console
+* [Console] Improved the UX of the log search page
     * Moved the expand column in the log search result table to the leftmost column
     * Added a feature to display the number of value types of the field to the right side of the field name in the "Selected Fields" area
     * In the modal window that appears when clicking on the field name in the "Selected Fields" area, added a feature to display the correct number when the number of value types in the field exceeds 100
@@ -35,7 +43,7 @@
 #### Feature Updates
 * [Console] Improved and changed the entire UI/UX of web console
 
-### April 27, 2020
+### April 27, 2021
 #### Feature Updates
 * [Console] Provided the API for searching logs
 * [Console] Applied masking to the fields that are configured by an administrator in the project while downloading logs
@@ -76,37 +84,37 @@
 ### June 23, 2020
 #### Feature Updates
 * [Console] Changed the query method for Object and Array types
-    * Query delivery method must be same as the search of character strings
+    * Queries must be delivered in the same way as the string search.
     * [See Guide for Lucene Query](/Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
 
 ### May 26, 2020
 #### Feature Updates
-* [Console] Support analyzing iOS app crashes applied with Bitcode  
-    * Modified to upload and analyze symbol files for each architecture within same version
+* [Console] Support analysis of iOS app crashes with Bitcode applied
+    * Made modifications so that symbol files for each architecture can be uploaded and analyzed within the same version
 
 ### April 28, 2020
 #### Feature Updates
-* [Console] Restricted the maximum available period for a log search up to 3 months 
+* [Console] Limited the maximum available period for a log search to 3 months 
 * [API] Changed the identification method for Android NDK crash  
 #### Bug Fixes
-* [Console] Fixed bugs in which modified queries are not properly saved under particular conditions
+* [Console] Fixed a bug where, when modifying a saved query, the query is not saved in particular conditions
 
 ### March 24, 2020	
 #### Feature Updates 
-* [Console] Edited the error message for failure in deleting saved queries 
+* [Console] Modified the error message for failure in deleting saved queries 
 
 ### February 25, 2020
 #### Feature Updates
 * [Console] Modified tooltip messages on the setting page of SDK log delivery. 
-* [Console] Added, in query saving, the validity authetication process for Lucene query.
+* [Console] Added a Lucene query validation process to the query saving feature.
 #### Bug Fixes 
 * [Console] Fixed bugs in which particular Windows symbol files cannot be processed in uploading symbol files. 
-    * Due to many builds, if the age of Windows PDB exceeds 11, symbol files that are extracted afterwards may contain a guid which has more than 34 characters. The limit of 33 characters for a guid field has been lifted. 
-* [Console] Fixed bugs, in which fields that are saved with the search of logs older than 30 days are not properly exposed.
+    * If the age of Windows PDB exceeds 11 due to multiple builds, symbol files that are extracted afterwards may contain a guid with 34 characters or more. The limit of 33 characters for a guid field has been released.
+* [Console] Fixed a bug where, when searching for logs older than 30 days, the saved fields are not properly displayed.
 
 ### January 21, 2020
 #### Feature Updates
-* [Console] Changed how to locate the occurrence of iOS crashes. 
+* [Console] Changed the method to locate the occurrence of iOS crashes. 
 * [Console] Allows additional display of information on iOS crashes (on TOAST SDK iOS 0.21.0 or higher versions).
 
 ### October 29, 2019
@@ -122,7 +130,7 @@
 #### Updates/Changes 
 * Fixed the (null) ((null)) symbolication result of some iOS crash logs.   
 * Increased the capacity limit of a single log case (general and crash) from 1MB to 2MB.
-* Modified to display actual phone numbers on the list of alarm recipients.
+* Made modifications so that the actual phone numbers are displayed on the list of alarm recipients.
 
 #### Bug Fixes
 * Allowed to query modified alarms from the list, when the last modifier has been excluded from project members.   
@@ -142,7 +150,7 @@
 
 ### January 15, 2019
 #### Feature Updates
-* [Console] Applied on User console 
+* [Console] Applied the User console 
 * [Console] Exclude crash occurred at Unity from the indicator.
     * Not collected from Search App Crash > App Crash Indicators. 
 * [Console] Added the feature of reverting status before registration, after issue tracker is registered. 
@@ -263,7 +271,7 @@
 * [Console] Added the feature of alarm setting when a new crash occurs 
 
 #### Bug Fixes
-* [console] Modified to show error message when a session is expired 
+* [console] Made modifications so that a error message is shown when a session has expired
 
 ### September 21, 2017 
 #### Feature Updates
@@ -281,10 +289,10 @@
         * Search and query is available on the log search page 
 
 #### Bug Fixes
-* [SDK] Fixed an issue in which sessionID is updated when initialize is called many times 
+* [SDK] Fixed an issue in which sessionID is updated when initialize is called multiple times 
 * [SDK] Fixed the failed release of activity from the memory, if closed with BackKey, since SDK has saved its last status 
     * Updated Version: [toast-logncrash-android-2.6.4](/Download/#analytics-log-crash-search) / [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
-* [SDK] Modified to include 'EMPTY CRASH FILE' to DmpData for transfer, if PLCrashReporter fails to create crash files. 
+* [SDK] Made modifications so that 'EMPTY CRASH FILE' is included in DmpData for transfer, if PLCrashReporter fails to create crash files. 
     * Updated Version: [toast-logncrash-ios-mac-sdk-2.6.7](/Download/#analytics-log-crash-search) [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
 * [SDK] Fixed wrong display of CrashStyle and SymMethod, when native crash occurs on iOS SDK 
 * [SDK] Fixed failed settings of userID on WeGL
@@ -414,7 +422,7 @@
 
 #### Bug Fixes
 * Fixed bugs in the log alarm setting, where log alarm list is not properly queried when "\" is included to the character strings included (excluded) to the filtering rule 
-* Modified to show failure alarms when there's not a member list to newly save crash alarms 
+* Made modifications to show failure alarms when there's no member list when newly saving crash alarms 
 
 ### November 24, 2016
 * [SDK] Changed the setting to get a host from internal thread, since the getaddrinfo function applied to get a host field hangs on some devices   
@@ -430,8 +438,8 @@
 * Collect DeviceID as original ID of device
     * Sending crash logs via new SDK allows DeviceID to be collected, and indicators by DeviceID are made available on Console > Log & Crash Search > Crashes > App Crash Indicators. 
 * [SDK] When a log delivery is unavailable, it can be saved in a file to be transferred during normal communication.   
-* [SDK] Applies duplicate log processing routine to all logs 
-    * When duplicate log is enabled, same logs in the body and loglevel are not sent. 
+* [SDK] Applied duplicate log processing routine to all logs 
+    * When duplicate log is enabled, the logs with the same Body and logLevel are not sent. 
     * If necessary, user's own control is available on a specific API.  
     * For more details, see Developer's Guide.
 * [Console] Changed 'Session', 'User Count' from App Crash Indicators , to 'Execution Count', and 'User experiencing crash'. 
@@ -484,10 +492,10 @@
 ### August 4, 2016
 #### Feature Updates
 * [SDK][Unity] Updated to 2.2.6 
-    * Changed the format of saving SaveToFile
-    * Modified to convert regular expression, by using JSON library
-    * Limit the maximum file count to be saved up to 100
-    * Limit the maximum queue count to remove duplicates up to 100  
+    * Changed the saving format of SaveToFile
+    * Made modifications to perform conversion by using regular expression and JSON libraries
+    * Limited the maximum number of files that can be saved to 100
+    * Limited the maximum number of queues to remove duplicates to 100
 
 #### Bug Fixes
 * [API] Fixed an issue in which json array or object is converted to string, when sent to a specific field  
