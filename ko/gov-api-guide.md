@@ -283,7 +283,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.gov-nhnc
 
 ### 기본 정보
 ```
-API Endpoint: https://api-lncs.gov-nhncloudservice.com
+API Endpoint: https://api-lncs-search.gov-nhncloudservice.com
 ```
 ```
 검색은 최근 90일 이내의 로그만 가능하며, 시작 시간과 종료 시간의 범위는 31일을 초과할 수 없습니다.
