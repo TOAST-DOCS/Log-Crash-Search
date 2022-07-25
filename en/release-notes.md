@@ -1,5 +1,14 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### July 26, 2022
+#### Feature Updates
+* [Console] Improved the UI/UX of the log search result page
+    * Provided a view option in enumerated format
+
+#### Bug Fixes
+* [Console] Fixed an issue where crash dump data of some platforms are not downloaded
+* [Console] Fixed an issue where tha alarm status change button does not work on pages after page two in the log alram setting
+
 ### June 30, 2022
 #### Feature Updates
 * [Console] Improved the UI/UX of the selected field dialog
