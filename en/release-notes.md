@@ -67,7 +67,7 @@
 * [Console] Applied masking to the fields that are configured by an administrator in the project while downloading logs
 
 #### Bug Fixes
-* [Console] Fixed an issue in whichenumerated forma when they were included in the body of the log search page
+* [Console] Fixed an issue in which HTML strings were parsed and displayed when they were included in the body of the log search page
 * [Console] Fixed an issue in which a problem would occur when the status of multiple crash issues were changed at the same time
 
 ### December 15, 2020
