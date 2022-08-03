@@ -267,7 +267,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 
 ![lcs_21_202108](https://static.toastoven.net/prod_logncrash/lcs_21_202108_ja.png)
 
-- プラットフォーム： iOS、Android、Unityのうち1つのプラットフォームを選択します。課題トラッカーはプラットフォーム別にそれぞれ設定可能です。
+- プラットフォーム： iOS、Android、Windows、WebGLのうち1つのプラットフォームを選択します。課題トラッカーはプラットフォーム別にそれぞれ設定可能です。
 - 課題トラッカー： GitHub、GitLabのうち1つを選択します。
 - GitHubプロジェクトURL：課題トラッカーをGitHubに選択する場合、https://github.com/{user}/{project}形式のURLを入力します。
 - Access token：課題トラッカーをGitHubに選択する場合、GitHubで作成したAccess tokenを入力します。(参照： https://help.github.com/articles/creating-an-access-token-for-command-line-use)

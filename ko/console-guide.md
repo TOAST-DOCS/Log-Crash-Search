@@ -266,7 +266,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 ![lcs_21_202108](https://static.toastoven.net/prod_logncrash/lcs_21_202108.png)
 
-- 플랫폼: iOS, Android, Unity 중 하나의 플랫폼을 선택합니다. 이슈 트래커는 플랫폼별로 각각 하나씩 설정 가능합니다.
+- 플랫폼: iOS, Android, Windows, WebGL 중 하나의 플랫폼을 선택합니다. 이슈 트래커는 플랫폼별로 각각 하나씩 설정 가능합니다.
 - 이슈 트래커: GitHub, GitLab 중 하나를 선택합니다.
 - GitHub 프로젝트 URL: 이슈 트래커를 GitHub로 선택할 경우 https://github.com/{user}/{project} 형식의 URL을 입력합니다.
 - Access token: 이슈 트래커를 GitHub로 선택할 경우 GitHub에서 생성한 Access token을 입력합니다.(참고: https://help.github.com/articles/creating-an-access-token-for-command-line-use)

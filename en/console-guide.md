@@ -267,7 +267,7 @@ By setting up an issue tracker, errors can be registered and managed on the **Er
 
 ![lcs_21_202108](https://static.toastoven.net/prod_logncrash/lcs_21_202108_en.png)
 
-- Platform: Choose a platform among iOS, Android, and Unity. Can set an issue tracker for each platform.
+- Platform: Choose a platform among iOS, Android, Windows and WebGL. Can set an issue tracker for each platform.
 - Issue Tracker: Choose GitHub or GitLab.
 - GitHub Project URL: If GitHub is selected as an issue tracker, enter the URL in the form of https://github.com/{user}/{project}.
 - Access Token: If GitHub is selected as an issue tracker, enter an access token created by GitHub (refer to: https://help.github.com/articles/creating-an-access-token-for-command-line-use).
