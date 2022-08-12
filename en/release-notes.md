@@ -1,5 +1,9 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### August 23, 2022
+#### Feature Updates
+* [Console] Changed the method of calling global utility functions
+
 ### July 26, 2022
 #### Feature Updates
 * [Console] Improved the UI/UX of the log search result page
