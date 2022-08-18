@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > コンソール使用ガイド
+## Data & Analytics > Log & Crash Search > コンソール使用ガイド
 
 Log & Crash Searchは、次のような順序で使用できます。
 
@@ -18,24 +18,24 @@ Log & Crash Search SDKを通して、ログの転送を開始します。
 
 ## サービス有効化
 
-プロジェクト(Project)を選択した状態で、画面上部にある**サービス選択**ボタンをクリックして、**Analytics**の下**Log & Crash Search**をクリックします。サービスが有効になると、サービス名の横に選択(v)表示が現れます。
+プロジェクト(Project)を選択した状態で、画面上部にある**サービス選択**ボタンをクリックして、**Data & Analytics**の下**Log & Crash Search**をクリックします。サービスが有効になると、サービス名の横に選択(v)表示が現れます。
 
 > [参考]  
 > サービスを有効にした後は、約5分後から転送できます。
 
-Log & Crash Searchが有効になると、左側メニューに**Analytics > Log & Crash Search**メニューが現れ、Appkeyが作成されます。
+Log & Crash Searchが有効になると、左側メニューに**Data & Analytics > Log & Crash Search**メニューが現れ、Appkeyが作成されます。
 
 ## Appkey確認
 
 ログを転送するには、Appkeyを確認する必要があります。
 
-1. 左側のメニューから、**Analytics > Log & Crash Search > ログ検索**をクリックします。
+1. 左側のメニューから、**Data & Analytics > Log & Crash Search > ログ検索**をクリックします。
 2. コンソール画面上部の**URL & Appkey**ボタンをクリックすると、Log & Crash Search用Appkeyを確認できます。
 
 ## ログ転送
 
 ログを転送するには、Log & Crash Search SDKが必要です。
-SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**Analytics > Log & Crash Search**でダウンロードできます。
+SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**Data & Analytics > Log & Crash Search**でダウンロードできます。
 
 > [参考]  
 > SDK使用時に、クラッシュログと一緒に送信されるセッションログは検索画面に表示されません。</br>
@@ -45,7 +45,7 @@ SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**An
 
 転送したログをLog Search機能を利用して検索してみましょう。
 
-1. コンソール画面の左側にあるメニューから**Analytics > Log & Crash Search > ログ検索**をクリックします。
+1. コンソール画面の左側にあるメニューから**Data & Analytics > Log & Crash Search > ログ検索**をクリックします。
 2. **ログ検索**タブには、基本的に24時間のログ量のグラフと詳細内容が表示されます。
 
 **ログ検索**画面は、次のように構成されています。
@@ -69,7 +69,7 @@ SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**An
 
 ## アプリクラッシュ照会
 
-Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Search > アプリクラッシュ検索**で確認できます。
+Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Crash Search > アプリクラッシュ検索**で確認できます。
 
 
 ### イシュー照会
@@ -156,7 +156,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 ## アラーム
 
 ログおよびクラッシュに対するアラーム設定およびアラーム送信履歴を確認できます。
-**Analytics > Log & Crash Search > アラーム**をクリックします。
+**Data & Analytics > Log & Crash Search > アラーム**をクリックします。
 
 ### ログアラーム設定
 
@@ -249,7 +249,7 @@ Android、iOS端末のクラッシュ情報は、**Analytics > Log & Crash Searc
 
 検索フィールド管理、課題トラッカー設定、シンボルファイル管理などのサービスに必要な設定を管理します。
 
-**Analytics > Log & Crash Search > 設定**をクリックします。
+**Data & Analytics > Log & Crash Search > 設定**をクリックします。
 
 
 ### 検索フィールド

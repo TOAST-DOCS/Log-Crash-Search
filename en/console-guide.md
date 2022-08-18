@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > Console User Guide
+## Data & Analytics > Log & Crash Search > Console User Guide
 
 Log & Crash Search can be applied in the following order:
 
@@ -18,24 +18,24 @@ See the [NHN Cloud Console Guide](https://docs.toast.com/en/TOAST/en/console-gui
 
 ## Enable the Service
 
-While a project is selected, click **Service** on top of the screen and go to **Log & Crash Search** under **Analytics** and enable it. When a service is enabled, (v) is displayed by the service name.
+While a project is selected, click **Service** on top of the screen and go to **Log & Crash Search** under **Data & Analytics** and enable it. When a service is enabled, (v) is displayed by the service name.
 
 > [Note]  
 > You can send logs in about five minutes after service is enabled.
 
-When Log & Crash Search is enabled, **Analytics > Log & Crash Search** shows on the menu, with the Appkey created.
+When Log & Crash Search is enabled, **Data & Analytics > Log & Crash Search** shows on the menu, with the Appkey created.
 
 ## Check Appkey
 
 To send logs, it is required to check Appkey.
 
-1. Click **Analytics > Log & Crash Search > Log Search** on the left navigation menu.
+1. Click **Data & Analytics > Log & Crash Search > Log Search** on the left navigation menu.
 2. Click **URL & Appkey** on top of the screen and check Appkey.
 
 ## Send Logs
 
 To send a log, Log & Crash Search SDK is required.
-You can download an SDK from **Analytics > Log & Crash Search** of [NHN Cloud Downloads](https://docs.toast.com/en/Download/)
+You can download an SDK from **Data & Analytics > Log & Crash Search** of [NHN Cloud Downloads](https://docs.toast.com/en/Download/)
 
 > [Note]  
 > When using the SDK, session logs sent along with crash logs are not exposed on the search screen.</br>
@@ -45,7 +45,7 @@ You can download an SDK from **Analytics > Log & Crash Search** of [NHN Cloud Do
 
 Logs can be searched by using Log Search.
 
-1. Click **Analytics > Log & Crash Search > Log Search**.
+1. Click **Data & Analytics > Log & Crash Search > Log Search**.
 2. **Log Search** provides around-the-clock log-volume graphs with details.
 
 Details of the **Log Search** screen are as below.
@@ -69,7 +69,7 @@ Logs containing fields with a data length greater than 1,000,000 characters are 
 
 ## Query App Crashes
 
-Crash information of Android and iOS devices can be retrieved through **Analytics > Log & Crash Search > App Crash Search**.
+Crash information of Android and iOS devices can be retrieved through **Data & Analytics > Log & Crash Search > App Crash Search**.
 
 ### Query Issues
 
@@ -156,7 +156,7 @@ Provide crash occurrence information per user.
 ## Alarm
 
 Set alarms for log and crash, and check history of alarm delivery.
-Click **Analytics > Log & Crash Search > Alarms**.
+Click **Data & Analytics > Log & Crash Search > Alarms**.
 
 ### Log Alarm Setting
 
@@ -250,7 +250,7 @@ Retrieves the history of user-defined alarm occurrences.
 
 Manage required service setting, such as search field, issue tracker, and symbol file.
 
-Click **Analytics > Log & Crash Search > Setting**.
+Click **Data & Analytics > Log & Crash Search > Setting**.
 
 ### Search Field
 
@@ -333,7 +333,7 @@ Set information for external log storage.
 
 Show latency and error rate delivered by Log & Crash Search SDK, on a timeline chart, URL list, or map.
 
-Click **Analytics > Log & Crash Search > Network Insights**.
+Click **Data & Analytics > Log & Crash Search > Network Insights**.
 
 - SDK delivers latency and status of a client request from screen of URL setting to URL, to Log & Crash Search
 - Set current platform and filter on the screen of monitoring and index, and check latency and error rate.

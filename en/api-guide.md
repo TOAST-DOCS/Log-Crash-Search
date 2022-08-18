@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > API Guide
+## Data & Analytics > Log & Crash Search > API Guide
 
 ## Collect Log API
 Logs can be sent to Log & Crash collector server via HTTP protocol. 

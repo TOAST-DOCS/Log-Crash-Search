@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > リリースノート
+## Data & Analytics > Log & Crash Search > リリースノート
 
 ### 2022. 08. 23.
 #### 機能改善/変更

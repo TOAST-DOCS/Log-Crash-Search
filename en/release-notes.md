@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > Release Notes
+## Data & Analytics > Log & Crash Search > Release Notes
 
 ### August 23, 2022
 #### Feature Updates

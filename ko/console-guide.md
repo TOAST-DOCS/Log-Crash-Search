@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > 콘솔 사용 가이드
+## Data & Analytics > Log & Crash Search > 콘솔 사용 가이드
 
 Log & Crash Search는 다음과 같은 순서로 사용할 수 있습니다.
 
@@ -18,24 +18,24 @@ Log & Crash Search SDK를 통해서 로그 전송을 시작합니다.
 
 ## 서비스 활성화
 
-프로젝트(Project)를 선택한 상태에서 화면 상단의 **서비스 선택** 버튼을 클릭하고 **Analytics** 아래 **Log & Crash Search**를 클릭합니다. 서비스가 활성화되면 서비스 이름 옆에 선택(v) 표시가 나타납니다.
+프로젝트(Project)를 선택한 상태에서 화면 상단의 **서비스 선택** 버튼을 클릭하고 **Data & Analytics** 아래 **Log & Crash Search**를 클릭합니다. 서비스가 활성화되면 서비스 이름 옆에 선택(v) 표시가 나타납니다.
 
 > [참고]  
 > 서비스를 활성화한 후에는 약 5분 이후부터 전송할 수 있습니다.
 
-Log & Crash Search가 활성화되면 왼쪽 메뉴에 **Analytics > Log & Crash Search** 메뉴가 나타나고 Appkey가 생성됩니다.
+Log & Crash Search가 활성화되면 왼쪽 메뉴에 **Data & Analytics > Log & Crash Search** 메뉴가 나타나고 Appkey가 생성됩니다.
 
 ## Appkey 확인
 
 로그를 전송하려면 Appkey를 확인해야 합니다.
 
-1. 왼쪽 탐색 메뉴에서 **Analytics > Log & Crash Search > 로그 검색**을 클릭합니다.
+1. 왼쪽 탐색 메뉴에서 **Data & Analytics > Log & Crash Search > 로그 검색**을 클릭합니다.
 2. 콘솔 화면 상단에 **URL & Appkey** 버튼을 클릭하면 Log & Crash Search용 Appkey를 확인할 수 있습니다.
 
 ## 로그 전송
 
 로그를 전송하려면 Log & Crash Search SDK가 필요합니다.
-SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 **Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
+SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 **Data & Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
 
 > [참고]  
 > SDK 사용 시 크래시 로그와 함께 전송되는 세션 로그는 검색 화면에 노출되지 않습니다.</br>
@@ -45,7 +45,7 @@ SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 *
 
 이제 전송한 로그를 Log Search 기능을 이용하여 검색해 보겠습니다.
 
-1. 콘솔 화면 왼쪽 메뉴에서 **Analytics > Log & Crash Search > 로그 검색**을 클릭합니다.
+1. 콘솔 화면 왼쪽 메뉴에서 **Data & Analytics > Log & Crash Search > 로그 검색**을 클릭합니다.
 2. **로그 검색** 탭에는 기본적으로 24시간 동안의 로그량이 그래프와 상세 내용으로 나옵니다.
 
 **로그 검색** 화면은 다음과 같이 구성되어 있습니다.
@@ -69,7 +69,7 @@ SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 *
 
 ## 앱 크래시 조회
 
-Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > 앱 크래시 검색**에서 볼 수 있습니다.
+Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Search > 앱 크래시 검색**에서 볼 수 있습니다.
 
 
 ### 이슈 조회
@@ -155,7 +155,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 ## 알람
 
 로그 및 크래시에 대한 알람 설정 및 알람 발송 이력을 확인할 수 있습니다.
-**Analytics > Log & Crash Search > 알람**을 클릭합니다.
+**Data & Analytics > Log & Crash Search > 알람**을 클릭합니다.
 
 ### 로그 알람 설정
 
@@ -248,7 +248,7 @@ Android, iOS 기기의 크래시 정보는 **Analytics > Log & Crash Search > �
 
 검색 필드 관리, 이슈 트래커 설정, 심벌 파일 관리 등 서비스에 필요한 설정을 관리합니다.
 
-**Analytics > Log & Crash Search > 설정**을 클릭합니다.
+**Data & Analytics > Log & Crash Search > 설정**을 클릭합니다.
 
 
 ### 검색 필드
@@ -332,7 +332,7 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 
 Log & Crash Search SDK에서 전송한 지연 시간과 오류율을 타임라인 차트와 URL 목록, 지도로 표시합니다.
 
-**Analytics > Log & Crash Search > 네트워크 인사이트**를 클릭합니다.
+**Data & Analytics > Log & Crash Search > 네트워크 인사이트**를 클릭합니다.
 
 - SDK에서는 클라이언트로부터 URL 설정 화면에서 설정한 URL까지 요청의 지연 시간(Latency)과 상탯값(Status)을 Log & Crash Search로 전송합니다.
 - 모니터링, 지표 화면에서 현재 플랫폼과 필터를 설정하고 지연 시간과 오류율을 확인할 수 있습니다.

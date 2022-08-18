@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > 릴리스 노트
+## Data & Analytics > Log & Crash Search > 릴리스 노트
 
 ### 2022. 08. 23.
 #### 기능 개선/변경
