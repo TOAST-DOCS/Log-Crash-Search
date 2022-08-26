@@ -49,7 +49,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 **로그 검색** 화면은 다음과 같이 구성되어 있습니다.
 
-![lcs_03_202107](https://static.toastoven.net/prod_logncrash/lcs_03_202107.png)
+![gov_lcs_01_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_01_202208.jpg)
 
 | 항목 | 설명 |
 |---|---|
@@ -73,7 +73,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 ### 로그 알람 설정
 
-![lcs_13_202108](https://static.toastoven.net/prod_logncrash/lcs_13_202108.png)
+![gov_lcs_02_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_02_202208.png)
 
 로그 알람에 대한 모든 기능을 수행할 수 있는 페이지입니다.
 
@@ -82,7 +82,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 - [발생 수], [증감률] 두 가지 유형의 알람이 있습니다.
 - **알람 추가** 버튼을 누르면 알람을 등록할 수 있습니다.
 
-![lcs_14_202108](https://static.toastoven.net/prod_logncrash/lcs_14_202108.png)
+![gov_lcs_03_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_03_202208.png)
 
 - 알람 설정 방법은 다음과 같습니다.
     - 알람 제목: 알람 설정 목록에 표시될 이름을 입력합니다.
@@ -103,7 +103,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 ### 로그 알람 이력
 
-![lcs_15_202108](https://static.toastoven.net/prod_logncrash/lcs_15_202108.png)
+![gov_lcs_04_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_04_202208.png)
 
 - 설정한 알람 목록들이 표시됩니다.
 - 목록 클릭시 해당 알람 발생 내역을 확인할 수 있습니다.
@@ -119,7 +119,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 로그 검색 시 사용되는 검색 필드를 조회하는 기능으로 시스템 필드인 기본 필드 목록 외에 사용자 전송 필드인 사용자 지정 필드(커스텀 필드)를 확인할 수 있습니다.
 
-![lcs_20_202108](https://static.toastoven.net/prod_logncrash/lcs_20_202108.png)
+![gov_lcs_05_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_05_202208.png)
 
 1. 로그 전송 시 필드 이름이 txt로 시작하는 경우 분석 여부가 true로 설정되고, 그 외에는 분석 여부가 false로 설정됩니다. 분석 여부가 false인 경우 로그 검색의 검색 필드로 등록하여 사용할 수 있습니다.
 2. 로그 파일이나 바이너리 파일을 전송하고 **로그 검색** 화면에서 **다운로드 > 보기** 링크를 이용하고자 하는 경우, UserBinaryData 혹은 UserTxtData라는 이름의 필드에 base64 인코딩된 값을 담아 전송하시기 바랍니다.
@@ -128,7 +128,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 로그 보관 기간을 설정합니다.
 
-![lcs_23_202108](https://static.toastoven.net/prod_logncrash/lcs_23_202108.png)
+![gov_lcs_06_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_06_202208.png)
 
 - 로그 보관 기간은 1개월, 2개월, 3개월, 4개월 중에서 선택할 수 있으며 월 1회에 한해 변경할 수 있습니다.
 - 로그 보관 기간이 지난 데이터는 다음날 새벽에 삭제됩니다.
@@ -137,7 +137,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 서비스별 로그 전송 여부를 설정합니다.
 
-![lcs_24_202108](https://static.toastoven.net/prod_logncrash/lcs_24_202108.png)
+![gov_lcs_07_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_07_202208.png)
 
 - 일반 로그, Network Insights 로그 각각에 대해 전송 여부를 설정할 수 있습니다.
 - TOASK SDK에 대해 전송 여부를 설정 할 수 있습니다.
@@ -148,7 +148,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 로그 외부 보관 정보를 설정합니다.
 
-![lcs_25_202108](https://static.toastoven.net/prod_logncrash/lcs_25_202108.png)
+![gov_lcs_08_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_08_202208.png)
 
 - 외부 OBS에 로그를 보관할 수 있습니다.
 
