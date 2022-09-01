@@ -353,7 +353,8 @@ Content-Type: application/json
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]
@@ -424,7 +425,8 @@ Content-Type: application/json
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]
@@ -475,7 +477,8 @@ Scroll Continue API does not require the request body.
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]
