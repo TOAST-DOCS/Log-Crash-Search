@@ -406,6 +406,7 @@ Content-Type: application/json
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
 | totalItems | Body | Number | ログの数 |
+| pageSize | Body | Number | ページサイズ |
 | data | Body | List | ログリスト |
 
 <details>
@@ -421,6 +422,7 @@ Content-Type: application/json
     "body": {
         "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
         "totalItems": 60,
+        "pageSize": 10,
         "data": [
             {
                 "logTime": 1609463102265,
