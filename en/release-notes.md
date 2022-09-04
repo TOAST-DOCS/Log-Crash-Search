@@ -1,5 +1,9 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### September 27, 2022
+#### Bug Fixes
+* [Console] Fixed a bug where, when deleting queries continuously from the saved query list menu, you are navigated to an error page
+
 ### August 23, 2022
 #### Feature Updates
 * [Console] Changed the method of calling global utility functions
