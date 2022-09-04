@@ -54,7 +54,7 @@ Details of the **Log Search** screen are as below.
 
 | Item | Description |
 |---|---|
-| Search Query Input | Can apply Lucene grammar for the search of query field. <br/> (Reference: https://docs.toast.com/ko/Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)|
+| Search Query Input | Can apply Lucene grammar for the search of query field. <br/> (Reference: https://docs.toast.com/ko/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)|
 | Time Conditions for Search Query | Configure time conditions for search queries. |
 | Log Search Result > Chart | The log search result is output as a bar graph. If you click a bar of the bar graph, you can check the log by re-searching for the log period of the bar. |
 | Log Result Download | You can download log search results in a format you want. Also, you can download only crash dump data separately. |

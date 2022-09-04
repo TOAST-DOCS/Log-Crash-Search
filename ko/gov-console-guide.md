@@ -53,7 +53,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 | 항목 | 설명 |
 |---|---|
-| 검색 쿼리 입력 | 쿼리 필드 검색은 Lucene 문법을 사용할 수 있습니다. <br/> (참고: https://gov-docs.toast.com/ko/Analytics/Log%20&%20Crash%20Search/ko/gov-lucene-query-guide/)|
+| 검색 쿼리 입력 | 쿼리 필드 검색은 Lucene 문법을 사용할 수 있습니다. <br/> (참고: https://gov-docs.toast.com/ko/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/gov-lucene-query-guide/)|
 | 검색 대상 기간 | 검색 쿼리의 기간 조건을 설정할 수 있습니다. |
 | 로그 검색 결과 > 차트 | 로그 검색 결과를 막대 그래프로 출력하며, 막대 그래프 바를 클릭하면 해당 바의 로그 기간만큼 재검색하여 로그를 확인할 수 있습니다. |
 | 로그 결과 다운로드 | 로그 검색 결과를 원하는 포맷으로 다운로드할 수 있습니다. |
