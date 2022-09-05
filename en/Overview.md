@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > Overview
+## Data & Analytics > Log & Crash Search > Overview
 
 Log & Crash Search collects and searches logs from client and server. 
 

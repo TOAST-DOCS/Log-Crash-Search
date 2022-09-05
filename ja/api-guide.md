@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > APIガイド
+## Data & Analytics > Log & Crash Search > APIガイド
 
 ## ログ収集API
 HTTPプロトコルを使用してLog & Crash収集サーバーにログを転送できます。

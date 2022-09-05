@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > 콘솔 사용 가이드
+## Data & Analytics > Log & Crash Search > 콘솔 사용 가이드
 
 Log & Crash Search는 다음과 같은 순서로 사용할 수 있습니다.
 
@@ -18,24 +18,24 @@ Log & Crash Search SDK를 통해서 로그 전송을 시작합니다.
 
 ## 서비스 활성화
 
-프로젝트(Project)를 선택한 상태에서 화면 상단의 **서비스 선택** 버튼을 클릭하고 **Analytics** 아래 **Log & Crash Search**를 클릭합니다. 서비스가 활성화되면 서비스 이름 옆에 선택(v) 표시가 나타납니다.
+프로젝트(Project)를 선택한 상태에서 화면 상단의 **서비스 선택** 버튼을 클릭하고 **Data & Analytics** 아래 **Log & Crash Search**를 클릭합니다. 서비스가 활성화되면 서비스 이름 옆에 선택(v) 표시가 나타납니다.
 
 > [참고]  
 > 서비스를 활성화한 후에는 약 5분 이후부터 전송할 수 있습니다.
 
-Log & Crash Search가 활성화되면 왼쪽 메뉴에 **Analytics > Log & Crash Search** 메뉴가 나타나고 Appkey가 생성됩니다.
+Log & Crash Search가 활성화되면 왼쪽 메뉴에 **Data & Analytics > Log & Crash Search** 메뉴가 나타나고 Appkey가 생성됩니다.
 
 ## Appkey 확인
 
 로그를 전송하려면 Appkey를 확인해야 합니다.
 
-1. 왼쪽 탐색 메뉴에서 **Analytics > Log & Crash Search > 로그 검색**을 클릭합니다.
+1. 왼쪽 탐색 메뉴에서 **Data & Analytics > Log & Crash Search > 로그 검색**을 클릭합니다.
 2. 콘솔 화면 상단에 **URL & Appkey** 버튼을 클릭하면 Log & Crash Search용 Appkey를 확인할 수 있습니다.
 
 ## 로그 전송
 
 로그를 전송하려면 Log & Crash Search SDK가 필요합니다.
-SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지의 **Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
+SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지의 **Data & Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
 
 > [참고]  
 > 세션 로그 전송 시 [리소스 제공 정책](https://gov-docs.toast.com/ko/TOAST/ko/resource-policy-gov/#log-crash-search)의 일일 로그 건수 제공량에는 다른 로그와 동일하게 합산하여 반영되지만, API 호출 요금에는 반영되지 않습니다.
@@ -44,7 +44,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 이제 전송한 로그를 Log Search 기능을 이용하여 검색해 보겠습니다.
 
-1. 콘솔 화면 왼쪽 메뉴에서 **Analytics > Log & Crash Search > 로그 검색**을 클릭합니다.
+1. 콘솔 화면 왼쪽 메뉴에서 **Data & Analytics > Log & Crash Search > 로그 검색**을 클릭합니다.
 2. **로그 검색** 탭에는 기본적으로 24시간 동안의 로그량이 그래프와 상세 내용으로 나옵니다.
 
 **로그 검색** 화면은 다음과 같이 구성되어 있습니다.
@@ -53,7 +53,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 | 항목 | 설명 |
 |---|---|
-| 검색 쿼리 입력 | 쿼리 필드 검색은 Lucene 문법을 사용할 수 있습니다. <br/> (참고: https://gov-docs.toast.com/ko/Analytics/Log%20&%20Crash%20Search/ko/gov-lucene-query-guide/)|
+| 검색 쿼리 입력 | 쿼리 필드 검색은 Lucene 문법을 사용할 수 있습니다. <br/> (참고: https://gov-docs.toast.com/ko/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/gov-lucene-query-guide/)|
 | 검색 대상 기간 | 검색 쿼리의 기간 조건을 설정할 수 있습니다. |
 | 로그 검색 결과 > 차트 | 로그 검색 결과를 막대 그래프로 출력하며, 막대 그래프 바를 클릭하면 해당 바의 로그 기간만큼 재검색하여 로그를 확인할 수 있습니다. |
 | 로그 결과 다운로드 | 로그 검색 결과를 원하는 포맷으로 다운로드할 수 있습니다. |
@@ -69,7 +69,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 ## 알람
 
 로그에 대한 알람 설정 및 알람 발송 이력을 확인할 수 있습니다.
-**Analytics > Log & Crash Search > 알람**을 클릭합니다.
+**Data & Analytics > Log & Crash Search > 알람**을 클릭합니다.
 
 ### 로그 알람 설정
 
@@ -112,7 +112,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 검색 필드 관리, 이슈 트래커 설정, 심벌 파일 관리 등 서비스에 필요한 설정을 관리합니다.
 
-**Analytics > Log & Crash Search > 설정**을 클릭합니다.
+**Data & Analytics > Log & Crash Search > 설정**을 클릭합니다.
 
 
 ### 검색 필드
@@ -165,7 +165,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 Log & Crash Search SDK에서 전송한 지연 시간과 오류율을 타임라인 차트와 URL 목록, 지도로 표시합니다.
 
-**Analytics > Log & Crash Search > 네트워크 인사이트**를 클릭합니다.
+**Data & Analytics > Log & Crash Search > 네트워크 인사이트**를 클릭합니다.
 
 - SDK에서는 클라이언트로부터 URL 설정 화면에서 설정한 URL까지 요청의 지연 시간(Latency)과 상탯값(Status)을 Log & Crash Search로 전송합니다.
 - 모니터링, 지표 화면에서 현재 플랫폼과 필터를 설정하고 지연 시간과 오류율을 확인할 수 있습니다.
