@@ -88,13 +88,13 @@
 ### July 28, 2020
 #### Feature Updates
 * [Console] Added the feature of integrity validation for logs that are externally stored
-    * [See Console User Guide](/Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
+    * [See Console User Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
 
 ### June 23, 2020
 #### Feature Updates
 * [Console] Changed the query method for Object and Array types
     * Queries must be delivered in the same way as the string search.
-    * [See Guide for Lucene Query](/Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
+    * [See Guide for Lucene Query](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
 
 ### May 26, 2020
 #### Feature Updates
@@ -390,7 +390,7 @@
 
 ### February 23, 2017
 #### Feature Updates
-* [API] [log Bulk upload](/Analytics/Log%20&%20Crash%20Search/ko/api-guide/) is available
+* [API] [log Bulk upload](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/api-guide/) is available
     * Sending REST API logs is available in the JSON array format.
 * [API] Added Long/ Double Options
     * In sending REST API logs, fields starting with long or double can be saved in long or double type.

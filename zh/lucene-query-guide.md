@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > 루씬 쿼리 가이드
+## Data & Analytics > Log & Crash Search > 루씬 쿼리 가이드
 
 ## 기본 주의 사항
 

@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > API Guide
+## Data & Analytics > Log & Crash Search > API Guide
 
 HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다. 
 
