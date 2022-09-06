@@ -88,13 +88,13 @@
 ### July 28, 2020
 #### Feature Updates
 * [Console] Added the feature of integrity validation for logs that are externally stored
-    * [See Console User Guide](/Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
+    * [See Console User Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
 
 ### June 23, 2020
 #### Feature Updates
 * [Console] Changed the query method for Object and Array types
     * Queries must be delivered in the same way as the string search.
-    * [See Guide for Lucene Query](/Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
+    * [See Guide for Lucene Query](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
 
 ### May 26, 2020
 #### Feature Updates
@@ -192,13 +192,13 @@
 ### September 4, 2018
 
 #### Feature Updates
-* [SDK][[logback-3.0.2](/Download/#analytics-log-crash-search)]
+* [SDK][[logback-3.0.2](/Download/#data-analytics-log-crash-search)]
     * Updated not to add reservation items, when Logncrash Appender has empty or null for non-default items of reservation words.
     * Set timeout for Longrash REST API.
     * Enable AsynAppender for Logback.
 
 #### Bug Fixes
-* [SDK][[logback-3.0.2](/Download/#analytics-log-crash-search)]
+* [SDK][[logback-3.0.2](/Download/#data-analytics-log-crash-search)]
     * Fixed bugs in which reservation words, such as empty or null, were added.
 
 ### July 24, 2018
@@ -209,23 +209,23 @@
 ### June 26, 2018
 
 #### Bug Fixes
-* [SDK][[iOS-2.7.1](/Download/#analytics-log-crash-search)]
+* [SDK][[iOS-2.7.1](/Download/#data-analytics-log-crash-search)]
     * Fixed bugs in which crash occurred during initialization in duplicates.
 
 ### June 5, 2018
 
 #### Feature Updates
-* [SDK][[Android-2.6.7](/Download/#analytics-log-crash-search)]
+* [SDK][[Android-2.6.7](/Download/#data-analytics-log-crash-search)]
     * Changed operations for saved logs, to be sent without filtering.
 
 #### Bug Fixes
-* [SDK][[iOS-2.7.0](/Download/#analytics-log-crash-search)]
+* [SDK][[iOS-2.7.0](/Download/#data-analytics-log-crash-search)]
     * Changed internal logic of SDK.
     
-* [SDK][[Android-2.6.7](/Download/#analytics-log-crash-search)]
+* [SDK][[Android-2.6.7](/Download/#data-analytics-log-crash-search)]
     * Fixed bugs in which logs were not sent in Android 4.1.2 or lower versions (bugs on Android-2.6.6 SDK).
 
-* [SDK][[Unity-2.8.6](/Download/#analytics-log-crash-search)]
+* [SDK][[Unity-2.8.6](/Download/#data-analytics-log-crash-search)]
     * Fixed an issue in which the loglevel was set as fatal when Unity crash logs occurred on iOS.
 
 ### May 29, 2018
@@ -236,7 +236,7 @@
 
 #### Bug Fixes
 
-* [SDK][[Unity-2.8.5](/Download/#analytics-log-crash-search)]
+* [SDK][[Unity-2.8.5](/Download/#data-analytics-log-crash-search)]
     * Roll back crash logtype occurred at Unity Script
         * Rolls back with crash occurred at Unity Script processed as Handled.
 
@@ -244,19 +244,19 @@
 
 #### Feature Updates
 
-* [SDK][[AOS-2.6.6](/Download/#analytics-log-crash-search)]
+* [SDK][[AOS-2.6.6](/Download/#data-analytics-log-crash-search)]
     * Removed IP Address collection field
         * Apply information collected from the server for "host" on console
 
-* [SDK][[Unity-2.8.4](/Download/#analytics-log-crash-search)]
+* [SDK][[Unity-2.8.4](/Download/#data-analytics-log-crash-search)]
     * Updated Call Android Native SDK API
 
 #### Bug Fixes
 
-* [SDK][[AOS-2.6.6](/Download/#analytics-log-crash-search)] 
+* [SDK][[AOS-2.6.6](/Download/#data-analytics-log-crash-search)] 
     * Fixed filter error in removing duplicates
 
-* [SDK][[iOS-2.6.10](/Download/#analytics-log-crash-search)]
+* [SDK][[iOS-2.6.10](/Download/#data-analytics-log-crash-search)]
     * Fixed the occurrence of crash during initialization, when userID was nil
     * Fixed the CPU usage rate raised up to 100% when enableSyncStart was YES
 
@@ -289,7 +289,7 @@
 * [SDK] Changed to allow transferring Unity Crash via CrashHandler registered externally (see MultihandlerSample)
 * [SDK] Removed unnecessary SDKs through the optimization script (see Doc documents)
 * [SDK] Allows the user to save settings at a time in need
-    * Updated Version: [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 * [Console] Changed the input method of log search time (to remove ms and specify timezone)
 * [Console] Show total count as output when the distinct count is over 100 for a specific field
 * [Console] Deleted UIs of users experiencing crash on the trend page
@@ -301,18 +301,18 @@
 #### Bug Fixes
 * [SDK] Fixed an issue in which sessionID is updated when initialize is called multiple times
 * [SDK] Fixed the failed release of activity from the memory, if closed with BackKey, since SDK has saved its last status
-    * Updated Version: [toast-logncrash-android-2.6.4](/Download/#analytics-log-crash-search) / [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-android-2.6.4](/Download/#data-analytics-log-crash-search) / [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 * [SDK] Made modifications so that 'EMPTY CRASH FILE' is included in DmpData for transfer, if PLCrashReporter fails to create crash files.
-    * Updated Version: [toast-logncrash-ios-mac-sdk-2.6.7](/Download/#analytics-log-crash-search) [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-ios-mac-sdk-2.6.7](/Download/#data-analytics-log-crash-search) [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 * [SDK] Fixed wrong display of CrashStyle and SymMethod, when native crash occurs on iOS SDK
 * [SDK] Fixed failed settings of userID on WeGL
 * [SDK] Fixed an issue in which https protocol was not specified by the Unity ios wrapper class
-    * Updated Version: [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 
 ### July 20, 2017
 #### Feature Updates
 * [SDK] Support WebGL Platform
-    * Updated Version: [toast-logncrash-unity-2.7.4](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-unity-2.7.4](/Download/#data-analytics-log-crash-search)
 * [Console] Removed user count from the softing option on the page of crash list
 
 #### Bug Fixes
@@ -321,22 +321,22 @@
 ### June 22, 2017
 #### Bug Fixes
 * [SDK] Fixed an issue in which crash occurs due to the Delete bug of LFU when the duplicate control queue exceeds the maximum size
-    * Updated Version: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search)/ [toast-logncrash-androidndk-sdk-2.6.2](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search)/ [toast-logncrash-androidndk-sdk-2.6.2](/Download/#data-analytics-log-crash-search)
 * [SDK] Changed the method of saving Resend logs from 20MB by 2MB, to 2MB only
 * [SDK] Changed the size of Send Queue from 500 to 200
 * [SDK] Modified the transfer being disabled, when it is disconnected to the internet, to the file saving mode.
 * [SDK] When it is re-connected to the internet, logs saved in files are to be re-sent
-    * Updated Version: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search)
 * [SDK] Fixed missing of some fields (country code, platform information, and etc.)
-    * Updated Version: [toast-logncrash-android-2.6.2](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-android-2.6.2](/Download/#data-analytics-log-crash-search)
 * [SDK] Errors are contained in errorCode and txterrorCode fields to be transferred
-    * Updated Version: [toast-logncrash-logback-sdk-2.2.7](/Download/#analytics-log-crash-search) / [toast-logncrash-log4j-sdk-2.2.7](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-logback-sdk-2.2.7](/Download/#data-analytics-log-crash-search) / [toast-logncrash-log4j-sdk-2.2.7](/Download/#data-analytics-log-crash-search)
 
 ### June 19, 2017
 #### Bug Fixes
 * [SDK] Fixed an issue in which CPU usage rate reaches 99% since sleep is not available for SendThread
 * [SDK] Fixed failed release of a memory when 100 logs are sent per second
-    * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.6.1](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.6.1](/Download/#data-analytics-log-crash-search)
 
 ### May 25, 2017
 #### Feature Updates
@@ -344,14 +344,14 @@
 * [Console] Changed the display order and processed grey for UserID Colum on the table at the page bottom of the Crash > App Crash Indicators
 * [Console] Allows the user to turn on/off for the exposure of session log page
 * [SDK] Integrated Unity Android and Android
-    * Updated Version: [toast-logncrash-android-2.6.1](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-android-2.6.1](/Download/#data-analytics-log-crash-search)
 * [SDK] Added Enable/ Disable Hotfield
-    * Updated Version: [toast-logncrash-android-2.6.1](/Download/#analytics-log-crash-search) / [toast-logncrash-androidndk-sdk-2.6.1](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-android-2.6.1](/Download/#data-analytics-log-crash-search) / [toast-logncrash-androidndk-sdk-2.6.1](/Download/#data-analytics-log-crash-search)
 
 #### Bug Fixes
 * [SDK] Fixed redundant transfer of session logs when unity crash is resent
 * [SDK] Fixed bugs in which the DeviceID field is missing
-    * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.5.1](/Download/#analytics-log-crash-search)
+    * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.5.1](/Download/#data-analytics-log-crash-search)
 
 ### April 20, 2017
 #### Feature Updates
@@ -364,17 +364,17 @@
 * [Console] Changed alarm delivery format (shows alarm name, instead of project name)
 * [SDK] Added more features
     * To ensure AddCustomField between the Init function and log delivery, added SendThread Lock
-        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#analytics-log-crash-search)
+        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Changed features
     * Send Exception, errorCode, and RequestHeader fields in the analyzable format on console
 		* Changed field names into txtException, txterrorCode, and txtRequestHeader
-		* Updated Version: [toast-logncrash-log4j-sdk-2.2.6](/Download/#analytics-log-crash-search) / [toast-logncrash-log4j2-sdk-2.2.6](/Download/#analytics-log-crash-search)/ [toast-logncrash-logback-sdk-2.2.6](/Download/#analytics-log-crash-search)
+		* Updated Version: [toast-logncrash-log4j-sdk-2.2.6](/Download/#data-analytics-log-crash-search) / [toast-logncrash-log4j2-sdk-2.2.6](/Download/#data-analytics-log-crash-search)/ [toast-logncrash-logback-sdk-2.2.6](/Download/#data-analytics-log-crash-search)
 		* When the alarm is set for the Exception,errorCode, and RequestHeader field, apply 2.6 and change it to txt* field.
     * Changed the sending method allowing logs to be collected up to 2M before sending
-        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#analytics-log-crash-search)
+        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Integrated Unity-ios and ios SDKs
     * See README.md file within SDK file for changes
-    * [Toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#analytics-log-crash-search)
+    * [Toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search)
     *  Deleted Toast-logncrash-unity-ios-sdk / toast-logncrash-ios-mac-sdk
 
 #### Bug Fixes
@@ -390,25 +390,25 @@
 
 ### February 23, 2017
 #### Feature Updates
-* [API] [log Bulk upload](/Analytics/Log%20&%20Crash%20Search/ko/api-guide/) is available
+* [API] [log Bulk upload](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/api-guide/) is available
     * Sending REST API logs is available in the JSON array format.
 * [API] Added Long/ Double Options
     * In sending REST API logs, fields starting with long or double can be saved in long or double type.
     * Range search is available for long or double type on the log search page.
 * [SDK] Added CrashCallback
-    * [Windows csharp SDK 2.5.2.1](/Download/#analytics-log-crash-search) / [Windows cpp SDK 2.5.2.1](/Download/#analytics-log-crash-search)
+    * [Windows csharp SDK 2.5.2.1](/Download/#data-analytics-log-crash-search) / [Windows cpp SDK 2.5.2.1](/Download/#data-analytics-log-crash-search)
 
 #### Bug Fixes
 * [WEB] Fixed unavailability of deleting query on View Saved Queries
 * [WEB] Updated pagination so that a back button on issue details does not return to page 1 on the list
 * [SDK] Fixed conflicts between threads
-    * [unity-android-sdk 2.5.6.0](/Download/#analytics-log-crash-search)
+    * [unity-android-sdk 2.5.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Fixed error in the binaryimagesort duplicate symbol, occurred when building external library along with logncrash
-    * [unity-ios-sdk-2.5.2.6](/Download/#analytics-log-crash-search)
+    * [unity-ios-sdk-2.5.2.6](/Download/#data-analytics-log-crash-search)
 * [SDK] Fixed forced closure, on some devices, of an application before breakpad is completed
-    * [androidndk-sdk 2.4.7.0](/Download/#analytics-log-crash-search)
+    * [androidndk-sdk 2.4.7.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Modified failed adding of customField under the Async mode
-    * [Log4j-sdk-2.2.5](/Download/#analytics-log-crash-search)/ [Logback-sdk-2.2.5](/Download/#analytics-log-crash-search)
+    * [Log4j-sdk-2.2.5](/Download/#data-analytics-log-crash-search)/ [Logback-sdk-2.2.5](/Download/#data-analytics-log-crash-search)
 
 ### January 19, 2017
 #### Feature Updates

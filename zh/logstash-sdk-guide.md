@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > User Guide for Logstash SDK
+## Data & Analytics > Log & Crash Search > User Guide for Logstash SDK
 
 This document describes how to process different types of inputs and outputs by using Logstash. 
 
