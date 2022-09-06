@@ -204,13 +204,13 @@
 
 ### 2018.09.04
 #### 기능 개선/변경
-* [SDK][[logback-3.0.2](/Download/#analytics-log-crash-search)]
+* [SDK][[logback-3.0.2](/Download/#data-analytics-log-crash-search)]
     * Logncrash Appender의 예약어 중 기본값이 없는 항목이 empty, null일 경우, 예약어 항목이 추가되지 않도록 개선
     * Logncrash REST API 타임아웃 설정
     * Logback의 AsyncAppender 사용
 
 #### 버그 수정
-* [SDK][[logback-3.0.2](/Download/#analytics-log-crash-search)]
+* [SDK][[logback-3.0.2](/Download/#data-analytics-log-crash-search)]
     * 일부 empty, null의 예약어 항목이 추가된 버그 수정
 
 ### 2018.07.24
@@ -221,23 +221,23 @@
 ### 2018.06.26
 
 #### 버그 수정
-* [SDK][[iOS-2.7.1](/Download/#analytics-log-crash-search)]
+* [SDK][[iOS-2.7.1](/Download/#data-analytics-log-crash-search)]
     * 중복하여 초기화 수행시 크래시 발생하던 버그 수정
 
 ### 2018.06.05
 
 #### 기능 개선/변경
-* [SDK][[Android-2.6.7](/Download/#analytics-log-crash-search)]
+* [SDK][[Android-2.6.7](/Download/#data-analytics-log-crash-search)]
     * 저장된 로그의 경우, 필터를 거치지 않고 전송하도록 동작 변경
 
 #### 버그 수정
-* [SDK][[iOS-2.7.0](/Download/#analytics-log-crash-search)]
+* [SDK][[iOS-2.7.0](/Download/#data-analytics-log-crash-search)]
     * SDK 내부 로직 개선
     
-* [SDK][[Android-2.6.7](/Download/#analytics-log-crash-search)]
+* [SDK][[Android-2.6.7](/Download/#data-analytics-log-crash-search)]
     * Android 4.1.2 이하 버전에서 로그가 전송되지 않던 버그 수정 ( Android-2.6.6 SDK 버그 )
 
-* [SDK][[Unity-2.8.6](/Download/#analytics-log-crash-search)]
+* [SDK][[Unity-2.8.6](/Download/#data-analytics-log-crash-search)]
     * iOS 에서 Unity Crash Log 발생시 LogLevel 이 전부 FATAL로 설정되던 문제 수정
 
 ### 2018.05.29
@@ -248,7 +248,7 @@
 
 #### 버그 수정
 
-* [SDK][[Unity-2.8.5](/Download/#analytics-log-crash-search)]
+* [SDK][[Unity-2.8.5](/Download/#data-analytics-log-crash-search)]
     * Unity Script에서 발생한 Crash logType 롤백
         * Unity Script에서 발생한 Crash를 HANDLED로 처리하는 로직이 적용되어 롤백합니다.
 
@@ -256,19 +256,19 @@
 
 #### 기능 개선/변경
 
-* [SDK][[AOS-2.6.6](/Download/#analytics-log-crash-search)]
+* [SDK][[AOS-2.6.6](/Download/#data-analytics-log-crash-search)]
     * IP Address 수집 필드 제거
         * 콘솔에 표시되는 "host" 값은 서버에서 수집한 정보를 사용합니다.
 
-* [SDK][[Unity-2.8.4](/Download/#analytics-log-crash-search)]
+* [SDK][[Unity-2.8.4](/Download/#data-analytics-log-crash-search)]
     * Android Native SDK 호출 API 개선
 
 #### 버그 수정
 
-* [SDK][[AOS-2.6.6](/Download/#analytics-log-crash-search)] 
+* [SDK][[AOS-2.6.6](/Download/#data-analytics-log-crash-search)] 
     * 중복 제거 필터 오류 수정
 
-* [SDK][[iOS-2.6.10](/Download/#analytics-log-crash-search)]
+* [SDK][[iOS-2.6.10](/Download/#data-analytics-log-crash-search)]
     * 초기화 과정에서 UserID 의 값이 nil 일 때 Crash가 발생하던 문제 수정
     * 초기화 과정에서 enableSyncStart 의 값이 YES 일 경우 CPU 이용률이 100%까지 올라가는 문제 수정
 
@@ -301,7 +301,7 @@
 * [SDK] 외부에서 등록한 CrashHandler를 통해 Unity Crash를 전송할 수 있도록 변경 (MultihandlerSample 참고)
 * [SDK] Optimization 스크립트를 통한 필요없는 SDK 제거 ( Doc 문서 참고 )
 * [SDK] 사용자가 Settings 객체를 원하는 시점에 저장할 수 있도록 변경
-    * 수정버전: [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 * [Console] 로그 서치 시간 출력 방식 변경 (ms 단위 제거 및 timezone 명시)
 * [Console] 특정 필드의 distinct count가 100을 넘으면 TOTAL count를 출력
 * [Console] 트렌드 페이지에서 crash를 겪은 사용자 UI 삭제
@@ -313,18 +313,18 @@
 #### 버그수정
 * [SDK] initialize를 여러번 호출하는 경우 SessionID가 갱신 되는 문제 수정
 * [SDK] BackKey로 Activity를 종료한 경우, SDK에서 마지막 Activity 상태를 저장하고 있어 Activity가 메모리에서 해제 되지 않는 문제 수정
-    * 수정버전: [toast-logncrash-android-2.6.4](/Download/#analytics-log-crash-search) / [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-android-2.6.4](/Download/#data-analytics-log-crash-search) / [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 * [SDK] PLCrashReporter가 Crash File을 생성하지 못하는 경우, 'EMPTY CRASH FILE'을 DmpData에 넣어 전송하도록 수정
-    * 수정버전: [toast-logncrash-ios-mac-sdk-2.6.7](/Download/#analytics-log-crash-search) [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-ios-mac-sdk-2.6.7](/Download/#data-analytics-log-crash-search) [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 * [SDK] iOS SDK에서 Native Crash 발생 시, CrashStyle, SymMethod가 잘못 표기되는 문제 수정
 * [SDK] WebGL에서UserID가 설정되지 않던 문제 수정
 * [SDK] unity ios wrapper class에서 https 프로토콜이 지정되지 않던 문제 수정
-    * 수정버전: [toast-logncrash-unity-2.8.3](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 
 ### 2017.07.20
 #### 기능 개선/변경
 * [SDK] WebGL플랫폼 지원
-    * 수정버전: [toast-logncrash-unity-2.7.4](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-unity-2.7.4](/Download/#data-analytics-log-crash-search)
 * [Console] 크래시 목록 화면 softing option에서 사용자수 제거
 
 #### 버그수정
@@ -333,22 +333,22 @@
 ### 2017.06.22
 #### 버그수정
 * [SDK] 중복제어 큐가 최대 사이즈가 넘은 경우, LFU 동작의 Delete 버그로 인해 Crash가 발생하는 현상 수정
-    * 수정버전: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search)/ [toast-logncrash-androidndk-sdk-2.6.2](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search)/ [toast-logncrash-androidndk-sdk-2.6.2](/Download/#data-analytics-log-crash-search)
 * [SDK] ReSend 로그 저장 시 2MB씩 총 20MB저장하는 방식에서 2MB만 저장하도록 변경
 * [SDK] Send Queue 사이즈를 500개에서 2000개로 변경
 * [SDK] 인터넷이 연결되어 있지 않은 경우, 전송 동작을 하지 않는 방식에서 파일로 저장하도록 변경
 * [SDK]인터넷 연결이 끊겼다가 다시 연결된 경우, 파일에 저장했던 로그를 재전송 하도록 변경
-    * 수정버전: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search)
 * [SDK] 일부 필드(국가 코드, 플랫폼정보 등) 누락 현상 수정
-    * 수정버전: [toast-logncrash-android-2.6.2](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-android-2.6.2](/Download/#data-analytics-log-crash-search)
 * [SDK] 에러 내용을 errorCode와 txterrorCode 필드에 담아 전송하도록 변경
-    * 수정버전: [toast-logncrash-logback-sdk-2.2.7](/Download/#analytics-log-crash-search) / [toast-logncrash-log4j-sdk-2.2.7](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-logback-sdk-2.2.7](/Download/#data-analytics-log-crash-search) / [toast-logncrash-log4j-sdk-2.2.7](/Download/#data-analytics-log-crash-search)
 
 ### 2017.06.19
 #### 버그수정
 * [SDK] SendThread에 Sleep이 없어 CPU 사용률이 99%가 되는 현상 수정
 * [SDK] 초당 100건의 로그를 보내는 경우, 메모리 해제가 정상적으로 되지 않는 현상 수정
-    * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.6.1](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.6.1](/Download/#data-analytics-log-crash-search)
 
 ### 2017.05.25
 #### 기능 개선/변경
@@ -356,14 +356,14 @@
 * [Console] Crashes > 앱 크래시 지표 페이지 하단 테이블 UserID Column 표시 순서 변경 및 Gray 처리
 * [Console] 세션로그 화면 노출 여부를 사용자가 on/off 할 수 있도록 기능 추가
 * [SDK] Unity Android / Android 통합
-    * 수정버전: [toast-logncrash-android-2.6.1](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-android-2.6.1](/Download/#data-analytics-log-crash-search)
 * [SDK] hotfield Enable/ Disable추가
-    * 수정버전: [toast-logncrash-android-2.6.1](/Download/#analytics-log-crash-search) / [toast-logncrash-androidndk-sdk-2.6.1](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-android-2.6.1](/Download/#data-analytics-log-crash-search) / [toast-logncrash-androidndk-sdk-2.6.1](/Download/#data-analytics-log-crash-search)
 
 #### 버그 수정
 * [SDK] Unity Crash 재전송 시, Seesion 로그가 한 번 더 전송되는 동작 수정
 * [SDK] DevicID 필드가 누락되는 버그 수정
-    * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.5.1](/Download/#analytics-log-crash-search)
+    * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.5.1](/Download/#data-analytics-log-crash-search)
 
 ### 2017.04.20
 #### 기능 개선/변경
@@ -376,17 +376,17 @@
 * [Console] 알람 발송 포맷 변경(프로젝트 이름 대신 알람 이름 노출
 * [SDK] 기능 추가
     * Init함수와 Log 전송 사이의 AddCustomField를 보장하기 위하며, SendThread Lock 기능 추가
-        * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#analytics-log-crash-search)
+        * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] 기능변경
     * Exception, errorCode, RequestHeader 필드를 콘솔에서 분석 가능한 형태로 전송
 		* txtException, txterrorCode, txtRequestHeader 필드명으로 변경됨
-		* 수정버전: [toast-logncrash-log4j-sdk-2.2.6](/Download/#analytics-log-crash-search) / [toast-logncrash-log4j2-sdk-2.2.6](/Download/#analytics-log-crash-search)/ [toast-logncrash-logback-sdk-2.2.6](/Download/#analytics-log-crash-search)
+		* 수정버전: [toast-logncrash-log4j-sdk-2.2.6](/Download/#data-analytics-log-crash-search) / [toast-logncrash-log4j2-sdk-2.2.6](/Download/#data-analytics-log-crash-search)/ [toast-logncrash-logback-sdk-2.2.6](/Download/#data-analytics-log-crash-search)
 		* Exception,errorCode,RequestHeader 필드에 대해 알람설정이 된경우 2.6 적용 후 txt\* 필드로 수정이 필요함
     * 최대 2M까지 로그를 모아 전송하도록 Send 방식 변경
-        * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#analytics-log-crash-search)
+        * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Unity-ios / ios SDK 통합
     * 변경사항은 SDK 파일내 README.md 파일 참고
-    * [Toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#analytics-log-crash-search)
+    * [Toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search)
     *  Toast-logncrash-unity-ios-sdk / toast-logncrash-ios-mac-sdk 삭제
 
 #### 버그 수정
@@ -408,19 +408,19 @@
     * REST API 로그 전송시 long, double 로 시작하는 필드 사용시 long,double 타입으로 저장
     * 로그 검색 화면에서 long, double 타입 Range 검색이 가능합니다.
 * [SDK] CrashCallback 기능 추가
-    * [Windwos csharp SDK 2.5.2.1](/Download/#analytics-log-crash-search) / [Windows cpp SDK 2.5.2.1](/Download/#analytics-log-crash-search)
+    * [Windwos csharp SDK 2.5.2.1](/Download/#data-analytics-log-crash-search) / [Windows cpp SDK 2.5.2.1](/Download/#data-analytics-log-crash-search)
 
 #### 버그 수정
 * [WEB] 저장된 쿼리 보기 페이지에서 쿼리 삭제 불가능한 문제 수정
 * [WEB] 이슈 상세에서 뒤로가기 클릭하면 이슈 목록 1페이지로 이동하지 않도록 pagination 개선
 * [SDK] Thread간의 충돌 현상 수정
-    * [unity-android-sdk 2.5.6.0](/Download/#analytics-log-crash-search)
+    * [unity-android-sdk 2.5.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] 외부 라이브러리와 logncrash를 함께 빌드 시 binaryimagesort duplicate symbol 오류 수정
-    * [unity-ios-sdk-2.5.2.6](/Download/#analytics-log-crash-search)
+    * [unity-ios-sdk-2.5.2.6](/Download/#data-analytics-log-crash-search)
 * [SDK] 일부 기기에서 breakpad 의 작업이 완료되기 전 어플리케이션이 강제로 종료 되는 현상 수정
-    * [androidndk-sdk 2.4.7.0](/Download/#analytics-log-crash-search)
+    * [androidndk-sdk 2.4.7.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Async 모드에서 customField 가 추가되지 않는 현상 수정
-    * [Log4j-sdk-2.2.5](/Download/#analytics-log-crash-search)/ [Logback-sdk-2.2.5](/Download/#analytics-log-crash-search)
+    * [Log4j-sdk-2.2.5](/Download/#data-analytics-log-crash-search)/ [Logback-sdk-2.2.5](/Download/#data-analytics-log-crash-search)
 
 ### 2017.01.19
 #### 기능 개선/변경
