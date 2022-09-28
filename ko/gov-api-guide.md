@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > API 가이드
+## Data & Analytics > Log & Crash Search > API 가이드
 
 ## 로그 수집 API
 HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다. 
@@ -355,7 +355,8 @@ Content-Type: application/json
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]
@@ -408,6 +409,7 @@ Content-Type: application/json
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
 | totalItems | Body | Number | 로그 개수 |
+| pageSize | Body | Number | 페이지 크기 |
 | data | Body | List | 로그 목록 |
 
 <details>
@@ -423,11 +425,13 @@ Content-Type: application/json
     "body": {
         "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
         "totalItems": 60,
+        "pageSize": 10,
         "data": [
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]
@@ -479,7 +483,8 @@ Scroll Continue API는 요청 본문이 필요하지 않습니다.
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]

@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > Logback SDK Guide
+## Data & Analytics > Log & Crash Search > Logback SDK Guide
 
 Log & Crash Logback SDK sends logs to a Log & Crash Search collector server. It allows to retrieve or search logs sent from Log & Crash Search and operates under a multi-threading environment. 
 
@@ -8,7 +8,7 @@ Add logncrash-java-sdk3-3.0.4.jar to dependency.
 Download Log & Crash Logback SDK from  [NHN Cloud Document](http://docs.toast.com/en/Download/).
 
 ```
-Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Logback SDK]
+Click [DOCUMENTS] > [Download] > [Data & Analytics > Log & Crash Search] > [Logback SDK]
 ```
 
 

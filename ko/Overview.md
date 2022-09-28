@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > 개요
+## Data & Analytics > Log & Crash Search > 개요
 
 Log & Crash Search는 클라이언트와 서버의 로그를 수집하여 원하는 로그를 검색하고 조회하는 시스템입니다.   
 모바일 앱에서 발생하는 크래시를 분석하고 통계 작업을 수행하여 크래시 발생 원인에 대한 다양한 정보도 제공합니다.  

@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > API Guide
+## Data & Analytics > Log & Crash Search > API Guide
 
 ## Collect Log API
 Logs can be sent to Log & Crash collector server via HTTP protocol. 
@@ -353,7 +353,8 @@ Content-Type: application/json
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]
@@ -405,6 +406,7 @@ Content-Type: application/json
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
 | totalItems | Body | Number | Number of logs |
+| pageSize | Body | Number | Page size |
 | data | Body | List | List of logs |
 
 <details>
@@ -420,11 +422,13 @@ Content-Type: application/json
     "body": {
         "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
         "totalItems": 60,
+        "pageSize": 10,
         "data": [
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]
@@ -475,7 +479,8 @@ Scroll Continue API does not require the request body.
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]

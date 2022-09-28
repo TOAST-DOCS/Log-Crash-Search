@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > APIガイド
+## Data & Analytics > Log & Crash Search > APIガイド
 
 ## ログ収集API
 HTTPプロトコルを使用してLog & Crash収集サーバーにログを転送できます。
@@ -354,7 +354,8 @@ Content-Type: application/json
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]
@@ -406,6 +407,7 @@ Content-Type: application/json
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
 | totalItems | Body | Number | ログの数 |
+| pageSize | Body | Number | ページサイズ |
 | data | Body | List | ログリスト |
 
 <details>
@@ -421,11 +423,13 @@ Content-Type: application/json
     "body": {
         "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
         "totalItems": 60,
+        "pageSize": 10,
         "data": [
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]
@@ -476,7 +480,8 @@ Scroll Continue APIはリクエスト本文が必要ありません。
             {
                 "logTime": 1609463102265,
                 "logType": "NORMAL",
-                "projectVersion": "1.0.0"
+                "projectVersion": "1.0.0",
+                ...
             },
             ...
         ]

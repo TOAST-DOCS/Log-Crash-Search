@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > 概要
+## Data & Analytics > Log & Crash Search > 概要
 
 Log & Crash Searchは、クライアントとサーバーのログを収集して、ログの検索と照会ができるシステムです。   
 モバイルアプリで発生するクラッシュを分析し、統計作業を実行してクラッシュ発生原因に対する様々な情報も提供します。  

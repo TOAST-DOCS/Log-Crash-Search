@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > SDKガイド
+## Data & Analytics > Log & Crash Search > SDKガイド
 NHN Cloud Log & Crash Search SDKを適用すると、モバイルアプリケーションで簡単かつ強力な遠隔ログおよびクラッシュ分析機能を使用できます。
 
 ## 主な機能

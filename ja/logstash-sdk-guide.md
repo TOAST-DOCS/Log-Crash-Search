@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > Logstash SDK使用ガイド
+## Data & Analytics > Log & Crash Search > Logstash SDK使用ガイド
 
 Logstashを利用して多様なInputとOutputを処理する方法を説明します。
 

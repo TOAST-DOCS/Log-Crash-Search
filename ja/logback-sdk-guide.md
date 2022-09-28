@@ -1,4 +1,4 @@
-## Analytics > Log & Crash Search > Logback SDK使用ガイド
+## Data & Analytics > Log & Crash Search > Logback SDK使用ガイド
 
 Log & Crash Logback SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。Log & Crash Searchで、転送されたログの照会および検索が可能で、マルチスレッド環境で動作します。
 
@@ -8,7 +8,7 @@ logncrash-java-sdk3-3.0.4.jarを依存性に追加します。
 [NHN Cloud Document](http://docs.toast.com/ko/Download/)でLog & Crash Logback SDKをダウンロードできます。
 
 ```
-[DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Logback SDK]クリック
+[DOCUMENTS] > [Download] > [Data & Analytics > Log & Crash Search] > [Logback SDK]クリック
 ```
 
 
