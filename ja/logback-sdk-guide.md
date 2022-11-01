@@ -4,7 +4,7 @@ Log & Crash Logback SDKは、Log & Crash Search収集サーバーにログを転
 
 ## 1. Log & Crash Logback SDK追加
 
-logncrash-java-sdk3-3.0.4.jarを依存性に追加します。
+logncrash-java-sdk3-3.0.5.jarを依存性に追加します。
 [NHN Cloud Document](http://docs.toast.com/ko/Download/)でLog & Crash Logback SDKをダウンロードできます。
 
 ```

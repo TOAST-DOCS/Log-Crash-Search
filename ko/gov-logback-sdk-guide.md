@@ -4,7 +4,7 @@ Log & Crash Logback SDK는 Log & Crash Search 수집 서버에 로그를 보내�
 
 ## 1. Log & Crash Logback SDK 추가
 
-logncrash-java-sdk3-3.0.4.jar를 의존성에 추가합니다.
+logncrash-java-sdk3-3.0.5.jar를 의존성에 추가합니다.
 [NHN Cloud Document](https://gov-docs.toast.com/ko/Download/)에서 Log & Crash Logback SDK를 다운로드할 수 있습니다.
 
 ```
