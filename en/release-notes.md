@@ -1,5 +1,11 @@
 ## Data & Analytics > Log & Crash Search > Release Notes
 
+### November 29, 2022
+#### Bug Fixes
+* [Console] Improved the log click search feature of the log search results
+  * Fixed a bug where, when clicking a word in the txt* or body field for search, all field values are searched
+  * Fixed a bug where, when clicking the custom field for search, highlighting is not applied
+
 ### September 27, 2022
 #### Bug Fixes
 * [Console] Fixed a bug where, when deleting queries continuously from the saved query list menu, you are navigated to an error page
