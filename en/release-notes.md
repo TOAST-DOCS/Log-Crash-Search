@@ -1,5 +1,10 @@
 ## Data & Analytics > Log & Crash Search > Release Notes
 
+### December 27, 2022
+#### Feature Updates
+* [Console] Added a feature to refresh log search automatically
+* [Console] Added a feature to set conditions on log search period by dragging log search result charts
+
 ### November 29, 2022
 #### Bug Fixes
 * [Console] Improved the log click search feature of the log search results
