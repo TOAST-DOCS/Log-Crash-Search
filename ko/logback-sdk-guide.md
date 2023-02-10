@@ -56,30 +56,31 @@ logback.xml을 기준으로 설명합니다.
 - Log & Crash Logback SDK의 LogNCrashHttpAppender로 전송 로그의 자세한 항목을 설정할 수 있습니다.
 
 ```xml
-<appender name="user-logger" class="ch.qos.logback.classic.AsyncAppender">
+<!-- LogNCrashHttpAppender 선언 -->
+<appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
+    <appKey value="앱키"/>
+    <logSource value="운영"/>
+    <version value="1.0.0"/>
+    <logType value="감사로그"/>
+    <debug value="true"/>
+    <category value="로그 서비스"/>
+    <errorCodeType value="action"/>
+</appender>
+<!-- LogNCrashHttpAppender를 포함한 AsyncAppender 선언 -->
+<appender name="LNCS-APPENDER" class="ch.qos.logback.classic.AsyncAppender">
     <!-- Logback의 AsyncAppender 옵션 -->
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
         <level>INFO</level>
     </filter>
-    <param name="includeCallerData" value="false"/>
-    <param name="queueSize" value="2048"/>
-    <param name="neverBlock" value="true"/>
-    <param name="maxFlushTime" value="60000"/>
-
-    <!-- Log & Crash Logback SDK의 LogNCrashHttpAppender 옵션 -->
-    <appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
-        <param name="appKey" value="앱키"/>
-        <param name="logSource" value="운영"/>
-        <param name="version" value="1.0.0"/>
-        <param name="logType" value="감사로그"/>
-        <param name="debug" value="true"/>
-        <param name="category" value="로그 서비스"/>
-        <param name="errorCodeType" value="action"/>
-    </appender>
+    <includeCallerData value="false"/>
+    <queueSize value="2048"/>
+    <neverBlock value="true"/>
+    <maxFlushTime value="60000"/>
+    <appender-ref ref="logNCrashHttp"/>
 </appender>
 
 <logger name="user-logger" additivity="false">
-    <appender-ref ref="user-logger"/>
+    <appender-ref ref="LNCS-APPENDER"/>
 </logger>
 ```
 
