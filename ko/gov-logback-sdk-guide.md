@@ -61,7 +61,7 @@ logback.xml을 기준으로 설명합니다.
     <appKey value="앱키"/>
     <logSource value="운영"/>
     <version value="1.0.0"/>
-    <logType value="감사로그"/>
+    <logType value="감사 로그"/>
     <debug value="true"/>
     <category value="로그 서비스"/>
     <errorCodeType value="action"/>
