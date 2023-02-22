@@ -38,7 +38,6 @@ Add dependency to pom.xml.
     <version>1.2.3</version>
 </dependency>
 ```
-
 ### 2.2 Install Gradle 
 
 ```gradle
@@ -57,30 +56,31 @@ Following description is based on logback.xml.
 - Set detail items for sending logs with LogNCrashHttpAppender of Log & Crash Logback SDK. 
 
 ```xml
-<appender name="user-logger" class="ch.qos.logback.classic.AsyncAppender">
+<!-- Declare LogNCrashHttpAppender -->
+<appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
+    <appKey value="appkey"/>
+    <logSource value="operation"/>
+    <version value="1.0.0"/>
+    <logType value="audit log"/>
+    <debug value="true"/>
+    <category value="log service"/>
+    <errorCodeType value="action"/>
+</appender>
+<!-- Declare AsyncAppender including LogNCrashHttpAppender -->
+<appender name="LNCS-APPENDER" class="ch.qos.logback.classic.AsyncAppender">
     <!-- AsyncAppender of Logback Option -->
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
         <level>INFO</level>
     </filter>
-    <param name="includeCallerData" value="false"/>
-    <param name="queueSize" value="2048"/>
-    <param name="neverBlock" value="true"/>
-    <param name="maxFlushTime" value="60000"/>
-
-    <!-- LogNCrashHttpAppender of Log & Crash Logback SDK Option -->
-    <appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
-        <param name="appKey" value="appkey"/>
-        <param name="logSource" value="operation"/>
-        <param name="version" value="1.0.0"/>
-        <param name="logType" value="audit log/>
-        <param name="debug" value="true"/>
-        <param name="category" value="log service"/>
-        <param name="errorCodeType" value="action"/>
-    </appender>
+    <includeCallerData value="false"/>
+    <queueSize value="2048"/>
+    <neverBlock value="true"/>
+    <maxFlushTime value="60000"/>
+    <appender-ref ref="logNCrashHttp"/>
 </appender>
 
 <logger name="user-logger" additivity="false">
-    <appender-ref ref="user-logger"/>
+    <appender-ref ref="LNCS-APPENDER"/>
 </logger>
 ```
 
