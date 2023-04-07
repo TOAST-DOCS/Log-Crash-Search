@@ -21,4 +21,4 @@ With NHN Cloud Log & Crash Search SDK, easy and strong remote log and crash anal
 * See [Guide for NHN Cloud Log & Crash Search Windows C++](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-windows/).
 
 #### Others
-* For inquiries on other platforms, contact [NHN Cloud Customer Center](https://toast.com/support/inquiry?alias=tab3_06).
+* For inquiries on other platforms, contact [NHN Cloud Customer Center](https://toast.com/support/inquiry?alias=tab3_11).
