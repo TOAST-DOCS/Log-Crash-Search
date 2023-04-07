@@ -1,5 +1,33 @@
 ## Analytics > Log & Crash Search > Release Notes
 
+### December 27, 2022
+#### Feature Updates
+* [Console] Added a feature to refresh log search automatically
+* [Console] Added a feature to set conditions on log search period by dragging log search result charts
+
+### November 29, 2022
+#### Bug Fixes
+* [Console] Improved the log click search feature of the log search results
+  * Fixed a bug where, when clicking a word in the txt* or body field for search, all field values are searched
+  * Fixed a bug where, when clicking the custom field for search, highlighting is not applied
+
+### September 27, 2022
+#### Bug Fixes
+* [Console] Fixed a bug where, when deleting queries continuously from the saved query list menu, you are navigated to an error page
+
+### August 23, 2022
+#### Feature Updates
+* [Console] Changed the method of calling global utility functions
+
+### July 26, 2022
+#### Feature Updates
+* [Console] Improved the UI/UX of the log search result page
+  * Provided a view option in enumerated format
+
+#### Bug Fixes
+* [Console] Fixed an issue where crash dump data of some platforms are not downloaded
+* [Console] Fixed an issue where the alarm status change button does not work on pages after page two in the log alarm setting
+
 ### June 30, 2022
 #### Feature Updates
 * [Console] Improved the UI/UX of the selected field dialog
