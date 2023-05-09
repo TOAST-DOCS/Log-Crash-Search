@@ -130,7 +130,7 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 ![gov_lcs_06_202305](https://static.toastoven.net/prod_logncrash/gov_lcs_06_202305.png)
 
-- 로그 보관 기간을 변경하시려면 고객 센터로 문의해주세요.
+- 로그 보관 기간을 변경하시려면 [고객 센터](https://www.nhncloud.com/kr/support/inquiry/?alias=tab2_11)로 문의해주세요.
 - 로그 보관 기간 변경은 다음 달 1일 00시에 적용되며 보관 기간에 따라 요금이 발생합니다.
 
 ### 로그 전송 설정
