@@ -1,6 +1,6 @@
 ## Data & Analytics > Log & Crash Search > 릴리스 노트
 
-### 2023. 05. 30
+### 2023. 05. 30.
 #### 버그 수정
 * [Console] 선택 가능한 필드에서 UserTxtData 필드가 표시되지 않도록 변경
 #### 기능 개선/변경
