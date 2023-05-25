@@ -1,5 +1,15 @@
 ## Data & Analytics > Log & Crash Search > Release Notes
 
+### May 30, 2023
+#### Bug Fixes
+* [Console] Changed so that the UserTxtData does not appear in the selectable fields
+#### Feature Updates
+* [Console] Changed so that the UserTxtData field appears as a default field, not a custom field, in the search field menu
+
+### April 26, 2023
+### Bug Fixes
+* Fixed a bug where the user-based alarm does not work
+
 ### December 27, 2022
 #### Feature Updates
 * [Console] Added a feature to refresh log search automatically
