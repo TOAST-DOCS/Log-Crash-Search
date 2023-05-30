@@ -71,8 +71,8 @@ Logs containing fields with a data length greater than 1,000,000 characters are 
 
 Crash information of Android and iOS devices can be retrieved through **Data & Analytics > Log & Crash Search > App Crash Search**.
 
-### Query Issues
 
+### Query Issues
 Select **Crashes** on **Error Type** of **Query Issues** to check issues.
 
 ![lcs_03_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-01-20211028.png)
@@ -135,7 +135,6 @@ Provide crash occurrence information per user.
 2. A user is identified by the combination of a user ID and a device name: users of a same user ID but on different devices are considered different users.
 
 ![lcs_11_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-06-20211028.png)
-
 
 |Item|	Description|
 |---|---|
@@ -298,8 +297,8 @@ Set the period of log retention.
 
 ![lcs_23_202108](https://static.toastoven.net/prod_logncrash/lcs_23_202108_en.png)
 
-- Select the period among 1 month, 2 months, 3 months, or 4 months, which can be modified once every month.
-- Expired data are to be deleted early next morning.
+- To change the log retention period, please contact [Customer Center](https://www.nhncloud.com/kr/support/inquiry/?alias=tab2_11).
+- Changes to the log retention period are applied at 00:00 on the 1st of the following month, and charges are incurred according to the retention period.
 
 ### Log Transfer Configuration
 
