@@ -293,12 +293,12 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 
 ### 로그 보관 기간
 
-로그 보관 기간을 설정합니다.
+로그 보관 기간을 조회할 수 있습니다.
 
-![lcs_23_202108](https://static.toastoven.net/prod_logncrash/lcs_23_202108.png)
+![lcs_23_202305](https://static.toastoven.net/prod_logncrash/lcs_23_202305.png)
 
-- 로그 보관 기간은 1개월, 2개월, 3개월, 4개월 중에서 선택할 수 있으며 월 1회에 한해 변경할 수 있습니다.
-- 로그 보관 기간이 지난 데이터는 다음날 새벽에 삭제됩니다.
+- 로그 보관 기간을 변경하려면 [고객 센터](https://www.nhncloud.com/kr/support/inquiry/?alias=tab2_11)로 문의해 주세요.
+- 로그 보관 기간 변경은 다음 달 1일 00시에 적용되며 보관 기간에 따라 요금이 발생합니다.
 
 ### 로그 전송 설정
 
