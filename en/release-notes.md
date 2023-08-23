@@ -1,5 +1,11 @@
 ## Data & Analytics > Log & Crash Search > Release Notes
 
+### August 29, 2023
+#### Feature Updates
+* [Console] Changed the length limit for some fields when setting log alarms
+  * Changed the length limit for alarm title from 20 characters to 80 characters.
+  * Changed the length limit for alarm description from 80 characters to 255 characters.
+
 ### May 30, 2023
 #### Bug Fixes
 * [Console] Changed so that the UserTxtData does not appear in the selectable fields
