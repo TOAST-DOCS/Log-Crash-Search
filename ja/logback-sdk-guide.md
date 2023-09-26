@@ -56,30 +56,31 @@ logback.xmlを基準に説明します。
 - Log & Crash Logback SDKのLogNCrashHttpAppenderで、転送ログの詳細項目を設定できます。
 
 ```xml
-<appender name="user-logger" class="ch.qos.logback.classic.AsyncAppender">
+<!-- LogNCrashHttpAppender宣言 -->
+<appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
+    <appKey value="アプリケーションキー"/>
+    <logSource value="運営"/>
+    <version value="1.0.0"/>
+    <logType value="監査ログ"/>
+    <debug value="true"/>
+    <category value="ログサービス"/>
+    <errorCodeType value="action"/>
+</appender>
+<!-- LogNCrashHttpAppenderを含むAsyncAppender宣言 -->
+<appender name="LNCS-APPENDER" class="ch.qos.logback.classic.AsyncAppender">
     <!-- LogbackのAsyncAppenderオプション -->
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
         <level>INFO</level>
     </filter>
-    <param name="includeCallerData" value="false"/>
-    <param name="queueSize" value="2048"/>
-    <param name="neverBlock" value="true"/>
-    <param name="maxFlushTime" value="60000"/>
-
-    <!-- Log & Crash Logback SDKのLogNCrashHttpAppenderオプション -->
-    <appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
-        <param name="appKey" value="アプリケーションキー"/>
-        <param name="logSource" value="運営"/>
-        <param name="version" value="1.0.0"/>
-        <param name="logType" value="監査ログ"/>
-        <param name="debug" value="true"/>
-        <param name="category" value="ログサービス"/>
-        <param name="errorCodeType" value="action"/>
-    </appender>
+    <includeCallerData value="false"/>
+    <queueSize value="2048"/>
+    <neverBlock value="true"/>
+    <maxFlushTime value="60000"/>
+    <appender-ref ref="logNCrashHttp"/>
 </appender>
 
 <logger name="user-logger" additivity="false">
-    <appender-ref ref="user-logger"/>
+    <appender-ref ref="LNCS-APPENDER"/>
 </logger>
 ```
 

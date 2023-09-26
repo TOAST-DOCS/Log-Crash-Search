@@ -275,3 +275,273 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.to
     }
 ]'
 ```
+
+## ログ検索API
+保存されたログをLuceneクエリを使用して検索できます。</br>
+ログ検索APIは、使用パターンによって1時間あたりにリクエストできる量を制限します。検索に使用可能なリソースはトークンで表現し、検索APIを呼び出すたびに内部基準に基づいて一定量が差し引かれます。トークンの残量が正の場合、検索APIを使用できます。</br>
+検索時に差し引かれるトークン数は検索期間や容量、クエリの複雑さによって異なり、トークンは時間が経過するにつれて自動的にチャージされます。</br>
+APIリクエストの際、プロジェクトで有効化されたsecretkeyをヘッダーに含める必要があります。
+
+![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
+
+### 基本情報
+```
+API Endpoint: https://api-lncs-search.nhncloudservice.com
+```
+```
+検索は最近90日以内のログのみ可能で、開始時間と終了時間の範囲は31日を超えることはできません。
+```
+
+### Search API
+Luceneクエリを使用して指定した時間範囲のログを照会します。ページングを適用して照会することができ、最大100,000件のログまで検索が可能です。
+```
+POST /api/v2/search/{appkey}
+Content-Type: application/json
+```
+
+#### リクエストパラメータ
+| 名前 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- |
+| appkey | String | プロジェクトアプリケーションキー | O | 
+
+#### リクエストヘッダ
+| 名前 | 形式 | 説明            | 必須 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | プロジェクトsecretkey | O |
+
+#### リクエスト本文
+| 名前 | 形式 | 説明 | 必須 | 備考 |
+| --- | --- | --- | --- | --- |
+| query | String | Luceneクエリ | O |  |
+| from | String | 開始時間 | O | ISO8601形式日付(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 終了時間 | O | ISO8601形式日付(YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageNumber | Number | ページ番号 |  | デフォルト値0 |
+| pageSize | Number | ページサイズ |  | デフォルト値10、最大値100 |
+| sort | Object | ソート基準 |  | フィールドごとの昇順(ASC)および降順(DESC)設定 |
+
+<details>
+<summary>例</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "pageNumber": 1,
+  "sort": {
+      "projectVersion": "asc"
+  }
+}
+```
+</details>
+
+#### レスポンス
+| 名前 | 種類 | 形式 | 説明 |
+| --- | --- | --- | --- |
+| totalItems | Body | Number | ログ数 |
+| pageNumber | Body | Number | ページ番号 |
+| pageSize | Body | Number | ページサイズ |
+| data | Body | List | ログリスト |
+
+<details>
+<summary>例</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 50,
+        "pageNumber": 1,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Scroll Start API
+Luceneクエリを使って指定した時間範囲のログをページ指定なしで全て照会します。Scroll Continue APIと一緒に使って複数回に渡って照会できます。
+```
+POST /api/v2/search/scroll/{appkey}
+Content-Type: application/json
+```
+
+#### リクエストパラメータ
+| 名前 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- |
+| appkey | String | プロジェクトアプリケーションキー | O | 
+
+#### リクエストヘッダ
+| 名前 | 形式 | 説明            | 必須 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | プロジェクトsecretkey | O |
+
+#### リクエスト本文
+| 名前 | 形式 | 説明 | 必須 | 備考 |
+| --- | --- | --- | --- | --- |
+| query | String | Luceneクエリ | O |  |
+| from | String | 開始時間 | O | ISO8601形式日付(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 終了時間 | O | ISO8601形式日付(YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageSize | Number | ページサイズ |  | デフォルト値10、最大値100 |
+| sort | Object | ソート基準 |  | フィールドごとの昇順(ASC)および降順(DESC)設定 |
+
+<details>
+<summary>例</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "sort": {
+      "projectVersion": "asc"
+  }
+}
+```
+</details>
+
+#### レスポンス
+| 名前 | 種類 | 形式 | 説明 |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | ログ数 |
+| pageSize | Body | Number | ページサイズ |
+| data | Body | List | ログリスト |
+
+<details>
+<summary>例</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
+        "totalItems": 60,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Scroll Continue API
+Scroll Start API または直前に呼び出した Scroll Continue API から取得した Scroll Key を指定してログ照会を継続します。</br>
+Scroll Keyは1分間有効です。
+```
+POST /api/v2/search/scroll/{appkey}/{scrollKey}
+Content-Type: application/json
+```
+
+#### リクエストパラメータ
+| 名前 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- |
+| appkey | String | プロジェクトアプリケーションキー | O |
+| scrollKey | String | Scroll Key | O |
+
+#### リクエストヘッダ
+| 名前 | 形式 | 説明            | 必須 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | プロジェクトsecretkey | O |
+
+#### リクエスト本文
+Scroll Continue APIはリクエスト本文が必要しません。
+
+#### レスポンス
+| 名前 | 種類 | 形式 | 説明 |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | ログ数 |
+| data | Body | List | ログリスト |
+
+<details>
+<summary>例</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
+        "totalItems": 60,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+### Available Token API
+使用可能なトークン数を照会します。
+```
+GET /api/v2/search/available-tokens/{appkey}
+```
+
+#### リクエストパラメータ
+| 名前 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- |
+| appkey | String | プロジェクトアプリケーションキー | O |
+
+#### リクエストヘッダ
+| 名前 | 形式 | 説明            | 必須 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | プロジェクトsecretkey | O |
+
+#### レスポンス
+| 名前 | 種類 | 形式 | 説明 |
+| --- | --- | --- | --- |
+| availableToken | Body | Number | 使用可能なトークン |
+
+<details>
+<summary>例</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "availableToken": 9875
+    }
+}
+```
+</details>
