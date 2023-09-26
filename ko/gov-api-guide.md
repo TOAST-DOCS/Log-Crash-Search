@@ -1,16 +1,16 @@
 ## Data & Analytics > Log & Crash Search > API 가이드
 
 ## 로그 수집 API
-HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다. 
+HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다.
 
 > - JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
->     - Log & Crash: api-logncrash.gov-nhncloudservice.com
+    >     - Log & Crash: api-logncrash.cloud.toast.com
 >     - Method of Delivery: POST
 >     - URI: /v2/log
 >     - Content-Type: "application/json"
-> - 로그를 전송하기 전에 Log & Crash에 프로젝트를 등록했는지 확인합니다.  
-> - "logTime"은 Log & Crash 시스템에서 사용합니다. 해당 키를 사용하면 Log & Crash에서는 무시합니다.  
-> -  키 이름에 공백 문자가 들어가지 않게 주의합니다. 예를 들어 "UserID"와 "UserID "는 서로 다른 키로 인식됩니다. 
+> - 로그를 전송하기 전에 Log & Crash에 프로젝트를 등록했는지 확인합니다.
+> - "logTime"은 Log & Crash 시스템에서 사용합니다. 해당 키를 사용하면 Log & Crash에서는 무시합니다.
+> -  키 이름에 공백 문자가 들어가지 않게 주의합니다. 예를 들어 "UserID"와 "UserID "는 서로 다른 키로 인식됩니다.
 > -  HTTP 요청 하나의 최대 크기는 52MB입니다.
 > -  로그(JSON) 하나의 최대 크기는 8MB(8388608바이트)입니다.
 
@@ -214,7 +214,7 @@ resultList: array
 
 ```
 //POST 메서드을 사용해 로그 전송
-$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.gov-nhncloudservice.com/v2/log' -d '{
+$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '{
 	"projectName": "__앱키__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -228,7 +228,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.gov-nhnc
 
 ```
 //URL이 잘못된 경우(log -> loggg)
-$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.gov-nhncloudservice.com/v2/loggg" -d '{
+$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.com/v2/loggg" -d '{
 	"projectName": "__앱키__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -239,7 +239,7 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.gov-nhnclouds
 
 
 //잘못된 필드 키를 사용한 경우(_xxx)
-$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.gov-nhncloudservice.com/v2/log" -d '{
+$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.com/v2/log" -d '{
 	"projectName": "__앱키__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -256,7 +256,7 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.gov-nhnclouds
 
 ```
 //POST 메서드을 사용해 로그 전송
-$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.gov-nhncloudservice.com/v2/log' -d '[
+$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '[
     {
         "projectName": "__앱키__",
         "projectVersion": "1.0.0",
@@ -276,3 +276,275 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.gov-nhnc
 ]'
 ```
 
+## 로그 검색 API
+저장된 로그를 Lucene 쿼리를 사용해 검색할 수 있습니다.</br>
+로그 검색 API는 사용 패턴에 따라 시간당 요청할 수 있는 양을 제한합니다. 검색에 사용 가능한 리소스는 토큰으로 표현하며, 검색 API를 호출할 때마다 내부 기준에 따라 일정량이 차감됩니다. 토큰 잔량이 양수일 때 검색 API를 사용할 수 있습니다.</br>
+검색 시 차감되는 토큰 수는 검색 기간 및 용량, 쿼리의 복잡도에 따라 달라지며, 토큰은 시간이 경과함에 따라 자동으로 충전됩니다.</br>
+API 요청 시 프로젝트에서 활성화된 secretkey를 헤더에 포함해야 합니다.
+
+![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
+
+### 기본 정보
+```
+API Endpoint: https://api-lncs-search.nhncloudservice.com
+```
+```
+검색은 최근 90일 이내의 로그만 가능하며, 시작 시간과 종료 시간의 범위는 31일을 초과할 수 없습니다.
+```
+
+### Search API
+Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 페이징을 적용하여 조회할 수 있고, 최대 100,000건의 로그까지 검색이 가능합니다.
+```
+POST /api/v2/search/{appkey}
+
+Content-Type: application/json
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O | 
+
+#### 요청 헤더
+| 이름 | 형식 | 설명             | 필수 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | 프로젝트 secretkey | O |
+
+#### 요청 본문
+| 이름 | 형식 | 설명 | 필수 | 비고 |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene 쿼리 | O |  |
+| from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageNumber | Number | 페이지 번호 |  | 기본값 0 |
+| pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
+| sort | Object | 정렬 기준 |  | 필드별 오름차순(ASC) 및 내림차순(DESC) 설정 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "pageNumber": 1,
+  "sort": {
+      "projectVersion": "asc"
+  }
+}
+```
+</details>
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| totalItems | Body | Number | 로그 개수 |
+| pageNumber | Body | Number | 페이지 번호 |
+| pageSize | Body | Number | 페이지 크기 |
+| data | Body | List | 로그 목록 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 50,
+        "pageNumber": 1,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Scroll Start API
+Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지 지정 없이 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
+```
+POST /api/v2/search/scroll/{appkey}
+
+Content-Type: application/json
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O | 
+
+#### 요청 헤더
+| 이름 | 형식 | 설명             | 필수 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | 프로젝트 secretkey | O |
+
+#### 요청 본문
+| 이름 | 형식 | 설명 | 필수 | 비고 |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene 쿼리 | O |  |
+| from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
+| sort | Object | 정렬 기준 |  | 필드별 오름차순(ASC) 및 내림차순(DESC) 설정 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "sort": {
+      "projectVersion": "asc"
+  }
+}
+```
+</details>
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | 로그 개수 |
+| pageSize | Body | Number | 페이지 크기 |
+| data | Body | List | 로그 목록 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
+        "totalItems": 60,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Scroll Continue API
+Scroll Start API 또는 직전에 호출한 Scroll Continue API로부터 얻은 Scroll Key를 지정하여 로그 조회를 지속합니다.</br>
+Scroll Key는 1분간 유효합니다.
+```
+POST /api/v2/search/scroll/{appkey}/{scrollKey}
+
+Content-Type: application/json
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O |
+| scrollKey | String | Scroll Key | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명             | 필수 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | 프로젝트 secretkey | O |
+
+#### 요청 본문
+Scroll Continue API는 요청 본문이 필요하지 않습니다.
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | 로그 개수 |
+| data | Body | List | 로그 목록 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
+        "totalItems": 60,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+### Available Token API
+사용 가능한 토큰 수를 조회합니다.
+```
+GET /api/v2/search/available-tokens/{appkey}
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명             | 필수 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | 프로젝트 secretkey | O |
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| availableToken | Body | Number | 사용 가능한 토큰 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "availableToken": 9875
+    }
+}
+```
+</details>
