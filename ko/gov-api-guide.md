@@ -4,7 +4,7 @@
 HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다.
 
 > - JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
-    >     - Log & Crash: api-logncrash.cloud.toast.com
+    >     - Log & Crash: api-logncrash.gov-nhncloudservice.com
 >     - Method of Delivery: POST
 >     - URI: /v2/log
 >     - Content-Type: "application/json"
@@ -214,7 +214,7 @@ resultList: array
 
 ```
 //POST 메서드을 사용해 로그 전송
-$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '{
+$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.gov-nhncloudservice.com/v2/log' -d '{
 	"projectName": "__앱키__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -228,7 +228,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.to
 
 ```
 //URL이 잘못된 경우(log -> loggg)
-$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.com/v2/loggg" -d '{
+$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.gov-nhncloudservice.com/v2/loggg" -d '{
 	"projectName": "__앱키__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -239,7 +239,7 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.c
 
 
 //잘못된 필드 키를 사용한 경우(_xxx)
-$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.com/v2/log" -d '{
+$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.gov-nhncloudservice.com/v2/log" -d '{
 	"projectName": "__앱키__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -256,7 +256,7 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.c
 
 ```
 //POST 메서드을 사용해 로그 전송
-$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '[
+$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.gov-nhncloudservice.com/v2/log' -d '[
     {
         "projectName": "__앱키__",
         "projectVersion": "1.0.0",
@@ -286,7 +286,7 @@ API 요청 시 프로젝트에서 활성화된 secretkey를 헤더에 포함해�
 
 ### 기본 정보
 ```
-API Endpoint: https://api-lncs-search.nhncloudservice.com
+API Endpoint: https://api-lncs-search.gov-nhncloudservice.com
 ```
 ```
 검색은 최근 90일 이내의 로그만 가능하며, 시작 시간과 종료 시간의 범위는 31일을 초과할 수 없습니다.
