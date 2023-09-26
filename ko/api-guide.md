@@ -318,7 +318,7 @@ Content-Type: application/json
 | to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
 | pageNumber | Number | 페이지 번호 |  | 기본값 0 |
 | pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
-| sort | Object | 정렬 기준 |  | 필드 별 오름차순(ASC) 및 내림차순(DESC) 설정 |
+| sort | Object | 정렬 기준 |  | 필드별 오름차순(ASC) 및 내림차순(DESC) 설정 |
 
 <details>
 <summary>예시</summary>
@@ -375,7 +375,7 @@ Content-Type: application/json
 
 
 ### Scroll Start API
-Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지를 지정하지 않고 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
+Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지를 지정 없이 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
 ```
 POST /api/v2/search/scroll/{appkey}
 
@@ -399,7 +399,7 @@ Content-Type: application/json
 | from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
 | to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
 | pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
-| sort | Object | 정렬 기준 |  | 필드 별 오름차순(ASC) 및 내림차순(DESC) 설정 |
+| sort | Object | 정렬 기준 |  | 필드별 오름차순(ASC) 및 내림차순(DESC) 설정 |
 
 <details>
 <summary>예시</summary>
@@ -455,7 +455,7 @@ Content-Type: application/json
 
 
 ### Scroll Continue API
-Scroll Start API 또는 직전에 호출한 Scroll Continue API 로부터 얻은 Scroll Key를 지정하여 로그 조회를 지속합니다.</br>
+Scroll Start API 또는 직전에 호출한 Scroll Continue API로부터 얻은 Scroll Key를 지정하여 로그 조회를 지속합니다.</br>
 Scroll Key는 1분간 유효합니다.
 ```
 POST /api/v2/search/scroll/{appkey}/{scrollKey}
