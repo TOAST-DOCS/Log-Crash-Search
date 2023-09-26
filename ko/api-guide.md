@@ -375,7 +375,7 @@ Content-Type: application/json
 
 
 ### Scroll Start API
-Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지를 지정 없이 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
+Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지 지정 없이 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
 ```
 POST /api/v2/search/scroll/{appkey}
 
