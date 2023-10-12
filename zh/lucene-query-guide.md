@@ -30,7 +30,7 @@ filedname:search word
 필드명이 log.type, log.time 또는 log.version같은 형태라면 아래와 같이 일괄 검색이 가능합니다.
 * ex) log.*:alpha
 
-\_missing\_:fieldname
+!\_exists\_:fieldname
 * 해당 fieldname에 값이 없거나(null) 해당 fieldname을 지니지 않은 로그를 검색합니다.
 
 \_exists\_:fieldname

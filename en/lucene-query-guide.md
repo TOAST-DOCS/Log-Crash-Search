@@ -30,7 +30,7 @@ filedname: Search Word
 If the field name is in the format of log.type, log.time, or log.version, batch search is available as below:
 * e.g.) log.*:alpha
 
-\_missing\_:fieldname
+!\_exists\_:fieldname
 * Search logs that are null in the field name or do not have the field name.
 
 \_exists\_:fieldname
