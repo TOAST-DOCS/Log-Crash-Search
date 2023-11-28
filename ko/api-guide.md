@@ -4,7 +4,7 @@
 HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다. 
 
 > - JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
->     - Log & Crash: api-logncrash.cloud.toast.com
+>     - Log & Crash: api-logncrash.nhncloudservice.com
 >     - Method of Delivery: POST
 >     - URI: /v2/log
 >     - Content-Type: "application/json"
