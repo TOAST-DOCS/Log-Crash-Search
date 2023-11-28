@@ -30,7 +30,7 @@ filedname:search word
 フィールド名がlog.type、log.timeまたはlog.versionなどの形式の場合は、下記のように一括検索が可能です。
 * 例) log.*:alpha
 
-\_missing\_:fieldname
+!\_exists\_:fieldname
 * 該当fieldnameに値がないか(null)、該当fieldnameを持たないログを検索します。
 
 \_exists\_:fieldname

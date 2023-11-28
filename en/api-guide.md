@@ -274,3 +274,277 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.to
     }
 ]'
 ```
+
+
+## Log Search API
+Saved logs can be searched using Lucene queries.</br>
+The log search API limits the amount of requests per hour according to user pattern. The resources available while searching are represented as tokens, and some of them are deducted whenever the search API is called. The API is available for use as long as the number of remaining tokens is a positive number.</br>
+The number of tokens deducted when searching an item varies depending on the search duration, size, and the complexity of a query. Tokens are automatically replenished over time.</br>
+API requests must include the secretkey enabled in a project in the header.
+
+![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
+
+### Basic Information
+```
+API Endpoint: https://api-lncs-search.nhncloudservice.com
+```
+```
+Only logs created in the past 90 days can be searched. The range of start time and end time cannot exceed 31 days.
+```
+
+### Search API
+You can view logs within the specified time frame using the Lucene query. Phasing is used to view them, which allows you to search for up to 100,000 logs.
+```
+POST /api/v2/search/{appkey}
+
+Content-Type: application/json
+```
+
+#### Request Parameter
+| Name | Format | Description | Required |
+| --- | --- | --- | --- |
+| appkey | String | Project appkey | O | 
+
+#### Request Header
+| Name | Format | Description             | Required |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | Project secretkey | O |
+
+#### Request Body
+| Name | Format | Description | Required | Note |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene query | O |  |
+| from | String | Start time | O | ISO8601 format date (YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | End time | O | ISO8601 format date (YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageNumber | Number | Page number |  | Default value 0 |
+| pageSize | Number | Page size |  | Min 10, Max 100. |
+| sort | Object | Sort by |  | Set ascending (ASC) and descending (DESC) by field |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "pageNumber": 1,
+  "sort": {
+      "projectVersion": "asc"
+  }
+}
+```
+</details>
+
+#### Response
+| Name | Type | Format | Description |
+| --- | --- | --- | --- |
+| totalItems | Body | Number | Number of logs |
+| pageNumber | Body | Number | Page number |
+| pageSize | Body | Number | Page size |
+| data | Body | List | Log list |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 50,
+        "pageNumber": 1,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Scroll Start API
+Searches all the logs within the specified time frame using the Lucene query without pages specified. It can be used with Scroll Continue API to search logs multiple times.
+```
+POST /api/v2/search/scroll/{appkey}
+
+Content-Type: application/json
+```
+
+#### Request Parameter
+| Name | Format | Description | Required |
+| --- | --- | --- | --- |
+| appkey | String | Project appkey | O | 
+
+#### Request Header
+| Name | Format | Description             | Required |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | Project secretkey | O |
+
+#### Request Body
+| Name | Format | Description | Required | Note |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene query | O |  |
+| from | String | Start time | O | ISO8601 format date (YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | End time | O | ISO8601 format date (YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageSize | Number | Page size |  | Min 10, Max 100. |
+| sort | Object | Sort by |  | Set ascending (ASC) and descending (DESC) by field |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "sort": {
+      "projectVersion": "asc"
+  }
+}
+```
+</details>
+
+#### Response
+| Name | Type | Format | Description |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | Number of logs |
+| pageSize | Body | Number | Page size |
+| data | Body | List | Log list |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
+        "totalItems": 60,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Scroll Continue API
+Continues searching logs by specifying the Scroll Key obtained from Scroll Start API or the previously called Scroll Continue API.</br>
+Scroll Key is valid for 1 minute.
+```
+POST /api/v2/search/scroll/{appkey}/{scrollKey}
+
+Content-Type: application/json
+```
+
+#### Request Parameter
+| Name | Format | Description | Required |
+| --- | --- | --- | --- |
+| appkey | String | Project appkey | O |
+| scrollKey | String | Scroll Key | O |
+
+#### Request Header
+| Name | Format | Description             | Required |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | Project secretkey | O |
+
+#### Request Body
+Scroll Continue API does not require the request body.
+
+#### Response
+| Name | Type | Format | Description |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | Number of logs |
+| data | Body | List | Log list |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
+        "totalItems": 60,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+### Available Token API
+Retrieves the number of available tokens.
+```
+GET /api/v2/search/available-tokens/{appkey}
+```
+
+#### Request Parameter
+| Name | Format | Description | Required |
+| --- | --- | --- | --- |
+| appkey | String | Project appkey | O |
+
+#### Request Header
+| Name | Format | Description             | Required |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | Project secretkey | O |
+
+#### Response
+| Name | Type | Format | Description |
+| --- | --- | --- | --- |
+| availableToken | Body | Number | Available tokens |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "availableToken": 9875
+    }
+}
+```
+</details>
