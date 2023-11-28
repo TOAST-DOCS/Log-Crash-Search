@@ -148,15 +148,15 @@ SDK는 [NHN Cloud Downloads](https://gov-docs.toast.com/ko/Download/) 페이지�
 
 로그 외부 보관 정보를 설정합니다.
 
-![gov_lcs_08_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_08_202208.png)
+![gov_lcs_08_202208](https://static.toastoven.net/prod_logncrash/gov_lcs_08_202312.png)
 
 - 외부 OBS에 로그를 보관할 수 있습니다.
 
 1. [AWS S3 API](https://gov-docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide-gov/#_1)를 이용해 자격 증명 등록 및 조회로 액세스 키(accessKey)와 비밀 키(secretKey)를 가져옵니다.
-2. **로그 외부 보관** 설정에서 **추가** 버튼 클릭
+2. **로그 외부 보관 설정**에서 **보관 설정** 버튼 클릭
 3. 액세스 키와 비밀 키를 비롯한 데이터들 입력합니다.
-4. 다른 OBS에 추가로 저장한다면 **추가** 버튼을 눌러 정보를 입력합니다.
-5. 모든 OBS 정보를 입력했다면 저장 버튼을 눌러 저장합니다.
+4. 모든 OBS 정보를 입력했다면 저장 버튼을 눌러 저장합니다.
+    - 연동 검증을 위해 설정한 버킷에 임시 파일이 생성됩니다.
 
 - 설정한 OBS로 로그가 저장됩니다.
 - [NHN Cloud OBS API 안내 가이드](https://gov-docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide-gov/)
