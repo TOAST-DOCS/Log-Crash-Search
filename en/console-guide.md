@@ -315,7 +315,7 @@ Set whether to send logs for each service.
 
 Set information for external log storage. 
 
-![lcs_25_202108](https://static.toastoven.net/prod_logncrash/lcs_25_202108_en.png)
+![lcs_25_202108](https://static.toastoven.net/prod_logncrash/lcs_25_202312_en.png)
 
 - Logs can be stored at an external OBS. 
 
