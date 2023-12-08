@@ -305,7 +305,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 
 サービスごとにログを送信するかどうかを設定します。
 
-![lcs_24_202108](https://static.toastoven.net/prod_logncrash/lcs_24_202108.png)
+![lcs_24_202108](https://static.toastoven.net/prod_logncrash/lcs_24_202108_ja.png)
 
 - 一般ログ、クラッシュログ、 Network Insightsログのそれぞれについて送信するかどうかを設定できます。
 - TOASK SDKに対して送信するかどうかを設定できます。
@@ -316,7 +316,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 
 ログ外部保管情報を設定します。
 
-![lcs_25_202108](https://static.toastoven.net/prod_logncrash/lcs_25_202312.png)
+![lcs_25_202312](https://static.toastoven.net/prod_logncrash/lcs_25_202312_ja.png)
 
 - 外部OBSにログを保管できます。
 
@@ -342,7 +342,7 @@ Log & Crash Search SDKで送信した遅延時間とエラー率をタイムラ�
 
 - 遅延時間とエラー率をタイムラインチャートとURLリストで表示します。
 
-![lcs_26_202108](https://static.toastoven.net/prod_logncrash/lcs_26_202108.png)
+![lcs_26_202108](https://static.toastoven.net/prod_logncrash/lcs_26_202108_ja.png)
 
 |項目| 説明|
 |---|---|
@@ -354,7 +354,7 @@ Log & Crash Search SDKで送信した遅延時間とエラー率をタイムラ�
 
 - 遅延時間とエラー率をマップ上に表示します。
 
-![lcs_27_202108](https://static.toastoven.net/prod_logncrash/lcs_27_202108.png)
+![lcs_27_202108](https://static.toastoven.net/prod_logncrash/lcs_27_202108_ja.png)
 
 |項目| 説明|
 |---|---|
@@ -366,7 +366,7 @@ Log & Crash Search SDKで送信した遅延時間とエラー率をタイムラ�
 
 - 遅延時間とエラー率を測定するWebサイトのURLを設定できます。
 
-![lcs_28_202108](https://static.toastoven.net/prod_logncrash/lcs_28_202108.png)
+![lcs_28_202108](https://static.toastoven.net/prod_logncrash/lcs_28_202108_ja.png)
 
 |項目|説明|
 |---|---|
