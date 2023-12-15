@@ -1,5 +1,10 @@
 ## Data & Analytics > Log & Crash Search > Release Notes
 
+### December 19, 2023
+#### Feature Updates
+* [Console] Changed the External Log Storage Settings
+  * Separate setup available for each type (OBS/AWS S3)
+
 ### August 29, 2023
 #### Feature Updates
 * [Console] Changed the length limit for some fields when setting log alarms
