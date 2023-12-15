@@ -320,10 +320,10 @@ Set information for external log storage.
 - Logs can be stored at an external OBS. 
 
 1. Visit [AWS S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1) and register/query credential to import access key and secret key. 
-2. From the **External Log Storage** setting, click **Add**.
+2. From the **External Log Storage Settings**, click **Storage Settings**.
 3. Enter data, including access key and secret key. 
-4. To save to another OBS, click **Add** and enter information. 
-5. After all data entered for OBS, click Save to save data. 
+4. After all data entered for OBS, click **Save**.
+    - A temporary file is created in the bucket you set up for integration verification. 
 
 - Logs are saved at OBS as configured. 
 - [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
