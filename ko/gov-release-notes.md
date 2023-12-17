@@ -1,5 +1,10 @@
 ## Data & Analytics > Log & Crash Search > 릴리스 노트
 
+### 2023. 12. 19.
+#### 기능 개선/변경
+* [Console] 로그 외부 보관 설정 기능 변경
+  * OBS / AWS S3 각 타입별 하나의 설정 가능
+
 ### 2023. 05. 30.
 #### 버그 수정
 * [Console] 선택 가능한 필드에서 UserTxtData 필드가 표시되지 않도록 변경
