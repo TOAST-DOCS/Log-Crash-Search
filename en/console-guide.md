@@ -321,8 +321,9 @@ Set information for external log storage.
 
 1. Visit [AWS S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1) and register/query credential to import access key and secret key. 
 2. From the **External Log Storage Settings**, click **Storage Settings**.
-3. Enter data, including access key and secret key. 
-4. After all data entered for OBS, click **Save**.
+3. Enter data, including access key and secret key.
+4. All of the information about external log tampering notifications is required when adding/editing/deleting settings.
+5. After all data entered for OBS, click **Save**.
     - A temporary file is created in the bucket you set up for integration verification. 
 
 - Logs are saved at OBS as configured. 
