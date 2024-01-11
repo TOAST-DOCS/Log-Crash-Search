@@ -1,104 +1,105 @@
-## Data & Analytics > Log & Crash Search > 루씬 쿼리 가이드
+## Guide for Lucene Query
 
-## 기본 주의 사항
+## Overview  
 
-큰따옴표(")와 물결표(~)의 위치 또는 유무에 따라 연산자로 사용될지, 아닐지가 결정됩니다.
-* ex) 근접 검색과 유사항목 검색
-또한 기본적으로 검색어가 큰따옴표(")로 감싸지면 감싸진 부분 전체를 하나의 구문으로 검색합니다.
-* ex) body:normal AND performance
-* -> body 필드의 값에 "normal"와 "performance" 단어가 있는 로그를 검색
+It depends on the location or availability of double quotes (") or tilde (~) to serve as an operator or not.
+* e.g.) Proximity searches and fuzzy searches
+Also, if a search word is surrounded by double quotes ("), the whole surrounded part is searched as one phrase.
+* e.g.) body:normal AND performance
+* -> Search logs that contain the words, "normal" and "performance", in the body field.
 
 ![lcs_lucene_guide_01](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_01.png)
 
-* ex) body:"normal AND performance"
-* -> body 필드의 값에 "normal AND performance" 단어가 있는 로그를 검색
+* e.g.) body:"normal AND performance"
+* ->Search logs containing the "normal AND performance" word in the body field
 
 ![lcs_lucene_guide_02](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_02.png)
-* "normal AND performance" 에 해당하는 텍스트가 없어서 로그 결과가 0
+* The log result is 0, since there is no text for "normal AND performance".
 
-검색 시 특수문자를 사용할 때는 문자 앞에 백슬래시 또는 \를 입력하여 이스케이프 처리합니다.
-* 대상 특수문자 : ```+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /```
+To use special characters for a search, enter backslash or \ ahead of a character, to process escape.  
+* Special characters at point: ```+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /```
 
-URL에서의 특수문자(예약문자 포함)들은 인코딩하여 처리하여야합니다.
-* ex) '<' 특수문자는 %3C로 입력
+Special characters (including reserved words) for URL must be encoded.
+* e.g.) Enter %3C for the special character, '<'.    
 
-## 기본 검색
+## Basic Search
 
-filedname:search word
-* 원하는 단일 필드(fieldname)에서 단일 용어(search word)를 검색합니다.
+filedname: Search Word
+* Search by search word for a single field name you need.
 
-필드명이 log.type, log.time 또는 log.version같은 형태라면 아래와 같이 일괄 검색이 가능합니다.
-* ex) log.*:alpha
+If the field name is in the format of log.type, log.time, or log.version, batch search is available as below:
+* e.g.) log.*:alpha
 
 !\_exists\_:fieldname
-* 해당 fieldname에 값이 없거나(null) 해당 fieldname을 지니지 않은 로그를 검색합니다.
+* Search logs that are null in the field name or do not have the field name.
 
 \_exists\_:fieldname
-* 해당 fieldname에 non-null인 값을 가진 로그를 검색합니다.
+* Search logs with the non-null value in the field name.
 
-## 범위 검색
+## Range Search  
 
-| 문법 | 동작 |
+| Grammar | Operations |
 | --- | --- |
-| [min TO max] | min, max 조건 포함 검색 |
-| {min TO max} | min, max 조건 제외 검색 |
-| {min TO max], [min TO max} | 조건 포함 또는 제외 혼용 |
-| {* TO max}, {min TO *} | min 또는 max 조건만 사용 |
+| [min TO max] | Search including min, max conditions |
+| {min TO max} | Search excluding min, max conditions |
+| {min TO max], [min TO max} | Conditions included or excluded |
+| {* TO max}, {min TO *} | Only min or max conditions apply |
 
-* 아래와 같이 좀 더 심플하게 조건을 넣을 수 있습니다.
-    * ex) fieldname:>10
+* Conditions can be simpler as follows:
+    * e.g.) fieldname:>10
 
-## 부울 연산자
+## Boolean Operators
 
-| 연산자 | 의미 |
+| Operator | Significance |
 | --- | --- |
-| AND, &&, + | AND 연산자 |
-| OR\, \|\| | OR 연산자 |
-| NOT, !, - | NOT 연산자 |
+| AND, &&, + | AND Opeartor |
+| OR\, \|\| | OR Operator |
+| NOT, !, - | NOT Operator |
 
-NOT 연산자인 `-`의 경우 AND NOT의 의미로도 사용됩니다.
-* ex) logType:bulk -api
-* -> logType:bulk AND NOT api 와 동일
+The NOT operator `-` also serves as AND NOT.
+* e.g.) logType:bulk -api
+* -> logType: Same as bulk AND NOT API
 
-## 와일드카드 검색
+## Wildcard Search
 
-*는 하나 이상의 임의의 문자들에 대응하여 검색합니다.
-* ex) body:performance\*
-* performance로 시작하는 body가 있는 로그를 검색합니다.
+*replaces many letters.
 
-?는 하나의 임의의 문자만 대응하여 검색합니다.
-* ex) body:performance?
-* performance로 시작하며 임의의 한 글자까지만 대응하는 body필드가 있는 로그를 검색합니다.
+* e.g.) body:performance\*
+* Search logs that have a body starting with performance.
 
-*와 ? 두 와일드카드는 글자 가운데에 적용하는 것이 가능합니다.
+? replaces only one letter.
+* e.g.) body:performance?
+* Search logs that have a body field which starts with performance and responds to only one letter.
 
-## 근접 검색(Proximity search)
+The two wildcards, such as * and ?, can also be applied in the middle of a letter.  
 
-fiedname:"검색어A 검색어B"~n
-* 검색어A와 검색어B 사이에 최대 n개의 단어가 들어간 로그를 찾습니다.
-* ex) body:"normal cron"~2
+## Proximity Search
+
+fiedname:"Search Word A Search Word B"~n
+* Search logs that have up to n words between search word A and search word B.
+* e.g.) body:"normal cron"~2
 
 ![lcs_lucene_guide_03](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_03.png)
 
-### 우선순위 부여 검색(Boosting)
+### Boosting
 
-fieldname:검색어A^n 검색어B
-* 일부 검색 키워드에 가중치를 두어 더 높은 순위로 결과를 가져올 수 있습니다.
-* ex) body:normal^2 cron
-* 가중치는 0보다 커야하며 1보다 작은 숫자도 가능합니다.
+fieldname: Search Word A^n Search Word B
+* Give more weight to some search key words to get the results higher on priority.
+* e.g.) body:normal^2 cron
+* Weight can be given only with real numbers bigger than 0.
 
-default 가중치는 1입니다.
+Default weight is 1.
 
-## 정규식 검색
+## RegEx Search
 
-일반적으로 알려진 정규식 검색이 가능합니다.
-* ex) dress 또는 press을 포함하는 문서를 찾으려면 /[dp]ress/ 로 작성
+Searching with regular expression is available.  
+* e.g.) To find a document including dress or press, write /[dp]ress/
 
-## 유사항목 검색(Fuzzy search)
+## Fuzzy Search
 
-fieldname:검색어~n
-* 검색어와 유사한, n개의 글자까지 다른 결과까지 검색합니다.(최대 2개)
-* default 글자수는 2입니다.
-* ex) logSource:logncrash-logS**ur**rce~2
+fieldname: Search Word~n
+* Search up to n letters, which are approximately close to a search word (no more than 2).
+* 2 is the default number of letters.
+* e.g.) logSource:logncrash-logS**ur**rce~2
 
 ![lcs_lucene_guide_04](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_04.png)
