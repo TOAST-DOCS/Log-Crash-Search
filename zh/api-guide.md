@@ -1,19 +1,20 @@
 ## Data & Analytics > Log & Crash Search > API Guide
 
-HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다. 
+## Collect Log API
+Logs can be sent to Log & Crash collector server via HTTP protocol. 
 
-> - JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
+> - Use the following address to send logs to the Log & Crash collector server with JSON/HTTP. 
 >     - Log & Crash: api-logncrash.cloud.toast.com
 >     - Method of Delivery: POST
 >     - URI: /v2/log
 >     - Content-Type: "application/json"
-> - 로그를 전송하기 전에 Log & Crash에 프로젝트를 등록했는지 확인합니다.  
-> - "logTime"은 Log & Crash 시스템에서 사용합니다. 해당 키를 사용하면 Log & Crash에서는 무시합니다.  
-> -  키 이름에 공백 문자가 들어가지 않게 주의합니다. 예를 들어 "UserID"와 "UserID "는 서로 다른 키로 인식됩니다. 
-> -  HTTP 요청 하나의 최대 크기는 52MB입니다.
-> -  로그(JSON) 하나의 최대 크기는 8MB(8388608바이트)입니다.
+> - Check, before log delivery, if a project has been registered at Log & Crash. 
+> - "logTime" is applied in the Log & Crash system; the key is ignored at Log & Crash.     
+> -  Take caution for not including a space character in the key name. For instance, "UserID" is considered a different key from "UserID ". 
+> -  One HTTP request can be no larger than 52MB. 
+> -  One log (JSON) can be no larger than 8MB (8388608 bytes).
 
-아래와 같은 JSON 형식을 사용합니다.
+Use the JSON format as below: 
 
 ```
 {
@@ -30,13 +31,13 @@ HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송�
 [Default Parameters]
 
 ```
-Log Search를 위한 파라미터
+Parameter for Log Search 
 
 projectName: string, required
 	[in] Appkey
 
 projectVersion: string, required
-	[in] 버전. 사용자 지정 가능. "A~Z, a~z, 0~9,-._"만 포함.
+	[in] Version. Allows user-specifics. Includes "A~Z, a~z, 0~9,-._" only.
 
 body: string, optional
 	[in] Log messages.
@@ -45,54 +46,54 @@ logVersion: string, required
 	[in] Log format version. "v2".
 
 logSource: string, optional
-	[in] 로그 소스. Log Search에서 필터링을 위해 사용. 정의되지 않으면 "http".
+	[in] Log source. Used for filtering at Log Search. "http", if not defined.
 
 logType: string, optional
-	[in] 로그 타입. Log Search에서 필터링을 위해 사용. 정의되지 않으면 "log".
+	[in] Log type. Used for filtering at Log Search. "log", if not defined. 
 
 host: string, optional
-	[in] 로그를 보내는 단말의 주소. 정의되지 않으면 수집 서버에서 peer-address를 사용해 자동으로 채움.
+	[in] Address of a log-sending device. Automatically filled by using peer-address at the collector server, if not defined.
 ```
 
 [Other Parameters]
 
 ```
 sendTime; string, optional
-	[in] 단말이 보낸 시간. 입력 시 Unix timestamp로 입력.
+	[in] Time sent by device. Enter Unix timestamp for input.
 
 logLevel; string, optional
-	[in] Syslog 이벤트용.
+	[in] For Syslog event.
 
 UserBinaryData; string, optional
 	[in] Display [Download|Show] link on the log search screen, and send with values encoded with base64.
 
 UserTxtData; string, optional
-	[in] 로그 검색 화면에서 [다운로드|보기] 링크 표시, base64 인코딩된 값을 담아 전송.
+	[in] Show [Download|View] link on the log search page, to be sent with base64 encdoed value. 
 
 txt*; string, optional
-	[in] 필드 이름이 txt로 시작하는 필드(txtMessage, txt_description 등)는 text 필드로 저장. 로그 검색 화면에서 필드값의 일부 문자열로 검색(full text search) 가능. 필드의 크기는 1MB로 제한됨.
+	[in] Save fields starting with txt (e.g. txtMessage or txt_description) as text fields. Allows search by partial character strings of a field value (full text search) on the log search page. Field size can be no larger than 1MB.  
 
 long*; long, optional
-    [in] 필드 이름이 long으로 시작하는 필드(longElapsedTime, long_elapsed_time 등)는 long 타입 필드로 저장됨. 로그 검색 화면에서 long 타입 range 검색 가능.
+    [in] Save fields starting with long (e.g. longElapsedTime, long_elapsed_time) as long-type fields. Allows search of long-type range on the log search page. 
 
 double*; double, optional
-    [in] 필드 이름이 double로 시작하는 필드(doubleAvgScore, double_avg_score 등)는 double 타입 필드로 저장됨. 로그 검색 화면에서 double 타입 range 검색 가능.
+    [in] Save fields starting with double (e.g. doubleAvgScore, double_avg_score) as double-type fields. Allows search of double-type range on the log search page.   
 ```
 
 [Custom Fields]
 
 ```
-커스텀 필드 이름은 "A-Z, a-z"로 시작하고 "A-Z, a-z, 0-9, -, _" 문자를 사용할 수 있습니다.
+A custom field name must start with "A-Z, a-z", allowing "A-Z, a-z, 0-9, -, _". 
 
-위의 기본 파라미터, Crash 파라미터와 이름이 중복되면 안 됩니다.
+Redundancy is not allowed for a name with basic or crash parameters. 
 
-커스텀 필드는 필드 전체 문자열과 일치하는 검색만 가능합니다(exact match).
+Search for a custom field is available only for an exact match.
 
-커스텀 필드의 길이는 1KB로 제한됩니다. 1KB 이상 전송하거나, 필드값의 일부 문자열을 검색해야 할 때는 txt* prefix를 붙여 필드를 생성해야 합니다.
+A custom field can be no longer than 1KB. To send larger than 1KB field or search only a part of a value, attach txt*prefix to create a field. 
 ```
 
 [Return Value]
-수집 서버에서 다음과 같이 반환합니다.
+Returned like follows, at the collector server: 
 
 ```
 Content-Type: application/json
@@ -106,17 +107,16 @@ Content-Type: application/json
 }
 
 isSuccessful: boolean
-	[out] 성공 시 true, 실패 시 false
-
+	[out] True for success; false for failure 
 resultCode: int
-	[out] 성공 시 0, 실패 시 오류 코드
+	[out] 0 for success; error code for failure 
 
 resultMessage: string
-	[out] 성공 시 "Success", 실패 시 오류 메시지
+	[out] "Success" for success; error message for failure 
 ```
 
 [Bulk Delivery]
-Bulk로 전송하려면 JSON array 형태로 전송합니다.
+Sent in the JSON array format, for bulk delivery. 
 
 ```
 [
@@ -141,9 +141,9 @@ Bulk로 전송하려면 JSON array 형태로 전송합니다.
 ]
 ```
 
-* 참고
-    * 웹에서는 수신 시간 기준으로 로그를 정렬해 표시하는데, Bulk 전송의 경우 동일한 시간에 수신한 것으로 간주되어 사용자가 전송한 순서가 유지되지 않습니다.
-        * Bulk로 전송하는 로그들의 순서를 유지하려면 각 로그에 lncBulkIndex 필드를 추가해 Integer값을 지정한 후 전송하면 서버에서는 이 값을 기준으로 내림차순으로 표시합니다.
+* Note
+    * On the web, logs are aligned for display in the receiving time order; but bulk delivery is considered to have been received on same time, and user delivery order is not maintained. 
+        * To maintain the order of bulk-delivery logs, add the lncBulkIndex field to each log and specify Integer before delivery; and, the server shows the descending order of the value. 
 
 ```
 [
@@ -169,9 +169,9 @@ Bulk로 전송하려면 JSON array 형태로 전송합니다.
     }
 ]
 ```
-	* 위 예시와 같이 전송한 경우 서버에서는 second message -> first message 순서로 표시합니다.
+	* If it has been delivered like the above, the server shows in the order of second message -> first message. 
 
-수집 서버에서는 전송된 순서에 따라 각각의 결괏값을 JSON array 형태로 다시 반환합니다.
+At the collector server, each result value is returned in the JSON array type, in the order of delivery time. 
 
 ```
 Content-Type: application/json
@@ -207,12 +207,12 @@ resultList: array
     [out] Result value of each delivered log
 ```
 
-## Samples
+### Samples
 
-[curl을 사용해 정상적으로 로그를 전송한 경우]
+[When log is normally sent with curl]
 
 ```
-//POST 메서드을 사용해 로그 전송
+//Send logs with POST method 
 $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '{
 	"projectName": "__Appkey__",
 	"projectVersion": "1.0.0",
@@ -223,7 +223,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.to
 }'
 ```
 
-[로그 전송에 실패하는 경우]
+[When it fails in log delivery]
 
 ```
 //When URL is incorrect (log -> loggg)
@@ -247,14 +247,14 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.c
 	"logType": "nelo2-http",
 	"_xxx": "this is a invalid key"
 	}'
-커스텀 키는 "A~Z, a~z, 0~9, -_"를 포함하고 알파벳으로 시작해야 합니다.
-커스텀 키는 "A~Z, a~z, 0~9, -_"를 포함하고 알파벳으로 시작해야 합니다.
+A custom key, starting with an alphabet, must include "A~Z, a~z, 0~9, -_".
+A custom key, starting with an alphabet, must include "A~Z, a~z, 0~9, -_".
 ```
 
 [Bulk log delivery using curl]
 
 ```
-//POST 메서드을 사용해 로그 전송
+//Send logs with POST method 
 $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '[
     {
         "projectName": "__Appkey__",
@@ -274,3 +274,277 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.to
     }
 ]'
 ```
+
+
+## Log Search API
+Saved logs can be searched using Lucene queries.</br>
+The log search API limits the amount of requests per hour according to user pattern. The resources available while searching are represented as tokens, and some of them are deducted whenever the search API is called. The API is available for use as long as the number of remaining tokens is a positive number.</br>
+The number of tokens deducted when searching an item varies depending on the search duration, size, and the complexity of a query. Tokens are automatically replenished over time.</br>
+API requests must include the secretkey enabled in a project in the header.
+
+![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
+
+### Basic Information
+```
+API Endpoint: https://api-lncs-search.nhncloudservice.com
+```
+```
+Only logs created in the past 90 days can be searched. The range of start time and end time cannot exceed 31 days.
+```
+
+### Search API
+You can view logs within the specified time frame using the Lucene query. Phasing is used to view them, which allows you to search for up to 100,000 logs.
+```
+POST /api/v2/search/{appkey}
+
+Content-Type: application/json
+```
+
+#### Request Parameter
+| Name | Format | Description | Required |
+| --- | --- | --- | --- |
+| appkey | String | Project appkey | O | 
+
+#### Request Header
+| Name | Format | Description             | Required |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | Project secretkey | O |
+
+#### Request Body
+| Name | Format | Description | Required | Note |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene query | O |  |
+| from | String | Start time | O | ISO8601 format date (YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | End time | O | ISO8601 format date (YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageNumber | Number | Page number |  | Default value 0 |
+| pageSize | Number | Page size |  | Min 10, Max 100. |
+| sort | Object | Sort by |  | Set ascending (ASC) and descending (DESC) by field |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "pageNumber": 1,
+  "sort": {
+      "projectVersion": "asc"
+  }
+}
+```
+</details>
+
+#### Response
+| Name | Type | Format | Description |
+| --- | --- | --- | --- |
+| totalItems | Body | Number | Number of logs |
+| pageNumber | Body | Number | Page number |
+| pageSize | Body | Number | Page size |
+| data | Body | List | Log list |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 50,
+        "pageNumber": 1,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Scroll Start API
+Searches all the logs within the specified time frame using the Lucene query without pages specified. It can be used with Scroll Continue API to search logs multiple times.
+```
+POST /api/v2/search/scroll/{appkey}
+
+Content-Type: application/json
+```
+
+#### Request Parameter
+| Name | Format | Description | Required |
+| --- | --- | --- | --- |
+| appkey | String | Project appkey | O | 
+
+#### Request Header
+| Name | Format | Description             | Required |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | Project secretkey | O |
+
+#### Request Body
+| Name | Format | Description | Required | Note |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene query | O |  |
+| from | String | Start time | O | ISO8601 format date (YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | End time | O | ISO8601 format date (YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageSize | Number | Page size |  | Min 10, Max 100. |
+| sort | Object | Sort by |  | Set ascending (ASC) and descending (DESC) by field |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "sort": {
+      "projectVersion": "asc"
+  }
+}
+```
+</details>
+
+#### Response
+| Name | Type | Format | Description |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | Number of logs |
+| pageSize | Body | Number | Page size |
+| data | Body | List | Log list |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
+        "totalItems": 60,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Scroll Continue API
+Continues searching logs by specifying the Scroll Key obtained from Scroll Start API or the previously called Scroll Continue API.</br>
+Scroll Key is valid for 1 minute.
+```
+POST /api/v2/search/scroll/{appkey}/{scrollKey}
+
+Content-Type: application/json
+```
+
+#### Request Parameter
+| Name | Format | Description | Required |
+| --- | --- | --- | --- |
+| appkey | String | Project appkey | O |
+| scrollKey | String | Scroll Key | O |
+
+#### Request Header
+| Name | Format | Description             | Required |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | Project secretkey | O |
+
+#### Request Body
+Scroll Continue API does not require the request body.
+
+#### Response
+| Name | Type | Format | Description |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | Number of logs |
+| data | Body | List | Log list |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "51482f39-d499-394d-adca-462585a477e9",
+        "totalItems": 60,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+### Available Token API
+Retrieves the number of available tokens.
+```
+GET /api/v2/search/available-tokens/{appkey}
+```
+
+#### Request Parameter
+| Name | Format | Description | Required |
+| --- | --- | --- | --- |
+| appkey | String | Project appkey | O |
+
+#### Request Header
+| Name | Format | Description             | Required |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | Project secretkey | O |
+
+#### Response
+| Name | Type | Format | Description |
+| --- | --- | --- | --- |
+| availableToken | Body | Number | Available tokens |
+
+<details>
+<summary>Example</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "availableToken": 9875
+    }
+}
+```
+</details>

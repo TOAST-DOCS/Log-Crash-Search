@@ -1,4 +1,25 @@
-## Analytics > Log & Crash Search > Release Notes
+## Data & Analytics > Log & Crash Search > Release Notes
+
+### December 19, 2023
+#### Feature Updates
+* [Console] Changed the External Log Storage Settings
+  * Separate setup available for each type (OBS/AWS S3)
+  
+### August 29, 2023
+#### Feature Updates
+* [Console] Changed the length limit for some fields when setting log alarms
+  * Changed the length limit for alarm title from 20 characters to 80 characters.
+  * Changed the length limit for alarm description from 80 characters to 255 characters.
+
+### May 30, 2023
+#### Bug Fixes
+* [Console] Changed so that the UserTxtData does not appear in the selectable fields
+#### Feature Updates
+* [Console] Changed so that the UserTxtData field appears as a default field, not a custom field, in the search field menu
+
+### April 26, 2023
+### Bug Fixes
+* Fixed a bug where the user-based alarm does not work
 
 ### December 27, 2022
 #### Feature Updates
@@ -22,7 +43,7 @@
 ### July 26, 2022
 #### Feature Updates
 * [Console] Improved the UI/UX of the log search result page
-  * Provided a view option in enumerated format
+    * Provided a view option in enumerated format
 
 #### Bug Fixes
 * [Console] Fixed an issue where crash dump data of some platforms are not downloaded
@@ -392,7 +413,7 @@
 * [Console] Changed alarm delivery format (shows alarm name, instead of project name)
 * [SDK] Added more features
     * To ensure AddCustomField between the Init function and log delivery, added SendThread Lock
-        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
+        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Changed features
     * Send Exception, errorCode, and RequestHeader fields in the analyzable format on console
 		* Changed field names into txtException, txterrorCode, and txtRequestHeader
