@@ -1,5 +1,10 @@
 ## Data & Analytics > Log & Crash Search > Release Notes
 
+### February 27, 2024
+#### Feature Updates
+* [Console] Changed the search field page
+  * Made modifications to that the search field for log retention periods can be viewed
+
 ### December 19, 2023
 #### Feature Updates
 * [Console] Changed the External Log Storage Settings
@@ -8,8 +13,8 @@
 ### August 29, 2023
 #### Feature Updates
 * [Console] Changed the length limit for some fields when setting log alarms
-  * Changed the length limit for alarm title from 20 characters to 80 characters.
-  * Changed the length limit for alarm description from 80 characters to 255 characters.
+  * Changed the length limit for alarm title from 20 characters to 80 characters
+  * Changed the length limit for alarm description from 80 characters to 255 characters
 
 ### May 30, 2023
 #### Bug Fixes
