@@ -318,7 +318,7 @@ false：重複除去ロジックを無効にする
 		 <true />
 	    </dict>
 
-	   <key> setting-logncrash.cloud.toast.com </key>
+	   <key> api-setting-logncrash.nhncloudservice.com </key>
             <dict>
 		 <key>NSTemporaryExceptionAllowsInsecureHttpLoads </key>
 		 <true />
@@ -330,7 +330,7 @@ false：重複除去ロジックを無効にする
 
 3.ATS自動設定機能
 
-- Assets > Toast > LogNCrash > Editor > post_process.pyファイルには、iOSビルド時、info.plistにapi-logncrash.nhncloudservice.comとsetting-logncrash.cloud.toast.comを自動的に追加するコードが挿入されています。
+- Assets > Toast > LogNCrash > Editor > post_process.pyファイルには、iOSビルド時、info.plistにapi-logncrash.nhncloudservice.comとapi-setting-logncrash.nhncloudservice.comを自動的に追加するコードが挿入されています。
 
 ## iOS Native Crashを解析する
 - Unity iOSのCrashは、Unity Engineで発生するCrashと、iOS Naitveで発生するCrashに区分されます。

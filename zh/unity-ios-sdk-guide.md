@@ -315,7 +315,7 @@ For detailed settings, refer to the link as below:
 		 <true />
 	    </dict>
 
-	   <key> setting-logncrash.cloud.toast.com </key>
+	   <key> api-setting-logncrash.nhncloudservice.com </key>
             <dict>
 		 <key>NSTemporaryExceptionAllowsInsecureHttpLoads </key>
 		 <true />
@@ -326,7 +326,7 @@ For detailed settings, refer to the link as below:
 ```
 
 3. Automatic ATS Setting
-- **Assets > Toast > LogNCrash > Editor > post_process.py** has a code to automatically add api-logncrash.nhncloudservice.com and setting-logncrash.cloud.toast.com to info.plist for an iOS build.
+- **Assets > Toast > LogNCrash > Editor > post_process.py** has a code to automatically add api-logncrash.nhncloudservice.com and api-setting-logncrash.nhncloudservice.com to info.plist for an iOS build.
 
 ## Interpret iOS Native Crashes
 

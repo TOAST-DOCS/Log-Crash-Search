@@ -318,7 +318,7 @@ false: 중복 제거 로직 비활성화
 		 <true />
 	    </dict>
 
-	   <key> setting-logncrash.cloud.toast.com </key>
+	   <key> api-setting-logncrash.nhncloudservice.com </key>
             <dict>
 		 <key>NSTemporaryExceptionAllowsInsecureHttpLoads </key>
 		 <true />
@@ -330,7 +330,7 @@ false: 중복 제거 로직 비활성화
 
 3.ATS 자동 설정 기능
 
-- Assets > Toast > LogNCrash > Editor > post_process.py 파일에는 iOS 빌드 시 info.plist에 api-logncrash.nhncloudservice.com와 setting-logncrash.cloud.toast.com를 자동으로 추가하는 코드가 삽입되어 있습니다.
+- Assets > Toast > LogNCrash > Editor > post_process.py 파일에는 iOS 빌드 시 info.plist에 api-logncrash.nhncloudservice.com와 api-setting-logncrash.nhncloudservice.com를 자동으로 추가하는 코드가 삽입되어 있습니다.
 
 ## iOS Native Crash 해석 하기
 - Unity iOS의 Crash는 Unity Engine에서 발생하는 Crash와 iOS Naitve에서 발생하는 Crash로 구분됩니다.
