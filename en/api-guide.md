@@ -4,7 +4,7 @@
 Logs can be sent to Log & Crash collector server via HTTP protocol. 
 
 > - Use the following address to send logs to the Log & Crash collector server with JSON/HTTP. 
->     - Log & Crash: api-logncrash.cloud.toast.com
+>     - Log & Crash: api-logncrash.nhncloudservice.com
 >     - Method of Delivery: POST
 >     - URI: /v2/log
 >     - Content-Type: "application/json"
@@ -213,7 +213,7 @@ resultList: array
 
 ```
 //Send logs with POST method 
-$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '{
+$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloudservice.com/v2/log' -d '{
 	"projectName": "__Appkey__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -227,7 +227,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.to
 
 ```
 //When URL is incorrect (log -> loggg)
-$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.com/v2/loggg" -d '{
+$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.nhncloudservice.com/v2/loggg" -d '{
 	"projectName": "__Appkey__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -238,7 +238,7 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.c
 
 
 //When a wrong field key (_xxx) is used
-$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.com/v2/log" -d '{
+$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.nhncloudservice.com/v2/log" -d '{
 	"projectName": "__Appkey__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -255,7 +255,7 @@ A custom key, starting with an alphabet, must include "A~Z, a~z, 0~9, -_".
 
 ```
 //Send logs with POST method 
-$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '[
+$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloudservice.com/v2/log' -d '[
     {
         "projectName": "__Appkey__",
         "projectVersion": "1.0.0",

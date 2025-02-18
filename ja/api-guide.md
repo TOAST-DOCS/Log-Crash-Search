@@ -4,7 +4,7 @@
 HTTPプロトコルを使用してLog & Crash収集サーバーにログを転送できます。
 
 > - JSON/HTTPでLog & Crash収集サーバーにログを転送する時は、次のアドレスを使用する必要があります。
->     - Log & Crash: api-logncrash.cloud.toast.com
+>     - Log & Crash: api-logncrash.nhncloudservice.com
 >     - 転送方式：POST
 >     - URI: /v2/log
 >     - Content-Type: "application/json"
@@ -214,7 +214,7 @@ resultList: array
 
 ```
 //POSTメソッドを使用してログ転送
-$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '{
+$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloudservice.com/v2/log' -d '{
 	"projectName": "__アプリケーションキー__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -228,7 +228,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.to
 
 ```
 //URLが無効な場合(log -> loggg)
-$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.com/v2/loggg" -d '{
+$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.nhncloudservice.com/v2/loggg" -d '{
 	"projectName": "__アプリケーションキー__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -239,7 +239,7 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.c
 
 
 //無効なフィールドキーを使用した場合(_xxx)
-$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.com/v2/log" -d '{
+$ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.nhncloudservice.com/v2/log" -d '{
 	"projectName": "__アプリケーションキー__",
 	"projectVersion": "1.0.0",
 	"logVersion": "v2",
@@ -256,7 +256,7 @@ $ curl -v -H 'content-type:application/json' -XPOST "api-logncrash.cloud.toast.c
 
 ```
 //POSTメソッドを使用してログ転送
-$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.cloud.toast.com/v2/log' -d '[
+$ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloudservice.com/v2/log' -d '[
     {
         "projectName": "__アプリケーションキー__",
         "projectVersion": "1.0.0",

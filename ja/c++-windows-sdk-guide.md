@@ -101,8 +101,8 @@ void DestroyToastLog();
 
 ```
 #define LOGNCRASH_VERSION         "1.0.0"
-#define LOGNCRASH_COLLECTOR_ADDR  "api-logncrash.cloud.toast.com"
-#define LOGNCRASH_COLLECTOR_PORT  80
+#define LOGNCRASH_COLLECTOR_ADDR  "api-logncrash.nhncloudservice.com"
+#define LOGNCRASH_COLLECTOR_PORT  443
 #ifdef WIN32
 #define LOGNCRASH_LOGSOURCE       "logncrash-windows"
 #else   //#ifdef WIN32
@@ -134,7 +134,7 @@ void destroy();
 	- appKey：アプリケーションキー
 	- version：アプリバージョン
 	- collectorAddr：収集サーバーアドレス
-		- Log & Crash収集サーバー： api-logncrash.cloud.toast.com
+		- Log & Crash収集サーバー： api-logncrash.nhncloudservice.com
 	- collectorPort：収集サーバーポート
 	- logSource：ログソース
 	- logType：ログタイプ
@@ -305,5 +305,5 @@ void setUserId(const char* userId);
         'dump_syms {.pdbファイル} > {出力ファイル}'
         'dump_syms Sample.pdb > Sample.sym'
         ```
-        
+
         - 作成したシンボルファイルをWebコンソールにアップロードします。

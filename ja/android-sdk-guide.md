@@ -108,7 +108,7 @@ com.toast.android.logncrash.ToastLog classで、提供する機能を説明し�
 ```
 public static final String DEFAULT_APP_KEY = "__app_key__";
 public static final String DEFAULT_VERSION = "1.0.0";
-public static final String DEFAULT_COLLECTOR_ADDR = "https://api-logncrash.cloud.toast.com";
+public static final String DEFAULT_COLLECTOR_ADDR = "https://api-logncrash.nhncloudservice.com";
 public static final int DEFAULT_COLLECTOR_PORT = 0;
 public static final String DEFAULT_LOG_SOURCE = "logncrash-logSource";
 public static final String DEFAULT_LOG_TYPE = "logncrash-logType";
@@ -125,9 +125,9 @@ public static boolean initialize(Application application, String collectorAddr, 
 - パラメータ
 	- application：Android Application情報。getApplication()の戻り値を入れます。
 	- collectorAddr：収集サーバーアドレス
-		- HTTP収集サーバー：https://api-logncrash.cloud.toast.com
+		- HTTP収集サーバー：https://api-logncrash.nhncloudservice.com
 	- collectorPort：収集サーバーのポート情報、0に指定すると、各protocolの基本ポートが使用されます。
-		- HTTP：80
+		- HTTP：443
 	- appKey：アプリケーションキー
 	- version：アプリバージョン
 	- userId：ユーザーID

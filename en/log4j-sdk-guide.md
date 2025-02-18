@@ -39,7 +39,7 @@ Below describe sample/log4j/ that is provided.
 2. Open the src/test/resources/log4j.xml file and update with issued Appkey and version, and collector server address, if necessary.
 
 ```
-<param name="collectorUrl" value="https://api-logncrash.cloud.toast.com" />
+<param name="collectorUrl" value="https://api-logncrash.nhncloudservice.com" />
 <param name="appKey" value="__app_key__" />
 <param name="version" value="1.0.0" />
 ```
@@ -119,7 +119,7 @@ json, 20090211
 
 ```
 <appender name="logncrash-http" class="com.toast.java.logncrash.log4j.LogNCrashHttpAppender">
-	 <param name="collectorUrl" value="https://api-logncrash.cloud.toast.com" />
+	 <param name="collectorUrl" value="https://api-logncrash.nhncloudservice.com" />
 	 <!-- v2 -->
 	 <!--	  -->
 	 <param name="appKey" value="__app_key__" />
@@ -146,7 +146,7 @@ log4j.appender.STDOUT.Threshold=DEBUG
 log4j.appender.STDOUT.layout=org.apache.log4j.PatternLayout
 log4j.appender.STDOUT.layout.ConversionPattern=%m%n
 log4j.appender.logncrash-http=com.toast.java.logncrash.log4j.LogNCrashHttpAppender
-log4j.appender.logncrash-http.collectorUrl=https://api-logncrash.cloud.toast.com
+log4j.appender.logncrash-http.collectorUrl=https://api-logncrash.nhncloudservice.com
 log4j.appender.logncrash-http.appKey=__appkey__
 log4j.appender.logncrash-http.version=1.0.0
 log4j.appender.logncrash-http.logSource=http-log4j
@@ -179,7 +179,7 @@ try {
 ### Setting Items for log4j.xml
 
 - collectorUrl: Collector server address
-  HTTP : https://api-logncrash.cloud.toast.com
+  HTTP : https://api-logncrash.nhncloudservice.com
 
 - appKey: Project Appkey: required
 - version: Project version. Default is "1.0.0". 

@@ -81,8 +81,8 @@ Toast.LogNCrash.ToastLog class에서 제공하는 기능들을 설명합니다.
 
 ```
 public const string VERSION = "1.0.0";
-public const string COLLECTOR_ADDR = "api-logncrash.cloud.toast.com";
-public const UInt16 COLLECTOR_PORT = 80;
+public const string COLLECTOR_ADDR = "api-logncrash.nhncloudservice.com";
+public const UInt16 COLLECTOR_PORT = 443;
 public const string LOGSOURCE = "logncrash-csharp";
 public const string LOGTYPE = "logncrash-log";
 

@@ -39,7 +39,7 @@ sample/     ; Log4J 샘플
 2.src/test/resources/log4j.xml 파일을 열어 발급받은 앱키와 버전을 수정하고, 필요하면 수집 서버 주소를 변경합니다.
 
 ```
-<param name="collectorUrl" value="https://api-logncrash.cloud.toast.com" />
+<param name="collectorUrl" value="https://api-logncrash.nhncloudservice.com" />
 <param name="appKey" value="__app_key__" />
 <param name="version" value="1.0.0" />
 ```
@@ -120,7 +120,7 @@ json, 20090211
 
 ```
 <appender name="logncrash-http" class="com.toast.java.logncrash.log4j.LogNCrashHttpAppender">
-	 <param name="collectorUrl" value="https://api-logncrash.cloud.toast.com" />
+	 <param name="collectorUrl" value="https://api-logncrash.nhncloudservice.com" />
 	 <!-- v2 -->
 	 <!--	  -->
 	 <param name="appKey" value="__app_key__" />
@@ -147,7 +147,7 @@ log4j.appender.STDOUT.Threshold=DEBUG
 log4j.appender.STDOUT.layout=org.apache.log4j.PatternLayout
 log4j.appender.STDOUT.layout.ConversionPattern=%m%n
 log4j.appender.logncrash-http=com.toast.java.logncrash.log4j.LogNCrashHttpAppender
-log4j.appender.logncrash-http.collectorUrl=https://api-logncrash.cloud.toast.com
+log4j.appender.logncrash-http.collectorUrl=https://api-logncrash.nhncloudservice.com
 log4j.appender.logncrash-http.appKey=__appkey__
 log4j.appender.logncrash-http.version=1.0.0
 log4j.appender.logncrash-http.logSource=http-log4j
@@ -180,7 +180,7 @@ try {
 ### log4j.xml 설정 항목
 
 - collectorUrl: 수집 서버 주소
-	HTTP: https://api-logncrash.cloud.toast.com
+	HTTP: https://api-logncrash.nhncloudservice.com
 - appKey: 프로젝트 앱키, 필수
 - version: 프로젝트 버전, 기본값 "1.0.0"
 - logSource: 로그 소스, 기본값 "http-log4j"
