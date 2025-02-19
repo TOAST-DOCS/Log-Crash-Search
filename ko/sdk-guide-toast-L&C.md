@@ -14,9 +14,6 @@ NHN Cloud Log & Crash Search SDK를 적용하면 모바일 애플리케이션에
 #### Android
 * [NHN Cloud Log & Crash Search Android 가이드](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-android/)를 참고하십시오.
 
-#### Unity
-* [NHN Cloud Log & Crash Search Unity 가이드](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-unity/)를 참고하십시오.
-
 #### Windows C++
 * [NHN Cloud Log & Crash Search Windows C++ 가이드](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-windows/)를 참고하십시오.
 
