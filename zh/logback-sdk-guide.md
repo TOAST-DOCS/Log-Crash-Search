@@ -58,13 +58,13 @@ Following description is based on logback.xml.
 ```xml
 <!-- Declare LogNCrashHttpAppender -->
 <appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
-    <appKey value="appkey"/>
-    <logSource value="operation"/>
-    <version value="1.0.0"/>
-    <logType value="audit log"/>
-    <debug value="true"/>
-    <category value="log service"/>
-    <errorCodeType value="action"/>
+    <appKey>appkey</appKey>
+    <logSource>operation</logSource>
+    <version>1.0.0</version>
+    <logType>audit log</logType>
+    <debug>true</debug>
+    <category>log service</category>
+    <errorCodeType>action</errorCodeType>
 </appender>
 <!-- Declare AsyncAppender including LogNCrashHttpAppender -->
 <appender name="LNCS-APPENDER" class="ch.qos.logback.classic.AsyncAppender">
@@ -72,10 +72,10 @@ Following description is based on logback.xml.
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
         <level>INFO</level>
     </filter>
-    <includeCallerData value="false"/>
-    <queueSize value="2048"/>
-    <neverBlock value="true"/>
-    <maxFlushTime value="60000"/>
+    <includeCallerData>false</includeCallerData>
+    <queueSize>2048</queueSize>
+    <neverBlock>true</neverBlock>
+    <maxFlushTime>60000</maxFlushTime>
     <appender-ref ref="logNCrashHttp"/>
 </appender>
 
