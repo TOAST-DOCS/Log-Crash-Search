@@ -58,13 +58,13 @@ logback.xmlを基準に説明します。
 ```xml
 <!-- LogNCrashHttpAppender宣言 -->
 <appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
-    <appKey value="アプリケーションキー"/>
-    <logSource value="運営"/>
-    <version value="1.0.0"/>
-    <logType value="監査ログ"/>
-    <debug value="true"/>
-    <category value="ログサービス"/>
-    <errorCodeType value="action"/>
+    <appKey>アプリケーションキー</appKey>
+    <logSource>運営</logSource>
+    <version>1.0.0</version>
+    <logType>監査ログ</logType>
+    <debug>true</debug>
+    <category>ログサービス</category>
+    <errorCodeType>action</errorCodeType>
 </appender>
 <!-- LogNCrashHttpAppenderを含むAsyncAppender宣言 -->
 <appender name="LNCS-APPENDER" class="ch.qos.logback.classic.AsyncAppender">
@@ -72,10 +72,10 @@ logback.xmlを基準に説明します。
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
         <level>INFO</level>
     </filter>
-    <includeCallerData value="false"/>
-    <queueSize value="2048"/>
-    <neverBlock value="true"/>
-    <maxFlushTime value="60000"/>
+    <includeCallerData>false</includeCallerData>
+    <queueSize>2048</queueSize>
+    <neverBlock>true</neverBlock>
+    <maxFlushTime>60000</maxFlushTime>
     <appender-ref ref="logNCrashHttp"/>
 </appender>
 

@@ -58,13 +58,13 @@ logback.xml을 기준으로 설명합니다.
 ```xml
 <!-- LogNCrashHttpAppender 선언 -->
 <appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
-    <appKey value="앱키"/>
-    <logSource value="운영"/>
-    <version value="1.0.0"/>
-    <logType value="감사 로그"/>
-    <debug value="true"/>
-    <category value="로그 서비스"/>
-    <errorCodeType value="action"/>
+    <appKey>앱키</appKey>
+    <logSource>운영</logSource>
+    <version>1.0.0</version>
+    <logType>감사 로그</logType>
+    <debug>true</debug>
+    <category>로그 서비스</category>
+    <errorCodeType>action</errorCodeType>
 </appender>
 <!-- LogNCrashHttpAppender를 포함한 AsyncAppender 선언 -->
 <appender name="LNCS-APPENDER" class="ch.qos.logback.classic.AsyncAppender">
@@ -72,10 +72,10 @@ logback.xml을 기준으로 설명합니다.
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
         <level>INFO</level>
     </filter>
-    <includeCallerData value="false"/>
-    <queueSize value="2048"/>
-    <neverBlock value="true"/>
-    <maxFlushTime value="60000"/>
+    <includeCallerData>false</includeCallerData>
+    <queueSize>2048</queueSize>
+    <neverBlock>true</neverBlock>
+    <maxFlushTime>60000</maxFlushTime>
     <appender-ref ref="logNCrashHttp"/>
 </appender>
 
