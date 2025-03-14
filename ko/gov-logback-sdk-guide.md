@@ -28,14 +28,14 @@ pom.xml에 dependency를 추가합니다.
     <version>20240303</version>
 </dependency>
 <dependency>
-<groupId>org.apache.httpcomponents.client5</groupId>
-<artifactId>httpclient</artifactId>
-<version>5.3.1</version>
+    <groupId>org.apache.httpcomponents.client5</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>5.3.1</version>
 </dependency>
 <dependency>
-<groupId>ch.qos.logback</groupId>
-<artifactId>logback-classic</artifactId>
-<version>1.5.3</version>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.5.3</version>
 </dependency> 
 ```
 ### 2.2 Gradle 설치
