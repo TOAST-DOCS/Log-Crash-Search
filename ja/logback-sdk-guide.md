@@ -4,7 +4,7 @@ Log & Crash Logback SDKは、Log & Crash Search収集サーバーにログを転
 
 ## 1. Log & Crash Logback SDK追加
 
-logncrash-java-sdk3-3.0.5.jarを依存性に追加します。
+logncrash-java-sdk3-4.0.0.jarを依存性に追加します。
 [NHN Cloud Document](http://docs.toast.com/ko/Download/)でLog & Crash Logback SDKをダウンロードできます。
 
 ```
@@ -12,7 +12,7 @@ logncrash-java-sdk3-3.0.5.jarを依存性に追加します。
 ```
 
 
-- Log & Crash Logback SDKは、`logback-classic 1.2.3+, apache httpclient 4.5+, json 20171018+`のライブラリに依存性を持っています。
+- Log & Crash Logback SDKは、`logback-classic 1.5.3+, apache httpclient 5.3.1+, json 20240303+`のライブラリに依存性を持っています。
 - 参照するlibraryが重複する場合、問題が発生することがあるため、上位バージョンの使用を推奨します。 
 
 ## 2. Log & Crash Logback SDKに必要な依存性を追加
@@ -25,26 +25,26 @@ pom.xmlにdependencyを追加します。
 <dependency>
     <groupId>org.json</groupId>
     <artifactId>json</artifactId>
-    <version>20171018</version>
+    <version>20240303</version>
 </dependency>
 <dependency>
-    <groupId>org.apache.httpcomponents</groupId>
+    <groupId>org.apache.httpcomponents.client5</groupId>
     <artifactId>httpclient</artifactId>
-    <version>4.5</version>
+    <version>5.3.1</version>
 </dependency>
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
-    <version>1.2.3</version>
+    <version>1.5.3</version>
 </dependency>
 ```
 ### 2.2 Gradleインストール
 
 ```gradle
-dependencies {
-    compile 'org.json:json:20171018'
-    compile 'org.apache.httpcomponents:httpclient:4.5'
-    compile 'ch.qos.logback:logback-classic:1.2.3'
+dependencies {  
+    compile 'org.json:json:20240303'    
+    compile 'org.apache.httpcomponents.client5:httpclient5:5.3.1'    
+    compile 'ch.qos.logback:logback-classic:1.5.3'
 }
 ```
 
