@@ -100,14 +100,14 @@ filter {
 output {
 ...
   http {
-	url => "https://api-logncrash.nhncloudservice.com/v2/log"
+	url => "https://api-logncrash.gov-nhncloudservice.com/v2/log"
 	http_method => "post"
 	format => "json"
 	verify_ssl => false
   }
 }
 - url에 전송할 Log & Crash Collector 주소로 수정해야 합니다.
-- NHN Cloud Log & Crash Collector 주소: https://api-logncrash.nhncloudservice.com/v2/log
+- NHN Cloud Log & Crash Collector 주소: https://api-logncrash.gov-nhncloudservice.com/v2/log
 - URI는 반드시 /v2/log 이어야 합니다.
 ```
 
