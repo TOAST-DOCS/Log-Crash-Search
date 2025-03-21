@@ -17,7 +17,7 @@ Below describe benefits and features of Log & Crash Unity SDK.
 Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Unity SDK**.
 
 ```
-[DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK] 
+[DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
 ```
 
 ## Install
@@ -37,7 +37,7 @@ The sample describes examples of initialization, log delivery, and error occurre
 Select **LogNCrash > Edit Settings** in the Unity menu to create LogNCrashSettings. Use AssetDatabase to define user’s Appkey and SDK operations of LogNCrashSettings.
 
 - Appkey: User’s Appkey
-- URL: Collector address: use https://api-logncrash.cloud.toast.com.
+- URL: Collector address: use https://api-logncrash.nhncloudservice.com.
 - Version: Log version
 - Send Warning: Whether to collect warning logs occurred in Unity
 - Send Error: Whether to collect error logs occurred in Unity
@@ -72,7 +72,7 @@ namespace Toast.LogNCrash
 	{
 		void Start ()
 		{
-			LogNCrash.Initialize ("https://api-logncrash.cloud.toast.com", "appkey", "1.0.0", 80,  true);
+			LogNCrash.Initialize ("https://api-logncrash.nhncloudservice.com", "appkey", "1.0.0", 443,  true);
 			LogNCrash.StartSendThread ();
 		}
 	}
@@ -82,7 +82,7 @@ namespace Toast.LogNCrash
 - Appkey: User’s Appkey
 - URL: Collector address: set collector information of http and https
 - Version: Log version
-- Port: Set 80, 443, depending on the protocol
+- Port：443
 - SendThreadLock: Save logs, which occur when it is true, in a queue without sending to server before StartSendThread is called. Nevertheless, if a native crash occurs, unlock ThreadLock and send the logs.
 
 

@@ -100,14 +100,14 @@ filter {
 output {
 ...
   http {
-	url => "https://api-logncrash.cloud.toast.com/v2/log"
+	url => "https://api-logncrash.nhncloudservice.com/v2/log"
 	http_method => "post"
 	format => "json"
 	verify_ssl => false
   }
 }
 - Modify URL to the address of Log & Crash Collector to send 
-- Address of NHN Cloud Log & Crash Collector: https://api-logncrash.cloud.toast.com/v2/log
+- Address of NHN Cloud Log & Crash Collector: https://api-logncrash.nhncloudservice.com/v2/log
 - The URI must be /v2/log.
 ```
 

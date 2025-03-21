@@ -100,14 +100,14 @@ filter {
 output {
 ...
   http {
-	url => "https://api-logncrash.cloud.toast.com/v2/log"
+	url => "https://api-logncrash.nhncloudservice.com/v2/log"
 	http_method => "post"
 	format => "json"
 	verify_ssl => false
   }
 }
 - urlに転送するLog & Crash Collectorアドレスに修正する必要があります。
-- NHN Cloud Log & Crash Collectorアドレス：https://api-logncrash.cloud.toast.com/v2/log
+- NHN Cloud Log & Crash Collectorアドレス：https://api-logncrash.nhncloudservice.com/v2/log
 - URIは/v2/logである必要があります。
 ```
 

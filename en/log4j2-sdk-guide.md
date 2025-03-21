@@ -39,7 +39,7 @@ Below describe sample/log4j2/ that is provided.
 2. Open the src/test/resources/log4j2.xml file and update with issued Appkey and version, and collector server address, if necessary.
 
 ```
-<collectorUrl>https://api-logncrash.cloud.toast.com </collectorUrl>
+<collectorUrl>https://api-logncrash.nhncloudservice.com </collectorUrl>
 <appkey>__app_key__</appkey>
 <version>1.0.0</version>
 ```
@@ -126,7 +126,7 @@ json, 20090211
 ```
 <Appenders>
 	<LogNCrashHttpAppender name="HTTP">
-	<collectorUrl>https://api-logncrash.cloud.toast.com </collectorUrl>
+	<collectorUrl>https://api-logncrash.nhncloudservice.com </collectorUrl>
 
 	<appKey>__app_key__</appKey>
 	<version>1.0.0</version>
@@ -167,7 +167,7 @@ try {
 ### Setting Items for log4j2.xml
 
 - collectorUrl: Collector server address
-  HTTP : https://api-logncrash.cloud.toast.com
+  HTTP : https://api-logncrash.nhncloudservice.com
 - appKey: Project Appkey: required
 - version: Project version. Default is "1.0.0".
 - logSource: Log source. Default is "http-log4j2".

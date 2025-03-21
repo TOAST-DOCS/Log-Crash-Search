@@ -4,7 +4,7 @@ Log & Crash Logback SDK sends logs to a Log & Crash Search collector server. It 
 
 ## 1. Add Log & Crash Logback SDK
 
-Add logncrash-java-sdk3-3.0.5.jar to dependency. 
+Add logncrash-java-sdk3-4.0.0.jar to dependency. 
 Download Log & Crash Logback SDK from  [NHN Cloud Document](http://docs.toast.com/en/Download/).
 
 ```
@@ -12,7 +12,7 @@ Click [DOCUMENTS] > [Download] > [Data & Analytics > Log & Crash Search] > [Logb
 ```
 
 
-- Log & Crash Logback SDK has dependency on the libraries of`logback-classic 1.2.3+, apache httpclient 4.5+, and json 20171018+`.
+- Log & Crash Logback SDK has dependency on the libraries of`logback-classic 1.5.3+, apache httpclient 5.3.1+, json 20240303+`.
 - It is recommended to apply the highest version to prevent any potential issues from redundant libraries.
 
 ## 2. Add Dependency for Log & Crash Logback SDK
@@ -21,30 +21,30 @@ Click [DOCUMENTS] > [Download] > [Data & Analytics > Log & Crash Search] > [Logb
 
 Add dependency to pom.xml.  
 
-```xml
-<dependency>
-    <groupId>org.json</groupId>
-    <artifactId>json</artifactId>
-    <version>20171018</version>
-</dependency>
-<dependency>
-    <groupId>org.apache.httpcomponents</groupId>
-    <artifactId>httpclient</artifactId>
-    <version>4.5</version>
-</dependency>
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.2.3</version>
-</dependency>
-```
+```xml  
+<dependency>  
+    <groupId>org.json</groupId>  
+    <artifactId>json</artifactId>  
+    <version>20240303</version>  
+</dependency>  
+<dependency>  
+    <groupId>org.apache.httpcomponents.client5</groupId>  
+    <artifactId>httpclient</artifactId>  
+    <version>5.3.1</version>  
+</dependency>  
+<dependency>  
+    <groupId>ch.qos.logback</groupId>  
+    <artifactId>logback-classic</artifactId>  
+    <version>1.5.3</version>  
+</dependency>  
+```  
 ### 2.2 Install Gradle 
 
 ```gradle
-dependencies {
-    compile 'org.json:json:20171018'
-    compile 'org.apache.httpcomponents:httpclient:4.5'
-    compile 'ch.qos.logback:logback-classic:1.2.3'
+dependencies {  
+    compile 'org.json:json:20240303'    
+    compile 'org.apache.httpcomponents.client5:httpclient5:5.3.1'    
+    compile 'ch.qos.logback:logback-classic:1.5.3'
 }
 ```
 
@@ -58,13 +58,13 @@ Following description is based on logback.xml.
 ```xml
 <!-- Declare LogNCrashHttpAppender -->
 <appender name="logNCrashHttp" class="com.toast.java.logncrash.logback.LogNCrashHttpAppender">
-    <appKey value="appkey"/>
-    <logSource value="operation"/>
-    <version value="1.0.0"/>
-    <logType value="audit log"/>
-    <debug value="true"/>
-    <category value="log service"/>
-    <errorCodeType value="action"/>
+    <appKey>appkey</appKey>
+    <logSource>operation</logSource>
+    <version>1.0.0</version>
+    <logType>audit log</logType>
+    <debug>true</debug>
+    <category>log service</category>
+    <errorCodeType>action</errorCodeType>
 </appender>
 <!-- Declare AsyncAppender including LogNCrashHttpAppender -->
 <appender name="LNCS-APPENDER" class="ch.qos.logback.classic.AsyncAppender">
@@ -72,10 +72,10 @@ Following description is based on logback.xml.
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
         <level>INFO</level>
     </filter>
-    <includeCallerData value="false"/>
-    <queueSize value="2048"/>
-    <neverBlock value="true"/>
-    <maxFlushTime value="60000"/>
+    <includeCallerData>false</includeCallerData>
+    <queueSize>2048</queueSize>
+    <neverBlock>true</neverBlock>
+    <maxFlushTime>60000</maxFlushTime>
     <appender-ref ref="logNCrashHttp"/>
 </appender>
 

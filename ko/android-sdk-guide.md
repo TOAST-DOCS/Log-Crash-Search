@@ -108,7 +108,7 @@ com.toast.android.logncrash.ToastLog class에서 제공하는 기능들을 설�
 ```
 public static final String DEFAULT_APP_KEY = "__app_key__";
 public static final String DEFAULT_VERSION = "1.0.0";
-public static final String DEFAULT_COLLECTOR_ADDR = "https://api-logncrash.cloud.toast.com";
+public static final String DEFAULT_COLLECTOR_ADDR = "https://api-logncrash.nhncloudservice.com";
 public static final int DEFAULT_COLLECTOR_PORT = 0;
 public static final String DEFAULT_LOG_SOURCE = "logncrash-logSource";
 public static final String DEFAULT_LOG_TYPE = "logncrash-logType";
@@ -125,9 +125,9 @@ public static boolean initialize(Application application, String collectorAddr, 
 - 파라미터
 	- application: Android Application 정보. getApplication() 반환값을 넣어 줍니다.
 	- collectorAddr: 수집서버 주소
-		- HTTP 수집 서버: https://api-logncrash.cloud.toast.com
+		- HTTP 수집 서버: https://api-logncrash.nhncloudservice.com
 	- collectorPort: 수집서버의 포트 정보, 0으로 지정하면 각 protocol 기본 포트가 사용됩니다.
-		- HTTP: 80
+		- HTTP: 443
 	- appKey: 앱키
 	- version: 앱 버전
 	- userId; 사용자 아이디

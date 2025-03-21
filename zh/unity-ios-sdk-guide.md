@@ -1,8 +1,8 @@
 ## Analytics > Log & Crash Search > Unity iOS SDK Guide
 
-> [Deprecated] 
-> Log & Crash Unity iOS SDK is not supported any more. 
-> Please use [TOAST SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/). 
+> [Deprecated]
+> Log & Crash Unity iOS SDK is not supported any more.
+> Please use [TOAST SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/).
 
 Log & Crash Unity SDK sends logs to a Log & Crash Search collector server.
 
@@ -24,7 +24,7 @@ Below describe benefits and features of Log & Crash Unity SDK.
 Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Unity SDK**.
 
 ```
-[DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK] 
+[DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
 ```
 
 ## Install
@@ -47,7 +47,7 @@ Add #import <LogNCrashSDK/LogNCrashSDK.h> to make it available in the iOS Unity 
 Select **LogNCrash > Edit Settings** in the Unity menu to create LogNCrashSettings. Use AssetDatabase to define user’s Appkey and SDK operations of LogNCrashSettings.
 
 - Appkey: User’s Appkey
-- URL: Collector address: use https://api-logncrash.cloud.toast.com.
+- URL: Collector address: use https://api-logncrash.nhncloudservice.com.
 - Version: Log version
 - Send Warning: Whether to collect warning logs occurred in Unity
 - Send Error: Whether to collect error logs occurred in Unity
@@ -81,7 +81,7 @@ namespace Toast.LogNCrash
 	{
 		void Start ()
 		{
-			LogNCrash.Initialize ("https://api-logncrash.cloud.toast.com", "appkey", "1.0.0", 80, true, true);
+			LogNCrash.Initialize ("https://api-logncrash.nhncloudservice.com", "appkey", "1.0.0", 443, true, true);
 			LogNCrash.StartSendThread ();
 		}
 	}
@@ -91,7 +91,7 @@ namespace Toast.LogNCrash
 - Appkey: User’s Appkey
 - URL: Collector address: set collector information of http and https.
 - Version: Log version
-- Port: Set 80, 443 depending on the protocol
+- Port: 443
 - PLCrashreporter Enable: Determine whether to use PLCrashrepoter.
 - SendThreadLock: Save logs, which occur when it is true, in a queue without sending to server before StartSendThread is called. Nevertheless, if a native crash occurs, unlock ThreadLock and send the logs.
 
@@ -309,13 +309,13 @@ For detailed settings, refer to the link as below:
 <dict>
     <key> NSExceptionDomains </key>
     <dict>
-           <key> api-logncrash.cloud.toast.com </key>
+           <key> api-logncrash.nhncloudservice.com </key>
             <dict>
 		 <key>NSTemporaryExceptionAllowsInsecureHttpLoads </key>
 		 <true />
 	    </dict>
 
-	   <key> setting-logncrash.cloud.toast.com </key>
+	   <key> api-setting-logncrash.nhncloudservice.com </key>
             <dict>
 		 <key>NSTemporaryExceptionAllowsInsecureHttpLoads </key>
 		 <true />
@@ -326,7 +326,7 @@ For detailed settings, refer to the link as below:
 ```
 
 3. Automatic ATS Setting
-- **Assets > Toast > LogNCrash > Editor > post_process.py** has a code to automatically add api-logncrash.cloud.toast.com and setting-logncrash.cloud.toast.com to info.plist for an iOS build.
+- **Assets > Toast > LogNCrash > Editor > post_process.py** has a code to automatically add api-logncrash.nhncloudservice.com and api-setting-logncrash.nhncloudservice.com to info.plist for an iOS build.
 
 ## Interpret iOS Native Crashes
 

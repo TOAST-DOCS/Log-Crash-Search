@@ -39,7 +39,7 @@ sample/     ; Log4J 2サンプル
 2.src/test/resources/log4j2.xmlファイルを開き、発行されたアプリケーションキーとバージョンを修正し、必要な場合は収集サーバーアドレスを変更します。
 
 ```
-<collectorUrl>https://api-logncrash.cloud.toast.com </collectorUrl>
+<collectorUrl>https://api-logncrash.nhncloudservice.com </collectorUrl>
 <appkey>__app_key__</appkey>
 <version>1.0.0</version>
 ```
@@ -126,7 +126,7 @@ json, 20090211
 ```
 <Appenders>
 	<LogNCrashHttpAppender name="HTTP">
-	<collectorUrl>https://api-logncrash.cloud.toast.com </collectorUrl>
+	<collectorUrl>https://api-logncrash.nhncloudservice.com </collectorUrl>
 
 	<appKey>__app_key__</appKey>
 	<version>1.0.0</version>
@@ -167,7 +167,7 @@ try {
 ### log4j.xml設定項目
 
 - collectorUrl：収集サーバーアドレス
-	HTTP： https://api-logncrash.cloud.toast.com
+	HTTP： https://api-logncrash.nhncloudservice.com
 - appKey：プロジェクトアプリケーションキー。必須
 - version：プロジェクトバージョン。デフォルト値"1.0.0"
 - logSource：ログソース。デフォルト値"http-log4j2"
