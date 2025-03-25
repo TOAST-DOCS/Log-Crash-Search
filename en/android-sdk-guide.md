@@ -1,8 +1,8 @@
 ## Analytics > Log & Crash Search > Android SDK Guide
 
-> [Deprecated] 
-> Log & Crash Android SDK is not supported any more. 
-> Please use [TOAST SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/). 
+> [Deprecated]
+> Log & Crash Android SDK is not supported any more.
+> Please use [TOAST SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/).
 
 Log & Crash Android SDK sends logs to a Log & Crash Search collector server.
 Below describe benefits and features of Log & Crash Android SDK.
@@ -22,7 +22,7 @@ Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Androi
 
 ```
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Android SDK]
-``` 
+```
 
 ## Install
 
@@ -107,7 +107,7 @@ Describes functions provided by com.toast.android.logncrash.ToastLog class.
 ```
 public static final String DEFAULT_APP_KEY = "__app_key__";
 public static final String DEFAULT_VERSION = "1.0.0";
-public static final String DEFAULT_COLLECTOR_ADDR = "https://api-logncrash.cloud.toast.com";
+public static final String DEFAULT_COLLECTOR_ADDR = "https://api-logncrash.nhncloudservice.com";
 public static final int DEFAULT_COLLECTOR_PORT = 0;
 public static final String DEFAULT_LOG_SOURCE = "logncrash-logSource";
 public static final String DEFAULT_LOG_TYPE = "logncrash-logType";
@@ -124,9 +124,9 @@ public static boolean initialize(Application application, String collectorAddr, 
 - Parameters
   - application: Android Application information. Apply return value of getApplication().
   - collectorAddr: Collector server address
-    - HTTP collector server: https://api-logncrash.cloud.toast.com
+    - HTTP collector server: https://api-logncrash.nhncloudservice.com
   - collectorPort: Port information of a collector server. When it is set to 0, default port of each protocol is applied.
-    - HTTP: 80
+    - HTTP: 443
   - appKey: Appkey
   - version: App version
   - userId: User ID

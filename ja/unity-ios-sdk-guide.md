@@ -48,7 +48,7 @@ iOS Unity環境で使用するには、#import <LogNCrashSDK/LogNCrashSDK.h\>を
 UnityメニューバーからLogNCrash> Edit Settingsを選択して、LogNCrashSettingsを作成します。 LogNCrashSettingsはAssetDatabaseで、ユーザーアプリケーションキーとSDKの動作を定義します。
 
 - Appkey：ユーザーアプリケーションキー
-- URL：コレクターアドレス、https://api-logncrash.cloud.toast.comを使用します。
+- URL：コレクターアドレス、https://api-logncrash.nhncloudservice.comを使用します。
 - Version：ログバージョン
 - Send Warning：Unityで発生したWarningログを収集するかどうか
 - Send Error：Unityで発生したErrorログを収集するかどうか
@@ -84,7 +84,7 @@ namespace Toast.LogNCrash
 	{
 		void Start ()
 		{
-			LogNCrash.Initialize ("https://api-logncrash.cloud.toast.com", "appkey", "1.0.0", 80, true, true);
+			LogNCrash.Initialize ("https://api-logncrash.nhncloudservice.com", "appkey", "1.0.0", 443, true, true);
 			LogNCrash.StartSendThread ();
 		}
 	}
@@ -94,7 +94,7 @@ namespace Toast.LogNCrash
 - Appkey：ユーザーアプリケーションキー
 - URL：コレクターアドレス、http、httpsのコクレクター情報を設定
 - Version：ログバージョン
-- Port：プロトコルに応じて80、443を設定
+- Port：443
 - PLCrashreporter Enable：PLCrashrepoterを使用するかどうかを決定します。
 - SendThreadLock：trueの場合、発生したログはStartSendThreadが呼び出されるまでサーバーに転送せず、キューに保存します。ただしNative Crashが発生した場合、ThreadLockを解除してログを転送します。
 
@@ -312,13 +312,13 @@ false：重複除去ロジックを無効にする
 <dict>
     <key> NSExceptionDomains </key>
     <dict>
-           <key> api-logncrash.cloud.toast.com </key>
+           <key> api-logncrash.nhncloudservice.com </key>
             <dict>
 		 <key>NSTemporaryExceptionAllowsInsecureHttpLoads </key>
 		 <true />
 	    </dict>
 
-	   <key> setting-logncrash.cloud.toast.com </key>
+	   <key> api-setting-logncrash.nhncloudservice.com </key>
             <dict>
 		 <key>NSTemporaryExceptionAllowsInsecureHttpLoads </key>
 		 <true />
@@ -330,7 +330,7 @@ false：重複除去ロジックを無効にする
 
 3.ATS自動設定機能
 
-- Assets > Toast > LogNCrash > Editor > post_process.pyファイルには、iOSビルド時、info.plistにapi-logncrash.cloud.toast.comとsetting-logncrash.cloud.toast.comを自動的に追加するコードが挿入されています。
+- Assets > Toast > LogNCrash > Editor > post_process.pyファイルには、iOSビルド時、info.plistにapi-logncrash.nhncloudservice.comとapi-setting-logncrash.nhncloudservice.comを自動的に追加するコードが挿入されています。
 
 ## iOS Native Crashを解析する
 - Unity iOSのCrashは、Unity Engineで発生するCrashと、iOS Naitveで発生するCrashに区分されます。

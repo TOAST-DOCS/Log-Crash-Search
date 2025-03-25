@@ -43,7 +43,7 @@ Log & Crash Unity SDK 특·장점은 다음과 같습니다.
 Unity 메뉴바에서 LogNCrash> Edit Settings를 선택하여 LogNCrashSettings를 생성합니다. LogNCrashSettings는 AssetDatabase로 사용자 앱키와 SDK 동작을 정의 합니다.
 
 - Appkey: 사용자 앱키
-- URL: 콜렉터 주소, https://api-logncrash.cloud.toast.com를 사용합니다.
+- URL: 콜렉터 주소, https://api-logncrash.nhncloudservice.com를 사용합니다.
 - Version: 로그 버전
 - Send Warning: Unity에서 발생한 Warning 로그의 수집 여부
 - Send Error: Unity에서 발생한 Error 로그의 수집 여부
@@ -77,7 +77,7 @@ namespace Toast.LogNCrash
 	{
 		void Start ()
 		{
-			LogNCrash.Initialize ("https://api-logncrash.cloud.toast.com", "appkey", "1.0.0", 80,  true);
+			LogNCrash.Initialize ("https://api-logncrash.nhncloudservice.com", "appkey", "1.0.0", 443,  true);
 			LogNCrash.StartSendThread ();
 		}
 	}
@@ -87,7 +87,7 @@ namespace Toast.LogNCrash
 - Appkey: 사용자 앱키
 - URL: 콜렉터 주소, http, https의 콜렉터 정보를 설정
 - Version: 로그 버전
-- Port: 프로토콜에 따라 80, 443을 설정
+- Port: 443
 - SendThreadLock: true인 경우 발생한 로그들은 StartSendThread가 호출되기 전까지 서버에 전송하지 않고, 큐에 저장합니다. 단 Native Crash가 발생한 경우 ThreadLock을 해제하고 로그를 전송합니다.
 
 ## 상세 API

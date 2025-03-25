@@ -101,8 +101,8 @@ void DestroyToastLog();
 
 ```
 #define LOGNCRASH_VERSION         "1.0.0"
-#define LOGNCRASH_COLLECTOR_ADDR  "api-logncrash.cloud.toast.com"
-#define LOGNCRASH_COLLECTOR_PORT  80
+#define LOGNCRASH_COLLECTOR_ADDR  "api-logncrash.nhncloudservice.com"
+#define LOGNCRASH_COLLECTOR_PORT  443
 #ifdef WIN32
 #define LOGNCRASH_LOGSOURCE       "logncrash-windows"
 #else   //#ifdef WIN32
@@ -134,7 +134,7 @@ void destroy();
   - appKey: Appkey
   - version: App version
   - collectorAddr: Collector server address
-    - Log&Crash collector server: api-logncrash.cloud.toast.com
+    - Log&Crash collector server: api-logncrash.nhncloudservice.com
   - collectorPort: Collector server port
   - logSource: Log source
   - logType: Log type
