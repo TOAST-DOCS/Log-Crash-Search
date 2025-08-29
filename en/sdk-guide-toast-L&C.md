@@ -14,9 +14,6 @@ With NHN Cloud Log & Crash Search SDK, easy and strong remote log and crash anal
 #### Android
 * See [Guide for NHN Cloud Log & Crash Search Android](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-android/).
 
-#### Unity
-* See [Guide for NHN Cloud Log & Crash Search Unity](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-unity/).
-
 #### Windows C++
 * See [Guide for NHN Cloud Log & Crash Search Windows C++](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-windows/).
 
