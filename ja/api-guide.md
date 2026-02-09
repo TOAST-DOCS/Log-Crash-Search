@@ -1,6 +1,12 @@
 ## Data & Analytics > Log & Crash Search > APIガイド
+### Appkey & SecretKey
+Log & Crash Search APIを使用するには、AppkeyとSecretKeyが必要です。
 
+Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、APIリクエスト時のサービス識別と有効性検証に使用されます。SecretKeyは、APIへのアクセスを制御するシークレットキーです。
+
+Appkey及びSecretKeyの確認及び使用に関する詳細は、[Appkey](docs.nhncloud.com/ja/nhncloud/ja/public-api/appkey)を参照してください。
 ## ログ収集API
+
 HTTPプロトコルを使用してLog & Crash収集サーバーにログを転送できます。
 
 > - JSON/HTTPでLog & Crash収集サーバーにログを転送する時は、次のアドレスを使用する必要があります。
@@ -277,10 +283,10 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 ```
 
 ## ログ検索API
+
 保存されたログをLuceneクエリを使用して検索できます。</br>
 ログ検索APIは、使用パターンによって1時間あたりにリクエストできる量を制限します。検索に使用可能なリソースはトークンで表現し、検索APIを呼び出すたびに内部基準に基づいて一定量が差し引かれます。トークンの残量が正の場合、検索APIを使用できます。</br>
 検索時に差し引かれるトークン数は検索期間や容量、クエリの複雑さによって異なり、トークンは時間が経過するにつれて自動的にチャージされます。</br>
-APIリクエストの際、プロジェクトで有効化されたsecretkeyをヘッダーに含める必要があります。
 
 ![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
 
