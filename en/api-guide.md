@@ -1,12 +1,12 @@
 ## Data & Analytics > Log & Crash Search > API Guide
+### Appkey and SecretKey
+
+AppKey and SecretKey are required to use the Log & Crash Search API.
+
+An Appkey is a unique authentication key issued for each NHN Cloud service, used to identify the service and validate API requests. A SecretKey is a private key used to control access to the API. For more information on checking and using Appkeys, please refer to the [Appkey](docs.nhncloud.com/en/nhncloud/en/public-api/appkey).
 
 ## Collect Log API
-### Prerequisite
-Appkey is required to use the Log & Crash Search API. An Appkey is a unique authentication key issued for each NHN Cloud service, used to identify the service and validate API requests.
 
-For more information on checking and using Appkeys, please refer to the [Appkey](docs.nhncloud.com/en/nhncloud/en/public-api/appkey).
-
-### API Usage
 Logs can be sent to Log & Crash collector server via HTTP protocol. 
 
 > - Use the following address to send logs to the Log & Crash collector server with JSON/HTTP. 
@@ -213,7 +213,7 @@ resultList: array
     [out] Result value of each delivered log
 ```
 
-#### Samples
+### Samples
 
 [When log is normally sent with curl]
 
@@ -283,19 +283,14 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 
 
 ## Log Search API
-### Prerequisite
-AppKey and SecretKey are required to use the Log & Crash Search API.
 
-An Appkey is a unique authentication key issued for each NHN Cloud service, used to identify the service and validate API requests. A SecretKey is a private key used to control access to the API. For more information on checking and using Appkeys, please refer to the [Appkey](docs.nhncloud.com/en/nhncloud/en/public-api/appkey).
-
-### API Usage
 Saved logs can be searched using Lucene queries.</br>
 The log search API limits the amount of requests per hour according to user pattern. The resources available while searching are represented as tokens, and some of them are deducted whenever the search API is called. The API is available for use as long as the number of remaining tokens is a positive number.</br>
 The number of tokens deducted when searching an item varies depending on the search duration, size, and the complexity of a query. Tokens are automatically replenished over time.</br>
 
 ![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
 
-#### Basic Information
+### Basic Information
 ```
 API Endpoint: https://api-lncs-search.nhncloudservice.com
 ```
@@ -303,7 +298,7 @@ API Endpoint: https://api-lncs-search.nhncloudservice.com
 Only logs created in the past 90 days can be searched. The range of start time and end time cannot exceed 31 days.
 ```
 
-#### Search API
+### Search API
 You can view logs within the specified time frame using the Lucene query. Phasing is used to view them, which allows you to search for up to 100,000 logs.
 ```
 POST /api/v2/search/{appkey}
@@ -311,17 +306,17 @@ POST /api/v2/search/{appkey}
 Content-Type: application/json
 ```
 
-##### Request Parameter
+#### Request Parameter
 | Name | Format | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project appkey | O | 
 
-##### Request Header
+#### Request Header
 | Name | Format | Description             | Required |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | Project secretkey | O |
 
-##### Request Body
+#### Request Body
 | Name | Format | Description | Required | Note |
 | --- | --- | --- | --- | --- |
 | query | String | Lucene query | O |  |
@@ -348,7 +343,7 @@ Content-Type: application/json
 ```
 </details>
 
-##### Response
+#### Response
 | Name | Type | Format | Description |
 | --- | --- | --- | --- |
 | totalItems | Body | Number | Number of logs |
@@ -385,7 +380,7 @@ Content-Type: application/json
 </details>
 
 
-#### Scroll Start API
+### Scroll Start API
 Searches all the logs within the specified time frame using the Lucene query without pages specified. It can be used with Scroll Continue API to search logs multiple times.
 ```
 POST /api/v2/search/scroll/{appkey}
@@ -393,17 +388,17 @@ POST /api/v2/search/scroll/{appkey}
 Content-Type: application/json
 ```
 
-##### Request Parameter
+#### Request Parameter
 | Name | Format | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project appkey | O | 
 
-##### Request Header
+#### Request Header
 | Name | Format | Description             | Required |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | Project secretkey | O |
 
-##### Request Body
+#### Request Body
 | Name | Format | Description | Required | Note |
 | --- | --- | --- | --- | --- |
 | query | String | Lucene query | O |  |
@@ -428,7 +423,7 @@ Content-Type: application/json
 ```
 </details>
 
-##### Response
+#### Response
 | Name | Type | Format | Description |
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
@@ -465,7 +460,7 @@ Content-Type: application/json
 </details>
 
 
-#### Scroll Continue API
+### Scroll Continue API
 Continues searching logs by specifying the Scroll Key obtained from Scroll Start API or the previously called Scroll Continue API.</br>
 Scroll Key is valid for 1 minute.
 ```
@@ -474,21 +469,21 @@ POST /api/v2/search/scroll/{appkey}/{scrollKey}
 Content-Type: application/json
 ```
 
-##### Request Parameter
+#### Request Parameter
 | Name | Format | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project appkey | O |
 | scrollKey | String | Scroll Key | O |
 
-##### Request Header
+#### Request Header
 | Name | Format | Description             | Required |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | Project secretkey | O |
 
-##### Request Body
+#### Request Body
 Scroll Continue API does not require the request body.
 
-##### Response
+#### Response
 | Name | Type | Format | Description |
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
@@ -522,23 +517,23 @@ Scroll Continue API does not require the request body.
 ```
 </details>
 
-#### Available Token API
+### Available Token API
 Retrieves the number of available tokens.
 ```
 GET /api/v2/search/available-tokens/{appkey}
 ```
 
-##### Request Parameter
+#### Request Parameter
 | Name | Format | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project appkey | O |
 
-##### Request Header
+#### Request Header
 | Name | Format | Description             | Required |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | Project secretkey | O |
 
-##### Response
+#### Response
 | Name | Type | Format | Description |
 | --- | --- | --- | --- |
 | availableToken | Body | Number | Available tokens |
