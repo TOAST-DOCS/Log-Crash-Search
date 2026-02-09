@@ -1,12 +1,12 @@
 ## Data & Analytics > Log & Crash Search > APIガイド
+### Appkey & SecretKey
+Log & Crash Search APIを使用するには、AppkeyとSecretKeyが必要です。
 
+Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、APIリクエスト時のサービス識別と有効性検証に使用されます。SecretKeyは、APIへのアクセスを制御するシークレットキーです。
+
+Appkey及びSecretKeyの確認及び使用に関する詳細は、[Appkey](docs.nhncloud.com/ja/nhncloud/ja/public-api/appkey)を参照してください。
 ## ログ収集API
-### 前提条件
-Log & Crash Search APIを使用するには、Appkeyが必要です。Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、APIリクエスト時のサービス識別と有効性検証に使用されます。
 
-Appkeyの確認及び使用に関する詳細は、[Appkey](docs.nhncloud.com/ja/nhncloud/ja/public-api/appkey)を参照してください。
-
-### APIの使用
 HTTPプロトコルを使用してLog & Crash収集サーバーにログを転送できます。
 
 > - JSON/HTTPでLog & Crash収集サーバーにログを転送する時は、次のアドレスを使用する必要があります。
@@ -214,7 +214,7 @@ resultList: array
     [out]転送された各ログの結果値
 ```
 
-#### サンプル
+### サンプル
 
 [curlを使用して正常にログを転送した場合]
 
@@ -283,21 +283,14 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 ```
 
 ## ログ検索API
-### 前提条件
-Log & Crash Search APIを使用するには、AppkeyとSecretKeyが必要です。
 
-Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーであり、APIリクエスト時のサービス識別と有効性検証に使用されます。SecretKeyは、APIへのアクセスを制御するシークレットキーです。
-
-Appkey及びSecretKeyの確認及び使用に関する詳細は、[Appkey](docs.nhncloud.com/ja/nhncloud/ja/public-api/appkey)を参照してください。
-
-### APIの使用
 保存されたログをLuceneクエリを使用して検索できます。</br>
 ログ検索APIは、使用パターンによって1時間あたりにリクエストできる量を制限します。検索に使用可能なリソースはトークンで表現し、検索APIを呼び出すたびに内部基準に基づいて一定量が差し引かれます。トークンの残量が正の場合、検索APIを使用できます。</br>
 検索時に差し引かれるトークン数は検索期間や容量、クエリの複雑さによって異なり、トークンは時間が経過するにつれて自動的にチャージされます。</br>
 
 ![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
 
-#### 基本情報
+### 基本情報
 ```
 API Endpoint: https://api-lncs-search.nhncloudservice.com
 ```
@@ -305,24 +298,24 @@ API Endpoint: https://api-lncs-search.nhncloudservice.com
 検索は最近90日以内のログのみ可能で、開始時間と終了時間の範囲は31日を超えることはできません。
 ```
 
-#### Search API
+### Search API
 Luceneクエリを使用して指定した時間範囲のログを照会します。ページングを適用して照会することができ、最大100,000件のログまで検索が可能です。
 ```
 POST /api/v2/search/{appkey}
 Content-Type: application/json
 ```
 
-##### リクエストパラメータ
+#### リクエストパラメータ
 | 名前 | 形式 | 説明 | 必須 |
 | --- | --- | --- | --- |
 | appkey | String | プロジェクトアプリケーションキー | O | 
 
-##### リクエストヘッダ
+#### リクエストヘッダ
 | 名前 | 形式 | 説明            | 必須 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | プロジェクトsecretkey | O |
 
-##### リクエスト本文
+#### リクエスト本文
 | 名前 | 形式 | 説明 | 必須 | 備考 |
 | --- | --- | --- | --- | --- |
 | query | String | Luceneクエリ | O |  |
@@ -349,7 +342,7 @@ Content-Type: application/json
 ```
 </details>
 
-##### レスポンス
+#### レスポンス
 | 名前 | 種類 | 形式 | 説明 |
 | --- | --- | --- | --- |
 | totalItems | Body | Number | ログ数 |
@@ -386,24 +379,24 @@ Content-Type: application/json
 </details>
 
 
-#### Scroll Start API
+### Scroll Start API
 Luceneクエリを使って指定した時間範囲のログをページ指定なしで全て照会します。Scroll Continue APIと一緒に使って複数回に渡って照会できます。
 ```
 POST /api/v2/search/scroll/{appkey}
 Content-Type: application/json
 ```
 
-##### リクエストパラメータ
+#### リクエストパラメータ
 | 名前 | 形式 | 説明 | 必須 |
 | --- | --- | --- | --- |
 | appkey | String | プロジェクトアプリケーションキー | O | 
 
-##### リクエストヘッダ
+#### リクエストヘッダ
 | 名前 | 形式 | 説明            | 必須 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | プロジェクトsecretkey | O |
 
-##### リクエスト本文
+#### リクエスト本文
 | 名前 | 形式 | 説明 | 必須 | 備考 |
 | --- | --- | --- | --- | --- |
 | query | String | Luceneクエリ | O |  |
@@ -428,7 +421,7 @@ Content-Type: application/json
 ```
 </details>
 
-##### レスポンス
+#### レスポンス
 | 名前 | 種類 | 形式 | 説明 |
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
@@ -465,7 +458,7 @@ Content-Type: application/json
 </details>
 
 
-#### Scroll Continue API
+### Scroll Continue API
 Scroll Start API または直前に呼び出した Scroll Continue API から取得した Scroll Key を指定してログ照会を継続します。</br>
 Scroll Keyは1分間有効です。
 ```
@@ -473,21 +466,21 @@ POST /api/v2/search/scroll/{appkey}/{scrollKey}
 Content-Type: application/json
 ```
 
-##### リクエストパラメータ
+#### リクエストパラメータ
 | 名前 | 形式 | 説明 | 必須 |
 | --- | --- | --- | --- |
 | appkey | String | プロジェクトアプリケーションキー | O |
 | scrollKey | String | Scroll Key | O |
 
-##### リクエストヘッダ
+#### リクエストヘッダ
 | 名前 | 形式 | 説明            | 必須 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | プロジェクトsecretkey | O |
 
-##### リクエスト本文
+#### リクエスト本文
 Scroll Continue APIはリクエスト本文が必要しません。
 
-##### レスポンス
+#### レスポンス
 | 名前 | 種類 | 形式 | 説明 |
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
@@ -521,23 +514,23 @@ Scroll Continue APIはリクエスト本文が必要しません。
 ```
 </details>
 
-#### Available Token API
+### Available Token API
 使用可能なトークン数を照会します。
 ```
 GET /api/v2/search/available-tokens/{appkey}
 ```
 
-##### リクエストパラメータ
+#### リクエストパラメータ
 | 名前 | 形式 | 説明 | 必須 |
 | --- | --- | --- | --- |
 | appkey | String | プロジェクトアプリケーションキー | O |
 
-##### リクエストヘッダ
+#### リクエストヘッダ
 | 名前 | 形式 | 説明            | 必須 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | プロジェクトsecretkey | O |
 
-##### レスポンス
+#### レスポンス
 | 名前 | 種類 | 形式 | 説明 |
 | --- | --- | --- | --- |
 | availableToken | Body | Number | 使用可能なトークン |
