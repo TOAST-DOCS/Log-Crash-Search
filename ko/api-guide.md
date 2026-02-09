@@ -1,7 +1,13 @@
 ## Data & Analytics > Log & Crash Search > API 가이드
 
 ## 로그 수집 API
-HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할수 있습니다. 
+### 사전 준비 사항
+Log & Crash Search의 로그 수집 API를 사용하려면 Appkey가 필요합니다. Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키로 API 요청 시 서비스 식별과 유효성 검증에 사용됩니다.
+
+Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](docs.nhncloud.com/ko/nhncloud/ko/public-api/appkey)를 참고하세요.
+
+### API 사용
+HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할 수 있습니다.
 
 > - JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
 >     - Log & Crash: api-logncrash.nhncloudservice.com
@@ -208,7 +214,7 @@ resultList: array
     [out] 전송된 각 로그들의 결괏값
 ```
 
-### 샘플
+#### 샘플
 
 [curl을 사용해 정상적으로 로그를 전송한 경우]
 
@@ -277,14 +283,21 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 ```
 
 ## 로그 검색 API
+### 사전 준비 사항
+Log & Crash Search 로그 검색 API를 사용하려면 Appkey와 SecretKey가 필요합니다.
+
+Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키로 API 요청 시 서비스 식별과 유효성 검증에 사용됩니다. SecretKey는 API에 대한 접근을 제어하는 비밀 키입니다.
+
+Appkey 및 SecretKey 확인 및 사용에 대한 자세한 내용은 [Appkey](docs.nhncloud.com/ko/nhncloud/ko/public-api/appkey)를 참고하세요.
+
+### API 사용
 저장된 로그를 Lucene 쿼리를 사용해 검색할 수 있습니다.</br>
 로그 검색 API는 사용 패턴에 따라 시간당 요청할 수 있는 양을 제한합니다. 검색에 사용 가능한 리소스는 토큰으로 표현하며, 검색 API를 호출할 때마다 내부 기준에 따라 일정량이 차감됩니다. 토큰 잔량이 양수일 때 검색 API를 사용할 수 있습니다.</br>
 검색 시 차감되는 토큰 수는 검색 기간 및 용량, 쿼리의 복잡도에 따라 달라지며, 토큰은 시간이 경과함에 따라 자동으로 충전됩니다.</br>
-API 요청 시 프로젝트에서 활성화된 secretkey를 헤더에 포함해야 합니다.
 
 ![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
 
-### 기본 정보
+#### 기본 정보
 ```
 API Endpoint: https://api-lncs-search.nhncloudservice.com
 ```
@@ -292,7 +305,7 @@ API Endpoint: https://api-lncs-search.nhncloudservice.com
 검색은 최근 90일 이내의 로그만 가능하며, 시작 시간과 종료 시간의 범위는 31일을 초과할 수 없습니다.
 ```
 
-### Search API
+#### Search API
 Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 페이징을 적용하여 조회할 수 있고, 최대 100,000건의 로그까지 검색이 가능합니다.
 ```
 POST /api/v2/search/{appkey}
@@ -300,17 +313,17 @@ POST /api/v2/search/{appkey}
 Content-Type: application/json
 ```
 
-#### 요청 파라미터
+##### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O | 
 
-#### 요청 헤더
+##### 요청 헤더
 | 이름 | 형식 | 설명             | 필수 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | 프로젝트 secretkey | O |
 
-#### 요청 본문
+##### 요청 본문
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
 | query | String | Lucene 쿼리 | O |  |
@@ -337,7 +350,7 @@ Content-Type: application/json
 ```
 </details>
 
-#### 응답
+##### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
 | totalItems | Body | Number | 로그 개수 |
@@ -374,7 +387,7 @@ Content-Type: application/json
 </details>
 
 
-### Scroll Start API
+#### Scroll Start API
 Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지 지정 없이 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
 ```
 POST /api/v2/search/scroll/{appkey}
@@ -382,17 +395,17 @@ POST /api/v2/search/scroll/{appkey}
 Content-Type: application/json
 ```
 
-#### 요청 파라미터
+##### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O | 
 
-#### 요청 헤더
+##### 요청 헤더
 | 이름 | 형식 | 설명             | 필수 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | 프로젝트 secretkey | O |
 
-#### 요청 본문
+##### 요청 본문
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
 | query | String | Lucene 쿼리 | O |  |
@@ -417,7 +430,7 @@ Content-Type: application/json
 ```
 </details>
 
-#### 응답
+##### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
@@ -454,7 +467,7 @@ Content-Type: application/json
 </details>
 
 
-### Scroll Continue API
+#### Scroll Continue API
 Scroll Start API 또는 직전에 호출한 Scroll Continue API로부터 얻은 Scroll Key를 지정하여 로그 조회를 지속합니다.</br>
 Scroll Key는 1분간 유효합니다.
 ```
@@ -463,21 +476,21 @@ POST /api/v2/search/scroll/{appkey}/{scrollKey}
 Content-Type: application/json
 ```
 
-#### 요청 파라미터
+##### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 | scrollKey | String | Scroll Key | O |
 
-#### 요청 헤더
+##### 요청 헤더
 | 이름 | 형식 | 설명             | 필수 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | 프로젝트 secretkey | O |
 
-#### 요청 본문
+##### 요청 본문
 Scroll Continue API는 요청 본문이 필요하지 않습니다.
 
-#### 응답
+##### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
 | scrollKey | Body | String | Scroll Key |
@@ -511,23 +524,23 @@ Scroll Continue API는 요청 본문이 필요하지 않습니다.
 ```
 </details>
 
-### Available Token API
+#### Available Token API
 사용 가능한 토큰 수를 조회합니다.
 ```
 GET /api/v2/search/available-tokens/{appkey}
 ```
 
-#### 요청 파라미터
+##### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 
-#### 요청 헤더
+##### 요청 헤더
 | 이름 | 형식 | 설명             | 필수 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | 프로젝트 secretkey | O |
 
-#### 응답
+##### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
 | availableToken | Body | Number | 사용 가능한 토큰 |
