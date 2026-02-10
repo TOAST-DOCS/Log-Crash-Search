@@ -3,7 +3,7 @@
 
 AppKey and SecretKey are required to use the Log & Crash Search API.
 
-An Appkey is a unique authentication key issued for each NHN Cloud service, used to identify the service and validate API requests. A SecretKey is a private key used to control access to the API. For more information on checking and using Appkeys, please refer to the [Appkey](/en/nhncloud/en/public-api/appkey).
+An Appkey is a unique authentication key issued for each NHN Cloud service, used to identify the service and validate API requests. A SecretKey is a private key used to control access to the API. For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
 
 ## Collect Log API
 

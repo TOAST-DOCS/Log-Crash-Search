@@ -4,7 +4,7 @@ Log & Crash Search API를 사용하려면 Appkey와 SecretKey가 필요합니다
 
 Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키로 API 요청 시 서비스 식별과 유효성 검증에 사용됩니다. SecretKey는 API에 대한 접근을 제어하는 비밀 키입니다.
 
-Appkey 및 SecretKey 확인 및 사용에 대한 자세한 내용은 [Appkey](/ko/nhncloud/ko/public-api/appkey-gov)를 참고하세요.
+Appkey 및 SecretKey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey-gov)를 참고하세요.
 
 ## 로그 수집 API
 
