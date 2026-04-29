@@ -381,6 +381,139 @@ Content-Type: application/json
 </details>
 
 
+### Search API (Cursor 페이지네이션)
+Search API와 동일한 엔드포인트에서 URL 쿼리 파라미터 `?cursor`를 옵트인하면 cursor(search_after) 기반 페이지네이션을 사용할 수 있습니다. 깊은 페이지로 이동하더라도 `pageNumber × pageSize`의 result window 한계(기본 검색 API 100,000건)에 영향을 받지 않고 순차적으로 다음 페이지를 조회할 수 있습니다.
+
+```
+POST /api/v2/search/{appkey}?cursor
+
+Content-Type: application/json
+```
+
+> - URL 쿼리 파라미터 `?cursor`, `?cursor=true` 지정 시 cursor 페이지네이션이 활성화됩니다. 옵트인이 없으면 기존 Search API 동작이 그대로 유지됩니다.
+> - cursor 옵트인 시에는 `pageNumber`를 함께 보낼 수 없습니다(동시 지정 시 400 응답). 첫 페이지 요청 시에는 `cursor`를 비우고, 이후 페이지에서는 직전 응답의 `nextCursor` 값을 그대로 다음 요청의 `cursor` 필드에 전달합니다.
+> - `cursor` 값은 서버 내부 정렬 상태를 인코딩한 opaque 문자열입니다. 클라이언트에서 파싱·변형하지 마세요.
+> - 한 번의 호출에서 받을 수 있는 페이지 크기 제한(`pageSize` 최댓값 100)은 일반 Search API와 동일하게 적용됩니다.
+> - 마지막 페이지에 도달하면 응답 본문에 `nextCursor` 필드가 포함되지 않습니다.
+
+#### 요청 파라미터
+| 이름 | 위치 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- | --- |
+| appkey | Path | String | 프로젝트 앱키 | O |
+| cursor | Query | - | cursor 기반 페이지네이션 옵트인 플래그. `?cursor`, `?cursor=true` 지정 시 활성화 | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명             | 필수 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | 프로젝트 secretkey | O |
+
+#### 요청 본문
+| 이름 | 형식 | 설명 | 필수 | 비고 |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene 쿼리 | O |  |
+| from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
+| sort | Object | 정렬 기준 |  | 필드별 오름차순(ASC) 및 내림차순(DESC) 설정 |
+| cursor | String | 다음 페이지 조회용 커서 |  | 첫 페이지에서는 생략. 이후 페이지에서는 직전 응답의 `nextCursor` 값을 그대로 전달. `pageNumber`와 동시 사용 불가(400) |
+
+<details>
+<summary>예시</summary>
+
+첫 페이지 요청(`cursor` 미지정):
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "sort": {
+      "logTime": "desc"
+  }
+}
+```
+
+다음 페이지 요청(직전 응답의 `nextCursor`를 그대로 전달):
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "sort": {
+      "logTime": "desc"
+  },
+  "cursor": "g2VleUlkLi4u"
+}
+```
+</details>
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| totalItems | Body | Number | 로그 개수 |
+| pageSize | Body | Number | 페이지 크기 |
+| data | Body | List | 로그 목록 |
+| nextCursor | Body | String | 다음 페이지 조회용 커서. 다음 결과가 존재할 때만 포함되며, 마지막 페이지에는 포함되지 않음 |
+
+<details>
+<summary>예시</summary>
+
+다음 페이지가 존재할 때(응답에 `nextCursor` 포함):
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 50,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ],
+        "nextCursor": "g2VleUlkLi4u"
+    }
+}
+```
+
+마지막 페이지일 때(응답에 `nextCursor` 미포함):
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 50,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
 ### Scroll Start API
 Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지 지정 없이 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
 ```
