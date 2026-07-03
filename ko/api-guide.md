@@ -11,8 +11,8 @@ Appkey 및 SecretKey 확인 및 사용에 대한 자세한 내용은 [Appkey](/n
 HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할 수 있습니다.
 
 > - JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
-    >     - Log & Crash: api-logncrash.nhncloudservice.com
-    >     - Method of Delivery: POST
+>     - Log & Crash: api-logncrash.nhncloudservice.com
+>     - Method of Delivery: POST
 >     - URI: /v2/log
 >     - Content-Type: "application/json"
 > - 로그를 전송하기 전에 Log & Crash에 프로젝트를 등록했는지 확인합니다.
