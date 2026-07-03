@@ -11,13 +11,13 @@ Appkey 및 SecretKey 확인 및 사용에 대한 자세한 내용은 [Appkey](/n
 HTTP 프로토콜을 사용해서 Log & Crash 수집 서버에 로그를 전송할 수 있습니다.
 
 > - JSON/HTTP로 Log & Crash 수집 서버에 로그를 전송할 때는 다음 주소를 사용해야 합니다.
->     - Log & Crash: api-logncrash.nhncloudservice.com
->     - Method of Delivery: POST
+    >     - Log & Crash: api-logncrash.nhncloudservice.com
+    >     - Method of Delivery: POST
 >     - URI: /v2/log
 >     - Content-Type: "application/json"
-> - 로그를 전송하기 전에 Log & Crash에 프로젝트를 등록했는지 확인합니다.  
-> - "logTime"은 Log & Crash 시스템에서 사용합니다. 해당 키를 사용하면 Log & Crash에서는 무시합니다.  
-> -  키 이름에 공백 문자가 들어가지 않게 주의합니다. 예를 들어 "UserID"와 "UserID "는 서로 다른 키로 인식됩니다. 
+> - 로그를 전송하기 전에 Log & Crash에 프로젝트를 등록했는지 확인합니다.
+> - "logTime"은 Log & Crash 시스템에서 사용합니다. 해당 키를 사용하면 Log & Crash에서는 무시합니다.
+> -  키 이름에 공백 문자가 들어가지 않게 주의합니다. 예를 들어 "UserID"와 "UserID "는 서로 다른 키로 인식됩니다.
 > -  HTTP 요청 하나의 최대 크기는 52MB입니다.
 > -  로그(JSON) 하나의 최대 크기는 8MB(8388608바이트)입니다.
 
@@ -285,6 +285,8 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 
 ## 로그 검색 API
 
+> [주의] 본 API는 deprecate 예정입니다. 신규 사용은 아래의 [v3 로그 검색 API](#v3-로그-검색-api) 사용을 권장합니다.
+
 저장된 로그를 Lucene 쿼리를 사용해 검색할 수 있습니다.</br>
 로그 검색 API는 사용 패턴에 따라 시간당 요청할 수 있는 양을 제한합니다. 검색에 사용 가능한 리소스는 토큰으로 표현하며, 검색 API를 호출할 때마다 내부 기준에 따라 일정량이 차감됩니다. 토큰 잔량이 양수일 때 검색 API를 사용할 수 있습니다.</br>
 검색 시 차감되는 토큰 수는 검색 기간 및 용량, 쿼리의 복잡도에 따라 달라지며, 토큰은 시간이 경과함에 따라 자동으로 충전됩니다.</br>
@@ -365,6 +367,139 @@ Content-Type: application/json
     "body": {
         "totalItems": 50,
         "pageNumber": 1,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Search API (Cursor 페이지네이션)
+Search API와 동일한 엔드포인트에서 URL 쿼리 파라미터 `?cursor`를 옵트인하면 cursor(search_after) 기반 페이지네이션을 사용할 수 있습니다. 깊은 페이지로 이동하더라도 `pageNumber × pageSize`의 result window 한계(기본 검색 API 100,000건)에 영향을 받지 않고 순차적으로 다음 페이지를 조회할 수 있습니다.
+
+```
+POST /api/v2/search/{appkey}?cursor
+
+Content-Type: application/json
+```
+
+> - URL 쿼리 파라미터 `?cursor`, `?cursor=true` 지정 시 cursor 페이지네이션이 활성화됩니다. 옵트인이 없으면 기존 Search API 동작이 그대로 유지됩니다.
+> - cursor 옵트인 시에는 `pageNumber`를 함께 보낼 수 없습니다(동시 지정 시 400 응답). 첫 페이지 요청 시에는 `cursor`를 비우고, 이후 페이지에서는 직전 응답의 `nextCursor` 값을 그대로 다음 요청의 `cursor` 필드에 전달합니다.
+> - `cursor` 값은 서버 내부 정렬 상태를 인코딩한 opaque 문자열입니다. 클라이언트에서 파싱·변형하지 마세요.
+> - 한 번의 호출에서 받을 수 있는 페이지 크기 제한(`pageSize` 최댓값 100)은 일반 Search API와 동일하게 적용됩니다.
+> - 마지막 페이지에 도달하면 응답 본문에 `nextCursor` 필드가 포함되지 않습니다.
+
+#### 요청 파라미터
+| 이름 | 위치 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- | --- |
+| appkey | Path | String | 프로젝트 앱키 | O |
+| cursor | Query | - | cursor 기반 페이지네이션 옵트인 플래그. `?cursor`, `?cursor=true` 지정 시 활성화 | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명             | 필수 |
+| --- | --- |----------------| --- |
+| X-LNCS-SECRET | String | 프로젝트 secretkey | O |
+
+#### 요청 본문
+| 이름 | 형식 | 설명 | 필수 | 비고 |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene 쿼리 | O |  |
+| from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
+| sort | Object | 정렬 기준 |  | 필드별 오름차순(ASC) 및 내림차순(DESC) 설정 |
+| cursor | String | 다음 페이지 조회용 커서 |  | 첫 페이지에서는 생략. 이후 페이지에서는 직전 응답의 `nextCursor` 값을 그대로 전달. `pageNumber`와 동시 사용 불가(400) |
+
+<details>
+<summary>예시</summary>
+
+첫 페이지 요청(`cursor` 미지정):
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "sort": {
+      "logTime": "desc"
+  }
+}
+```
+
+다음 페이지 요청(직전 응답의 `nextCursor`를 그대로 전달):
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2021-01-01T10:00:00+09:00",
+  "to": "2021-01-01T11:00:00+09:00",
+  "pageSize": 10,
+  "sort": {
+      "logTime": "desc"
+  },
+  "cursor": "g2VleUlkLi4u"
+}
+```
+</details>
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| totalItems | Body | Number | 로그 개수 |
+| pageSize | Body | Number | 페이지 크기 |
+| data | Body | List | 로그 목록 |
+| nextCursor | Body | String | 다음 페이지 조회용 커서. 다음 결과가 존재할 때만 포함되며, 마지막 페이지에는 포함되지 않음 |
+
+<details>
+<summary>예시</summary>
+
+다음 페이지가 존재할 때(응답에 `nextCursor` 포함):
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 50,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ],
+        "nextCursor": "g2VleUlkLi4u"
+    }
+}
+```
+
+마지막 페이지일 때(응답에 `nextCursor` 미포함):
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 50,
         "pageSize": 10,
         "data": [
             {
@@ -552,6 +687,512 @@ GET /api/v2/search/available-tokens/{appkey}
     "body": {
         "availableToken": 9875
     }
+}
+```
+</details>
+
+
+## v3 로그 검색 API
+
+저장된 로그를 Lucene 쿼리를 사용해 검색할 수 있으며, 크래시 분석용 Symbol 파일 업로드/조회/삭제 기능을 제공합니다.</br>
+로그 검색 API는 사용 패턴에 따라 시간당 요청할 수 있는 양을 제한합니다. 검색에 사용 가능한 리소스는 토큰으로 표현하며, 검색 API를 호출할 때마다 내부 기준에 따라 일정량이 차감됩니다. 토큰 잔량이 양수일 때 검색 API를 사용할 수 있습니다.</br>
+검색 시 차감되는 토큰 수는 검색 기간 및 용량, 쿼리의 복잡도에 따라 달라지며, 토큰은 시간이 경과함에 따라 자동으로 충전됩니다.</br>
+
+### 인증
+
+API 호출 및 인증을 위한 방법으로 User Access Key 토큰을 지원합니다.</br>
+토큰 발급 방법은 아래 링크를 참고하세요.
+
+[User Access Key Token](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/user-access-key-token/)
+
+#### API 요청의 HTTP 헤더 예시
+```
+X-NHN-Authorization: Bearer {Access Token}
+```
+
+### Search API
+Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 페이징을 적용하여 조회할 수 있고, 최대 100,000건의 로그까지 검색이 가능합니다.
+```
+POST /v3/{appkey}/logs/search
+
+Content-Type: application/json
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
+
+#### 요청 본문
+| 이름 | 형식 | 설명 | 필수 | 비고 |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene 쿼리 | O |  |
+| from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageNumber | Number | 페이지 번호 |  | 기본값 0 |
+| pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
+| sort | Object | 정렬 기준 |  | 필드별 오름차순(ASC) 및 내림차순(DESC) 설정 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2026-03-24T00:00:00+09:00",
+  "to": "2026-03-24T23:59:59.999+09:00",
+  "pageSize": 10,
+  "pageNumber": 0,
+  "sort": {
+      "logTime": "DESC"
+  }
+}
+```
+</details>
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| totalItems | Body | Number | 로그 개수 |
+| pageNumber | Body | Number | 페이지 번호 |
+| pageSize | Body | Number | 페이지 크기 |
+| data | Body | List | 로그 목록 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 20927,
+        "pageNumber": 0,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Cursor Search API
+cursor(opaque) 기반 페이지네이션으로 로그를 검색합니다.</br>
+깊은 페이지로 이동해도 `pageNumber × pageSize`의 result window 한계에 영향받지 않고 순차적으로 조회 가능합니다.
+
+- 첫 페이지 요청 시 body의 `cursor`를 생략합니다.
+- 다음 페이지 요청 시 직전 응답의 `nextCursor` 값을 body의 `cursor` 필드에 그대로 전달합니다.
+- 마지막 페이지에 도달하면 응답 body에 `nextCursor`가 포함되지 않습니다.
+- `cursor` 값은 백엔드 내부 정렬 상태를 인코딩한 opaque 문자열입니다. 클라이언트에서 파싱·변형하지 마세요.
+- `pageNumber`는 사용하지 않으며, body에 포함하면 400 응답이 반환됩니다.
+
+```
+POST /v3/{appkey}/logs/cursor
+
+Content-Type: application/json
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
+
+#### 요청 본문
+| 이름 | 형식 | 설명 | 필수 | 비고 |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene 쿼리 | O |  |
+| from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
+| sort | Object | 정렬 기준 |  | 필드별 오름차순(ASC) 및 내림차순(DESC) 설정 |
+| cursor | String | 이전 응답의 `nextCursor` 값 |  | 첫 페이지 요청 시 생략 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2026-03-24T00:00:00+09:00",
+  "to": "2026-03-24T23:59:59.999+09:00",
+  "pageSize": 10,
+  "sort": {
+      "logTime": "DESC"
+  },
+  "cursor": "g6JpdGVtc4123WsBYWKhYWOhYWQ"
+}
+```
+</details>
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| totalItems | Body | Number | 로그 개수 |
+| pageNumber | Body | Number | 페이지 번호 (cursor 모드에서는 항상 `0` 고정, 의미 없음) |
+| pageSize | Body | Number | 페이지 크기 |
+| data | Body | List | 로그 목록 |
+| nextCursor | Body | String | 다음 페이지 조회용 opaque cursor (마지막 페이지에는 미포함) |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "totalItems": 20907,
+        "pageNumber": 0,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ],
+        "nextCursor": "ghsAAAGePyNW0XZpRnFtZm42Q31231pRcHJ2UC9MMGpR"
+    }
+}
+```
+</details>
+
+
+### Scroll Start API
+Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지 지정 없이 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
+```
+POST /v3/{appkey}/logs/scroll
+
+Content-Type: application/json
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
+
+#### 요청 본문
+| 이름 | 형식 | 설명 | 필수 | 비고 |
+| --- | --- | --- | --- | --- |
+| query | String | Lucene 쿼리 | O |  |
+| from | String | 시작 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| to | String | 종료 시간 | O | ISO8601 형식 날짜(YYYY-MM-DDThh:mm:ss.sTZD) |
+| pageSize | Number | 페이지 크기 |  | 기본값 10, 최댓값 100 |
+| sort | Object | 정렬 기준 |  | 필드별 오름차순(ASC) 및 내림차순(DESC) 설정 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+  "query": "logType:\"NORMAL\"",
+  "from": "2026-03-24T00:00:00+09:00",
+  "to": "2026-03-24T23:59:59.999+09:00",
+  "pageSize": 10,
+  "sort": {
+      "logTime": "DESC"
+  }
+}
+```
+</details>
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | 로그 개수 |
+| pageSize | Body | Number | 페이지 크기 |
+| data | Body | List | 로그 목록 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "12345bd8-d5a3-3d42-8711-16bc225b0e59",
+        "totalItems": 20943,
+        "pageSize": 10,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Scroll Continue API
+Scroll Start API 또는 직전에 호출한 Scroll Continue API로부터 얻은 Scroll Key를 지정하여 로그 조회를 지속합니다.</br>
+Scroll Key는 1분간 유효합니다.
+```
+POST /v3/{appkey}/logs/scroll/{scrollKey}
+
+Content-Type: application/json
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O |
+| scrollKey | String | Scroll Key | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
+
+#### 요청 본문
+Scroll Continue API는 요청 본문이 필요하지 않습니다.
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| scrollKey | Body | String | Scroll Key |
+| totalItems | Body | Number | 로그 개수 |
+| data | Body | List | 로그 목록 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "scrollKey": "12345bd8-d5a3-3d42-8711-16bc225b0e59",
+        "totalItems": 20943,
+        "data": [
+            {
+                "logTime": 1609463102265,
+                "logType": "NORMAL",
+                "projectVersion": "1.0.0",
+                ...
+            },
+            ...
+        ]
+    }
+}
+```
+</details>
+
+
+### Available Token API
+사용 가능한 토큰 수를 조회합니다.
+```
+GET /v3/{appkey}/logs/available-token
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| availableToken | Body | Number | 사용 가능한 토큰 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "body": {
+        "availableToken": 9975
+    }
+}
+```
+</details>
+
+
+### Symbol Upload API
+크래시 분석용 Symbol 파일을 업로드합니다.
+```
+POST /v3/{appkey}/symbols?platform={platform}&version={version}&description={description}
+
+Content-Type: multipart/form-data
+```
+
+#### 요청 파라미터
+| 이름 | 위치 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- | -- |
+| appkey | Path | String | 프로젝트 앱키 | O |
+| platform | Query | String | Symbol 대상 플랫폼 (`iOS`, `Android`, `Android-NDK`, `Windows` 중 하나) | O |
+| version | Query | String | Symbol 버전 | O |
+| description | Query | String | Symbol 설명 (공백 등 특수문자는 URL 인코딩 필요) |  |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
+
+#### 요청 본문
+| 이름 | 형식 | 설명 | 필수 | 비고 |
+| --- | --- | --- | --- | --- |
+| symbolfile | Binary | Symbol 파일 | O | multipart/form-data 형식으로 전송 |
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| result.data.id | Body | List | 업로드된 Symbol 파일의 식별자 목록 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "result": {
+        "data": {
+            "id": [
+                "1239aaba9c74f678c6df8b8"
+            ]
+        }
+    }
+}
+```
+</details>
+
+
+### Symbol List API
+업로드된 Symbol 파일 목록을 조회합니다. `platform`/`version` 값으로 필터링하며, 전체 조회 시 두 값 모두 `all`로 호출합니다.
+```
+GET /v3/{appkey}/symbols/{platform}/{version}
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O |
+| platform | String | Symbol 플랫폼 필터 (전체 조회 시 `all`) | O |
+| version | String | Symbol 버전 필터 (전체 조회 시 `all`) | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| result.data | Body | List | Symbol 파일 목록 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "result": {
+        "data": [
+            {
+                ...
+            }
+        ]
+    }
+}
+```
+</details>
+
+
+### Symbol Delete API
+Symbol 파일을 단건 삭제합니다.
+```
+DELETE /v3/{appkey}/symbols/{sid}
+```
+
+#### 요청 파라미터
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| appkey | String | 프로젝트 앱키 | O |
+| sid | String | Symbol 파일 ID | O |
+
+#### 요청 헤더
+| 이름 | 형식 | 설명 | 필수 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
+
+#### 응답
+| 이름 | 종류 | 형식 | 설명 |
+| --- | --- | --- | --- |
+| header.isSuccessful | Body | Boolean | 성공 여부 |
+| header.resultCode | Body | Number | 결과 코드 |
+| header.resultMessage | Body | String | 결과 메시지 |
+
+<details>
+<summary>예시</summary>
+
+```json
+{
+  "header": {
+    "isSuccessful": true,
+    "resultMessage": "success",
+    "resultCode": 0
+  }
 }
 ```
 </details>
