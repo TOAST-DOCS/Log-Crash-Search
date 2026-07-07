@@ -302,7 +302,7 @@ API Endpoint: https://api-lncs-search.nhncloudservice.com
 ```
 
 ### Search API
-Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 페이징을 적용하여 조회할 수 있고, 최대 100,000건의 로그까지 검색이 가능합니다.
+Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 검색 결과(totalItems)에는 제한이 없으나, 페이징으로 조회 가능한 범위는 최대 100,000건(`pageNumber × pageSize ≤ 100,000`)까지입니다. 그 이상은 Cursor Search API 또는 Scroll API를 사용하세요.
 ```
 POST /api/v2/search/{appkey}
 
@@ -711,7 +711,7 @@ X-NHN-Authorization: Bearer {Access Token}
 ```
 
 ### Search API
-Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 페이징을 적용하여 조회할 수 있고, 최대 100,000건의 로그까지 검색이 가능합니다.
+Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 검색 결과(totalItems)에는 제한이 없으나, 페이징으로 조회 가능한 범위는 최대 100,000건(`pageNumber × pageSize ≤ 100,000`)까지입니다. 그 이상은 Cursor Search API 또는 Scroll API를 사용하세요.
 ```
 POST /v3/{appkey}/logs/search
 
