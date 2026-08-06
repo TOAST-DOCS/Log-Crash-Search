@@ -132,7 +132,7 @@ public static void RemoveAllCustomFields()
         - @logType
   - When the value of a custom field is NULL or empty, SDKs do not send the field to a server.
 
-  ### Lock Host
+### Lock Host
 
   ```
   		public static SetEnableHost(bool flag)
