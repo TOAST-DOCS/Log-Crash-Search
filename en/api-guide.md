@@ -74,7 +74,7 @@ UserBinaryData: string, optional
 	[in] Display [Download|Show] link on the log search screen, and send with values encoded with base64.
 
 UserTxtData: string, optional
-	[in] Show [Download|View] link on the log search page, to be sent with base64 encdoed value. 
+	[in] Show [Download|View] link on the log search page, to be sent with base64 encoded value. 
 
 txt*: string, optional
 	[in] Save fields starting with txt (e.g. txtMessage or txt_description) as text fields. Allows search by partial character strings of a field value (full text search) on the log search page. Field size can be no larger than 1MB.  
@@ -284,7 +284,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 
 ## Log Search API
 
-> [Caution] This API is scheduled for deprecation. For new development, we recommend using the [v3 Log Search API](#v3-로그-검색-api) below.
+> [Caution] This API is scheduled for deprecation. For new development, we recommend using the [v3 Log Search API](#v3-log-search-api) below.
 
 Saved logs can be searched using Lucene queries.</br>
 The log search API limits the amount of requests per hour according to user pattern. The resources available while searching are represented as tokens, and some of them are deducted whenever the search API is called. The API is available for use as long as the number of remaining tokens is a positive number.</br>
@@ -702,7 +702,7 @@ The number of tokens deducted per search varies depending on the search period, 
 The User Access Key token is supported as a method for API calls and authentication.<br>
 For information on how to issue a token, see the link below.
 
-[User Access Key Token](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/user-access-key-token/)
+[User Access Key Token](https://docs.nhncloud.com/en/nhncloud/en/public-api/user-access-key-token/)
 
 #### Example HTTP Header for an API Request
 ```
