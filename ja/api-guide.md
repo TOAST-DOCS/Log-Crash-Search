@@ -1054,3 +1054,140 @@ GET /v3/{appkey}/logs/available-token
 }
 ```
 </details>
+
+
+### Symbol Upload API
+クラッシュ分析用のSymbolファイルをアップロードします。
+```
+POST /v3/{appkey}/symbols?platform={platform}&version={version}&description={description}
+
+Content-Type: multipart/form-data
+```
+
+#### リクエストパラメータ
+| 名前 | 位置 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- | -- |
+| appkey | Path | String | プロジェクトのアプリキー | O |
+| platform | Query | String | Symbol対象プラットフォーム(`iOS`、`Android`、`Android-NDK`、`Windows`のいずれか) | O |
+| version | Query | String | Symbolバージョン | O |
+| description | Query | String | Symbol説明(空白などの記号はURLエンコードが必要) |  |
+
+#### リクエストヘッダ
+| 名前 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 形式のUser Access Keyトークン | O |
+
+#### リクエストボディ
+| 名前 | 形式 | 説明 | 必須 | 備考 |
+| --- | --- | --- | --- | --- |
+| symbolfile | Binary | Symbolファイル | O | multipart/form-data形式で送信 |
+
+#### レスポンス
+| 名前 | 種類 | 形式 | 説明 |
+| --- | --- | --- | --- |
+| result.data.id | Body | List | アップロードされたSymbolファイルの識別子一覧 |
+
+<details>
+<summary>例</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "result": {
+        "data": {
+            "id": [
+                "1239aaba9c74f678c6df8b8"
+            ]
+        }
+    }
+}
+```
+</details>
+
+
+### Symbol List API
+アップロードされたSymbolファイルの一覧を照会します。`platform`/`version`値でフィルタリングし、全体を照会する場合は両方の値を`all`として呼び出します。
+```
+GET /v3/{appkey}/symbols/{platform}/{version}
+```
+
+#### リクエストパラメータ
+| 名前 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- |
+| appkey | String | プロジェクトのアプリキー | O |
+| platform | String | Symbolプラットフォームフィルタ(全体照会時は `all`) | O |
+| version | String | Symbolバージョンフィルタ(全体照会時は `all`) | O |
+
+#### リクエストヘッダ
+| 名前 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 形式のUser Access Keyトークン | O |
+
+#### レスポンス
+| 名前 | 種類 | 形式 | 説明 |
+| --- | --- | --- | --- |
+| result.data | Body | List | Symbolファイル一覧 |
+
+<details>
+<summary>例</summary>
+
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultMessage": "success",
+        "resultCode": 0
+    },
+    "result": {
+        "data": [
+            {
+                ...
+            }
+        ]
+    }
+}
+```
+</details>
+
+
+### Symbol Delete API
+Symbolファイルを単件削除します。
+```
+DELETE /v3/{appkey}/symbols/{sid}
+```
+
+#### リクエストパラメータ
+| 名前 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- |
+| appkey | String | プロジェクトのアプリキー | O |
+| sid | String | SymbolファイルID | O |
+
+#### リクエストヘッダ
+| 名前 | 形式 | 説明 | 必須 |
+| --- | --- | --- | --- |
+| X-NHN-Authorization | String | `Bearer {Access Token}` 形式のUser Access Keyトークン | O |
+
+#### レスポンス
+| 名前 | 種類 | 形式 | 説明 |
+| --- | --- | --- | --- |
+| header.isSuccessful | Body | Boolean | 成否 |
+| header.resultCode | Body | Number | 結果コード |
+| header.resultMessage | Body | String | 結果メッセージ |
+
+<details>
+<summary>例</summary>
+
+```json
+{
+  "header": {
+    "isSuccessful": true,
+    "resultMessage": "success",
+    "resultCode": 0
+  }
+}
+```
+</details>
