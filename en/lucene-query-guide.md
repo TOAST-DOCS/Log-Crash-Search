@@ -1,13 +1,10 @@
-## Guide for Lucene Query
+<!-- machine_translated: true -->
 
 <a id="guide-for-lucene-query"></a>
-## Basic Precautions { #guide-for-lucene-query }
+## Data & Analytics > Log & Crash Search > Lucene 쿼리 가이드 { #guide-for-lucene-query }
 
-<!-- TODO: translate body -->
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (No ko counterpart; k2 is '기본 주의 사항' (Basic Precautions), which is semantically distinct from 'Overview') -->
 <a id="basic-precautions"></a>
-## Overview { #basic-precautions }
+## 기본 주의 사항 { #basic-precautions }
 
 It depends on the location or availability of double quotes (") or tilde (~) to serve as an operator or not.
 * e.g.) Proximity searches and fuzzy searches
@@ -118,8 +115,21 @@ fieldname: Search Word~n
 * e.g.) logSource:logncrash-logS**ur**rce~2
 
 ![lcs_lucene_guide_04](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_04.png)
+
 <a id="objectarray-search"></a>
 ## Object/Array Search { #objectarray-search }
 
-<!-- TODO: translate body -->
+If the type of each field is Object or Array, it is converted to a string and stored.
+To search by Object and Array fields in the following example log, use the wildcard search feature.
 
+```json
+// Example log
+{
+  "arrayTypedField": ["elem1", "elem2"],
+  "objectTypedField": {
+    "key": "value"
+  }
+}
+```
+* Object search: `objectTypedField:*\"key\"\:\"value\"*`
+* Array search: `arrayTypedField:*\"elem1\"*`
