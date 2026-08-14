@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > Android SDK Guide
+<!-- pre-align:aligned sig=2d04f196eb51 -->
+
+<a id="analytics-log-crash-search-android-sdk-guide"></a>
+## Analytics > Log & Crash Search > Android SDK Guide { #analytics-log-crash-search-android-sdk-guide }
 
 > [Deprecated]
 > Log & Crash Android SDK is not supported any more.
@@ -12,11 +15,13 @@ Below describe benefits and features of Log & Crash Android SDK.
 - Retrieve and search logs sent from Log & Crash Search.
 - Operate in a multi-threading environment.
 
-## Supporting Environment
+<a id="supporting-environment"></a>
+## Supporting Environment { #supporting-environment }
 
 - Android 2.3.3, API Level 10 or higher
 
-## Download
+<a id="download"></a>
+## Download { #download }
 
 Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Android SDK**.
 
@@ -24,9 +29,11 @@ Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Androi
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Android SDK]
 ```
 
-## Install
+<a id="install"></a>
+## Install { #install }
 
-### Configuration
+<a id="configuration"></a>
+### Configuration { #configuration }
 
 Android SDK is configured as follows:
 
@@ -36,7 +43,8 @@ libs/       ; Android SDK Library
 sample/     ; Android SDK Sample
 ```
 
-### SDK Sample
+<a id="sdk-sample"></a>
+### SDK Sample { #sdk-sample }
 
 Below describes sample/ provided along with SDK.
 
@@ -49,7 +57,8 @@ Below describes sample/ provided along with SDK.
 6. Click debug, info, warn, error, fatal to send logs.
 7. Click send crash, crash to send crash logs. send crash button sends crash logs only. crash button occurs crash by force, both to close an app and sends crash logs.
 
-## Example
+<a id="example"></a>
+### Example { #example }
 
 1. Copy libs/ of Android SDK to a project libs/.
 2. Add authority to the AndroidManifest.xml file.
@@ -98,11 +107,13 @@ public class MainActivity extends Activity {
 .....
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 Describes functions provided by com.toast.android.logncrash.ToastLog class.
 
-### Initialize
+<a id="initialize"></a>
+### Initialize { #initialize }
 
 ```
 public static final String DEFAULT_APP_KEY = "__app_key__";
@@ -135,13 +146,15 @@ public static boolean initialize(Application application, String collectorAddr, 
   - true: for successful initialization
   - false: for failure
 
-### Unlock SendThread
+<a id="unlock-sendthread"></a>
+### Unlock SendThread { #unlock-sendthread }
 ```
   	(void) startSendThread;
 ```
   - Unlock SendThread.
 
-### Caution for Initialization
+<a id="caution-for-initialization"></a>
+### Caution for Initialization { #caution-for-initialization }
   - To execute initialization from Application onCreate
      - Calls may be unintentionally made when a receiver, a service, or an activity is created from Application onCreate.
 
@@ -154,7 +167,8 @@ public static boolean isInitialized()
   - true for successful initialization
   - false for failure
 
-### Send Logs
+<a id="send-logs"></a>
+### Send Logs { #send-logs }
 
 ```
 public static void fatal(String message, Throwable t)
@@ -205,7 +219,8 @@ public static void crash(Throwable throwable, String errorCode, String message, 
 public static void crash(Throwable throwable, String errorCode, String message)
 ```
 
-### Specify Custom Keys
+<a id="specify-custom-keys"></a>
+### Specify Custom Keys { #specify-custom-keys }
 
 ```
 public static void addCustomField(String key, String value)
@@ -223,7 +238,8 @@ public static void clearCustomFields()
   - "SessionID", "UserID"
   - "Carrier", "CountyCode", "DeviceModel", "Locale", "NetworkType", "Rooted"
 
-### Manage Default Setting
+<a id="manage-default-setting"></a>
+### Manage Default Setting { #manage-default-setting }
 
 ```
 public static String getAppKey()
@@ -248,7 +264,8 @@ public static void setLogType(String logType)
 
 - Get or newly specify a log type.
 
-### Remove Duplicates
+<a id="remove-duplicates"></a>
+### Remove Duplicates { #remove-duplicates }
 
 The Remove Duplicates logic has been applied to general logs for 2.4.0 or higher SDKs.
 
@@ -261,12 +278,14 @@ public static void setDuplicate(bool enable)
 true: (Default) Remove duplicates is enabled <br>
 false: Remove duplicates is disabled
 
-## Test Proguard Using SDK Samples
+<a id="test-proguard-using-sdk-samples"></a>
+## Test Proguard Using SDK Samples { #test-proguard-using-sdk-samples }
 
 Describes how to test code obfuscation using Proguard which Android provides.
 To apply Proguard, a project needs to be created by Release. Sample/ has required keystore and Proguard configuration.
 
-### Test Proguard with Eclipse
+<a id="test-proguard-with-eclipse"></a>
+### Test Proguard with Eclipse { #test-proguard-with-eclipse }
 
 1. Copy libs/ to sample/libs/.
 2. Run Eclipse to select a project, and select File - Export... .
@@ -283,14 +302,16 @@ Under normal operations of Proguard, you will find proguard/mapping.txt created.
 3. See if ToastLogSample.clickCrash() is named correctly.
 
 
-### Test Proguard with Ant Build
+<a id="test-proguard-with-ant-build"></a>
+### Test Proguard with Ant Build { #test-proguard-with-ant-build }
 1. Copy libs/ to sample/libs/.
 2. In case build.xml is not available, create one with android update project -p . -n AndroidSDKSample.
 3. Build by ant clean release. The result will be saved as AndroidSDKSampe-release.apk in bin/.
 
 In case of Release builds using Ant, unlike Eclipse Release builds, mapping.txt is located in bin/proguard/mapping.txt.  
 
-### Test Proguard with AndroidStudio
+<a id="test-proguard-with-androidstudio"></a>
+### Test Proguard with AndroidStudio { #test-proguard-with-androidstudio }
 
 1. Copy libs/ to sample/libs/.
 2. Run AndroidStudio and execute File - New - Import Project..., so that an AndroidStudio project can be created at a new location.
@@ -300,7 +321,8 @@ In case of Release builds using Ant, unlike Eclipse Release builds, mapping.txt 
 
 With Release build using AndroidStudio, the mapping.txt shall be located in app/build/outputs/mapping/release/mapping.txt.
 
-## Guide for JNI Application
+<a id="guide-for-jni-application"></a>
+## Guide for JNI Application { #guide-for-jni-application }
 
 Here is how to use Android SDK by using [JNI](http://en.wikipedia.org/wiki/Java_Native_Interface) of [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html). Log & Crash Android SDK can normally operate only when catch-exception is available in Java. To that end, a class is required in Native Code to deliver errors when they occur. For instance, if an error occurs in the process of executing getString function, catch an error by using the try/catch phrase, create an exception with Java code, and throw it. Then, Java will catch and send the error to log.
 

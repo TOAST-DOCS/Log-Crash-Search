@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=ecb9adf37221 -->
+
 ﻿## Analytics > Log & Crash Search > iOS SDK使用ガイド
 
 > [Deprecated]
@@ -16,10 +18,17 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 - Log & Crash Searchで、転送されたログを照会および検索ができます。
 - マルチスレッド環境で動作します。
 
-## サポート環境
+<a id="analytics-log-crash-search-ios-sdk-guide"></a>
+## Analytics > Log & Crash Search > iOS SDK 使用ガイド { #analytics-log-crash-search-ios-sdk-guide }
+
+<!-- TODO: translate body -->
+
+<a id="supporting-environment"></a>
+## サポート環境 { #supporting-environment }
 - iOS 8.0以上
 
-## ダウンロード
+<a id="download"></a>
+## ダウンロード { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)でiOS SDK(native)をダウンロードできます。
 
@@ -27,13 +36,16 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [iOS SDK]をクリック
 ```
 
-## SDKの使用方法
+<a id="how-to-use-sdks"></a>
+## SDKの使用方法 { #how-to-use-sdks }
 
-### ヘッダファイルの追加
+<a id="add-header-files"></a>
+### ヘッダファイルの追加 { #add-header-files }
 
 \#import <LogNCrashSDK/LogNCrashSDK.h\> 追加します。
 
-### 初期化
+<a id="initialize"></a>
+### 初期化 { #initialize }
 
 ```
 (bool) init:(NSString *)server ofAppKey:(NSString*)appName withVersion:(NSString*)appVersion;
@@ -54,7 +66,8 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 	- userId：ユーザーID
 	- 失敗時はfalse
 
-### SendThreadのロック解除
+<a id="unlock-sendthread"></a>
+### SendThreadのロック解除 { #unlock-sendthread }
 
 ```
 	(void) startSendThread;
@@ -62,7 +75,8 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 
 - SendThreadのロック状態を解除します。
 
-### Hostのロック設定
+<a id="lock-host"></a>
+### Hostのロック設定 { #lock-host }
 
 ```
 	(void) enableHost;
@@ -71,7 +85,8 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 - true ： ip addressを取得して、hostフィールドに保存します。
 - false： ip addressを取得しません。
 
-### ログを転送
+<a id="send-logs"></a>
+### ログを転送 { #send-logs }
 
 ```
 (void) debug:(NSString*)errorCode withMessage:(NSString*)message;
@@ -95,7 +110,8 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 	- message：ログメッセージ
 	- location：エラー位置
 
-### カスタムキーを指定する
+<a id="specify-custom-keys"></a>
+### カスタムキーを指定する { #specify-custom-keys }
 
 ```
 (void) setCustomField:(NSString*)value forKey:(NSString*)key;
@@ -110,7 +126,8 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 	- projectName, projectVersion, host, logType, logSource, sendTime, logTime, logLevel, UserID
 	- Platform, DeviceModel, NetworkType, Carrier, CountryCode, DmpData, errorCode, Location, body, SessionID
 
-### 重複除去モード設定
+<a id="remove-duplicates"></a>
+### 重複除去モード設定 { #remove-duplicates }
 
 2.4.0以上のSDKから一般ログに重複除去ロジックが適用されました。
 
@@ -123,7 +140,8 @@ public static void setLogDeduplicate(bool enable)
 true：(Default値)重複除去ロジック有効化<br>
 false：重複除去ロジックを無効にする
 
-### 基本設定管理
+<a id="manage-default-setting"></a>
+### 基本設定管理 { #manage-default-setting }
 
 ```
 (void) setUserId:(NSString*)userId;
@@ -143,7 +161,8 @@ false：重複除去ロジックを無効にする
 
 - ログソースを設定します。
 
-## 自動収集される情報
+<a id="automatically-collected-information"></a>
+## 自動収集される情報 { #automatically-collected-information }
 
 下記の情報は、Log & Crash SDKにより自動的に収集され、Log & Crash Searchで確認できます。ログ転送時点で情報収集ができない場合や、値を表示できない場合に発生することがあります。
 
@@ -154,7 +173,8 @@ false：重複除去ロジックを無効にする
 	\- CountryCode：ユーザーのサービスプロバイダーのISO国コード
 	\- NetworkType： Wi-FiまたはCellular (ログ転送イベント発生時点でネットワーク使用ができない場合は"No Connection")
 
-## iOS Crashを解析する
+<a id="interpret-ios-crashed"></a>
+## iOS Crashを解析する { #interpret-ios-crashed }
 - iOSで発生したCrashの場合、Crash情報がアドレス値に収集されるため、これを解析するためのSymbolファイルが必要です。
 
 - Xcodeを実行してWindows > Organizerをクリックします。
@@ -167,6 +187,7 @@ false：重複除去ロジックを無効にする
 
 - .dSYMを .zipに圧縮し、Webコンソール > Analytic > Log & Crash Search > Settings > シンボルファイルタブに登録します。
 
-## iOS Unity Crash注意事項
+<a id="note-for-ios-unity-crash"></a>
+## iOS Unity Crash注意事項 { #note-for-ios-unity-crash }
 
 - シンボルがなくて解析されなかったCrashログは、一般ログとして扱われます。

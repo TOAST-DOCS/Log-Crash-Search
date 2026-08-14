@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > C++ Windows SDK Guide
+<!-- pre-align:aligned sig=bcd1c8ae042b -->
+
+<a id="analytics-log-crash-search-c-windows-sdk-guide"></a>
+## Analytics > Log & Crash Search > C++ Windows SDK Guide { #analytics-log-crash-search-c-windows-sdk-guide }
 
 > [Deprecated]
 > Log & Crash C++ Windows SDK is not supported any more.
@@ -12,12 +15,14 @@ Below describe benefits and features of Log & Crash C++ Windows SDK.
   - Retrieve and search logs sent from Log & Crash Search.
   - Operate under a multi-threading environment.
 
-## Supporting Environment
+<a id="supporting-environment"></a>
+## Supporting Environment { #supporting-environment }
 
 - Windows 2000, Windows Vista, Windows XP, Windows 2003, Windows 2008, Windows 7, Windows 8
 - 32bit/64bit
 
-## Download
+<a id="download"></a>
+## Download { #download }
 
 Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **C++ Windows SDK**.
 
@@ -25,9 +30,11 @@ Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **C++ Wi
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Windows SDK]
 ```
 
-## Install
+<a id="install"></a>
+## Install { #install }
 
-### Configuration
+<a id="configuration"></a>
+### Configuration { #configuration }
 
 C# Windows SDK is configured as below.
 
@@ -40,7 +47,8 @@ windows-sdk/lib64/			; C++ Windows 64bit Library
 windows-sdk-sample/			; Sample Project for VS 2010
 ```
 
-### SDK Sample
+<a id="sdk-sample"></a>
+### SDK Sample { #sdk-sample }
 
 Below describes sample/ provided along with SDK.
 
@@ -49,7 +57,8 @@ Below describes sample/ provided along with SDK.
 3. Copy *.dll required for app execution to an execution file directory, depending on 32bit/64bit and Debug/Release.
 4. Execute.
 
-## Example
+<a id="example"></a>
+## Example { #example }
 
 1. Add include/toast/ to the include path.
 2. Specify an import library as below, depending on 32bit/64bit and Debug/Release.
@@ -80,11 +89,13 @@ Below describes sample/ provided along with SDK.
      DestroyToastLog();
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 Below describe functions provided by toast::logncrash::ToastLog class.
 
-### Assign/Destroy
+<a id="assigndestroy"></a>
+### Assign/Destroy { #assigndestroy }
 
 ```
 toast::logncrash::ToastLog* GetToastLog();
@@ -97,7 +108,8 @@ void DestroyToastLog();
 - Do not delete a returned ToastLog instance; it is required to call DestroyToastLog() to delete it.
 
 
-### Initialize/Destroy
+<a id="initializedestroy"></a>
+### Initialize/Destroy { #initializedestroy }
 
 ```
 #define LOGNCRASH_VERSION         "1.0.0"
@@ -146,7 +158,8 @@ void destroy();
   - LOGNCRASH\_LOG\_ERROR\_ADDRESS: -4, Error in collector server address
   - LOGNCRASH\_LOG\_ERROR\_PORT: -5, Error in collector server port
 
-### Send Logs
+<a id="send-logs"></a>
+### Send Logs { #send-logs }
 
 ```
 bool sendLog(
@@ -186,7 +199,8 @@ bool fatal(const char* message, const char* errorCode = NULL, const char* locati
   - true: if successful
   - false: if logLevel is high or message is empty
 
-### Specify Log Levels
+<a id="specify-log-levels"></a>
+### Specify Log Levels { #specify-log-levels }
 
 ```
 typedef enum {
@@ -207,7 +221,8 @@ void setLogLevel(const LogNCrashLogLevel logLevel);
 
 - The default of ToastLog is LOGNCRASH\_INFO. Therefore, to use debug() function, it should be set to setLogLevel(LOGNCRASH\_DEBUG).
 
-### Specify Custom Keys
+<a id="specify-custom-keys"></a>
+### Specify Custom Keys { #specify-custom-keys }
 
 ```
 bool addCustomKey(const char* key, const char* value);
@@ -228,7 +243,8 @@ void clearCustomKeys();
   - true: if successful
   - false: if the key format is wrong
 
-### Process Crashed
+<a id="process-crashed"></a>
+### Process Crashed { #process-crashed }
 
 ```
 typedef enum {
@@ -255,7 +271,8 @@ void setCrashCallback(const LogNCrashCallbackType cb, void* cbData = NULL);
 
 - Start or end processing crashes.
 
-### Remove Duplicates
+<a id="remove-duplicates"></a>
+### Remove Duplicates { #remove-duplicates }
 
 - When duplicate logging is enabled, do not send any same logs that occur in the body and logLevel.
 
@@ -265,7 +282,8 @@ public static void setDuplicate(bool enable)
 - true: (Default) Remove duplicates is enabled.
 - false: Remove duplicates is disabled.
 
-### Other Settings
+<a id="other-settings"></a>
+### Other Settings { #other-settings }
 
 ```
 const char* getUserId();
@@ -275,18 +293,26 @@ void setUserId(const char* userId);
 
 - Get or specify a user ID.
 
-## Guide to Create Symbol Files
+<a id="guide-to-create-symbol-files"></a>
+## Guide to Create Symbol Files { #guide-to-create-symbol-files }
 
 - To interpret crashes occurred in Log & Crash Windows SDK, symbol files need to be created and uploaded to Console.
 
-### Requirements
+<a id="overview"></a>
+### Overview { #overview }
+
+<!-- TODO: translate body -->
+
+<a id="requirements"></a>
+### Requirements { #requirements }
 
 - Use dump\_syms which fits for the VS. ( VC\_1500 = 2008, VC\_1600 = 2010 )
 - Download for [VS 2008 or lower](https://github.com/zpao/v8monkey/blob/master/toolkit/crashreporter/tools/win32/dump_syms_vc1500.exe)
 - Download for [VS 2010 or higher](http://hg.mozilla.org/mozilla-central/file/tip/toolkit/crashreporter/tools/win32)
 - [minidump\_stackwalk.exe](http://hg.mozilla.org/build/tools/raw-file/755e58ebc9d4/breakpad/win32/minidump_stackwalk.exe)
 
-### Create Symbol Files
+<a id="create-symbol-files"></a>
+### Create Symbol Files { #create-symbol-files }
 - Get debugging information for windows crash dumps, by converting .pdb files to .sym symbol files.
 
 - How to convert .pdb files to .sym files:

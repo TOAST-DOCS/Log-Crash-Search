@@ -1,6 +1,8 @@
-## Luceneクエリガイド
+<a id="guide-for-lucene-query"></a>
+## Luceneクエリガイド { #guide-for-lucene-query }
 
-## 基本注意事項
+<a id="basic-precautions"></a>
+## 基本注意事項 { #basic-precautions }
 
 ダブルクォーテーション(")とチルダ(~)の位置や有無によって、演算子として使用するかどうかが決定されます。
 * 例)近似検索と類似項目検索
@@ -22,7 +24,8 @@
 URL内の特殊文字(予約文字含む)は、エンコードする必要があります。
 * 例) '<'特殊文字は%3Cと入力
 
-## 基本検索
+<a id="basic-search"></a>
+## 基本検索 { #basic-search }
 
 filedname:search word
 * 任意の単一フィールド(fieldname)で、単一の用語(search word)を検索します。
@@ -36,7 +39,8 @@ filedname:search word
 \_exists\_:fieldname
 * 該当fieldnameにnon-nullの値を持たないログを検索します。
 
-## 範囲検索
+<a id="range-search"></a>
+## 範囲検索 { #range-search }
 
 | 文法 | 動作 |
 | --- | --- |
@@ -48,7 +52,8 @@ filedname:search word
 * 下記のように、もう少しシンプルに条件を入れることができます。
     * 例) fieldname:>10
 
-## 論理演算子
+<a id="boolean-operators"></a>
+## 論理演算子 { #boolean-operators }
 
 | 演算子 | 意味 |
 | --- | --- |
@@ -60,7 +65,8 @@ NOT演算子`-`の場合、AND NOTの意味で使います。
 * 例) logType:bulk -api
 * → logType:bulk AND NOT apiと同じ
 
-## ワイルドカード検索
+<a id="wildcard-search"></a>
+## ワイルドカード検索 { #wildcard-search }
 
 *は、任意の0文字以上の文字列を検索します。
 
@@ -73,7 +79,8 @@ NOT演算子`-`の場合、AND NOTの意味で使います。
 
 ワイルドカードの*と?は、文字の間にも適用することができます。
 
-## 近似検索(proximity search)
+<a id="proximity-search"></a>
+## 近似検索(proximity search) { #proximity-search }
 
 fiedname:"検索語A 検索語B"~n
 * 検索語Aと検索語Bの間に最大n個の単語があるログを探します。
@@ -81,7 +88,8 @@ fiedname:"検索語A 検索語B"~n
 
 ![lcs_lucene_guide_03](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_03.png)
 
-### 重み付け検索(Boosting)
+<a id="boosting"></a>
+### 重み付け検索(Boosting) { #boosting }
 
 fieldname:検索語A^n検索語B
 * 一部検索キーワードに重みを用いて、結果を取得できます。
@@ -90,12 +98,14 @@ fieldname:検索語A^n検索語B
 
 デフォルトの重みは1です。
 
-## 正規表現検索
+<a id="regex-search"></a>
+## 正規表現検索 { #regex-search }
 
 正規表現検索が可能です。
 * 例) dressまたはpressを含む文書を検索する場合は、/[dp]ress/と入力
 
-## あいまい項目検索(fuzzy search)
+<a id="fuzzy-search"></a>
+## あいまい項目検索(fuzzy search) { #fuzzy-search }
 
 fieldname:検索語~n
 * 検索語と類似した、n個の文字まで他の結果を検索します。(最大2個)
@@ -104,7 +114,8 @@ fieldname:検索語~n
 
 ![lcs_lucene_guide_04](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_04.png)
 
-## Object/Array検索
+<a id="objectarray-search"></a>
+## Object/Array検索 { #objectarray-search }
 
 各フィールドのタイプがObjectとArrayの場合、全て文字列に置換して保存します。
 次のサンプルログでは、ObjectとArrayフィールドで検索するためにワイルドカード検索機能を使用します。

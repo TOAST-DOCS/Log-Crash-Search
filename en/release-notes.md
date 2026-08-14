@@ -1,60 +1,87 @@
-## Data & Analytics > Log & Crash Search > Release Notes
+<!-- pre-align:aligned sig=99d57f88ede8 -->
 
-### February 27, 2024
+<a id="data-analytics-log-crash-search-release-notes"></a>
+## Data & Analytics > Log & Crash Search > Release Notes { #data-analytics-log-crash-search-release-notes }
+
+<a id="february-27-2024"></a>
+### February 27, 2024 { #february-27-2024 }
+<a id="february-27-2024-feature-updates"></a>
 #### Feature Updates
 * [Console] Changed the search field page
   * Made modifications to that the search field for log retention periods can be viewed
 
-### December 19, 2023
+<a id="december-19-2023"></a>
+### December 19, 2023 { #december-19-2023 }
+<a id="december-19-2023-feature-updates"></a>
 #### Feature Updates
 * [Console] Changed the External Log Storage Settings
   * Separate setup available for each type (OBS/AWS S3)
   
-### August 29, 2023
+<a id="august-29-2023"></a>
+### August 29, 2023 { #august-29-2023 }
+<a id="august-29-2023-feature-updates"></a>
 #### Feature Updates
 * [Console] Changed the length limit for some fields when setting log alarms
   * Changed the length limit for alarm title from 20 characters to 80 characters
   * Changed the length limit for alarm description from 80 characters to 255 characters
 
-### May 30, 2023
+<a id="may-30-2023"></a>
+### May 30, 2023 { #may-30-2023 }
+<a id="may-30-2023-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Changed so that the UserTxtData does not appear in the selectable fields
+<a id="may-30-2023-feature-updates"></a>
 #### Feature Updates
 * [Console] Changed so that the UserTxtData field appears as a default field, not a custom field, in the search field menu
 
-### April 26, 2023
-### Bug Fixes
+<a id="april-26-2023"></a>
+### April 26, 2023 { #april-26-2023 }
+<a id="bug-fixes"></a>
+### Bug Fixes { #bug-fixes }
 * Fixed a bug where the user-based alarm does not work
 
-### December 27, 2022
+<a id="december-27-2022"></a>
+### December 27, 2022 { #december-27-2022 }
+<a id="december-27-2022-feature-updates"></a>
 #### Feature Updates
 * [Console] Added a feature to refresh log search automatically
 * [Console] Added a feature to set conditions on log search period by dragging log search result charts
 
-### November 29, 2022
+<a id="november-29-2022"></a>
+### November 29, 2022 { #november-29-2022 }
+<a id="november-29-2022-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Improved the log click search feature of the log search results
   * Fixed a bug where, when clicking a word in the txt* or body field for search, all field values are searched
   * Fixed a bug where, when clicking the custom field for search, highlighting is not applied
 
-### September 27, 2022
+<a id="september-27-2022"></a>
+### September 27, 2022 { #september-27-2022 }
+<a id="september-27-2022-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed a bug where, when deleting queries continuously from the saved query list menu, you are navigated to an error page
 
-### August 23, 2022
+<a id="august-23-2022"></a>
+### August 23, 2022 { #august-23-2022 }
+<a id="august-23-2022-feature-updates"></a>
 #### Feature Updates
 * [Console] Changed the method of calling global utility functions
 
-### July 26, 2022
+<a id="july-26-2022"></a>
+### July 26, 2022 { #july-26-2022 }
+<a id="july-26-2022-feature-updates"></a>
 #### Feature Updates
 * [Console] Improved the UI/UX of the log search result page
     * Provided a view option in enumerated format
 
+<a id="july-26-2022-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed an issue where crash dump data of some platforms are not downloaded
 * [Console] Fixed an issue where the alarm status change button does not work on pages after page two in the log alarm setting
 
-### June 30, 2022
+<a id="june-30-2022"></a>
+### June 30, 2022 { #june-30-2022 }
+<a id="june-30-2022-feature-updates"></a>
 #### Feature Updates
 * [Console] Improved the UI/UX of the selected field dialog
     * Adjusted the position of field dialog
@@ -63,7 +90,9 @@
 * [Console] Bug fixes
     * Fixed a bug where, when you modify the settings of an alarm that contains certain characters in the query, it is displayed differently from the saved query
 
-### May 24, 2022
+<a id="may-24-2022"></a>
+### May 24, 2022 { #may-24-2022 }
+<a id="may-24-2022-feature-updates"></a>
 #### Feature Updates
 * [Console] Improved the UI/UX of the web console
     * Unified the method of displaying the time in the web console
@@ -71,30 +100,40 @@
 * [Console] Bug fixes
     * Fixed an error where the list of error instances is not displayed when the data has a specific value in the Error Instance menu of the app crash issue details
 
-### April 26, 2022
+<a id="april-26-2022"></a>
+### April 26, 2022 { #april-26-2022 }
+<a id="april-26-2022-feature-updates"></a>
 #### Feature Updates
 * [Console] Improved the UI/UX of the log alarm setting page
     * Fixed a bug where the screen was not displayed properly when changing **Alarm Type** from **Number of Occurrences** to **Rate of Increase/Decrease** in the **Add Alarm Configuration** dialog box
 
-### March 29, 2022
+<a id="march-29-2022"></a>
+### March 29, 2022 { #march-29-2022 }
+<a id="march-29-2022-feature-updates"></a>
 #### Feature Updates
 * [Console] Improved the UI/UX of the log search page
     * Changed the position of the button displayed when expanding the log search results
     * Changed to enable keyboard selection of query auto-completion items when searching logs
 
-### February 22, 2022
+<a id="february-22-2022"></a>
+### February 22, 2022 { #february-22-2022 }
+<a id="february-22-2022-feature-updates"></a>
 #### Feature Updates
 * [Console] Improved the UI/UX of the log search page
     * Changed the display format when expanding the log search results
     * For crash logs, added the **View Issue** button to the Log Search page
 
-### January 25, 2022
+<a id="january-25-2022"></a>
+### January 25, 2022 { #january-25-2022 }
+<a id="january-25-2022-feature-updates"></a>
 #### Feature Updates
 * [Console] Improved the UX of the log search page
     * Made the log search result table header fixed
     * Changed the form of the pop-up window displayed when clicking the field name in 'Selected Fields'
 
-### November 23, 2021
+<a id="november-23-2021"></a>
+### November 23, 2021 { #november-23-2021 }
+<a id="november-23-2021-feature-updates"></a>
 #### Feature Updates
 * [Console] Made the web console with the new UI/UX the default and removed the feature for switching to the previous web console
 * [Console] Improved the UX of the log search page
@@ -102,116 +141,160 @@
     * Added a feature to display the number of value types of the field to the right side of the field name in the "Selected Fields" area
     * In the modal window that appears when clicking on the field name in the "Selected Fields" area, added a feature to display the correct number when the number of value types in the field exceeds 100
 
-### July 27, 2021
+<a id="july-27-2021"></a>
+### July 27, 2021 { #july-27-2021 }
+<a id="july-27-2021-feature-updates"></a>
 #### Feature Updates
 * [Console] Improved and changed the entire UI/UX of web console
 
-### April 27, 2021
+<a id="april-27-2021"></a>
+### April 27, 2021 { #april-27-2021 }
+<a id="april-27-2021-feature-updates"></a>
 #### Feature Updates
 * [Console] Provided the API for searching logs
 * [Console] Applied masking to the fields that are configured by an administrator in the project while downloading logs
 
+<a id="april-27-2021-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed an issue in which HTML strings were parsed and displayed when they were included in the body of the log search page
 * [Console] Fixed an issue in which a problem would occur when the status of multiple crash issues were changed at the same time
 
-### December 15, 2020
+<a id="december-15-2020"></a>
+### December 15, 2020 { #december-15-2020 }
+<a id="december-15-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Added a feature to display and limit the maximum number of input characters for title and description during alarm setting
 * [Console] Fixed a bug where the crash alarm was not saved when the threshold was modified to 0
 * [Console] For the log retention period, deleted 6 months and 1 year, and added 4 months
 
-### October 27, 2020
+<a id="october-27-2020"></a>
+### October 27, 2020 { #october-27-2020 }
+<a id="october-27-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Supports the event history page for events that can be accessed without session
     * Supports the event history page link replacing the previous console link when a log alarm is triggered
     * Added the event history page link to SMS as well
 
-### October 13, 2020
+<a id="october-13-2020"></a>
+### October 13, 2020 { #october-13-2020 }
+<a id="october-13-2020-feature-updates"></a>
 #### Feature Updates
 * Changed the capacity limit for a single log (general or crash) from 2MB to 8MB
 
-### September 22, 2020
+<a id="september-22-2020"></a>
+### September 22, 2020 { #september-22-2020 }
+<a id="september-22-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Supports IAM console from access link for TOAST Log & Search, attached to notifications of email, or Dooray!
 
-### August 25, 2020
+<a id="august-25-2020"></a>
+### August 25, 2020 { #august-25-2020 }
+<a id="august-25-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Updated to enter and execute multiple objects for alarm callback/webhook
 
-### July 28, 2020
+<a id="july-28-2020"></a>
+### July 28, 2020 { #july-28-2020 }
+<a id="july-28-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Added the feature of integrity validation for logs that are externally stored
     * [See Console User Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
 
-### June 23, 2020
+<a id="june-23-2020"></a>
+### June 23, 2020 { #june-23-2020 }
+<a id="june-23-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Changed the query method for Object and Array types
     * Queries must be delivered in the same way as the string search.
     * [See Guide for Lucene Query](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
 
-### May 26, 2020
+<a id="may-26-2020"></a>
+### May 26, 2020 { #may-26-2020 }
+<a id="may-26-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Support analysis of iOS app crashes with Bitcode applied
     * Made modifications so that symbol files for each architecture can be uploaded and analyzed within the same version
 
-### April 28, 2020
+<a id="april-28-2020"></a>
+### April 28, 2020 { #april-28-2020 }
+<a id="april-28-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Limited the maximum available period for a log search to 3 months
 * [API] Changed the identification method for Android NDK crash
+<a id="april-28-2020-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed a bug where, when modifying a saved query, the query is not saved in particular conditions
 
-### March 24, 2020
+<a id="march-24-2020"></a>
+### March 24, 2020 { #march-24-2020 }
+<a id="march-24-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Modified the error message for failure in deleting saved queries
 
-### February 25, 2020
+<a id="february-25-2020"></a>
+### February 25, 2020 { #february-25-2020 }
+<a id="february-25-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Modified tooltip messages on the setting page of SDK log delivery.
 * [Console] Added a Lucene query validation process to the query saving feature.
+<a id="february-25-2020-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed bugs in which particular Windows symbol files cannot be processed in uploading symbol files.
     * If the age of Windows PDB exceeds 11 due to multiple builds, symbol files that are extracted afterwards may contain a guid with 34 characters or more. The limit of 33 characters for a guid field has been released.
 * [Console] Fixed a bug where, when searching for logs older than 30 days, the saved fields are not properly displayed.
 
-### January 21, 2020
+<a id="january-21-2020"></a>
+### January 21, 2020 { #january-21-2020 }
+<a id="january-21-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Changed the method to locate the occurrence of iOS crashes.
 * [Console] Allows additional display of information on iOS crashes (on TOAST SDK iOS 0.21.0 or higher versions).
 
-### October 29, 2019
+<a id="october-29-2019"></a>
+### October 29, 2019 { #october-29-2019 }
+<a id="october-29-2019-feature-updates"></a>
 #### Feature Updates
 * [Console] Added the feature of S3 uploading.
 * [Console] Changed the error message for alarms activated due to invalid query of alarm.
 
-### August 27, 2019
+<a id="august-27-2019"></a>
+### August 27, 2019 { #august-27-2019 }
+<a id="august-27-2019-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed an event in which search of a particular query is unavailable from the list.
 
-### June 25, 2019
+<a id="june-25-2019"></a>
+### June 25, 2019 { #june-25-2019 }
+<a id="june-25-2019-feature-updates"></a>
 #### Feature Updates
 * Fixed the (null) ((null)) symbolication result of some iOS crash logs.
 * Increased the capacity limit of a single log case (general and crash) from 1MB to 2MB.
 * Made modifications so that the actual phone numbers are displayed on the list of alarm recipients.
 
+<a id="june-25-2019-bug-fixes"></a>
 #### Bug Fixes
 * Allowed to query modified alarms from the list, when the last modifier has been excluded from project members.
 
-### May 28, 2019
+<a id="may-28-2019"></a>
+### May 28, 2019 { #may-28-2019 }
+<a id="may-28-2019-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed abnormal operations in some pages for Windows 10 and Internet Explorer 11.
 * [Console] Fixed the unavailability of interpreting some zip files when symbolized files were uploaded.
 * [Console] Allows to immediately apply particular parts when language was changed on a web console.
 * [Console] Fixed the alarm setting by which https callback setting was unavailable.
 
-### March 27, 2019
+<a id="march-27-2019"></a>
+### March 27, 2019 { #march-27-2019 }
+<a id="march-27-2019-feature-updates"></a>
 #### Feature Updates
 * [Console] Support analysis of crashes occured on iOS arm64e (requires compatible SDK).
 * [Console] Support analysis of crash occurred on Android NDK (requires compatible SDK).
 * [Console] Apply globalization (in Japanese)
 
-### January 15, 2019
+<a id="january-15-2019"></a>
+### January 15, 2019 { #january-15-2019 }
+<a id="january-15-2019-feature-updates"></a>
 #### Feature Updates
 * [Console] Applied the User console
 * [Console] Exclude crash occurred at Unity from the indicator.
@@ -219,7 +302,9 @@
 * [Console] Added the feature of reverting status before registration, after issue tracker is registered.
 * [Console] Emphasize actual symbol names applied for symbolication on the symbolic file management page.
 
-### November 27, 2018
+<a id="november-27-2018"></a>
+### November 27, 2018 { #november-27-2018 }
+<a id="november-27-2018-feature-updates"></a>
 #### Feature Updates
 * [Console] Fixed an issue in which exception type is not properly judged when an Android crash occurs for Unity and the crash type is recorded as 'java.lang.Error'.
     * Fixed an issue in which access is unavailable to detail page from Web Console > Crash > Query Issues.
@@ -234,44 +319,58 @@
 * [Console] Added guides of symbol files for Android Unity on the Web Console > Setting > Uploading Symbol Files.
 * [Console] Changed validation for Network Insight URL.
 
-### October 23, 2018
+<a id="october-23-2018"></a>
+### October 23, 2018 { #october-23-2018 }
+<a id="october-23-2018-feature-updates"></a>
 #### Feature Updates
 * [Console] Closed log alarms (old)
     * [Relevant Notice](https://toast.com/support/notice/detail/1453435858K00594)
 
-### September 18, 2018
+<a id="september-18-2018"></a>
+### September 18, 2018 { #september-18-2018 }
+<a id="september-18-2018-feature-updates"></a>
 #### Feature Updates
 * [Console] Share query for saving
 
-### September 4, 2018
+<a id="september-4-2018"></a>
+### September 4, 2018 { #september-4-2018 }
 
+<a id="september-4-2018-feature-updates"></a>
 #### Feature Updates
 * [SDK][[logback-3.0.2](/Download/#data-analytics-log-crash-search)]
     * Updated not to add reservation items, when Logncrash Appender has empty or null for non-default items of reservation words.
     * Set timeout for Longrash REST API.
     * Enable AsynAppender for Logback.
 
+<a id="september-4-2018-bug-fixes"></a>
 #### Bug Fixes
 * [SDK][[logback-3.0.2](/Download/#data-analytics-log-crash-search)]
     * Fixed bugs in which reservation words, such as empty or null, were added.
 
-### July 24, 2018
+<a id="july-24-2018"></a>
+### July 24, 2018 { #july-24-2018 }
 
+<a id="july-24-2018-feature-updates"></a>
 #### Feature Updates
 * [Console] Changed UI for the setting page.
 
-### June 26, 2018
+<a id="june-26-2018"></a>
+### June 26, 2018 { #june-26-2018 }
 
+<a id="june-26-2018-bug-fixes"></a>
 #### Bug Fixes
 * [SDK][[iOS-2.7.1](/Download/#data-analytics-log-crash-search)]
     * Fixed bugs in which crash occurred during initialization in duplicates.
 
-### June 5, 2018
+<a id="june-5-2018"></a>
+### June 5, 2018 { #june-5-2018 }
 
+<a id="june-5-2018-feature-updates"></a>
 #### Feature Updates
 * [SDK][[Android-2.6.7](/Download/#data-analytics-log-crash-search)]
     * Changed operations for saved logs, to be sent without filtering.
 
+<a id="june-5-2018-bug-fixes"></a>
 #### Bug Fixes
 * [SDK][[iOS-2.7.0](/Download/#data-analytics-log-crash-search)]
     * Changed internal logic of SDK.
@@ -282,20 +381,25 @@
 * [SDK][[Unity-2.8.6](/Download/#data-analytics-log-crash-search)]
     * Fixed an issue in which the loglevel was set as fatal when Unity crash logs occurred on iOS.
 
-### May 29, 2018
+<a id="may-29-2018"></a>
+### May 29, 2018 { #may-29-2018 }
 
 * [Console] Fixed an issue in which symbolication didn't work when bundles of duplicate names (e.g. Framework.UIKit, Accessibility.UIKit) exist among iOS crash symbolication.
 
-### May 09, 2018
+<a id="may-09-2018"></a>
+### May 09, 2018 { #may-09-2018 }
 
+<a id="may-09-2018-bug-fixes"></a>
 #### Bug Fixes
 
 * [SDK][[Unity-2.8.5](/Download/#data-analytics-log-crash-search)]
     * Roll back crash logtype occurred at Unity Script
         * Rolls back with crash occurred at Unity Script processed as Handled.
 
-### May 2, 2018 
+<a id="may-2-2018"></a>
+### May 2, 2018 { #may-2-2018 }
 
+<a id="may-2-2018-feature-updates"></a>
 #### Feature Updates
 
 * [SDK][[AOS-2.6.6](/Download/#data-analytics-log-crash-search)]
@@ -305,6 +409,7 @@
 * [SDK][[Unity-2.8.4](/Download/#data-analytics-log-crash-search)]
     * Updated Call Android Native SDK API
 
+<a id="may-2-2018-bug-fixes"></a>
 #### Bug Fixes
 
 * [SDK][[AOS-2.6.6](/Download/#data-analytics-log-crash-search)] 
@@ -314,30 +419,41 @@
     * Fixed the occurrence of crash during initialization, when userID was nil
     * Fixed the CPU usage rate raised up to 100% when enableSyncStart was YES
 
-### April 24, 2018
+<a id="april-24-2018"></a>
+### April 24, 2018 { #april-24-2018 }
 
+<a id="april-24-2018-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed invalid numbering of an issue, when integrated with app crash Gitlab
 * [Console] Fixed failed symbolication when symbol files for app crash are deleted and uploaded, still in the same version
 * [Console] Fixed failure in SMS alarm transfer when particular characters are included to an alarm
 * [Console] Fixed failed SMS alarm transfer for app crash when a particular country code is included to an alarm recipient
 
-### January 22, 2018
+<a id="january-22-2018"></a>
+### January 22, 2018 { #january-22-2018 }
+<a id="january-22-2018-feature-updates"></a>
 #### Feature Updates
 * [Console] Released Network Insights
 
-### December 21, 2017
+<a id="december-21-2017"></a>
+### December 21, 2017 { #december-21-2017 }
+<a id="december-21-2017-feature-updates"></a>
 #### Feature Updates
 * [Console] Added query-based alarms
 
-### October 26, 2017
+<a id="october-26-2017"></a>
+### October 26, 2017 { #october-26-2017 }
+<a id="october-26-2017-feature-updates"></a>
 #### Feature Updates
 * [Console] Added the feature of alarm setting when a new crash occurs
 
+<a id="october-26-2017-bug-fixes"></a>
 #### Bug Fixes
 * [console] Made modifications so that a error message is shown when a session has expired
 
-### September 21, 2017
+<a id="september-21-2017"></a>
+### September 21, 2017 { #september-21-2017 }
+<a id="september-21-2017-feature-updates"></a>
 #### Feature Updates
 * [SDK] Added a function that does not automatically register CrashHandler during initialization (see MultihandlerSample)
 * [SDK] Changed to allow transferring Unity Crash via CrashHandler registered externally (see MultihandlerSample)
@@ -352,6 +468,7 @@
     * Modified not to classify error-level logs of Unity as crashes
         * Search and query is available on the log search page
 
+<a id="september-21-2017-bug-fixes"></a>
 #### Bug Fixes
 * [SDK] Fixed an issue in which sessionID is updated when initialize is called multiple times
 * [SDK] Fixed the failed release of activity from the memory, if closed with BackKey, since SDK has saved its last status
@@ -363,16 +480,21 @@
 * [SDK] Fixed an issue in which https protocol was not specified by the Unity ios wrapper class
     * Updated Version: [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 
-### July 20, 2017
+<a id="july-20-2017"></a>
+### July 20, 2017 { #july-20-2017 }
+<a id="july-20-2017-feature-updates"></a>
 #### Feature Updates
 * [SDK] Support WebGL Platform
     * Updated Version: [toast-logncrash-unity-2.7.4](/Download/#data-analytics-log-crash-search)
 * [Console] Removed user count from the softing option on the page of crash list
 
+<a id="july-20-2017-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed bugs in crash user layout
 
-### June 22, 2017
+<a id="june-22-2017"></a>
+### June 22, 2017 { #june-22-2017 }
+<a id="june-22-2017-bug-fixes"></a>
 #### Bug Fixes
 * [SDK] Fixed an issue in which crash occurs due to the Delete bug of LFU when the duplicate control queue exceeds the maximum size
     * Updated Version: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search)/ [toast-logncrash-androidndk-sdk-2.6.2](/Download/#data-analytics-log-crash-search)
@@ -386,13 +508,17 @@
 * [SDK] Errors are contained in errorCode and txterrorCode fields to be transferred
     * Updated Version: [toast-logncrash-logback-sdk-2.2.7](/Download/#data-analytics-log-crash-search) / [toast-logncrash-log4j-sdk-2.2.7](/Download/#data-analytics-log-crash-search)
 
-### June 19, 2017
+<a id="june-19-2017"></a>
+### June 19, 2017 { #june-19-2017 }
+<a id="june-19-2017-bug-fixes"></a>
 #### Bug Fixes
 * [SDK] Fixed an issue in which CPU usage rate reaches 99% since sleep is not available for SendThread
 * [SDK] Fixed failed release of a memory when 100 logs are sent per second
     * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.6.1](/Download/#data-analytics-log-crash-search)
 
-### May 25, 2017
+<a id="may-25-2017"></a>
+### May 25, 2017 { #may-25-2017 }
+<a id="may-25-2017-feature-updates"></a>
 #### Feature Updates
 * [Console] Added autocomplete for the log search field name
 * [Console] Changed the display order and processed grey for UserID Colum on the table at the page bottom of the Crash > App Crash Indicators
@@ -402,12 +528,15 @@
 * [SDK] Added Enable/ Disable Hotfield
     * Updated Version: [toast-logncrash-android-2.6.1](/Download/#data-analytics-log-crash-search) / [toast-logncrash-androidndk-sdk-2.6.1](/Download/#data-analytics-log-crash-search)
 
+<a id="may-25-2017-bug-fixes"></a>
 #### Bug Fixes
 * [SDK] Fixed redundant transfer of session logs when unity crash is resent
 * [SDK] Fixed bugs in which the DeviceID field is missing
     * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.5.1](/Download/#data-analytics-log-crash-search)
 
-### April 20, 2017
+<a id="april-20-2017"></a>
+### April 20, 2017 { #april-20-2017 }
+<a id="april-20-2017-feature-updates"></a>
 #### Feature Updates
 * [Console] Changed the page layout for app crash indicators
     * Shows SDK version on the screen
@@ -431,18 +560,24 @@
     * [Toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search)
     *  Deleted Toast-logncrash-unity-ios-sdk / toast-logncrash-ios-mac-sdk
 
+<a id="april-20-2017-bug-fixes"></a>
 #### Bug Fixes
 * Fixed failed snooze operations when the alarm cycle is not one minute
-### March 23, 2017
+<a id="march-23-2017"></a>
+### March 23, 2017 { #march-23-2017 }
+<a id="march-23-2017-feature-updates"></a>
 #### Feature Updates
 * [Console] Updated crashes with failed dump analysis to provide statistics in the format of UNKNOWN crash
 * [Console] Shows guide message on the stack trace page when stack trace is unavailable
     * Shows guide message on the stack trace page when stack trace is unavailable (when the error type is UNKNOWN) since symbol files are not registered
 
+<a id="march-23-2017-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed the broken display of the Real Time Monitoring tab on the English page of crash search
 
-### February 23, 2017
+<a id="february-23-2017"></a>
+### February 23, 2017 { #february-23-2017 }
+<a id="february-23-2017-feature-updates"></a>
 #### Feature Updates
 * [API] [log Bulk upload](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/api-guide/) is available
     * Sending REST API logs is available in the JSON array format.
@@ -452,6 +587,7 @@
 * [SDK] Added CrashCallback
     * [Windows csharp SDK 2.5.2.1](/Download/#data-analytics-log-crash-search) / [Windows cpp SDK 2.5.2.1](/Download/#data-analytics-log-crash-search)
 
+<a id="february-23-2017-bug-fixes"></a>
 #### Bug Fixes
 * [WEB] Fixed unavailability of deleting query on View Saved Queries
 * [WEB] Updated pagination so that a back button on issue details does not return to page 1 on the list
@@ -464,14 +600,19 @@
 * [SDK] Modified failed adding of customField under the Async mode
     * [Log4j-sdk-2.2.5](/Download/#data-analytics-log-crash-search)/ [Logback-sdk-2.2.5](/Download/#data-analytics-log-crash-search)
 
-### January 19, 2017
+<a id="january-19-2017"></a>
+### January 19, 2017 { #january-19-2017 }
+<a id="january-19-2017-feature-updates"></a>
 #### Feature Updates
 * Changed criteria for version display of app crash indicators
     * Modified to show the version in which crash exists under execution, even if not occurred, from App Crash Indicators > Crash
+<a id="january-19-2017-bug-fixes"></a>
 #### Bug Fixes
 * Modified the Show/Hide All Logs feature on the Log Search page
 
-### December 22, 2016
+<a id="december-22-2016"></a>
+### December 22, 2016 { #december-22-2016 }
+<a id="december-22-2016-feature-updates"></a>
 #### Feature Updates
 * Restrict downloading of log files to be no more than 100 thousand on the Web page
     * Send alarms on popup with over 100 thousand trials
@@ -480,24 +621,32 @@
 * [SDK] Restrict the size of log duplicate queue to be no more than 1,000
     * Updated Version: Android-2.4.3, Android-NDK-2.4.5, iOS-2.4.1, unity-android-2.5.1, unity-ios-2.5.1
 
-### December 8, 2016
+<a id="december-8-2016"></a>
+### December 8, 2016 { #december-8-2016 }
+<a id="december-8-2016-feature-updates"></a>
 #### Feature Updates
 * When a user, who registered content for Query Issue > Issue Details > Comment, History, has been deleted from project members, the user is identified as "[Deleted Member]" on email.
 
+<a id="december-8-2016-bug-fixes"></a>
 #### Bug Fixes
 * Fixed bugs in the log alarm setting, where log alarm list is not properly queried when "" is included to the character strings included (excluded) to the filtering rule
 * Made modifications to show failure alarms when there's no member list when newly saving crash alarms
 
-### November 24, 2016
+<a id="november-24-2016"></a>
+### November 24, 2016 { #november-24-2016 }
 * [SDK] Changed the setting to get a host from internal thread, since the getaddrinfo function applied to get a host field hangs on some devices
   * Updated Version: Android-NDK 2.4.4
 
-### November 4, 2016
+<a id="november-4-2016"></a>
+### November 4, 2016 { #november-4-2016 }
+<a id="november-4-2016-bug-fixes"></a>
 #### Bug Fixes
 * [SDK] Changed logic to Thread, since Android 2.4.1 has a bug preventing AsyncTask from cancelled
   * Updated Version: Android 2.4.2
 
-### October 20, 2016
+<a id="october-20-2016"></a>
+### October 20, 2016 { #october-20-2016 }
+<a id="october-20-2016-feature-updates"></a>
 #### Feature Updates
 * Collect DeviceID as original ID of device
     * Sending crash logs via new SDK allows DeviceID to be collected, and indicators by DeviceID are made available on Console > Log & Crash Search > Crashes > App Crash Indicators.
@@ -508,7 +657,9 @@
     * For more details, see Developer's Guide.
 * [Console] Changed 'Session', 'User Count' from App Crash Indicators , to 'Execution Count', and 'User experiencing crash'.
 
-### September 29, 2016
+<a id="september-29-2016"></a>
+### September 29, 2016 { #september-29-2016 }
+<a id="september-29-2016-feature-updates"></a>
 #### Feature Updates
 * Set alarm thresholds and added http callback
     * Support operators (>,>=,=,<=,<) for comparing alarm thresholds
@@ -517,18 +668,23 @@
 * Added the UserTxtData field downloadable from the log search page
     * Check "UserTxtData" on the Log Search page from [Download|View]
 
+<a id="september-29-2016-bug-fixes"></a>
 #### Bug Fixes
 * [SDK] Fixed repetitive attempts of initialization, for exceptional cases, due to failure in initializing log transfer objects
     * Updated SDK: logback , log4j, log4j2
 * [SDK] Fixed a bug in which value was not properly added to the log when UserID was set for the fixed init function
     * Updated SDK: iOS
 
-### September 12, 2016
+<a id="september-12-2016"></a>
+### September 12, 2016 { #september-12-2016 }
+<a id="september-12-2016-bug-fixes"></a>
 #### Bug Fixes
 * [SDK] Added exception processing codes for carrier and for cases in which the carrier value is returned to null
     * Updated SDK: Unity(v.2.3.4)
 
-### August 22, 2016
+<a id="august-22-2016"></a>
+### August 22, 2016 { #august-22-2016 }
+<a id="august-22-2016-feature-updates"></a>
 #### Feature Updates
 * Changed the option and length restrictions of Custom Field Default
     * Set false for 'Analyzed' when the custom field is created
@@ -538,7 +694,9 @@
       Search by some character strings of a field value is available on the log search page
 
 
-### August 18, 2016
+<a id="august-18-2016"></a>
+### August 18, 2016 { #august-18-2016 }
+<a id="august-18-2016-feature-updates"></a>
 #### Feature Updates
 * Added a feature to set on or off Log Transfers
     * User can set On/Off for logs transferred via Log & Crash Search (General/Crash/Session Logs) and decide whether to collect on console.
@@ -549,11 +707,14 @@
 * [API] Added UserBinaryData field
     * Download is available on the log search page when log file or binary file is sent to the field
 
+<a id="august-18-2016-bug-fixes"></a>
 #### Bug Fixes
 * [Console] Fixed the speed issue of loading crash details
 
 
-### August 4, 2016
+<a id="august-4-2016"></a>
+### August 4, 2016 { #august-4-2016 }
+<a id="august-4-2016-feature-updates"></a>
 #### Feature Updates
 * [SDK][Unity] Updated to 2.2.6
     * Changed the saving format of SaveToFile
@@ -561,5 +722,6 @@
     * Limited the maximum number of files that can be saved to 100
     * Limited the maximum number of queues to remove duplicates to 100
 
+<a id="august-4-2016-bug-fixes"></a>
 #### Bug Fixes
 * [API] Fixed an issue in which json array or object is converted to string, when sent to a specific field

@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=3c5d3c0528c4 -->
+
 ﻿## Analytics > Log & Crash Search > Unity iOS SDK使用ガイド
 
 > [Deprecated]
@@ -11,7 +13,13 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 - アプリで発生したクラッシュログを収集サーバーに転送します。
 - Log & Crash Searchで、転送されたログの照会および検索が可能です。
 
-## サポート環境
+<a id="analytics-log-crash-search-unity-ios-sdk-guide"></a>
+## Analytics > Log & Crash Search > Unity iOS SDK 使用ガイド { #analytics-log-crash-search-unity-ios-sdk-guide }
+
+<!-- TODO: translate body -->
+
+<a id="supporting-environment"></a>
+## サポート環境 { #supporting-environment }
 
 - 共通
 	\- Unity3D v4.0以上
@@ -19,7 +27,8 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 	\- An Intel-based Mac
 	\- Xcode 6.0 or later
 
-## ダウンロード
+<a id="download"></a>
+## ダウンロード { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)でUnity SDKをダウンロードできます。
 
@@ -27,21 +36,25 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
 ```
 
-## インストール
+<a id="install"></a>
+## インストール { #install }
 
  - ダウンロードしたtoast-logncrash-ios-unity-sdk.unitypackageをダブルクリックして、該当プロジェクトにImportします。
 
 
-### サンプル説明
+<a id="sample-description"></a>
+### サンプル説明 { #sample-description }
 
 サンプルを実行するには、Assets > LogNCrash > Sample > SampleSceneをダブルクリックします。
 サンプルには初期化、ログ転送、エラー発生についての例が記述されています。
 
-### ヘッダファイル追加
+<a id="add-header-file"></a>
+### ヘッダファイル追加 { #add-header-file }
 
 iOS Unity環境で使用するには、#import <LogNCrashSDK/LogNCrashSDK.h\>を追加します。
 
-## 使用例
+<a id="example"></a>
+## 使用例 { #example }
 
 1. LogNCrashSettingsによる初期化
 
@@ -98,9 +111,11 @@ namespace Toast.LogNCrash
 - PLCrashreporter Enable：PLCrashrepoterを使用するかどうかを決定します。
 - SendThreadLock：trueの場合、発生したログはStartSendThreadが呼び出されるまでサーバーに転送せず、キューに保存します。ただしNative Crashが発生した場合、ThreadLockを解除してログを転送します。
 
-## 詳細API
+<a id="api-details"></a>
+## 詳細API { #api-details }
 
-### カスタムフィールドの指定
+<a id="specify-custom-fields"></a>
+### カスタムフィールドの指定 { #specify-custom-fields }
 
 ```
 public static void AddCustomField(string key, string val)
@@ -135,7 +150,8 @@ public static void RemoveAllCustomFields()
         - @logType
 	- custom filedの値がNULLまたは空の場合、SDKsは該当フィールドをserverに転送しません。
 
-### Hostロック設定
+<a id="lock-host"></a>
+### Hostロック設定 { #lock-host }
 
 ```
 		public static SetEnableHost(bool flag)
@@ -144,7 +160,8 @@ public static void RemoveAllCustomFields()
 	- true：ip addressを取得し、hostフィールドに保存します。
 	- false：ip addressを取得しません。
 
-### 基本設定管理
+<a id="manage-default-setting"></a>
+### 基本設定管理 { #manage-default-setting }
 
 ```
 public static void SetLogSource(string value)
@@ -160,7 +177,8 @@ public static string GetLogType()
 
 - ログタイプの取得や新規指定を行います。
 
-### LEVELフィルタ
+<a id="filter-levels"></a>
+### LEVELフィルタ { #filter-levels }
 
 - Unity SDKでは、Default設定でFATALレベルのログのみを転送します。 Error、Warningレベルのログには、変数値(時間、パス、進行度など)の挿入により多くのログが発生することがあります。
 	- Send Error：システムで発生したERRORレベルのログを転送します。
@@ -168,10 +186,12 @@ public static string GetLogType()
 	- Send Debug Error：ユーザーが発生させたERRORレベルのログを転送します。
 	- Send Debug Warning：ユーザーが発生させたWARNレベルのログを転送します。
 
-### API使用例
+<a id="example-of-api-use"></a>
+### API使用例 { #example-of-api-use }
 	- html > index.htmlを参照してください。
 
-### ログ転送
+<a id="send-logs"></a>
+### ログ転送 { #send-logs }
 
 ```
 //send info log message
@@ -194,7 +214,8 @@ public static void Error(string strMsg)
 	- strMsg: string
 		- [in]転送するlogメッセージ
 
-### Handled Exception
+<a id="handled-exception"></a>
+### Handled Exception { #handled-exception }
 
 ```
 //send Handled info log message
@@ -223,7 +244,8 @@ try{
 
 - try&catchで発生したExceptionを転送します。
 
-### クラッシュコールバック
+<a id="crash-callbacks"></a>
+### クラッシュコールバック { #crash-callbacks }
 
 ```
 public void Crash_Send_Complete_Callback(string message) {
@@ -237,7 +259,8 @@ void Start() {
 - ExceptionDelegateは、Unity Csharpで発生したCrashをサーバーに転送した後に呼び出されるコールバックです。<br>
 ネイティブCrashの場合は呼び出されません。
 
-### ユーザーID設定
+<a id="set-user-ids"></a>
+### ユーザーID設定 { #set-user-ids }
 
 ```
 public static void SetUserId(string userID)
@@ -248,7 +271,8 @@ public static string GetUserID()
 	- userID: string
 		- [in]各ユーザーを区分するuser id
 
-### 重複除去モード設定
+<a id="remove-duplicates"></a>
+### 重複除去モード設定 { #remove-duplicates }
 
 2.4.0以上のSDKから、一般ログに重複除去ロジックが適用されました。初期化時に重複除去ロジックが有効になります。
 
@@ -265,7 +289,8 @@ public static void SetDeduplicate(bool flag)
 true：(Default値)重複除去ロジックを有効にする<br>
 false：重複除去ロジックを無効にする
 
-## iOS buildする
+<a id="build"></a>
+## iOS buildする { #build }
 
 1.File->Build Settingsをクリック。
 
@@ -288,7 +313,8 @@ false：重複除去ロジックを無効にする
 3.作成されたXcode projectをXcodeで開きます。
 
 
-## iOSでATS(App transport Security)を追加する
+<a id="add-app-transport-security-ats-in-ios"></a>
+## iOSでATS(App transport Security)を追加する { #add-app-transport-security-ats-in-ios }
 - ATSは、iOS9、OS X 10.11で導入されたアプリとネットワーク間の安全な通信を保障するための機能で、安全に暗号化されたhttps通信のみを許可し、安全ではない水準のhttps/http通信を遮断する機能です。Log & Crash Searchではhttpプロトコルを使用して通信を試行する際、info.plistに下記のような設定を追加する必要があります。
 
 詳細な設定は、下記のリンクを参照してください。
@@ -332,7 +358,8 @@ false：重複除去ロジックを無効にする
 
 - Assets > Toast > LogNCrash > Editor > post_process.pyファイルには、iOSビルド時、info.plistにapi-logncrash.nhncloudservice.comとapi-setting-logncrash.nhncloudservice.comを自動的に追加するコードが挿入されています。
 
-## iOS Native Crashを解析する
+<a id="interpret-ios-native-crashes"></a>
+## iOS Native Crashを解析する { #interpret-ios-native-crashes }
 - Unity iOSのCrashは、Unity Engineで発生するCrashと、iOS Naitveで発生するCrashに区分されます。
 - Unityで発生したCrashの場合、Crash情報がStringで収集されるため、Symbolファイルが必要ありません。
 - iOSで発生したCrashの場合、Crash情報がアドレス値で収集されるため、これを解析するためのSymbolファイルが必要です。
@@ -345,16 +372,19 @@ false：重複除去ロジックを無効にする
 - .dSYMを.zipに圧縮して、Webコンソール > Analytic > Log & Crash Search > Settings > シンボルファイルタブに登録します。
 ![](http://static.toastoven.net/prod_logncrash/ios_15.png)
 
-## iOS Unity Crash注意事項
+<a id="caution-for-ios-unity-crash"></a>
+## iOS Unity Crash注意事項 { #caution-for-ios-unity-crash }
 
 - シンボルがなく、解析されていないCrashログは一般ログとして扱われます。
 
-## 外部CrashHandlerを使用する
+<a id="use-external-crashhandler"></a>
+## 外部CrashHandlerを使用する { #use-external-crashhandler }
 
 - 既存SDKでは初期化段階でlogMessageReceivedなどを使用してUnityのCrashHandlerをLogNCrash専用Callback関数に登録して使用しました。
 - 外部CrashHandlerのように使用する場合があり、一緒に適用できるように構造を修正しました。(MultihandlerSample参照)
 
-### 適用方法
+<a id="applications"></a>
+### 適用方法 { #applications }
 
 - LogNCrash.SetCrashHandler関数にfalseをパラメータとして渡し、自動的にCrashHandlerが登録されることを防ぎます。
 - Initialize関数の前に設定されている必要があります。
@@ -380,7 +410,8 @@ void HandleLog(string logString, string stackTrace, LogType type)
 }
 ```
 
-### AssetDataBaseを活用したビルド環境分岐
+<a id="diverge-build-environment-with-assetdatabase"></a>
+### AssetDataBaseを活用したビルド環境分岐 { #diverge-build-environment-with-assetdatabase }
 
 - メニューバーのLogNCrash > Edit Settingsをクリックすると、簡単なデータを保存できるAssetDataBaseが作成されます。
 - BuildPipeline.BuildPlayerでBuildを行う場合、LogNCrashSettings.Setter_BuildTypeとLogNCrashSettings.Getter_BuildTypeを活用してビルド環境を分岐します。

@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > C# Windows SDK Guide
+<!-- pre-align:aligned sig=978d2c23b0ba -->
+
+<a id="analytics-log-crash-search-c-windows-sdk-guide"></a>
+## Analytics > Log & Crash Search > C# Windows SDK Guide { #analytics-log-crash-search-c-windows-sdk-guide }
 
 Log & Crash C# Windows SDK는 Log & Crash Search 수집 서버에 로그를 보내는 기능을 제공합니다.
 Log & Crash C# Windows SDK 특·장점은 다음과 같습니다.
@@ -9,12 +12,14 @@ Log & Crash C# Windows SDK 특·장점은 다음과 같습니다.
 - Log & Crash Search 에서 전송된 로그를 조회 및 검색이 가능합니다.
 - 멀티 쓰레딩 환경에서 동작합니다.
 
-## 지원 환경
+<a id="section-1"></a>
+## 지원 환경 { #section-1 }
 
 - .NET Framework 4 이상
 - 32bit/64bit
 
-## 다운로드
+<a id="section-2"></a>
+## 다운로드 { #section-2 }
 
 Toast Cloud에서 C# Windows SDK를 받을 수 있습니다.
 
@@ -22,9 +27,11 @@ Toast Cloud에서 C# Windows SDK를 받을 수 있습니다.
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [C# SDK] 클릭
 ```
 
-## 설치
+<a id="section-3"></a>
+## 설치 { #section-3 }
 
-### 구성
+<a id="section-3-1"></a>
+### 구성 { #section-3-1 }
 
 C# Windows SDK는 다음과 같이 구성되어 있습니다.
 
@@ -36,7 +43,8 @@ csharp-sdk\lib64\*                      ; C++ Windows 64bit 라이브러리
 csharp-sdk-sample\                      ; VS 2010용 샘플 프로젝트
 ```
 
-### SDK 샘플
+<a id="sdk"></a>
+### SDK 샘플 { #sdk }
 
 같이 제공되는 csharp-sdk-sample/에 대해 설명합니다.
 
@@ -47,7 +55,8 @@ csharp-sdk-sample\                      ; VS 2010용 샘플 프로젝트
 5. References에 liblogncrash_csharp이 들어 있는지 확인합니다. 없으면 csharp-sdk\lib\liblogncrash_csharp.dll을 추가해 주세요.
 6. 상황에 따라 Debug/Release와 x86/x64를 조절하고 실행해 줍니다.
 
-## 사용 예
+<a id="section-4"></a>
+## 사용 예 { #section-4 }
 
 1. C# 프로젝트에 References에 csharp-sdk/lib/logncrash_csharp.dll을 추가합니다.
 2. C# 프로젝트 32bit/64bit 설정에 따라 lib32/lib64 내용을 실행파일 디렉토리로 복사합니다.
@@ -73,11 +82,13 @@ csharp-sdk-sample\                      ; VS 2010용 샘플 프로젝트
  ...
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 Toast.LogNCrash.ToastLog class에서 제공하는 기능들을 설명합니다.
 
-### 초기화/해제
+<a id="api-list-1"></a>
+### 초기화/해제 { #api-list-1 }
 
 ```
 public const string VERSION = "1.0.0";
@@ -120,7 +131,8 @@ public static void Destroy();
 	- LOG_ERROR_ADDRESS: -4, 수집 서버 주소가 잘못된 경우
 	- LOG_ERROR_PORT: -5, 수집 서버 포트가 잘못된 경우
 
-### 로그 보내기
+<a id="api-list-2"></a>
+### 로그 보내기 { #api-list-2 }
 
 ```
 public static bool SendLog(LogLevel logLevel,
@@ -159,7 +171,8 @@ public static bool SendFatal(string message, string errorCode = null, string loc
 	- 성공시 true
 	- logLevel이 크거나, message가 비어있는 경우 false
 
-### 로그 레벨 지정하기
+<a id="api-list-3"></a>
+### 로그 레벨 지정하기 { #api-list-3 }
 
 ```
 public enum LogLevel
@@ -180,7 +193,8 @@ public static void SetLogLevel(LogLevel logLevel);
 - ToastLog의 logLevel을 구하거나 지정합니다.
 - ToastLog 기본값은 INFO입니다. 따라서 SendDebug() 함수를 사용하시려면 SetLogLevel(DEBUG)로 설정해주셔야 합니다.
 
-### 커스텀 키 지정하기
+<a id="api-list-4"></a>
+### 커스텀 키 지정하기 { #api-list-4 }
 
 ```
 public static bool AddCustomKey(string key, string value)
@@ -201,7 +215,8 @@ public static void ClearCustomKeys()
 	- 성공시 true
 	- key 형식이 맞지 않으면 추가 실패시 false
 
-### 크래시 처리하기
+<a id="api-list-5"></a>
+### 크래시 처리하기 { #api-list-5 }
 
 ```
 public enum LangType
@@ -222,7 +237,8 @@ public static void CloseCrashCatcher()
 
 - 크래시 처리를 시작하거나 종료합니다.
 
-### 중복 제거 모드 설정
+<a id="api-list-6"></a>
+### 중복 제거 모드 설정 { #api-list-6 }
 중복 로그 기능이 켜져있는 경우 body와 logLevel의 내용이 같은 로그가 발생하면 전송하지 않습니다.
 
 ```
@@ -233,7 +249,8 @@ true: 중복 제거 로직 활성화 (Default 값 )
 
 false: 중복 제거 로직 비활성화
 
-### 기타 설정
+<a id="api-list-7"></a>
+### 기타 설정 { #api-list-7 }
 
 ```
 public static string GetUserId()
@@ -243,18 +260,22 @@ public static void SetUserId(string userId)
 
 - 사용자 ID를 구하거나 지정합니다.
 
-## 심볼 파일 생성 가이드
+<a id="section-5"></a>
+## 심볼 파일 생성 가이드 { #section-5 }
 
-### 개요
+<a id="section-5-1"></a>
+### 개요 { #section-5-1 }
 - Log & Crash Windows SDK 에서 발생한 Crash 를 해석하기 위해서는 심볼 파일을 생성하여 웹 콘솔에 업로드 해야 합니다.
 
-### 필요 도구
+<a id="section-5-2"></a>
+### 필요 도구 { #section-5-2 }
 - VS에 맞는 dump_syms을 사용합니다 ( VC_1500 = 2008, VC_1600 = 2010 )
 - [VS 2008 이하 다운로드](https://github.com/zpao/v8monkey/blob/master/toolkit/crashreporter/tools/win32/dump_syms_vc1500.exe)
 - [VS 2010 이상 다운로드](http://hg.mozilla.org/mozilla-central/file/tip/toolkit/crashreporter/tools/win32)
 - [minidump_stackwalk.exe](http://hg.mozilla.org/build/tools/raw-file/755e58ebc9d4/breakpad/win32/minidump_stackwalk.exe)
 
-### 심볼 파일 생성
+<a id="section-5-3"></a>
+### 심볼 파일 생성 { #section-5-3 }
 - windows crash dumps 는 .pdb 파일을 .sym 심볼로 변환시켜 디버깅 정보를 얻을 수 있습니다.
 - .pdb 파일을 .sym 파일로 변환 시키기 :
     - .pdb 파일을 생성합니다. ( 프로젝트 빌드 시 생성 )

@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > Log4J SDK Guide
+<!-- pre-align:aligned sig=badf397da372 -->
+
+<a id="analytics-log-crash-search-log4j-sdk-guide"></a>
+## Analytics > Log & Crash Search > Log4J SDK Guide { #analytics-log-crash-search-log4j-sdk-guide }
 
 Log & Crash Log4J SDK sends logs to a Log & Crash Search collector server.
 Below describe benefits and features of Log & Crash Log4J SDK.
@@ -7,11 +10,13 @@ Below describe benefits and features of Log & Crash Log4J SDK.
 - Retrieve and search logs sent from Log & Crash Search.
 - Operate under a multi-threading environment.
 
-## Supporting Environment
+<a id="supporting-environment"></a>
+## Supporting Environment { #supporting-environment }
 
 - Log4J 1.2.x (1.2.14, 1.2.16, 1.2.17)
 
-## Download
+<a id="download"></a>
+## Download { #download }
 
 Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Log4J SDK**.
 
@@ -19,9 +24,11 @@ Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Log4J 
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Log4J SDK] 
 ```
 
-## Install
+<a id="install"></a>
+## Install { #install }
 
-### Configuration
+<a id="configuration"></a>
+### Configuration { #configuration }
 
 SDK is configured as below.
 
@@ -31,7 +38,8 @@ lib/        ; Log4J Library
 sample/     ; Log4J Sample
 ```
 
-### SDK Sample
+<a id="sdk-sample"></a>
+### SDK Sample { #sdk-sample }
 
 Below describe sample/log4j/ that is provided.
 
@@ -47,7 +55,8 @@ Below describe sample/log4j/ that is provided.
 3. Go to **Project > Properties > Java Build Path > Libraries** in Eclipse and add toast-logncrash-log4j-sdk-jar.
 4. In Eclipse, select **Run > Run As > JUnit Test** and execute.
 
-## Example
+<a id="example"></a>
+## Example { #example }
 
 1. Add Log4J SDK library to your project.
     For instance, select **Project > Properties > Java Build Path > Libraries** in the Eclipse menu and add toast-logncrash-log4j-sdk-.jar
@@ -174,9 +183,11 @@ try {
 }
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
-### Setting Items for log4j.xml
+<a id="setting-items-for-log4jxml"></a>
+### Setting Items for log4j.xml { #setting-items-for-log4jxml }
 
 - collectorUrl: Collector server address
   HTTP : https://api-logncrash.nhncloudservice.com
@@ -192,14 +203,17 @@ try {
   default: Use exception data. 
   mdc: Set and use errorCode of Log4j MDC.
 
-## Constraints
+<a id="constraints"></a>
+## Constraints { #constraints }
 
 - The current **log4j 2.0** version is not supported. log4j 1.3 supports alpha8 only, but it is recommended to migrate to log4j 1.2. Recommended versions are: log4j 1.2.14, 1.2.16, and 1.2.17. 
 - In case too much error data occur all at once, handling of the log4j may be delayed if the bufferSize of logncrash-async appender is small; hence, the bufferSize needs to be adjusted.
 
-## FAQs
+<a id="faqs"></a>
+## FAQs { #faqs }
 
-### How can I apply false for blocking?
+<a id="how-can-i-apply-false-for-blocking"></a>
+### How can I apply false for blocking? { #how-can-i-apply-false-for-blocking }
 
 Modify the class name of logncrash-async in log4j.xml, as below. 
 
@@ -214,7 +228,8 @@ Modify the class name of logncrash-async in log4j.xml, as below.
 </appender>
 ```
 
-### How can I use logncrash client in a batch program (project)?
+<a id="how-can-i-use-logncrash-client-in-a-batch-program-project"></a>
+### How can I use logncrash client in a batch program (project)? { #how-can-i-use-logncrash-client-in-a-batch-program-project }
 
 It is not applied to a batch project that runs in demonstration-type using quartz. 
  Add a code that allows you to wait for seconds at the end of a batch program.
@@ -246,7 +261,8 @@ Another method to apply is to separately use log4j.xml for batch-purposes: modif
 </root>
 ```
 
-### How can a Java stack trace be logged to a log4j (including Log & Crash Search)?
+<a id="how-can-a-java-stack-trace-be-logged-to-a-log4j-including-log-crash-search"></a>
+### How can a Java stack trace be logged to a log4j (including Log & Crash Search)? { #how-can-a-java-stack-trace-be-logged-to-a-log4j-including-log-crash-search }
 
 To get an output of stack trace with log4j, use the log.error (e.getMessage()) type: cannot get an output of stack trace for log.error(e);.  
 
@@ -260,7 +276,8 @@ try {
 }
 ```
 
-### How can I minimize performance degradation due to log4j (including Log & Crash Search) logging?
+<a id="how-can-i-minimize-performance-degradation-due-to-log4j-including-log-crash-search-logging"></a>
+### How can I minimize performance degradation due to log4j (including Log & Crash Search) logging? { #how-can-i-minimize-performance-degradation-due-to-log4j-including-log-crash-search-logging }
 
 Maximize filtering by using name and level in the logger setting of logback.xml.
 Like below, if com or org is set for DEBUG level for logger configuration, many LoggingEvents(log4js) are unnecessarily created in the logger. As threshold is set with ERROR in appender, logs are not actually sent but LoggingEvent is created in logger and sent to appender. 
@@ -308,7 +325,8 @@ Like below, if com or org is set for DEBUG level for logger configuration, many 
 </root>
 ```
 
-### How can I safely close WAS?
+<a id="how-can-i-safely-close-was"></a>
+### How can I safely close WAS? { #how-can-i-safely-close-was }
 
 When closing WAS (such as Tomcat) while error logs are sent, following exception may occur and WAS may not be closed properly.
 

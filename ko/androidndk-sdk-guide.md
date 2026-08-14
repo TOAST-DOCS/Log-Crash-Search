@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > AndroidNDK SDK 사용 가이드
+<!-- pre-align:aligned sig=b6b3abc56554 -->
+
+<a id="analytics-log-crash-search-androidndk-sdk-guide"></a>
+## Analytics > Log & Crash Search > AndroidNDK SDK 사용 가이드 { #analytics-log-crash-search-androidndk-sdk-guide }
 
 Log & Crash AndroidNDK SDK는 Log & Crash Search 수집 서버에 로그를 보내는 기능을 제공합니다.  
 Log & Crash AndroidNDK SDK 특·장점은 다음과 같습니다.  
@@ -8,13 +11,15 @@ Log & Crash AndroidNDK SDK 특·장점은 다음과 같습니다.
 - Log & Crash Search 에서 전송된 로그를 조회 및 검색이 가능합니다.
 - 멀티 쓰레딩 환경에서 동작합니다.
 
-## 지원 환경
+<a id="supporting-environment"></a>
+## 지원 환경 { #supporting-environment }
 
 - Android 2.3.3, API Level 10 이상
 - AndroidNDK 최신 버전 권장
 - 지원 ABI: armeabi, armeabi-v7a, x86
 
-## 다운로드
+<a id="download"></a>
+## 다운로드 { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)에서 Android SDK를 받을 수 있습니다.
 
@@ -22,9 +27,11 @@ Log & Crash AndroidNDK SDK 특·장점은 다음과 같습니다.
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [AndroidNDK SDK] 클릭
 ```
 
-## 설치
+<a id="install"></a>
+## 설치 { #install }
 
-### 구성
+<a id="configuration"></a>
+### 구성 { #configuration }
 
 AndroidNDK SDK는 다음과 같이 구성되어 있습니다.
 
@@ -39,7 +46,8 @@ androidndk-sdk/
 androidndk-sdk-sample/      ; Android JNI 샘플
 ```
 
-### SDK 샘플
+<a id="sdk-sample"></a>
+### SDK 샘플 { #sdk-sample }
 
 같이 제공되는 androidndk-sdk-sample/에 대해 설명합니다.
 
@@ -60,7 +68,8 @@ androidndk-sdk-sample/      ; Android JNI 샘플
 	- 크래시 로그와 심볼 사이에 프로젝트 버전이 맞지 않는 경우
 	- 심볼 파일을 잘못 올린 경우
 
-## 사용 예
+<a id="example"></a>
+## 사용 예 { #example }
 
 1.jni/Application.mk에 다음 내용을 추가합니다.
 
@@ -144,11 +153,13 @@ static {
 AndroidNDK SDK는 Java Exception을 처리할 수 없습니다. AndroidNDK SDK는 C++ Native code를 위해서 제작되었기 때문입니다.  
 androidndk-sdk-sample/jni/Android.mk 파일과 AndroidNDK에 포함된 문서(<ndk_path>/docs/)를 참조해 주세요.
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 toast::logncrash::ToastLog class에서 제공하는 기능들을 설명합니다.
 
-### ToastLog 인스턴스 할당/해제
+<a id="assigndestroy-toastlog-instances"></a>
+### ToastLog 인스턴스 할당/해제 { #assigndestroy-toastlog-instances }
 
 ```
 toast::logncrash::ToastLog* GetToastLog();
@@ -160,7 +171,8 @@ void DestroyToastLog();
 - 싱글톤 방식으로 하나의 인스턴스만 반환됩니다.
 - 반환된 ToastLog instance에 대해서 delete를 하면 안됩니다. 제거하기 위해서는 반드시 DestroyToastLog()를 호출하셔야 합니다.
 
-### 초기화/해제
+<a id="initializedestroy"></a>
+### 초기화/해제 { #initializedestroy }
 
 ```
 #define LOGNCRASH_VERSION         "1.0.0"
@@ -213,7 +225,8 @@ void destroy();
 	- LOGNCRASH_LOG_ERROR_ADDRESS: -4, 수집 서버 주소가 잘못된 경우
 	- LOGNCRASH_LOG_ERROR_PORT: -5, 수집 서버 포트가 잘못된 경우
 
-### SendThread Lock 상태 해제
+<a id="unlock-sendthread"></a>
+### SendThread Lock 상태 해제 { #unlock-sendthread }
 
 ```
   	void StartSendThread();
@@ -221,7 +234,8 @@ void destroy();
 
   - SendThread를 전송 가능 상태로 변경
 
-### 로그 보내기
+<a id="send-logs"></a>
+### 로그 보내기 { #send-logs }
 
 ```
 bool sendLog(
@@ -261,7 +275,8 @@ bool fatal(const char* message, const char* errorCode = NULL, const char* locati
 	- 성공시 true
 	- logLevel이 크거나, message가 비어있는 경우 false
 
-### 로그 레벨 지정하기
+<a id="specify-log-levels"></a>
+### 로그 레벨 지정하기 { #specify-log-levels }
 
 ```
 typedef enum {
@@ -281,7 +296,8 @@ void setLogLevel(const LogNCrashLogLevel logLevel);
 - ToastLog instance의 logLevel을 구하거나 지정합니다.
 - ToastLog 기본값은 LOGNCRASH_INFO입니다. 따라서 debug() 함수를 사용하시려면 setLogLevel(LOGNCRASH_DEBUG)로 설정해주셔야 합니다.
 
-### 커스텀 키 지정하기
+<a id="specify-custom-keys"></a>
+### 커스텀 키 지정하기 { #specify-custom-keys }
 
 ```
 bool addCustomKey(const char* key, const char* value);
@@ -302,7 +318,8 @@ void clearCustomKeys();
 	- 성공시 true
 	- key 형식이 맞지 않으면 추가 실패시 false
 
-### 호스트 타입 지정하기
+<a id="specify-host-types"></a>
+### 호스트 타입 지정하기 { #specify-host-types }
 
 ```
 bool setHostMode(int mode);
@@ -311,7 +328,8 @@ bool setHostMode(int mode);
 - mode 가 0인 경우: Private IP를 구하여 host 필드를 채웁니다. Private IP를 구하는데 실패 하면 Public IP로 host 필드를 채웁니다.
 - mode 가 1인 경우: Public IP 로 host 필드를 채웁니다.
 
-### 크래시 처리하기
+<a id="process-crashes"></a>
+### 크래시 처리하기 { #process-crashes }
 
 ```
 typedef enum {
@@ -345,7 +363,8 @@ void setCrashCallback(const LogNCrashCallbackType cb, void* cbData = NULL);
 	- 설정 실패시 false
 	- AndroidNDK SDK는 단말의 /sdcard 디렉토리를 사용합니다. 단말에 위 디렉토리가 없으면 제대로 동작 안할수 있습니다.
 
-### 중복 제거 모드 설정
+<a id="remove-duplicates"></a>
+### 중복 제거 모드 설정 { #remove-duplicates }
   - 2.4.0 이상 SDK 부터 일반 로그에 중복 제거 로직이 적용되었습니다
   - 중복 로그 기능이 켜져있는 경우 body와 logLevel의 내용이 같은 로그가 발생하면 전송하지 않습니다.
 
@@ -356,7 +375,8 @@ public static void setDuplicate(bool enable)
 
   - false: 중복 제거 로직 비활성화
 
-### 기타 설정
+<a id="other-settings"></a>
+### 기타 설정 { #other-settings }
 
 ```
 const char* getUserId();

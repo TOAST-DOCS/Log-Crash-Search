@@ -1,11 +1,16 @@
-## Data & Analytics > Log & Crash Search > API Guide
-### Appkey and SecretKey
+<!-- pre-align:aligned sig=956b0b576e08 -->
+
+<a id="data-analytics-log-crash-search-api-guide"></a>
+## Data & Analytics > Log & Crash Search > API Guide { #data-analytics-log-crash-search-api-guide }
+<a id="appkey-and-secretkey"></a>
+### Appkey and SecretKey { #appkey-and-secretkey }
 
 AppKey and SecretKey are required to use the Log & Crash Search API.
 
 An Appkey is a unique authentication key issued for each NHN Cloud service, used to identify the service and validate API requests. A SecretKey is a private key used to control access to the API. For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
 
-## Collect Log API
+<a id="collect-log-api"></a>
+## Collect Log API { #collect-log-api }
 
 Logs can be sent to Log & Crash collector server via HTTP protocol. 
 
@@ -213,7 +218,8 @@ resultList: array
     [out] Result value of each delivered log
 ```
 
-### Samples
+<a id="samples"></a>
+### Samples { #samples }
 
 [When log is normally sent with curl]
 
@@ -282,7 +288,8 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 ```
 
 
-## Log Search API
+<a id="log-search-api"></a>
+## Log Search API { #log-search-api }
 
 > [Caution] This API is scheduled for deprecation. For new development, we recommend using the [v3 Log Search API](#v3-log-search-api) below.
 
@@ -292,7 +299,8 @@ The number of tokens deducted when searching an item varies depending on the sea
 
 ![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
 
-### Basic Information
+<a id="basic-information"></a>
+### Basic Information { #basic-information }
 ```
 API Endpoint: https://api-lncs-search.nhncloudservice.com
 ```
@@ -300,7 +308,8 @@ API Endpoint: https://api-lncs-search.nhncloudservice.com
 Only logs created in the past 90 days can be searched. The range of start time and end time cannot exceed 31 days.
 ```
 
-### Search API
+<a id="search-api"></a>
+### Search API { #search-api }
 Retrieves logs within the specified time range using a Lucene query. There is no limit on the search results (`totalItems`), but the range that can be retrieved through paging is limited to a maximum of 100,000 (`pageNumber × pageSize ≤ 100,000`). To retrieve more logs than this, use the Search API (cursor pagination) or the Scroll API.
 ```
 POST /api/v2/search/{appkey}
@@ -308,16 +317,19 @@ POST /api/v2/search/{appkey}
 Content-Type: application/json
 ```
 
+<a id="search-api-request-parameter"></a>
 #### Request Parameter
 | Name | Format | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project appkey | O |
 
+<a id="search-api-request-header"></a>
 #### Request Header
 | Name | Format | Description             | Required |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | Project SecretKey | O |
 
+<a id="search-api-request-body"></a>
 #### Request Body
 | Name | Format | Description | Required | Note |
 | --- | --- | --- | --- | --- |
@@ -345,6 +357,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="search-api-response"></a>
 #### Response
 | Name | Type | Format | Description |
 | --- | --- | --- | --- |
@@ -382,7 +395,8 @@ Content-Type: application/json
 </details>
 
 
-### Search API (Cursor Pagination)
+<a id="search-api-cursor-pagination"></a>
+### Search API (Cursor Pagination) { #search-api-cursor-pagination }
 By specifying the URL query parameter `?cursor` at the same endpoint as the Search API to opt in, you can use cursor (search_after)-based pagination. Even when moving to deep pages, you can retrieve subsequent pages sequentially without being affected by the result window limit of `pageNumber × pageSize` (100,000 for the basic Search API).
 
 ```
@@ -397,17 +411,20 @@ Content-Type: application/json
 > - The page size limit per call (`pageSize` maximum value of 100) applies the same as in the standard Search API.
 > - When you reach the last page, the response body does not include the `nextCursor` field.
 
+<a id="search-api-cursor-pagination-request-parameters"></a>
 #### Request Parameters
 | Name | Category | Type | Description | Required |
 | --- | --- | --- | --- | --- |
 | appkey | Path | String | Project app key | O |
 | cursor | Query | - | Cursor-based pagination opt-in flag. Activated when `?cursor` or `?cursor=true` is specified | O |
 
+<a id="search-api-cursor-pagination-request-header"></a>
 #### Request Header
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | X-LNCS-SECRET | String | Project Secret Key | O |
 
+<a id="search-api-cursor-pagination-request-body"></a>
 #### Request Body
 | Name | Type | Description | Required | Note |
 | --- | --- | --- | --- | --- |
@@ -451,6 +468,7 @@ Next page request (passing the previous response's `nextCursor` as-is):
 ```
 </details>
 
+<a id="search-api-cursor-pagination-response"></a>
 #### Response
 | Name | Category | Type | Description |
 | --- | --- | --- | --- |
@@ -515,7 +533,8 @@ When it is the last page (response does not include `nextCursor`):
 </details>
 
 
-### Scroll Start API
+<a id="scroll-start-api"></a>
+### Scroll Start API { #scroll-start-api }
 Searches all the logs within the specified time frame using the Lucene query without pages specified. It can be used with Scroll Continue API to search logs multiple times.
 ```
 POST /api/v2/search/scroll/{appkey}
@@ -523,16 +542,19 @@ POST /api/v2/search/scroll/{appkey}
 Content-Type: application/json
 ```
 
+<a id="scroll-start-api-request-parameter"></a>
 #### Request Parameter
 | Name | Format | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project appkey | O |
 
+<a id="scroll-start-api-request-header"></a>
 #### Request Header
 | Name | Format | Description             | Required |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | Project SecretKey | O |
 
+<a id="scroll-start-api-request-body"></a>
 #### Request Body
 | Name | Format | Description | Required | Note |
 | --- | --- | --- | --- | --- |
@@ -558,6 +580,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="scroll-start-api-response"></a>
 #### Response
 | Name | Type | Format | Description |
 | --- | --- | --- | --- |
@@ -595,7 +618,8 @@ Content-Type: application/json
 </details>
 
 
-### Scroll Continue API
+<a id="scroll-continue-api"></a>
+### Scroll Continue API { #scroll-continue-api }
 Continues searching logs by specifying the Scroll Key obtained from Scroll Start API or the previously called Scroll Continue API.<br>
 Scroll Key is valid for 1 minute.
 ```
@@ -604,20 +628,24 @@ POST /api/v2/search/scroll/{appkey}/{scrollKey}
 Content-Type: application/json
 ```
 
+<a id="scroll-continue-api-request-parameter"></a>
 #### Request Parameter
 | Name | Format | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project appkey | O |
 | scrollKey | String | Scroll Key | O |
 
+<a id="scroll-continue-api-request-header"></a>
 #### Request Header
 | Name | Format | Description             | Required |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | Project SecretKey | O |
 
+<a id="scroll-continue-api-request-body"></a>
 #### Request Body
 Scroll Continue API does not require the request body.
 
+<a id="scroll-continue-api-response"></a>
 #### Response
 | Name | Type | Format | Description |
 | --- | --- | --- | --- |
@@ -652,22 +680,26 @@ Scroll Continue API does not require the request body.
 ```
 </details>
 
-### Available Token API
+<a id="available-token-api"></a>
+### Available Token API { #available-token-api }
 Retrieves the number of available tokens.
 ```
 GET /api/v2/search/available-tokens/{appkey}
 ```
 
+<a id="available-token-api-request-parameter"></a>
 #### Request Parameter
 | Name | Format | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project appkey | O |
 
+<a id="available-token-api-request-header"></a>
 #### Request Header
 | Name | Format | Description             | Required |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | Project SecretKey | O |
 
+<a id="available-token-api-response"></a>
 #### Response
 | Name | Type | Format | Description |
 | --- | --- | --- | --- |
@@ -691,25 +723,29 @@ GET /api/v2/search/available-tokens/{appkey}
 </details>
 
 
-## v3 Log Search API
+<a id="v3-log-search-api"></a>
+## v3 Log Search API { #v3-log-search-api }
 
 You can search stored logs using a Lucene query, and it provides features to upload, retrieve, and delete Symbol files for crash analysis.<br>
 The log search API limits the amount you can request per hour, depending on your usage pattern. The resources available for search are represented as tokens, and a certain amount is deducted according to internal criteria each time you call the search API. You can use the search API as long as your remaining token balance is positive.<br>
 The number of tokens deducted per search varies depending on the search period, data volume, and query complexity, and tokens are automatically replenished over time.<br>
 
-### Authentication
+<a id="authentication"></a>
+### Authentication { #authentication }
 
 The User Access Key token is supported as a method for API calls and authentication.<br>
 For information on how to issue a token, see the link below.
 
 [User Access Key Token](https://docs.nhncloud.com/en/nhncloud/en/public-api/user-access-key-token/)
 
+<a id="authentication-example-http-header-for-an-api-request"></a>
 #### Example HTTP Header for an API Request
 ```
 X-NHN-Authorization: Bearer {Access Token}
 ```
 
-### Search API
+<a id="v3-log-search-api-search-api"></a>
+### Search API { #v3-log-search-api-search-api }
 Retrieves logs within the specified time range using a Lucene query. There is no limit on the search results (`totalItems`), but the range that can be retrieved through paging is limited to a maximum of 100,000 (`pageNumber × pageSize ≤ 100,000`). To retrieve more logs than this, use the Cursor Search API or the Scroll API.
 ```
 POST /v3/{appkey}/logs/search
@@ -717,16 +753,19 @@ POST /v3/{appkey}/logs/search
 Content-Type: application/json
 ```
 
+<a id="v3-log-search-api-search-api-request-parameters"></a>
 #### Request Parameters
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project app key | O |
 
+<a id="v3-log-search-api-search-api-request-header"></a>
 #### Request Header
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | User Access Key token in the format `Bearer {Access Token}` | O |
 
+<a id="v3-log-search-api-search-api-request-body"></a>
 #### Request Body
 | Name | Type | Description | Required | Note |
 | --- | --- | --- | --- | --- |
@@ -754,6 +793,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="v3-log-search-api-search-api-response"></a>
 #### Response
 | Name | Category | Type | Description |
 | --- | --- | --- | --- |
@@ -791,7 +831,8 @@ Content-Type: application/json
 </details>
 
 
-### Cursor Search API
+<a id="cursor-search-api"></a>
+### Cursor Search API { #cursor-search-api }
 Searches logs using cursor (opaque)-based pagination.<br>
 Even when moving to deep pages, you can retrieve results sequentially without being affected by the result window limit of `pageNumber × pageSize`.
 
@@ -807,16 +848,19 @@ POST /v3/{appkey}/logs/cursor
 Content-Type: application/json
 ```
 
+<a id="cursor-search-api-request-parameters"></a>
 #### Request Parameters
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project app key | O |
 
+<a id="cursor-search-api-request-header"></a>
 #### Request Header
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | User Access Key token in the format `Bearer {Access Token}` | O |
 
+<a id="cursor-search-api-request-body"></a>
 #### Request Body
 | Name | Type | Description | Required | Note |
 | --- | --- | --- | --- | --- |
@@ -844,6 +888,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="cursor-search-api-response"></a>
 #### Response
 | Name | Category | Type | Description |
 | --- | --- | --- | --- |
@@ -883,7 +928,8 @@ Content-Type: application/json
 </details>
 
 
-### Scroll Start API
+<a id="v3-log-search-api-scroll-start-api"></a>
+### Scroll Start API { #v3-log-search-api-scroll-start-api }
 Retrieves all logs within the specified time range using a Lucene query, without specifying a page. Use this together with the Scroll Continue API to retrieve results across multiple calls.
 ```
 POST /v3/{appkey}/logs/scroll
@@ -891,16 +937,19 @@ POST /v3/{appkey}/logs/scroll
 Content-Type: application/json
 ```
 
+<a id="v3-log-search-api-scroll-start-api-request-parameters"></a>
 #### Request Parameters
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project app key | O |
 
+<a id="v3-log-search-api-scroll-start-api-request-header"></a>
 #### Request Header
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | User Access Key token in the format `Bearer {Access Token}` | O |
 
+<a id="v3-log-search-api-scroll-start-api-request-body"></a>
 #### Request Body
 | Name | Type | Description | Required | Note |
 | --- | --- | --- | --- | --- |
@@ -926,6 +975,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="v3-log-search-api-scroll-start-api-response"></a>
 #### Response
 | Name | Category | Type | Description |
 | --- | --- | --- | --- |
@@ -963,7 +1013,8 @@ Content-Type: application/json
 </details>
 
 
-### Scroll Continue API
+<a id="v3-log-search-api-scroll-continue-api"></a>
+### Scroll Continue API { #v3-log-search-api-scroll-continue-api }
 Continues retrieving logs by specifying the Scroll Key obtained from the Scroll Start API or the most recently called Scroll Continue API.<br>
 The Scroll Key is valid for 1 minute.
 ```
@@ -972,20 +1023,24 @@ POST /v3/{appkey}/logs/scroll/{scrollKey}
 Content-Type: application/json
 ```
 
+<a id="v3-log-search-api-scroll-continue-api-request-parameters"></a>
 #### Request Parameters
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project app key | O |
 | scrollKey | String | Scroll Key | O |
 
+<a id="v3-log-search-api-scroll-continue-api-request-header"></a>
 #### Request Header
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | User Access Key token in the format `Bearer {Access Token}` | O |
 
+<a id="v3-log-search-api-scroll-continue-api-request-body"></a>
 #### Request Body
 The Scroll Continue API does not require a request body.
 
+<a id="v3-log-search-api-scroll-continue-api-response"></a>
 #### Response
 | Name | Category | Type | Description |
 | --- | --- | --- | --- |
@@ -1021,22 +1076,26 @@ The Scroll Continue API does not require a request body.
 </details>
 
 
-### Available Token API
+<a id="v3-log-search-api-available-token-api"></a>
+### Available Token API { #v3-log-search-api-available-token-api }
 Retrieves the number of available tokens.
 ```
 GET /v3/{appkey}/logs/available-token
 ```
 
+<a id="v3-log-search-api-available-token-api-request-parameters"></a>
 #### Request Parameters
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project app key | O |
 
+<a id="v3-log-search-api-available-token-api-request-header"></a>
 #### Request Header
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | User Access Key token in the format `Bearer {Access Token}` | O |
 
+<a id="v3-log-search-api-available-token-api-response"></a>
 #### Response
 | Name | Category | Type | Description |
 | --- | --- | --- | --- |
@@ -1060,7 +1119,8 @@ GET /v3/{appkey}/logs/available-token
 </details>
 
 
-### Symbol Upload API
+<a id="symbol-upload-api"></a>
+### Symbol Upload API { #symbol-upload-api }
 Uploads a Symbol file for crash analysis.
 ```
 POST /v3/{appkey}/symbols?platform={platform}&version={version}&description={description}
@@ -1068,6 +1128,7 @@ POST /v3/{appkey}/symbols?platform={platform}&version={version}&description={des
 Content-Type: multipart/form-data
 ```
 
+<a id="symbol-upload-api-request-parameters"></a>
 #### Request Parameters
 | Name | Category | Type | Description | Required |
 | --- | --- | --- | --- | -- |
@@ -1076,16 +1137,19 @@ Content-Type: multipart/form-data
 | version | Query | String | Symbol version | O |
 | description | Query | String | Symbol description (special characters such as spaces require URL encoding) |  |
 
+<a id="symbol-upload-api-request-header"></a>
 #### Request Header
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | User Access Key token in the format `Bearer {Access Token}` | O |
 
+<a id="symbol-upload-api-request-body"></a>
 #### Request Body
 | Name | Type | Description | Required | Note |
 | --- | --- | --- | --- | --- |
 | symbolfile | Binary | Symbol file | O | Sent in multipart/form-data format |
 
+<a id="symbol-upload-api-response"></a>
 #### Response
 | Name | Category | Type | Description |
 | --- | --- | --- | --- |
@@ -1113,12 +1177,14 @@ Content-Type: multipart/form-data
 </details>
 
 
-### Symbol List API
+<a id="symbol-list-api"></a>
+### Symbol List API { #symbol-list-api }
 Retrieves the list of uploaded Symbol files. Filters by the `platform`/`version` values; to retrieve all, call with both values set to `all`.
 ```
 GET /v3/{appkey}/symbols/{platform}/{version}
 ```
 
+<a id="symbol-list-api-request-parameters"></a>
 #### Request Parameters
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -1126,11 +1192,13 @@ GET /v3/{appkey}/symbols/{platform}/{version}
 | platform | String | Symbol platform filter (`all` to retrieve all) | O |
 | version | String | Symbol version filter (`all` to retrieve all) | O |
 
+<a id="symbol-list-api-request-header"></a>
 #### Request Header
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | User Access Key token in the format `Bearer {Access Token}` | O |
 
+<a id="symbol-list-api-response"></a>
 #### Response
 | Name | Category | Type | Description |
 | --- | --- | --- | --- |
@@ -1158,23 +1226,27 @@ GET /v3/{appkey}/symbols/{platform}/{version}
 </details>
 
 
-### Symbol Delete API
+<a id="symbol-delete-api"></a>
+### Symbol Delete API { #symbol-delete-api }
 Deletes a single Symbol file.
 ```
 DELETE /v3/{appkey}/symbols/{sid}
 ```
 
+<a id="symbol-delete-api-request-parameters"></a>
 #### Request Parameters
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | appkey | String | Project app key | O |
 | sid | String | Symbol file ID | O |
 
+<a id="symbol-delete-api-request-header"></a>
 #### Request Header
 | Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | User Access Key token in the format `Bearer {Access Token}` | O |
 
+<a id="symbol-delete-api-response"></a>
 #### Response
 | Name | Category | Type | Description |
 | --- | --- | --- | --- |

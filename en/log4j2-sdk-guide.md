@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > Log4J v2 SDK Guide
+<!-- pre-align:aligned sig=eec5a9a734d6 -->
+
+<a id="analytics-log-crash-search-log4j-v2-sdk-guide"></a>
+## Analytics > Log & Crash Search > Log4J v2 SDK Guide { #analytics-log-crash-search-log4j-v2-sdk-guide }
 
 Log & Crash Log4J v2 SDK sends logs to a Log & Crash Search collector server.
 Below describe benefits and features of Log & Crash Log4J v2 SDK.
@@ -7,11 +10,13 @@ Below describe benefits and features of Log & Crash Log4J v2 SDK.
 - Retrieve and search logs sent from Log & Crash Search.
 - Operate under a multi-threading environment.
 
-## Supporting Environment
+<a id="supporting-environment"></a>
+## Supporting Environment { #supporting-environment }
 
 - Log4J 2.x
 
-## Download
+<a id="download"></a>
+## Download { #download }
 
 Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Log4J 2 SDK**.[DOCUMENTS] > 
 
@@ -19,9 +24,11 @@ Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Log4J 
 Click [Download] > [Analytics > Log & Crash Search] > [Log4J.v2 SDK] 
 ```
 
-## Install
+<a id="install"></a>
+## Install { #install }
 
-### Configuration
+<a id="configuration"></a>
+### Configuration { #configuration }
 
 SDK is configured as below.
 
@@ -31,7 +38,8 @@ lib/        ; Log4J 2 Library
 sample/     ; Log4J 2 Sample
 ```
 
-### SDK Sample
+<a id="sdk-sample"></a>
+### SDK Sample { #sdk-sample }
 
 Below describe sample/log4j2/ that is provided.
 
@@ -47,7 +55,8 @@ Below describe sample/log4j2/ that is provided.
 3. Go to **Project > Properties > Java Build Path > Libraries** in Eclipse and add toast-logncrash-log4j2-sdk-.jar.
 4. In Eclipse, select **Run > Run As > JUnit Test** and execute.
 
-## Example
+<a id="example"></a>
+## Example { #example }
 
 1. Add Log4J 2 SDK library to your project.
 For instance, select **Project > Properties > Java Build Path > Libraries** in the Eclipse menu and add toast-logncrash-log4j2-sdk-.jar
@@ -162,9 +171,11 @@ try {
 }
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
-### Setting Items for log4j2.xml
+<a id="setting-items-for-log4j2xml"></a>
+### Setting Items for log4j2.xml { #setting-items-for-log4j2xml }
 
 - collectorUrl: Collector server address
   HTTP : https://api-logncrash.nhncloudservice.com
@@ -176,17 +187,21 @@ try {
 - debug: Whether to use Debug or not. Default is "false".
 
 
-## Constraints
+<a id="constraints"></a>
+## Constraints { #constraints }
 
 - **log4j 1.2** is not supported.  
 
-## FAQ
+<a id="faq"></a>
+## FAQ { #faq }
 
-### How can I use Asynchronous Logger to enhance performance?
+<a id="how-can-i-use-asynchronous-logger-to-enhance-performance"></a>
+### How can I use Asynchronous Logger to enhance performance? { #how-can-i-use-asynchronous-logger-to-enhance-performance }
 
 Make a reference of Asynchronous Loggers for Low-Latency Logging
 
-### How can a Java stack trace be logged to a log4j 2 (including Log & Crash Search)?
+<a id="how-can-a-java-stack-trace-be-logged-to-a-log4j-2-including-log-crash-search"></a>
+### How can a Java stack trace be logged to a log4j 2 (including Log & Crash Search)? { #how-can-a-java-stack-trace-be-logged-to-a-log4j-2-including-log-crash-search }
 To get an output of stack trace with log4j 2, use the log.error(e.toString(),e); type: cannot get an output of stack trace for log.error(e);.  
 
 
