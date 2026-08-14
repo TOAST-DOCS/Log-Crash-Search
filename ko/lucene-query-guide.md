@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=1db700fbea0a -->
+
 <a id="guide-for-lucene-query"></a>
 ## Data & Analytics > Log & Crash Search > Lucene 쿼리 가이드 { #guide-for-lucene-query }
 
