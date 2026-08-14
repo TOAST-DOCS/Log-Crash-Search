@@ -1,5 +1,7 @@
 <!-- machine_translated: true -->
 
+<!-- pre-align:aligned sig=1db700fbea0a -->
+
 <a id="guide-for-lucene-query"></a>
 ## Data & Analytics > Log & Crash Search > Luceneクエリガイド { #guide-for-lucene-query }
 
