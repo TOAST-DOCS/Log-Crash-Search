@@ -1,5 +1,7 @@
+<!-- machine_translated: true -->
+
 <a id="guide-for-lucene-query"></a>
-## Luceneクエリガイド { #guide-for-lucene-query }
+## Data & Analytics > Log & Crash Search > Luceneクエリガイド { #guide-for-lucene-query }
 
 <a id="basic-precautions"></a>
 ## 基本注意事項 { #basic-precautions }
@@ -80,7 +82,7 @@ NOT演算子`-`の場合、AND NOTの意味で使います。
 ワイルドカードの*と?は、文字の間にも適用することができます。
 
 <a id="proximity-search"></a>
-## 近似検索(proximity search) { #proximity-search }
+## 近似検索(Proximity search) { #proximity-search }
 
 fiedname:"検索語A 検索語B"~n
 * 検索語Aと検索語Bの間に最大n個の単語があるログを探します。
@@ -91,21 +93,21 @@ fiedname:"検索語A 検索語B"~n
 <a id="boosting"></a>
 ### 重み付け検索(Boosting) { #boosting }
 
-fieldname:検索語A^n検索語B
-* 一部検索キーワードに重みを用いて、結果を取得できます。
+fieldname:検索語A^n 検索語B
+* 一部検索キーワードに重みを用いて、より高い順位で結果を取得できます。
 * 例) body:normal^2 cron
-* 重みは、0より大きい実数のみ可能です。
+* 重みは0より大きい実数のみ可能で、1未満の数値も指定できます。
 
 デフォルトの重みは1です。
 
 <a id="regex-search"></a>
 ## 正規表現検索 { #regex-search }
 
-正規表現検索が可能です。
+一般的に知られている正規表現検索が可能です。
 * 例) dressまたはpressを含む文書を検索する場合は、/[dp]ress/と入力
 
 <a id="fuzzy-search"></a>
-## あいまい項目検索(fuzzy search) { #fuzzy-search }
+## あいまい項目検索(Fuzzy search) { #fuzzy-search }
 
 fieldname:検索語~n
 * 検索語と類似した、n個の文字まで他の結果を検索します。(最大2個)
