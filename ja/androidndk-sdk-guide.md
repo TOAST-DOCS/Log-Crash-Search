@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=b6b3abc56554 -->
+
 ﻿## Analytics > Log & Crash Search > AndroidNDK SDK使用ガイド
 
 Log & Crash AndroidNDK SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。  
@@ -8,13 +10,20 @@ Log & Crash AndroidNDK SDKの特徴・利点は次のとおりです。
 - Log & Crash Searchから転送されたログを照会および検索できます。
 - マルチスレッド環境で動作します。
 
-## サポート環境
+<a id="analytics-log-crash-search-androidndk-sdk-guide"></a>
+## Analytics > Log & Crash Search > AndroidNDK SDK 使用ガイド { #analytics-log-crash-search-androidndk-sdk-guide }
+
+<!-- TODO: translate body -->
+
+<a id="supporting-environment"></a>
+## サポート環境 { #supporting-environment }
 
 - Android 2.3.3、API Level 10以上
 - AndroidNDK最新バージョン推奨
 - サポートABI：armeabi、armeabi-v7a、x86
 
-## ダウンロード
+<a id="download"></a>
+## ダウンロード { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)でAndroid SDKをダウンロードできます。
 
@@ -22,9 +31,11 @@ Log & Crash AndroidNDK SDKの特徴・利点は次のとおりです。
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [AndroidNDK SDK]をクリック
 ```
 
-## インストール
+<a id="install"></a>
+## インストール { #install }
 
-### 構成
+<a id="configuration"></a>
+### 構成 { #configuration }
 
 AndroidNDK SDKは、次のように構成されています。
 
@@ -39,7 +50,8 @@ androidndk-sdk/
 androidndk-sdk-sample/      ; Android JNIサンプル
 ```
 
-### SDKサンプル
+<a id="sdk-sample"></a>
+### SDKサンプル { #sdk-sample }
 
 一緒に提供されるandroidndk-sdk-sample/について説明します。
 
@@ -60,7 +72,8 @@ androidndk-sdk-sample/      ; Android JNIサンプル
 	- クラッシュログとシンボルの間のプロジェクトバージョンが合っているか
 	- 無効なシンボルファイルをアップロードしていないか
 
-## 使用例
+<a id="example"></a>
+## 使用例 { #example }
 
 1.jni/Application.mkに次の内容を追加します。
 
@@ -144,11 +157,13 @@ static {
 AndroidNDK SDKは、Java Exceptionを処理できません。AndroidNDK SDKは、C++ Native codeのために作られているためです。
 androidndk-sdk-sample/jni/Android.mkファイルとAndroidNDKに含まれている文書(<ndk_path>/docs/)を参照してください。
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 toast::logncrash::ToastLog classで提供する機能を説明します。
 
-### ToastLogインスタンスの割り当て/解除
+<a id="assigndestroy-toastlog-instances"></a>
+### ToastLogインスタンスの割り当て/解除 { #assigndestroy-toastlog-instances }
 
 ```
 toast::logncrash::ToastLog* GetToastLog();
@@ -160,7 +175,8 @@ void DestroyToastLog();
 - Singleton方式で1つのインスタンスのみ返します。
 - 返されたToastLog instanceに対してdeleteをしてはいけません。除去するにはDestroyToastLog()を呼び出す必要があります。
 
-### 初期化/解除
+<a id="initializedestroy"></a>
+### 初期化/解除 { #initializedestroy }
 
 ```
 #define LOGNCRASH_VERSION         "1.0.0"
@@ -213,7 +229,8 @@ void destroy();
 	- LOGNCRASH_LOG_ERROR_ADDRESS：-4、収集サーバーアドレスが無効な場合
 	- LOGNCRASH_LOG_ERROR_PORT：-5、収集サーバーポートが無効な場合
 
-### SendThread Lock状態解除
+<a id="unlock-sendthread"></a>
+### SendThread Lock状態解除 { #unlock-sendthread }
 
 ```
   	void StartSendThread();
@@ -221,7 +238,8 @@ void destroy();
 
   - SendThreadを転送可能な状態に変更
 
-### ログ転送
+<a id="send-logs"></a>
+### ログ転送 { #send-logs }
 
 ```
 bool sendLog(
@@ -261,7 +279,8 @@ bool fatal(const char* message, const char* errorCode = NULL, const char* locati
 	- 成功時はtrue
 	- logLevelより大きいか、messageが空の場合はfalse
 
-### ログレベルを指定する
+<a id="specify-log-levels"></a>
+### ログレベルを指定する { #specify-log-levels }
 
 ```
 typedef enum {
@@ -281,7 +300,8 @@ void setLogLevel(const LogNCrashLogLevel logLevel);
 - ToastLog instanceのlogLevelの取得や指定を行います。
 - ToastLogデフォルト値はLOGNCRASH_INFOです。したがってdebug()関数を使用するには、setLogLevel(LOGNCRASH_DEBUG)に設定する必要があります。
 
-### カスタムキーを指定する
+<a id="specify-custom-keys"></a>
+### カスタムキーを指定する { #specify-custom-keys }
 
 ```
 bool addCustomKey(const char* key, const char* value);
@@ -302,7 +322,8 @@ void clearCustomKeys();
 	- 成功時はtrue
 	- key形式が合っていない場合、追加失敗時はfalse
 
-### ホストタイプを指定する
+<a id="specify-host-types"></a>
+### ホストタイプを指定する { #specify-host-types }
 
 ```
 bool setHostMode(int mode);
@@ -311,7 +332,8 @@ bool setHostMode(int mode);
 - modeが0の場合：Private IPを取得してhostフィールドを埋めます。Private IPを取得するのに失敗した場合、Public IPでhostフィールドを埋めます。
 - modeが1の場合：Public IPでhostフィールドを埋めます。
 
-### クラッシュを処理する
+<a id="process-crashes"></a>
+### クラッシュを処理する { #process-crashes }
 
 ```
 typedef enum {
@@ -345,7 +367,8 @@ void setCrashCallback(const LogNCrashCallbackType cb, void* cbData = NULL);
 	- 設定失敗時はfalse
 	- AndroidNDK SDKは、端末の/sdcardディレクトリを使用します。端末に上記のディレクトリがない場合、正常に動作しないことがあります。
 
-### 重複除去モード設定
+<a id="remove-duplicates"></a>
+### 重複除去モード設定 { #remove-duplicates }
   - 2.4.0以上のSDKから一般ログに重複除去ロジックが適用されました。
   - 重複ログ機能が有効になっている場合、bodyとlogLevelの内容が同じログが発生した時、転送しません。
 
@@ -356,7 +379,8 @@ public static void setDuplicate(bool enable)
 
   - false：重複除去ロジックが無効
 
-### その他設定
+<a id="other-settings"></a>
+### その他設定 { #other-settings }
 
 ```
 const char* getUserId();

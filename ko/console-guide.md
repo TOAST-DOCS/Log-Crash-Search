@@ -1,4 +1,7 @@
-## Data & Analytics > Log & Crash Search > 콘솔 사용 가이드
+<!-- pre-align:aligned sig=62aa7702009c -->
+
+<a id="data-analytics-log-crash-search-console-user-guide"></a>
+## Data & Analytics > Log & Crash Search > 콘솔 사용 가이드 { #data-analytics-log-crash-search-console-user-guide }
 
 Log & Crash Search는 다음과 같은 순서로 사용할 수 있습니다.
 
@@ -9,14 +12,16 @@ Log & Crash Search SDK를 통해서 로그 전송을 시작합니다.
 - 로그 확인  
 로그 전송을 마친 후에는 **로그 검색** 또는 **앱 크래시 검색** 화면에서 차트나 검색 등 다양한 방식으로 로그를 살펴볼 수 있습니다.
 
-## 프로젝트 선택
+<a id="select-a-project"></a>
+## 프로젝트 선택 { #select-a-project }
 
 콘솔에 접속하여 왼쪽 메뉴를 이용하여 조직(Organization)과 프로젝트(Project)를 선택합니다. 조직이나 프로젝트가 없다면 새로 만들어야 합니다.
 - 왼쪽 메뉴에서 **ORGANIZATION > PROJECT**를 클릭합니다.
 
 조직과 프로젝트를 만드는 자세한 방법은 [NHN Cloud 콘솔 사용 가이드](https://docs.toast.com/ko/TOAST/ko/console-guide/)를 참고하세요.
 
-## 서비스 활성화
+<a id="enable-the-service"></a>
+## 서비스 활성화 { #enable-the-service }
 
 프로젝트(Project)를 선택한 상태에서 화면 상단의 **서비스 선택** 버튼을 클릭하고 **Data & Analytics** 아래 **Log & Crash Search**를 클릭합니다. 서비스가 활성화되면 서비스 이름 옆에 선택(v) 표시가 나타납니다.
 
@@ -25,14 +30,16 @@ Log & Crash Search SDK를 통해서 로그 전송을 시작합니다.
 
 Log & Crash Search가 활성화되면 왼쪽 메뉴에 **Data & Analytics > Log & Crash Search** 메뉴가 나타나고 Appkey가 생성됩니다.
 
-## Appkey 확인
+<a id="check-appkey"></a>
+## Appkey 확인 { #check-appkey }
 
 로그를 전송하려면 Appkey를 확인해야 합니다.
 
 1. 왼쪽 탐색 메뉴에서 **Data & Analytics > Log & Crash Search > 로그 검색**을 클릭합니다.
 2. 콘솔 화면 상단에 **URL & Appkey** 버튼을 클릭하면 Log & Crash Search용 Appkey를 확인할 수 있습니다.
 
-## 로그 전송
+<a id="send-logs"></a>
+## 로그 전송 { #send-logs }
 
 로그를 전송하려면 Log & Crash Search SDK가 필요합니다.
 SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 **Data & Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
@@ -41,7 +48,8 @@ SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 *
 > SDK 사용 시 크래시 로그와 함께 전송되는 세션 로그는 검색 화면에 노출되지 않습니다.</br>
 > 세션 로그 전송 시 [리소스 제공 정책](https://docs.toast.com/ko/TOAST/ko/resource-policy/#log-crash-search)의 일일 로그 건수 제공량에는 다른 로그와 동일하게 합산하여 반영되지만, API 호출 요금에는 반영되지 않습니다.
 
-## 로그 검색
+<a id="search-logs"></a>
+## 로그 검색 { #search-logs }
 
 이제 전송한 로그를 Log Search 기능을 이용하여 검색해 보겠습니다.
 
@@ -67,12 +75,14 @@ SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 *
 데이터 길이가 1,000,000 글자를 초과하는 필드를 포함하는 로그는 검색이 불가능합니다. 해당 이슈로 인해 조회가 불가능한 로그는 이슈가 해결되기 전까지 로그 다운로드 기능을 이용해 조회 부탁드립니다.
 >
 
-## 앱 크래시 조회
+<a id="query-app-crashes"></a>
+## 앱 크래시 조회 { #query-app-crashes }
 
 Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Search > 앱 크래시 검색**에서 볼 수 있습니다.
 
 
-### 이슈 조회
+<a id="query-issues"></a>
+### 이슈 조회 { #query-issues }
 **이슈 조회** 탭의 **오류 유형**에서 **Crashes**를 선택하면 이슈를 확인할 수 있습니다.
 
 ![lcs_03_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-01-20211028.png)
@@ -105,7 +115,8 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 |히스토리 그래프| 이슈 발생 건수를 타임라인 차트와 월드맵으로 표시해 줍니다|
 |매트릭스 정보| 네트워크, OS 버전, 디바이스, 통신사, 국가 정보를 표시해 줍니다|
 
-### 이슈 트렌드
+<a id="issue-trend"></a>
+### 이슈 트렌드 { #issue-trend }
 
 ![lcs_07_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-04-20211028.png)
 
@@ -115,7 +126,8 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 |검색 조건| 오류 유형 - Crashes / Handled 선택 <br/> 플랫폼 - 앱 플랫폼 선택 |
 |트렌드 그래프| 다양한 트렌드 그래프를 볼 수 있습니다. <br/> - 크래시 수 <br/> - 크래시가 발생한 기기<br/>- 운영체제 버전별 이슈 <br/> - 기기별 이슈 <br/> - 국가별 이슈|
 
-### 크래시 리포트
+<a id="crash-report"></a>
+### 크래시 리포트 { #crash-report }
 
 ![lcs_08_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-05-20211028.png)
 
@@ -127,7 +139,8 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 |크래시 그래프| 검색 기간 내 크래시 발생 수를 보여줍니다. |
 |크래시 지표| 검색 기간 내 앱 버전별 세션 수/크래시 수/발생률(%)/이전 기간 크래시 수/증가율(%) 정보를 제공합니다.|
 
-### 사용자별 이슈 조회
+<a id="query-issues-by-user"></a>
+### 사용자별 이슈 조회 { #query-issues-by-user }
 
 사용자별 크래시 발생 정보를 제공합니다.
 
@@ -142,7 +155,8 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 |검색 조건| 오류 유형 - 시스템에서 발생시키는 Crash 통계와 Exception 블럭에서 사용자가 발생시키는 Handled로 구분 <br/> 플랫폼 - 앱 플랫폼 <br/> 앱 버전 - 앱 버전 <br/> 사용자 - SDK에서 user_id로 지정한 사용자 아이디 <br/> 기기 - 디바이스명|
 |사용자 정보| 앱 크래시 사용자에 대한 정보(디바이스, 앱 버전 등)를 보여줍니다. |
 
-### 이슈통계
+<a id="issue-statistics"></a>
+### 이슈통계 { #issue-statistics }
 ![lcs_12_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-07-20211028.png)
 
 |항목|설명|
@@ -152,12 +166,14 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 |크래시별 발생 빈도 파이 그래프|	크래시별 발생 빈도를 보여줍니다.|
 |크래시별 발생 빈도 순위 테이블|	크래시별 발생 빈도 순위를 보여줍니다.|
 
-## 알람
+<a id="alarm"></a>
+## 알람 { #alarm }
 
 로그 및 크래시에 대한 알람 설정 및 알람 발송 이력을 확인할 수 있습니다.
 **Data & Analytics > Log & Crash Search > 알람**을 클릭합니다.
 
-### 로그 알람 설정
+<a id="log-alarm-setting"></a>
+### 로그 알람 설정 { #log-alarm-setting }
 
 ![lcs_13_202108](https://static.toastoven.net/prod_logncrash/lcs_13_202108.png)
 
@@ -187,14 +203,16 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
     - SMS 알람 문구: 알람 발송 시 SMS로 보낼 문구를 입력합니다.
     - 콜백 수신지: 알람 발송 시 호출될 URL을 입력합니다. http(s)://와 이메일, 그리고 두레이 훅을 지원합니다.
 
-### 로그 알람 이력
+<a id="log-alarm-history"></a>
+### 로그 알람 이력 { #log-alarm-history }
 
 ![lcs_15_202108](https://static.toastoven.net/prod_logncrash/lcs_15_202108.png)
 
 - 설정한 알람 목록들이 표시됩니다.
 - 목록 클릭시 해당 알람 발생 내역을 확인할 수 있습니다.
 
-### 크래시 알람 설정
+<a id="crash-alarm-setting"></a>
+### 크래시 알람 설정 { #crash-alarm-setting }
 
 ![lcs_16_202108](https://static.toastoven.net/prod_logncrash/lcs_16_202108.png)
 
@@ -210,7 +228,8 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 - SMS 알림 문구 사용: 활성화하면 장애 내용 대신 SMS 알람 문구에 입력된 내용이 SMS로 전송됩니다.
 - 알람 수신자: 프로젝트 멤버 목록에서 알람을 수신할 사용자의 이메일, SMS를 선택합니다.
 
-### 크래시 알람 이력
+<a id="crash-alarm-history"></a>
+### 크래시 알람 이력 { #crash-alarm-history }
 
 ![lcs_17_202108](https://static.toastoven.net/prod_logncrash/lcs_17_202108.png)
 
@@ -220,7 +239,8 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 - 시간 조건을 설정하여 조회 기간을 조절할 수 있습니다.
 - 알람 시간, 플랫폼, 크래시 유형, 임곗값, 이벤트 수, 전파 방법 및 발송 상태를 제공합니다.
 
-### 사용자 기반 알람 설정
+<a id="user-defined-alarm-setting"></a>
+### 사용자 기반 알람 설정 { #user-defined-alarm-setting }
 
 ![lcs_18_202108](https://static.toastoven.net/prod_logncrash/lcs_18_202108.png)
 
@@ -234,7 +254,8 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 - SMS 알람 문구: 활성화시 장애 내용 대신 SMS알람 문구에 입력된 내용이 SMS로 전송됩니다.
 - 알람 수신자: 프로젝트 멤버 목록에서 알람을 수신할 사용자의 이메일, SMS를 선택합니다.
 
-### 사용자 기반 알람 이력
+<a id="user-defined-crash-alarm-history"></a>
+### 사용자 기반 알람 이력 { #user-defined-crash-alarm-history }
 
 ![lcs_19_202108](https://static.toastoven.net/prod_logncrash/lcs_19_202108.png)
 
@@ -244,14 +265,16 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 - 시간 조건을 설정하여 조회 기간을 조절할 수 있습니다.
 - 알람 시간, 플랫폼, 임곗값, 크래시 경험 사용자 비율, 전파 방법 및 발송 상태를 제공합니다.
 
-## 설정
+<a id="setting"></a>
+## 설정 { #setting }
 
 검색 필드 관리, 이슈 트래커 설정, 심벌 파일 관리 등 서비스에 필요한 설정을 관리합니다.
 
 **Data & Analytics > Log & Crash Search > 설정**을 클릭합니다.
 
 
-### 검색 필드
+<a id="search-field"></a>
+### 검색 필드 { #search-field }
 
 로그 검색 시 사용되는 검색 필드를 조회하는 기능으로 시스템 필드인 기본 필드 목록 외에 사용자 전송 필드인 사용자 지정 필드(커스텀 필드)를 확인할 수 있습니다.
 
@@ -260,7 +283,8 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 1. 로그 전송 시 필드 이름이 txt로 시작하는 경우 분석 여부가 true로 설정되고, 그 외에는 분석 여부가 false로 설정됩니다. 분석 여부가 false인 경우 로그 검색의 검색 필드로 등록하여 사용할 수 있습니다.
 2. 로그 파일이나 바이너리 파일을 전송하고 **로그 검색** 화면에서 **다운로드 > 보기** 링크를 이용하고자 하는 경우, UserBinaryData 혹은 UserTxtData라는 이름의 필드에 base64 인코딩된 값을 담아 전송하시기 바랍니다.
 
-### 이슈 트래킹
+<a id="issue-tracking"></a>
+### 이슈 트래킹 { #issue-tracking }
 
 이슈 트래커를 설정하면 **앱 크래시 검색 > 이슈 조회** 탭에서 이슈 목록을 클릭하면 나타나는 Error Detail 페이지에서, 해당 오류를 이슈 트래커에 등록하여 관리할 수 있습니다.
 
@@ -275,7 +299,8 @@ Android, iOS 기기의 크래시 정보는 **Data & Analytics > Log & Crash Sear
 - Issue Title Format: 이슈 제목에 버전 및 위치 정보를 포함 시킬지 여부를 선택합니다.
 - 테스트: 설정이 정상적인지를 확인합니다.
 
-### 심벌 파일
+<a id="symbol-file"></a>
+### 심벌 파일 { #symbol-file }
 
 Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 있습니다. 이 메뉴에서는 Symbolication file을 업로드, 다운로드하고 삭제할 수 있습니다.
 
@@ -291,7 +316,8 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 - Android NDK 심벌리케이션 파일이 허용하는 최대 파일 크기를 초과할 경우, 원본 ‘lib.so’ 바이너리 파일의 텍스트 형태 심벌을 포함하고 있는 하나의 ‘lib.so.sym’을 포함하는 ZIP 파일의 형태로 업로드할 수 있습니다.
 - Android Unity의 경우 심벌 파일의 등록이 필요하지 않습니다. 단, ProGuard 적용시 mapping.txt. 업로드가 필요합니다.
 
-### 로그 보관 기간
+<a id="log-retention-period"></a>
+### 로그 보관 기간 { #log-retention-period }
 
 로그 보관 기간을 조회할 수 있습니다.
 
@@ -300,7 +326,8 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 - 로그 보관 기간을 변경하려면 [고객 센터](https://www.nhncloud.com/kr/support/inquiry/?alias=tab2_11)로 문의해 주세요.
 - 로그 보관 기간 변경은 다음 달 1일 00시에 적용되며 보관 기간에 따라 요금이 발생합니다.
 
-### 로그 전송 설정
+<a id="log-transfer-configuration"></a>
+### 로그 전송 설정 { #log-transfer-configuration }
 
 서비스별 로그 전송 여부를 설정합니다.
 
@@ -311,7 +338,8 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
     - 중복 로그, 로그 레벨, 로그 유형 별로 필터링 할 수 있습니다.
 - 설정을 저장한 뒤 앱을 재시작하면 적용됩니다.
 
-### 로그 외부 보관 설정
+<a id="external-log-storage-setting"></a>
+### 로그 외부 보관 설정 { #external-log-storage-setting }
 
 로그 외부 보관 정보를 설정합니다.
 
@@ -329,7 +357,8 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 - 설정한 OBS로 로그가 저장됩니다.
 - [NHN Cloud OBS API 안내 가이드](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
 
-## 네트워크 인사이트
+<a id="network-insights"></a>
+## 네트워크 인사이트 { #network-insights }
 
 Log & Crash Search SDK에서 전송한 지연 시간과 오류율을 타임라인 차트와 URL 목록, 지도로 표시합니다.
 
@@ -338,7 +367,8 @@ Log & Crash Search SDK에서 전송한 지연 시간과 오류율을 타임라�
 - SDK에서는 클라이언트로부터 URL 설정 화면에서 설정한 URL까지 요청의 지연 시간(Latency)과 상탯값(Status)을 Log & Crash Search로 전송합니다.
 - 모니터링, 지표 화면에서 현재 플랫폼과 필터를 설정하고 지연 시간과 오류율을 확인할 수 있습니다.
 
-### 모니터링
+<a id="monitoring"></a>
+### 모니터링 { #monitoring }
 
 - 지연 시간과 오류율을 타임라인 차트와 URL 목록으로 표시합니다.
 
@@ -350,7 +380,8 @@ Log & Crash Search SDK에서 전송한 지연 시간과 오류율을 타임라�
 |차트| 지연 시간과 오류율이 타임라인 차트에 표시됩니다. <br/>**현재 플랫폼** 드랍다운 메뉴에서 iOS, Android, Windows 및 WebGL별로 설정 할 수 있습니다. |
 |URL| URL 설정에서 추가한 URL 별로 지연시간과 오류율을 보여줍니다.|
 
-### 지도
+<a id="map"></a>
+### 지도 { #map }
 
 - 지연 시간과 오류율을 지도상에 표시합니다.
 
@@ -362,7 +393,8 @@ Log & Crash Search SDK에서 전송한 지연 시간과 오류율을 타임라�
 |필터 조건 | - 최근: 최근 15분, 60분, 24시간, 48시간 동안의 시간별 조회 필터, 사용자 지정은 시작/종료 일자를 선택하여 조회(최대 48시간) <br/> - 앱 버전: 앱 버전별 조회 필터 <br/> - 운영체제 버전: 운영체제 버전별 조회 필터 <br/> - 기기: 디바이스 이름 입력<br/> - 통신사: 통신사 이름 입력<br/> - 국가: 국가별 조회 필터 <br/> - URL: URL별 조회 필터|
 |지도| 지연 시간과 오류율을 지도상에 표시합니다. <br/>**현재 플랫폼** 드랍다운 메뉴에서 iOS, Android, Windows 및 WebGL별로 설정 할 수 있습니다.|
 
-### URL 설정
+<a id="url-setting"></a>
+### URL 설정 { #url-setting }
 
 - 지연 시간과 오류율을 측정할 웹사이트의 URL을 설정할 수 있습니다.
 

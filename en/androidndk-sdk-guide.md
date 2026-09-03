@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > AndroidNDK SDK Guide
+<!-- pre-align:aligned sig=b6b3abc56554 -->
+
+<a id="analytics-log-crash-search-androidndk-sdk-guide"></a>
+## Analytics > Log & Crash Search > AndroidNDK SDK Guide { #analytics-log-crash-search-androidndk-sdk-guide }
 
 Log & Crash Android SDK sends logs to a Log & Crash Search collector server.
 Below describe benefits and features of Log & Crash Android SDK.
@@ -8,13 +11,15 @@ Below describe benefits and features of Log & Crash Android SDK.
 - Retrieve and search logs sent from Log & Crash Search.
 - Operate in a multi-threading environment.
 
-## Supporting Environment
+<a id="supporting-environment"></a>
+## Supporting Environment { #supporting-environment }
 
 - Android 2.3.3. API Level 10 or higher
 - Most updated AndroidNDK version recommended
 - Supportive ABI : armeabi, armeabi-v7a, x86
 
-## Download
+<a id="download"></a>
+## Download { #download }
 
 Go to [TOAST Document](http://docs.toast.com/en/Download/) to download **AndroidNDK SDK**.
 
@@ -22,9 +27,11 @@ Go to [TOAST Document](http://docs.toast.com/en/Download/) to download **Android
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [AndroidNDK SDK]
 ```
 
-## Install
+<a id="install"></a>
+## Install { #install }
 
-### Configuration
+<a id="configuration"></a>
+### Configuration { #configuration }
 
 Android SDK is configured as follows:
 
@@ -39,7 +46,8 @@ androidndk-sdk/
 androidndk-sdk-sample/      ; Android JNI Sample
 ```
 
-### SDK Sample
+<a id="sdk-sample"></a>
+### SDK Sample { #sdk-sample }
 
 Below describe androidndk-sdk-sample/ provided along with SDK.
 
@@ -60,7 +68,8 @@ To view crash logs at Log & Crash Search, symbol files must be uploaded.
    - Check if the project version is different between a crash log and a symbol.
    - Check if there is an error in the symbol file.
 
-## Example
+<a id="example"></a>
+## Example { #example }
 
 1.Add below to jni/Application.mk.
 
@@ -144,11 +153,13 @@ static {
 Java Exception cannot be processed in AndroidNDK SDK because it has been made for C++ Native Code.
 Please refer to documents (/docs/) included to the androidndk-sdk-sample/jni/Android.mk file and AndroidNDK.
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 Below describe functions provided by toast::logncrash::ToastLog class.
 
-### Assign/Destroy ToastLog Instances
+<a id="assigndestroy-toastlog-instances"></a>
+### Assign/Destroy ToastLog Instances { #assigndestroy-toastlog-instances }
 
 ```
 toast::logncrash::ToastLog* GetToastLog();
@@ -160,7 +171,8 @@ void DestroyToastLog();
 - With a single-tone method, only one instance is returned.  
 - Do not delete a returned ToastLog instance: it is required to call DestroyToastLog() to delete it.
 
-### Initialize/Destroy
+<a id="initializedestroy"></a>
+### Initialize/Destroy { #initializedestroy }
 
 ```
 #define LOGNCRASH_VERSION         "1.0.0"
@@ -213,7 +225,8 @@ void destroy();
   - LOGNCRASH_LOG_ERROR_ADDRESS: -4, Error in collector server address
   - LOGNCRASH_LOG_ERROR_PORT: -5, Error in collector server port
 
-### Unlock SendThread
+<a id="unlock-sendthread"></a>
+### Unlock SendThread { #unlock-sendthread }
 
 ```
   	void StartSendThread();
@@ -221,7 +234,8 @@ void destroy();
 
   - Change the status of SendThread to deliverable.
 
-### Send Logs
+<a id="send-logs"></a>
+### Send Logs { #send-logs }
 
 ```
 bool sendLog(
@@ -261,7 +275,8 @@ bool fatal(const char* message, const char* errorCode = NULL, const char* locati
   - true: if successful
   - false: if logLevel is high or message is empty
 
-### Specify Log Levels
+<a id="specify-log-levels"></a>
+### Specify Log Levels { #specify-log-levels }
 
 ```
 typedef enum {
@@ -281,7 +296,8 @@ void setLogLevel(const LogNCrashLogLevel logLevel);
 - Get or newly specify a logLevel of a ToastLog instance.
 - The default of ToastLog is LOGNCRASH_INFO. Therefore, to use debug () function, it should be set as setLogLevel(LOGNCRASH_DEBUG).
 
-### Specify Custom Keys
+<a id="specify-custom-keys"></a>
+### Specify Custom Keys { #specify-custom-keys }
 
 ```
 bool addCustomKey(const char* key, const char* value);
@@ -302,7 +318,8 @@ void clearCustomKeys();
   - true: if successful
   - false: if a wrong key format is adde
 
-### Specify Host Types
+<a id="specify-host-types"></a>
+### Specify Host Types { #specify-host-types }
 
 ```
 bool setHostMode(int mode);
@@ -311,7 +328,8 @@ bool setHostMode(int mode);
 - For Mode 0: Get a private IP to fill up the host field. If it fails, fill the host field with public IP.
 - For Mode 1: Fill the host field with public IP.
 
-### Process Crashes
+<a id="process-crashes"></a>
+### Process Crashes { #process-crashes }
 
 ```
 typedef enum {
@@ -345,7 +363,8 @@ void setCrashCallback(const LogNCrashCallbackType cb, void* cbData = NULL);
   - False if setting fails
   - AndroidNDK SDK needs /sdcard directory on devices. If the directory is not available on a device, it may not operate properly.
 
-### Remove Duplicates
+<a id="remove-duplicates"></a>
+### Remove Duplicates { #remove-duplicates }
   - Remove Duplicates has been applied to general logs for 2.4.0 or higher SDKs.
   - When duplicate logging is enabled, do not send logs that have the same content in the body and logLevel.
 
@@ -356,7 +375,8 @@ public static void setDuplicate(bool enable)
 
   - false: Remove duplicates is disabled.
 
-### Other Settings
+<a id="other-settings"></a>
+### Other Settings { #other-settings }
 
 ```
 const char* getUserId();

@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=badf397da372 -->
+
 ﻿## Analytics > Log & Crash Search > Log4J SDK使用ガイド
 
 Log & Crash Log4J SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。
@@ -7,11 +9,18 @@ Log & Crash Log4J SDKの特徴・利点は次のとおりです。
 - Log & Crash Searchで、転送されたログの照会および検索が可能です。
 - マルチスレッド環境で動作します。
 
-## サポート環境
+<a id="analytics-log-crash-search-log4j-sdk-guide"></a>
+## Analytics > Log & Crash Search > Log4J SDK 使用ガイド { #analytics-log-crash-search-log4j-sdk-guide }
+
+<!-- TODO: translate body -->
+
+<a id="supporting-environment"></a>
+## サポート環境 { #supporting-environment }
 
 - Log4J 1.2.x (1.2.14, 1.2.16, 1.2.17)
 
-## ダウンロード
+<a id="download"></a>
+## ダウンロード { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)でLog4J SDKをダウンロードできます。
 
@@ -19,9 +28,11 @@ Log & Crash Log4J SDKの特徴・利点は次のとおりです。
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Log4J SDK]をクリック
 ```
 
-## インストール
+<a id="install"></a>
+## インストール { #install }
 
-### 構成
+<a id="configuration"></a>
+### 構成 { #configuration }
 
 Log4J SDKは、次のように構成されています。
 
@@ -31,7 +42,8 @@ lib/        ; Log4Jライブラリ
 sample/     ; Log4Jサンプル
 ```
 
-### SDKサンプル
+<a id="sdk-sample"></a>
+### SDKサンプル { #sdk-sample }
 
 一緒に提供されるsample/log4j/について説明します。
 
@@ -47,7 +59,8 @@ sample/     ; Log4Jサンプル
 3.EclipseメニューからProject - Properties - Java Build Path - Librariesを選択して、toast-logncrash-log4j-sdk-<version>.jarを追加します。
 4.Eclipseメニューから、Run - Run As - JUnit Testを選択して実行します。
 
-## 使用例
+<a id="example"></a>
+## 使用例 { #example }
 
 1.Log4J SDKライブラリをProjectに追加します。
 - 例えば、EclipseメニューProject - Properties - Java Build Path - Librariesを選択してtoast-logncrash-log4j-sdk-<version>.jarを追加します。
@@ -175,9 +188,11 @@ try {
 }
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
-### log4j.xml設定項目
+<a id="setting-items-for-log4jxml"></a>
+### log4j.xml設定項目 { #setting-items-for-log4jxml }
 
 - collectorUrl：収集サーバーアドレス
 	HTTP： https://api-logncrash.nhncloudservice.com
@@ -192,14 +207,17 @@ try {
 	default： Exception情報を使用
 	mdc： Log4j MDCのerrorCode項目値を設定して使用する。
 
-## 制約事項
+<a id="constraints"></a>
+## 制約事項 { #constraints }
 
 - 現在、**log4j 2.0**バージョンでは動作しません。log4j 1.3はalpha8のみ動作しますが、log4j 1.2でマイグレーションすることを推奨します。推奨バージョンは、log4j 1.2.14、1.2.16、1.2.17です。
 - エラーデータが一度に大量に発生する場合は、logncrash-async appenderのbufferSizeが小さいとlog4j自体で処理する時に遅延が発生することがあるため、bufferSizeの調節が必要です。
 
-## FAQ
+<a id="faqs"></a>
+## FAQ { #faqs }
 
-### blockingをfalseで使用するには？
+<a id="how-can-i-apply-false-for-blocking"></a>
+### blockingをfalseで使用するには？ { #how-can-i-apply-false-for-blocking }
 
 log4j.xmlで、次のようにlogncrash-asyncのclass名を変更する。
 
@@ -214,7 +232,8 @@ log4j.xmlで、次のようにlogncrash-asyncのclass名を変更する。
 </appender>
 ```
 
-### batch program(project)で、logncrash clientを使用するには？
+<a id="how-can-i-use-logncrash-client-in-a-batch-program-project"></a>
+### batch program(project)で、logncrash clientを使用するには？ { #how-can-i-use-logncrash-client-in-a-batch-program-project }
 
 Quartzなどを使用して、デーモン形式で動くbatch projectには適用されません。batchプログラムの最後に数秒間待機するコードを追加します。
 
@@ -244,7 +263,8 @@ AsyncAppender内でログを記録する別途のデーモンスレッドが作�
 </root>
 ```
 
-### Java stack traceをlog4j(Log & Crash Searchを含む)にロギングするには？
+<a id="how-can-a-java-stack-trace-be-logged-to-a-log4j-including-log-crash-search"></a>
+### Java stack traceをlog4j(Log & Crash Searchを含む)にロギングするには？ { #how-can-a-java-stack-trace-be-logged-to-a-log4j-including-log-crash-search }
 
 log4jを利用してstack traceを出力するには、log.error(e.getMessage(), e);形式を使用します。log.error(e);の場合はstack traceが出力されません。
 
@@ -258,7 +278,8 @@ try {
 }
 ```
 
-### log4j(Log & Crash Search含む) loggingによる性能低下を最小化するには？
+<a id="how-can-i-minimize-performance-degradation-due-to-log4j-including-log-crash-search-logging"></a>
+### log4j(Log & Crash Search含む) loggingによる性能低下を最小化するには？ { #how-can-i-minimize-performance-degradation-due-to-log4j-including-log-crash-search-logging }
 
 log4j.xmlのlogger設定で、nameとlevelを使用してfilteringを最大化します。
 このようにlogger設定でcomやorgをDEBUG levelに設定すると、loggerで多くのLoggingEvent(log4j)が不必要に作成されます。AppenderでThresholdがERRORに設定されていて実際のログは転送されませんが、一旦loggerでLoggingEventが作成されappenderに伝達されます。
@@ -306,7 +327,8 @@ log4j.xmlのlogger設定で、nameとlevelを使用してfilteringを最大化�
 </root>
 ```
 
-### WASで使用時に安定的に終了するには？
+<a id="how-can-i-safely-close-was"></a>
+### WASで使用時に安定的に終了するには？ { #how-can-i-safely-close-was }
 
 エラーログを転送中の状況でWAS(Tomcatなど)が終了する場合は、次のようなExceptionが発生し、WASが正常に終了しないことがあります。
 

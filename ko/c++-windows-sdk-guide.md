@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > C++ Windows SDK 사용 가이드
+<!-- pre-align:aligned sig=bcd1c8ae042b -->
+
+<a id="analytics-log-crash-search-c-windows-sdk-guide"></a>
+## Analytics > Log & Crash Search > C++ Windows SDK 사용 가이드 { #analytics-log-crash-search-c-windows-sdk-guide }
 
 > [Deprecated]
 > Log & Crash C++ Windows SDK 버전은 더 이상 지원되지 않습니다.
@@ -12,12 +15,14 @@ Log & Crash C++ Windows SDK 특·장점은 다음과 같습니다.
 - Log & Crash Search 에서 전송된 로그를 조회 및 검색이 가능합니다.
 - 멀티 쓰레딩 환경에서 동작합니다.
 
-## 지원 환경
+<a id="supporting-environment"></a>
+## 지원 환경 { #supporting-environment }
 
 - Windows 2000, Windows Vista, Windows XP, Windows 2003, Windows 2008, Windows 7, Windows 8
 - 32bit/64bit
 
-## 다운로드
+<a id="download"></a>
+## 다운로드 { #download }
 
 Toast Cloud에서 C++ Windows SDK를 받을 수 있습니다.
 
@@ -25,9 +30,11 @@ Toast Cloud에서 C++ Windows SDK를 받을 수 있습니다.
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Windows SDK] 클릭
 ```
 
-## 설치
+<a id="install"></a>
+## 설치 { #install }
 
-### 구성
+<a id="configuration"></a>
+### 구성 { #configuration }
 
 C++ Windows SDK는 다음과 같이 구성되어 있습니다.
 
@@ -40,7 +47,8 @@ windows-sdk/lib64/			; C++ Windows 64bit 라이브러리
 windows-sdk-sample/			; VS 2010용 샘플 프로젝트
 ```
 
-### SDK 샘플
+<a id="sdk-sample"></a>
+### SDK 샘플 { #sdk-sample }
 
 같이 제공되는 windows-sdk-sample/에 대해 설명합니다.
 
@@ -49,7 +57,8 @@ windows-sdk-sample/			; VS 2010용 샘플 프로젝트
 3. 32bit/64bit와 Debug/Release에 따라 앱 실행에 필요한 \*.dll을 실행파일 디렉토리로 복사합니다
 4. 실행합니다.
 
-## 사용 예
+<a id="example"></a>
+## 사용 예 { #example }
 
 
 1. include/toast/를 인클루드 패쓰에 넣어줍니다.
@@ -81,11 +90,13 @@ windows-sdk-sample/			; VS 2010용 샘플 프로젝트
      DestroyToastLog();
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 toast::logncrash::ToastLog class에서 제공하는 기능들을 설명합니다.
 
-### ToastLog 인스턴스 할당/해제
+<a id="assigndestroy"></a>
+### ToastLog 인스턴스 할당/해제 { #assigndestroy }
 
 ```
 toast::logncrash::ToastLog* GetToastLog();
@@ -97,7 +108,8 @@ void DestroyToastLog();
 - 싱글톤 방식으로 하나의 인스턴스만 반환됩니다.
 - 반환된 ToastLog instance에 대해서 delete를 하면 안됩니다. 제거하기 위해서는 반드시 DestroyToastLog()를 호출하셔야 합니다.
 
-### 초기화/해제
+<a id="initializedestroy"></a>
+### 초기화/해제 { #initializedestroy }
 
 ```
 #define LOGNCRASH_VERSION         "1.0.0"
@@ -146,7 +158,8 @@ void destroy();
 	- LOGNCRASH_LOG_ERROR_ADDRESS: -4, 수집 서버 주소가 잘못된 경우
 	- LOGNCRASH_LOG_ERROR_PORT: -5, 수집 서버 포트가 잘못된 경우
 
-### 로그 보내기
+<a id="send-logs"></a>
+### 로그 보내기 { #send-logs }
 
 ```
 bool sendLog(
@@ -186,7 +199,8 @@ bool fatal(const char* message, const char* errorCode = NULL, const char* locati
 	- 성공시 true
 	- logLevel이 크거나, message가 비어있는 경우 false
 
-### 로그 레벨 지정하기
+<a id="specify-log-levels"></a>
+### 로그 레벨 지정하기 { #specify-log-levels }
 
 ```
 typedef enum {
@@ -206,7 +220,8 @@ void setLogLevel(const LogNCrashLogLevel logLevel);
 - ToastLog instance의 logLevel을 구하거나 지정합니다.
 - ToastLog 기본값은 LOGNCRASH_INFO입니다. 따라서 debug() 함수를 사용하시려면 setLogLevel(LOGNCRASH_DEBUG)로 설정해주셔야 합니다.
 
-### 커스텀 키 지정하기
+<a id="specify-custom-keys"></a>
+### 커스텀 키 지정하기 { #specify-custom-keys }
 
 ```
 bool addCustomKey(const char* key, const char* value);
@@ -227,7 +242,8 @@ void clearCustomKeys();
 	- 성공시 true
 	- key 형식이 맞지 않으면 추가 실패시 false
 
-### 크래시 처리하기
+<a id="process-crashed"></a>
+### 크래시 처리하기 { #process-crashed }
 
 ```
 typedef enum {
@@ -254,7 +270,8 @@ void setCrashCallback(const LogNCrashCallbackType cb, void* cbData = NULL);
 
 - 크래시 처리를 시작하거나 종료합니다.
 
-### 중복 제거 모드 설정
+<a id="remove-duplicates"></a>
+### 중복 제거 모드 설정 { #remove-duplicates }
 
 - 중복 로그 기능이 켜져 있는 경우 body 와 LogLevel 의 내용이 같은 로그가 발생하면 전송하지 않습니다.
 
@@ -264,7 +281,8 @@ public static void setDuplicate(bool enable)
 - true: 중복 제거 로직 활성화 (Default 값)
 - false: 중복 제거 로직 비활성화
 
-### 기타 설정
+<a id="other-settings"></a>
+### 기타 설정 { #other-settings }
 
 ```
 const char* getUserId();
@@ -274,18 +292,22 @@ void setUserId(const char* userId);
 
 - 사용자 ID를 구하거나 지정합니다.
 
-## 심볼 파일 생성 가이드
+<a id="guide-to-create-symbol-files"></a>
+## 심볼 파일 생성 가이드 { #guide-to-create-symbol-files }
 
-### 개요
+<a id="overview"></a>
+### 개요 { #overview }
 - Log & Crash Windows SDK 에서 발생한 Crash 를 해석하기 위해서는 심볼 파일을 생성하여 웹 콘솔에 업로드 해야 합니다.
 
-### 필요 도구
+<a id="requirements"></a>
+### 필요 도구 { #requirements }
 - VS에 맞는 dump_syms을 사용합니다 ( VC_1500 = 2008, VC_1600 = 2010 )
 - [VS 2008 이하 다운로드](https://github.com/zpao/v8monkey/blob/master/toolkit/crashreporter/tools/win32/dump_syms_vc1500.exe)
 - [VS 2010 이상 다운로드](http://hg.mozilla.org/mozilla-central/file/tip/toolkit/crashreporter/tools/win32)
 - [minidump_stackwalk.exe](http://hg.mozilla.org/build/tools/raw-file/755e58ebc9d4/breakpad/win32/minidump_stackwalk.exe)
 
-### 심볼 파일 생성
+<a id="create-symbol-files"></a>
+### 심볼 파일 생성 { #create-symbol-files }
 - windows crash dumps 는 .pdb 파일을 .sym 심볼로 변환시켜 디버깅 정보를 얻을 수 있습니다.
 - .pdb 파일을 .sym 파일로 변환 시키기 :
     - .pdb 파일을 생성합니다. ( 프로젝트 빌드 시 생성 )

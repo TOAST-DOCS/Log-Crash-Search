@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > Unity iOS SDK Guide
+<!-- pre-align:aligned sig=3c5d3c0528c4 -->
+
+<a id="analytics-log-crash-search-unity-ios-sdk-guide"></a>
+## Analytics > Log & Crash Search > Unity iOS SDK Guide { #analytics-log-crash-search-unity-ios-sdk-guide }
 
 > [Deprecated]
 > Log & Crash Unity iOS SDK is not supported any more.
@@ -11,7 +14,8 @@ Below describe benefits and features of Log & Crash Unity SDK.
 - Send crash logs occurred in an app to a collector server.
 - Retrieve and search logs sent from Log & Crash Search.
 
-## Supporting Environment
+<a id="supporting-environment"></a>
+## Supporting Environment { #supporting-environment }
 
 - Common
   \- Unity3D v4.0 or higher
@@ -19,7 +23,8 @@ Below describe benefits and features of Log & Crash Unity SDK.
   \- An Intel-based Mac
   \- Xcode 6.0 or later
 
-## Download
+<a id="download"></a>
+## Download { #download }
 
 Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Unity SDK**.
 
@@ -27,20 +32,24 @@ Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Unity 
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
 ```
 
-## Install
+<a id="install"></a>
+## Install { #install }
 
 * Double-click downloaded toast-logncrash-ios-unity-sdk.unitypackage and import it to your project.
 
 
-### Sample Description
+<a id="sample-description"></a>
+### Sample Description { #sample-description }
 
 To execute the sample, double-click **Assets > LogNCrash > Sample > SampleScene**.
 The sample describes examples of initialization, log delivery, and error occurrence.
 
-### Add Header File
+<a id="add-header-file"></a>
+### Add Header File { #add-header-file }
 Add #import <LogNCrashSDK/LogNCrashSDK.h> to make it available in the iOS Unity environment.
 
-## Example
+<a id="example"></a>
+## Example { #example }
 
 1. Initialize with LogNCrashSettings
 
@@ -96,9 +105,11 @@ namespace Toast.LogNCrash
 - SendThreadLock: Save logs, which occur when it is true, in a queue without sending to server before StartSendThread is called. Nevertheless, if a native crash occurs, unlock ThreadLock and send the logs.
 
 
-## API Details
+<a id="api-details"></a>
+## API Details { #api-details }
 
-### Specify Custom Fields
+<a id="specify-custom-fields"></a>
+### Specify Custom Fields { #specify-custom-fields }
 
 ```
 public static void AddCustomField(string key, string val)
@@ -132,7 +143,8 @@ public static void RemoveAllCustomFields()
         - @logType
   - When the value of a custom field is NULL or empty, SDKs do not send the field to a server.
 
-### Lock Host
+<a id="lock-host"></a>
+### Lock Host { #lock-host }
 
   ```
   		public static SetEnableHost(bool flag)
@@ -142,7 +154,8 @@ public static void RemoveAllCustomFields()
   	- false: Do not get an IP address.
 
 
-### Manage Default Setting
+<a id="manage-default-setting"></a>
+### Manage Default Setting { #manage-default-setting }
 
 ```
 public static void SetLogSource(string value)
@@ -158,7 +171,8 @@ public static string GetLogType()
 
 - Get or newly specify a log type.
 
-### Filter Levels
+<a id="filter-levels"></a>
+### Filter Levels { #filter-levels }
 - In Unity SDK, send logs of a FATAL level only by default setting. In ERROR or WARN levels, many logs may occur due to variables (such as time, route, and progress level.).
   - Send Error: Send ERROR-level logs occurred at a system.
   - Send Warning: Send WARN-level logs occurred at a system.
@@ -166,11 +180,13 @@ public static string GetLogType()
   - Send Debug Warning: Send WARN-level logs induced by a user.
 
 
-### Example of API Use
+<a id="example-of-api-use"></a>
+### Example of API Use { #example-of-api-use }
 
 - Refer to **html > index.html**.
 
-### Send Logs
+<a id="send-logs"></a>
+### Send Logs { #send-logs }
 
 ```
 //send info log message
@@ -193,7 +209,8 @@ public static void Error(string strMsg)
   - strMsg: string
     - [in] Log messages to send
 
-### Handled Exception
+<a id="handled-exception"></a>
+### Handled Exception { #handled-exception }
 
 ```
 //send Handled info log message
@@ -222,7 +239,8 @@ try{
 
 - Send Exception occurred at try&catch.
 
-### Crash Callbacks  
+<a id="crash-callbacks"></a>
+### Crash Callbacks { #crash-callbacks }
 
 ```
 public void Crash_Send_Complete_Callback(string message) {
@@ -236,7 +254,8 @@ void Start() {
 
 - The ExceptionDelegate callback is called after crashes in Unity CSharp are sent to server: it is not called for native crashes.
 
-### Set User IDs
+<a id="set-user-ids"></a>
+### Set User IDs { #set-user-ids }
 
 ```
 public static void SetUserId(string userID)
@@ -247,7 +266,8 @@ public static string GetUserID()
   - userID: string
     - [in] User ID to sort out users
 
-### Remove Duplicates
+<a id="remove-duplicates"></a>
+### Remove Duplicates { #remove-duplicates }
 
 The Remove Duplicates logic has been applied to general logs for 2.4.0 or higher SDKs: the logic is enabled with initialization.
 
@@ -264,7 +284,8 @@ public static void SetDeduplicate(bool flag)
 true: (Default) Remove duplicates is enabled. <br>
 false: Remove duplicates is disabled.
 
-## Build
+<a id="build"></a>
+## Build { #build }
 
 1. Click **File > Build Settings**.
 
@@ -286,7 +307,8 @@ false: Remove duplicates is disabled.
 
 3. Open the newly-created Xcode project in Xcode.
 
-## Add App Transport Security (ATS) in iOS
+<a id="add-app-transport-security-ats-in-ios"></a>
+## Add App Transport Security (ATS) in iOS { #add-app-transport-security-ats-in-ios }
 - ATS is provided to secure safe communication between apps and networks introduced in iOS9 and OSX10.11, by allowing safely encrypted https communications only and blocking unsafe https/http communications. In Log & Crash Search where communication using http protocol is under trial, settings must be added as below to info.plist.
 
 For detailed settings, refer to the link as below:
@@ -328,7 +350,8 @@ For detailed settings, refer to the link as below:
 3. Automatic ATS Setting
 - **Assets > Toast > LogNCrash > Editor > post_process.py** has a code to automatically add api-logncrash.nhncloudservice.com and api-setting-logncrash.nhncloudservice.com to info.plist for an iOS build.
 
-## Interpret iOS Native Crashes
+<a id="interpret-ios-native-crashes"></a>
+## Interpret iOS Native Crashes { #interpret-ios-native-crashes }
 
 - Unity iOS has crashes that occur in Unity Engine or iOS Native.   
 - For Unity crashes, symbol files are not required as crash information is collected in string.
@@ -341,16 +364,19 @@ For detailed settings, refer to the link as below:
 - Compress .dSYM to .zip and register it to **Web Console > Analytic > Log & Crash Search > Settings > Symbol Files** tab.
   ![](http://static.toastoven.net/prod_logncrash/ios_15.png)
 
-## Caution for iOS Unity Crash
+<a id="caution-for-ios-unity-crash"></a>
+## Caution for iOS Unity Crash { #caution-for-ios-unity-crash }
 
 - Crash logs are considered general logs, when they are not interpreted because symbol files are unavailable.
 
-## Use External CrashHandler
+<a id="use-external-crashhandler"></a>
+## Use External CrashHandler { #use-external-crashhandler }
 
 - Existing SDKs have deployed logMessageReceived during initialization to register CrashHandler of Unity for a LogNCrash callback function.
 - The structure has been modified to allow applications to be made both for CrashHandler and external CrashHandler (refer to MultihandlerSample).
 
-### Applications
+<a id="applications"></a>
+### Applications { #applications }
 
 - Send a false parameter to the LogNCrash.SetCrashHandler function to prevent CrashHandler from being automatically registered.
 - Must set before the Initialize function.
@@ -376,7 +402,8 @@ void HandleLog(string logString, string stackTrace, LogType type)
 }
 ```
 
-## Diverge Build Environment with AssetDataBase
+<a id="diverge-build-environment-with-assetdatabase"></a>
+### Diverge Build Environment with AssetDataBase { #diverge-build-environment-with-assetdatabase }
 
 - Click **LogNCrash > Edit Settings** in the menu and create AssetDataBase to save simple data.
 - For a build using BuildPipeline.BuildPlayer, diverge the build environment by using LogNCrashSettings.Setter_BuildType and LogNCrashSettings.Getter_BuildType.

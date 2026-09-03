@@ -1,10 +1,14 @@
-## Data & Analytics > Log & Crash Search > 概要
+<!-- pre-align:aligned sig=c96bea70065a -->
+
+<a id="data-analytics-log-crash-search-overview"></a>
+## Data & Analytics > Log & Crash Search > 概要 { #data-analytics-log-crash-search-overview }
 
 Log & Crash Searchは、クライアントとサーバーのログを収集して、ログの検索と照会ができるシステムです。   
 モバイルアプリで発生するクラッシュを分析し、統計作業を実行してクラッシュ発生原因に対する様々な情報も提供します。  
 Log & Crash Searchの特徴・利点は次のとおりです。  
 
-## 特徴・利点
+<a id="benefits"></a>
+## 特徴・利点 { #benefits }
 
 * ゲームサーバーとログサーバーを分離することにより、大量のログによる問題点を除去できます。
 * 配布したすべてのクライアントで発生するエラーを一か所に集め、照会と分析ができます。
@@ -13,7 +17,8 @@ Log & Crash Searchの特徴・利点は次のとおりです。
 * 使用量増加に伴ってログ量が増加しても、サービスを停止することなく利用できます。
 * エラー、クラッシュダンプ、Webアプリケーションログ、カスタムメッセージ形式などをサポートし、Windows、LinuxとJava環境で使用可能です。
 
-## 主な機能
+<a id="main-features"></a>
+## 主な機能 { #main-features }
 Log & Crash Searchの主な機能は[表1]のとおりです。
 
 [表1] Log & Crash Search主な機能

@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > Unity WebGL SDK User Guide
+<!-- pre-align:aligned sig=45b1bfc767db -->
+
+<a id="analytics-log-crash-search-unity-webgl-sdk-user-guide"></a>
+## Analytics > Log & Crash Search > Unity WebGL SDK User Guide { #analytics-log-crash-search-unity-webgl-sdk-user-guide }
 
 Log & Crash Unity SDK sends logs to a Log & Crash Search collector server.
 
@@ -7,12 +10,14 @@ Below describe benefits and features of Log & Crash Unity SDK.
 - Send crash logs occurred in an app to a collector server.
 - Retrieve and search logs sent from Log & Crash Search.
 
-## Supporting Environment
+<a id="supporting-environment"></a>
+## Supporting Environment { #supporting-environment }
 
 - Common
   \- Unity3D v4.0 or higher
 
-## Download
+<a id="download"></a>
+## Download { #download }
 
 Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Unity SDK**.
 
@@ -20,17 +25,20 @@ Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Unity 
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
 ```
 
-## Install
+<a id="install"></a>
+## Install { #install }
 
 * Double-click downloaded toast-logncrash-android-unity-sdk.unitypackage and import it to your project.
 
 
-### Sample Description
+<a id="sample-description"></a>
+### Sample Description { #sample-description }
 
 To execute the sample, double-click **Assets > LogNCrash > Sample > SampleScene**.
 The sample describes examples of initialization, log delivery, and error occurrence.
 
-## Example
+<a id="example"></a>
+## Example { #example }
 
 1. Initialize with LogNCrashSettings
 
@@ -86,9 +94,11 @@ namespace Toast.LogNCrash
 - SendThreadLock: Save logs, which occur when it is true, in a queue without sending to server before StartSendThread is called. Nevertheless, if a native crash occurs, unlock ThreadLock and send the logs.
 
 
-## API Details
+<a id="api-details"></a>
+## API Details { #api-details }
 
-### Specify Custom Fields
+<a id="specify-custom-fields"></a>
+### Specify Custom Fields { #specify-custom-fields }
 
 ```
 public static void AddCustomField(string key, string val)
@@ -122,7 +132,8 @@ public static void RemoveAllCustomFields()
         - @logType
   - When the value of a custom field is NULL or empty, SDKs do not send the field to a server.
 
-### Manage Default Setting
+<a id="manage-default-setting"></a>
+### Manage Default Setting { #manage-default-setting }
 
 ```
 public static void SetLogSource(string value)
@@ -138,7 +149,8 @@ public static string GetLogType()
 
 - Get or newly specify a log type.
 
-### Filter Levels
+<a id="filter-levels"></a>
+### Filter Levels { #filter-levels }
 - In Unity SDK, send logs of a FATAL level only by default setting. In ERROR or WARN levels, many logs may occur due to variables (such as time, route, and progress level.).
   - Send Error: Send ERROR-level logs occurred at a system.
   - Send Warning: Send WARN-level logs occurred at a system.
@@ -146,12 +158,14 @@ public static string GetLogType()
   - Send Debug Warning: Send WARN-level logs induced by a user.
 
 
-### Example of API Use
+<a id="example-of-api-use"></a>
+### Example of API Use { #example-of-api-use }
 
 - Refer to **html > index.html**.
 
 
-### Collect IP Address
+<a id="collect-ip-address"></a>
+### Collect IP Address { #collect-ip-address }
 
 ```
 public static void SetEnableHost:(bool flag)
@@ -160,7 +174,8 @@ public static void SetEnableHost:(bool flag)
 -	true: Get an ip address and save in the host field.
 		false: Save"-" in the host field.
 
-### Send Logs
+<a id="send-logs"></a>
+### Send Logs { #send-logs }
 
 ```
 //send info log message
@@ -184,7 +199,8 @@ public static void Error(string strMsg)
     - [in] Log messages to send
 
 
-### Crash Callbacks  
+<a id="crash-callbacks"></a>
+### Crash Callbacks { #crash-callbacks }
 
 ```
 public void Crash_Send_Complete_Callback(string message) {
@@ -199,7 +215,8 @@ void Start() {
 
 - The ExceptionDelegate callback is called after crashes in Unity CSharp are sent to server: it is not called for native crashes.
 
-### Set User IDs
+<a id="set-user-ids"></a>
+### Set User IDs { #set-user-ids }
 
 ```
 public static void SetUserId(string userID)
@@ -210,7 +227,8 @@ public static string GetUserID()
   - userID: string
     - [in] User ID to sort out users
 
-### Remove Duplicates
+<a id="remove-duplicates"></a>
+### Remove Duplicates { #remove-duplicates }
 
 In the case of general logs, do not send logs that have the same content in the body and logLevel.
 
@@ -225,13 +243,16 @@ The function may be disabled by using the function below, after initialization.
 - true: (Default) Remove duplicates is enabled <br>
 - false: Remove duplicates is disabled
 
-## WebGL API
+<a id="webgl-api"></a>
+## WebGL API { #webgl-api }
 
-### Unsupported API
+<a id="unsupported-api"></a>
+### Unsupported API { #unsupported-api }
 
 - WebGL SDK does not support Handled Exception because asm.js doesn’t support try-catch.
 
-### WebGL-only API
+<a id="webgl-only-api"></a>
+### WebGL-only API { #webgl-only-api }
 
 - Specify a maximum size of remove duplicates log queue.
 
@@ -256,11 +277,13 @@ LogNCrash.setMaximumFileCount (100);
 LogNCrash.setMaximumSendCount (100);
 ```
 
-### Settings to Collect Crashes
+<a id="settings-to-collect-crashes"></a>
+### Settings to Collect Crashes { #settings-to-collect-crashes }
 
 - To collect crashes in WebGL SDK, go to **PlayerSettings > Publishing Settings > Enable Exception** and set the options to the **Full**.
 
-### Caution
+<a id="caution"></a>
+### Caution { #caution }
 
 - Log&Crash can save up to 200 logs in SendQueue in the memory delivery process.
 - Log&Crash can save up to 500 duplicate logs in order to remove duplicates.
@@ -268,7 +291,8 @@ LogNCrash.setMaximumSendCount (100);
 - Therefore, a sufficient memory capacity is required.
 - To measure server’s response speed, Cross-Domain setting is required in the server.
 
-## Build
+<a id="build"></a>
+## Build { #build }
 
 1. Click **File > Build Settings**.
 
@@ -280,12 +304,14 @@ LogNCrash.setMaximumSendCount (100);
 
 2. Click **Build And Run** in the **Build settings**.
 
-## Use External CrashHandler
+<a id="use-external-crashhandler"></a>
+## Use External CrashHandler { #use-external-crashhandler }
 
 - Existing SDKs have deployed logMessageReceived during initialization to register CrashHandler of Unity for a LogNCrash callback function.
 - The structure has been modified to allow applications to be made both for CrashHandler and external CrashHandler (refer to MultihandlerSample).
 
-### Applications
+<a id="applications"></a>
+### Applications { #applications }
 
 - Send a false parameter to the LogNCrash.SetCrashHandler function to prevent CrashHandler from being automatically registered.
 - Must set before the initialize function.

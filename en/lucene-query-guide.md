@@ -1,6 +1,12 @@
-## Guide for Lucene Query
+<!-- machine_translated: true -->
 
-## Overview  
+<!-- pre-align:aligned sig=1db700fbea0a -->
+
+<a id="guide-for-lucene-query"></a>
+## Data & Analytics > Log & Crash Search > Lucene 쿼리 가이드 { #guide-for-lucene-query }
+
+<a id="basic-precautions"></a>
+## 기본 주의 사항 { #basic-precautions }
 
 It depends on the location or availability of double quotes (") or tilde (~) to serve as an operator or not.
 * e.g.) Proximity searches and fuzzy searches
@@ -22,7 +28,8 @@ To use special characters for a search, enter backslash or \ ahead of a characte
 Special characters (including reserved words) for URL must be encoded.
 * e.g.) Enter %3C for the special character, '<'.    
 
-## Basic Search
+<a id="basic-search"></a>
+## Basic Search { #basic-search }
 
 filedname: Search Word
 * Search by search word for a single field name you need.
@@ -36,7 +43,8 @@ If the field name is in the format of log.type, log.time, or log.version, batch 
 \_exists\_:fieldname
 * Search logs with the non-null value in the field name.
 
-## Range Search  
+<a id="range-search"></a>
+## Range Search { #range-search }
 
 | Grammar | Operations |
 | --- | --- |
@@ -48,7 +56,8 @@ If the field name is in the format of log.type, log.time, or log.version, batch 
 * Conditions can be simpler as follows:
     * e.g.) fieldname:>10
 
-## Boolean Operators
+<a id="boolean-operators"></a>
+## Boolean Operators { #boolean-operators }
 
 | Operator | Significance |
 | --- | --- |
@@ -60,7 +69,8 @@ The NOT operator `-` also serves as AND NOT.
 * e.g.) logType:bulk -api
 * -> logType: Same as bulk AND NOT API
 
-## Wildcard Search
+<a id="wildcard-search"></a>
+## Wildcard Search { #wildcard-search }
 
 *replaces many letters.
 
@@ -73,7 +83,8 @@ The NOT operator `-` also serves as AND NOT.
 
 The two wildcards, such as * and ?, can also be applied in the middle of a letter.  
 
-## Proximity Search
+<a id="proximity-search"></a>
+## Proximity Search { #proximity-search }
 
 fiedname:"Search Word A Search Word B"~n
 * Search logs that have up to n words between search word A and search word B.
@@ -81,7 +92,8 @@ fiedname:"Search Word A Search Word B"~n
 
 ![lcs_lucene_guide_03](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_03.png)
 
-### Boosting
+<a id="boosting"></a>
+### Boosting { #boosting }
 
 fieldname: Search Word A^n Search Word B
 * Give more weight to some search key words to get the results higher on priority.
@@ -90,12 +102,14 @@ fieldname: Search Word A^n Search Word B
 
 Default weight is 1.
 
-## RegEx Search
+<a id="regex-search"></a>
+## RegEx Search { #regex-search }
 
 Searching with regular expression is available.  
 * e.g.) To find a document including dress or press, write /[dp]ress/
 
-## Fuzzy Search
+<a id="fuzzy-search"></a>
+## Fuzzy Search { #fuzzy-search }
 
 fieldname: Search Word~n
 * Search up to n letters, which are approximately close to a search word (no more than 2).
@@ -103,3 +117,21 @@ fieldname: Search Word~n
 * e.g.) logSource:logncrash-logS**ur**rce~2
 
 ![lcs_lucene_guide_04](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_04.png)
+
+<a id="objectarray-search"></a>
+## Object/Array Search { #objectarray-search }
+
+If the type of each field is Object or Array, it is converted to a string and stored.
+To search by Object and Array fields in the following example log, use the wildcard search feature.
+
+```json
+// Example log
+{
+  "arrayTypedField": ["elem1", "elem2"],
+  "objectTypedField": {
+    "key": "value"
+  }
+}
+```
+* Object search: `objectTypedField:*\"key\"\:\"value\"*`
+* Array search: `arrayTypedField:*\"elem1\"*`
