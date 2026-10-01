@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > iOS SDK Guide
+<!-- pre-align:aligned sig=ecb9adf37221 -->
+
+<a id="analytics-log-crash-search-ios-sdk-guide"></a>
+## Analytics > Log & Crash Search > iOS SDK Guide { #analytics-log-crash-search-ios-sdk-guide }
 
 > [Deprecated] 
 > Log & Crash iOS SDK is not supported any more. 
@@ -17,10 +20,12 @@ Below describe benefits and features of Log & Crash iOS SDK.
 - Retrieve and search logs sent from Log & Crash Search.
 - Operate in a multi-threading environment.
 
-## Supporting Environment
+<a id="supporting-environment"></a>
+## Supporting Environment { #supporting-environment }
 - iOS 8.0 or higher
 
-## Download
+<a id="download"></a>
+## Download { #download }
 
 Go to [TOAST Document](http://docs.toast.com/en/Download/) to download **iOS SDK(native)**.
 
@@ -28,13 +33,16 @@ Go to [TOAST Document](http://docs.toast.com/en/Download/) to download **iOS SDK
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [iOS SDK] 
 ```
 
-## How to Use SDKs
+<a id="how-to-use-sdks"></a>
+## How to Use SDKs { #how-to-use-sdks }
 
-### Add Header Files
+<a id="add-header-files"></a>
+### Add Header Files { #add-header-files }
 
 Add #import <LogNCrashSDK/LogNCrashSDK.h>.
 
-### Initialize
+<a id="initialize"></a>
+### Initialize { #initialize }
 
 ```
 (bool) init:(NSString *)server ofAppKey:(NSString*)appName withVersion:(NSString*)appVersion;
@@ -55,7 +63,8 @@ Add #import <LogNCrashSDK/LogNCrashSDK.h>.
   - userId: User ID
   - False for failure
 
-### Unlock SendThread
+<a id="unlock-sendthread"></a>
+### Unlock SendThread { #unlock-sendthread }
 
 ```
 	(void) startSendThread;
@@ -63,7 +72,8 @@ Add #import <LogNCrashSDK/LogNCrashSDK.h>.
 
 - Unlock SendThread.
 
-### Lock Host
+<a id="lock-host"></a>
+### Lock Host { #lock-host }
 
 ```
 	(void) enableHost;
@@ -72,7 +82,8 @@ Add #import <LogNCrashSDK/LogNCrashSDK.h>.
 - true: Get an ip address and save it in the host field.
 - false: Do not get an ip address.
 
-### Send Logs
+<a id="send-logs"></a>
+### Send Logs { #send-logs }
 
 ```
 (void) debug:(NSString*)errorCode withMessage:(NSString*)message;
@@ -96,7 +107,8 @@ Add #import <LogNCrashSDK/LogNCrashSDK.h>.
   - message: Log messages
   - location: Error location
 
-### Specify Custom Keys
+<a id="specify-custom-keys"></a>
+### Specify Custom Keys { #specify-custom-keys }
 
 ```
 (void) setCustomField:(NSString*)value forKey:(NSString*)key;
@@ -111,7 +123,8 @@ Add #import <LogNCrashSDK/LogNCrashSDK.h>.
   - projectName, projectVersion, host, logType, logSource, sendTime, logTime, logLevel, UserID
   - Platform, DeviceModel, NetworkType, Carrier, CountryCode, DmpData, errorCode, Location, body, SessionID.
 
-### Remove Duplicates
+<a id="remove-duplicates"></a>
+### Remove Duplicates { #remove-duplicates }
 
 The Remove Duplicates logic has been applied to general logs from 2.4.0
 or higher SDKs.
@@ -126,7 +139,8 @@ public static void setLogDeduplicate(bool enable)
 true: (Default) Remove duplicates is enabled<br>
 false: Remove duplicates is disabled
 
-### Manage Default Setting
+<a id="manage-default-setting"></a>
+### Manage Default Setting { #manage-default-setting }
 
 ```
 (void) setUserId:(NSString*)userId;
@@ -146,7 +160,8 @@ false: Remove duplicates is disabled
 
 - Set a log source.
 
-## Automatically Collected Information
+<a id="automatically-collected-information"></a>
+## Automatically Collected Information { #automatically-collected-information }
 
 Below information is automatically collected by Log & Crash SDK and can be found in Log & Crash Search. In case data collection is not available at the time of log delivery, values may not be found.  
 
@@ -157,7 +172,8 @@ Below information is automatically collected by Log & Crash SDK and can be found
   \- CountryCode: User's country code of user's telecommunication service provider
   \- NetworkType: Wi-Fi or Cellular("No Connection\" if network use is unavailable when log delivery event occurs)
 
-## Interpret iOS Crashed
+<a id="interpret-ios-crashed"></a>
+## Interpret iOS Crashed { #interpret-ios-crashed }
 - For iOS crashes, symbol files are required to interpret crash information which is collected as an address value.
 
 - Open Xcode and click **Windows \> Organizer**.
@@ -170,6 +186,7 @@ Below information is automatically collected by Log & Crash SDK and can be found
 
 - Compress .dSYM to .zip and register it to Web Console> Analytic > Log & Crash Search > Settings > Symbol Files tab.
 
-## Note for iOS Unity Crash
+<a id="note-for-ios-unity-crash"></a>
+## Note for iOS Unity Crash { #note-for-ios-unity-crash }
 
 - Crash logs without registered symbol files are classified as general logs.

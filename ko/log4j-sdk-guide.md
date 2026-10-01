@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > Log4J SDK 사용 가이드
+<!-- pre-align:aligned sig=badf397da372 -->
+
+<a id="analytics-log-crash-search-log4j-sdk-guide"></a>
+## Analytics > Log & Crash Search > Log4J SDK 사용 가이드 { #analytics-log-crash-search-log4j-sdk-guide }
 
 Log & Crash Log4J SDK는 Log & Crash Search 수집 서버에 로그를 보내는 기능을 제공합니다.
 Log & Crash Log4J SDK 특·장점은 다음과 같습니다.
@@ -7,11 +10,13 @@ Log & Crash Log4J SDK 특·장점은 다음과 같습니다.
 - Log & Crash Search 에서 전송된 로그를 조회 및 검색이 가능합니다.
 - 멀티 쓰레딩 환경에서 동작합니다.
 
-## 지원 환경
+<a id="supporting-environment"></a>
+## 지원 환경 { #supporting-environment }
 
 - Log4J 1.2.x (1.2.14, 1.2.16, 1.2.17)
 
-## 다운로드
+<a id="download"></a>
+## 다운로드 { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)에서 Log4J SDK를 받을 수 있습니다.
 
@@ -19,9 +24,11 @@ Log & Crash Log4J SDK 특·장점은 다음과 같습니다.
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Log4J SDK] 클릭
 ```
 
-## 설치
+<a id="install"></a>
+## 설치 { #install }
 
-### 구성
+<a id="configuration"></a>
+### 구성 { #configuration }
 
 Log4J SDK는 다음과 같이 구성되어 있습니다.
 
@@ -31,7 +38,8 @@ lib/        ; Log4J 라이브러리
 sample/     ; Log4J 샘플
 ```
 
-### SDK 샘플
+<a id="sdk-sample"></a>
+### SDK 샘플 { #sdk-sample }
 
 같이 제공되는 sample/log4j/에 대해 설명합니다.
 
@@ -47,7 +55,8 @@ sample/     ; Log4J 샘플
 3.Eclipse 메뉴에서 Project - Properties - Java Build Path - Libraries 를 선택하여 toast-logncrash-log4j-sdk-<version>.jar 를 추가합니다.
 4.Eclipse 메뉴에서 Run - Run As - JUnit Test를 선택하여 실행합니다.
 
-## 사용 예
+<a id="example"></a>
+## 사용 예 { #example }
 
 1.Log4J SDK 라이브러리를 Project에 추가합니다.
 - 예를 들어 Eclipse 메뉴 Project - Properties - Java Build Path - Libraries 를 선택하여 toast-logncrash-log4j-sdk-<version>.jar 를 추가합니다.
@@ -175,9 +184,11 @@ try {
 }
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
-### log4j.xml 설정 항목
+<a id="setting-items-for-log4jxml"></a>
+### log4j.xml 설정 항목 { #setting-items-for-log4jxml }
 
 - collectorUrl: 수집 서버 주소
 	HTTP: https://api-logncrash.nhncloudservice.com
@@ -192,14 +203,17 @@ try {
 	default: Exception 정보를 사용
 	mdc: Log4j MDC의 errorCode 항목값을 설정해서 사용한다.
 
-## 제약 사항
+<a id="constraints"></a>
+## 제약 사항 { #constraints }
 
 - 현재 **log4j 2.0** 버전에서는 동작하지 않습니다. log4j 1.3은 alpha8만 작동하지만 log4j 1.2로 마이그레이션을 권장합니다. 권장 버전은 log4j 1.2.14, 1.2.16, 1.2.17입니다.
 - 오류 데이터가 한꺼번에 많이 발생하는 경우 logncrash-async appender의 bufferSize가 작으면 log4j 자체에서 처리시 지연이 발생할 수 있으므로, bufferSize 조절이 필요합니다.
 
-## FAQ
+<a id="faqs"></a>
+## FAQ { #faqs }
 
-### blocking을 false로 사용하려면?
+<a id="how-can-i-apply-false-for-blocking"></a>
+### blocking을 false로 사용하려면? { #how-can-i-apply-false-for-blocking }
 
 log4j.xml에서 다음과 같이 logncrash-async의 class명을 변경한다.
 
@@ -214,7 +228,8 @@ log4j.xml에서 다음과 같이 logncrash-async의 class명을 변경한다.
 </appender>
 ```
 
-### batch program(project)에서 logncrash client를 사용하려면?
+<a id="how-can-i-use-logncrash-client-in-a-batch-program-project"></a>
+### batch program(project)에서 logncrash client를 사용하려면? { #how-can-i-use-logncrash-client-in-a-batch-program-project }
 
 Quartz 등을 사용해서 데몬 형태로 구동하는 batch project에는 적용되지 않습니다. batch 프로그램의 마지막에 몇초간 대기하는 코드를 추가합니다.
 
@@ -244,7 +259,8 @@ AsyncAppender 안에서 로그를 기록하는 별도의 데몬 스레드가 생
 </root>
 ```
 
-### Java stack trace를 log4j(Log & Crash Search 포함)에 로깅하려면?
+<a id="how-can-a-java-stack-trace-be-logged-to-a-log4j-including-log-crash-search"></a>
+### Java stack trace를 log4j(Log & Crash Search 포함)에 로깅하려면? { #how-can-a-java-stack-trace-be-logged-to-a-log4j-including-log-crash-search }
 
 log4j를 이용하여 stack trace를 출력하려면 log.error(e.getMessage(), e); 형태를 사용합니다. log.error(e);의 경우는 stack trace가 출력되지 않습니다.
 
@@ -258,7 +274,8 @@ try {
 }
 ```
 
-### log4j(Log & Crash Search 포함) logging으로 인한 성능 저하를 최소화 하려면?
+<a id="how-can-i-minimize-performance-degradation-due-to-log4j-including-log-crash-search-logging"></a>
+### log4j(Log & Crash Search 포함) logging으로 인한 성능 저하를 최소화 하려면? { #how-can-i-minimize-performance-degradation-due-to-log4j-including-log-crash-search-logging }
 
 log4j.xml의 logger 설정에서 name과 level을 사용하여 filtering을 최대화합니다.
 아래처럼 logger 설정에서 com이나 org를 DEBUG level로 설정하게 되면 logger에서 많은 LoggingEvent(log4j)가 불필요하게 생성됩니다. Appender에서 Threshold가 ERROR로 설정되어 있어 실제 로그 전송은 되지 않지만 일단 logger에서 LoggingEvent가 생성이 되어 appender에 전달이 됩니다.
@@ -306,7 +323,8 @@ log4j.xml의 logger 설정에서 name과 level을 사용하여 filtering을 최�
 </root>
 ```
 
-### WAS 에서 사용시 안정적인 종료를 하려면?
+<a id="how-can-i-safely-close-was"></a>
+### WAS 에서 사용시 안정적인 종료를 하려면? { #how-can-i-safely-close-was }
 
 에러로그가 전송중인 상황에서 WAS(Tomcat 등)가 종료되는 경우에는, 다음과 같은 Exception이 발생하며 WAS가 정상적으로 종료되지 않을 때가 있습니다.
 

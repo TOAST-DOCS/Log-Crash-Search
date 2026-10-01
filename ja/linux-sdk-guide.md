@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > Linux SDK Guide
+<!-- pre-align:aligned sig=91e5466c6a88 -->
+
+<a id="analytics-log-crash-search-linux-sdk-guide"></a>
+## Analytics > Log & Crash Search > Linux SDK Guide { #analytics-log-crash-search-linux-sdk-guide }
 
 Log & Crash C++ Linux SDK는 Log & Crash Search 수집 서버에 로그를 보내는 기능을 제공합니다.
 Log & Crash C++ Linux SDK 특·장점은 다음과 같습니다.
@@ -8,14 +11,16 @@ Log & Crash C++ Linux SDK 특·장점은 다음과 같습니다.
 - Log & Crash Search 에서 전송된 로그를 조회 및 검색이 가능합니다.
 - 멀티 쓰레딩 환경에서 동작합니다.
 
-## 지원 환경
+<a id="section-1"></a>
+## 지원 환경 { #section-1 }
 
 - Linux, glibc >= 2.0.0
 - 32bit/64bit
 - openssl >= 1.0.1e
 - libcurl >= 7.19.7
 
-## 다운로드
+<a id="section-2"></a>
+## 다운로드 { #section-2 }
 
 Toast Cloud에서 C++ Linux SDK를 받을 수 있습니다.
 
@@ -23,9 +28,11 @@ Toast Cloud에서 C++ Linux SDK를 받을 수 있습니다.
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Linux SDK] 클릭
 ```
 
-## 설치
+<a id="section-3"></a>
+## 설치 { #section-3 }
 
-### 구성
+<a id="section-3-1"></a>
+### 구성 { #section-3-1 }
 
 C++ Linux SDK는 다음과 같이 구성되어 있습니다.
 
@@ -39,7 +46,8 @@ linux-sdk-sample/			; C++ Linux SDK 샘플
 ...
 ```
 
-### SDK 샘플
+<a id="sdk"></a>
+### SDK 샘플 { #sdk }
 
 같이 제공되는 linux-sdk-sample/에 대해서 설명합니다.
 
@@ -50,7 +58,8 @@ linux-sdk-sample/			; C++ Linux SDK 샘플
 	- x86, x86_64 빌드 환경에 대해서는 사용하시는 Linux 배포본 문서를 참고해 주세요.
 4. 빌드된 실행 파일을 실행합니다.
 
-## 사용 예
+<a id="section-4"></a>
+## 사용 예 { #section-4 }
 
 1. include/toast/를 인클루드 패쓰에 넣어줍니다.
 2. 타겟에 따라 lib32/liblogncrash_linux.a 또는 lib64/liblogncrash_linux.a를 링크해 줍니다.
@@ -77,11 +86,13 @@ linux-sdk-sample/			; C++ Linux SDK 샘플
      DestroyToastLog();
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 toast::logncrash::ToastLog class에서 제공하는 기능들을 설명합니다.
 
-### ToastLog 인스턴스 할당/해제
+<a id="toastlog"></a>
+### ToastLog 인스턴스 할당/해제 { #toastlog }
 
 ```
 toast::logncrash::ToastLog* GetToastLog();
@@ -93,7 +104,8 @@ void DestroyToastLog();
 - 싱글톤 방식으로 하나의 인스턴스만 반환됩니다.
 - 반환된 ToastLog instance에 대해서 delete를 하면 안됩니다. 제거하기 위해서는 반드시 DestroyToastLog()를 호출하셔야 합니다.
 
-### 초기화/해제
+<a id="api-list-1"></a>
+### 초기화/해제 { #api-list-1 }
 
 ```
 #define LOGNCRASH_VERSION         "1.0.0"
@@ -142,7 +154,8 @@ void destroy();
 	- LOGNCRASH_LOG_ERROR_ADDRESS: -4, 수집 서버 주소가 잘못된 경우
 	- LOGNCRASH_LOG_ERROR_PORT: -5, 수집 서버 포트가 잘못된 경우
 
-### 로그 보내기
+<a id="api-list-2"></a>
+### 로그 보내기 { #api-list-2 }
 
 ```
 bool sendLog(
@@ -182,7 +195,8 @@ bool fatal(const char* message, const char* errorCode = NULL, const char* locati
 	- 성공시 true
 	- logLevel이 크거나, message가 비어있는 경우 false
 
-### 로그 레벨 지정하기
+<a id="api-list-3"></a>
+### 로그 레벨 지정하기 { #api-list-3 }
 
 ```
 typedef enum {
@@ -202,7 +216,8 @@ void setLogLevel(const LogNCrashLogLevel logLevel);
 - ToastLog instance의 logLevel을 구하거나 지정합니다.
 - ToastLog 기본값은 LOGNCRASH_INFO입니다. 따라서 debug() 함수를 사용하시려면 setLogLevel(LOGNCRASH_DEBUG)로 설정해주셔야 합니다.
 
-### 커스텀 키 지정하기
+<a id="api-list-4"></a>
+### 커스텀 키 지정하기 { #api-list-4 }
 
 ```
 bool addCustomKey(const char* key, const char* value);
@@ -223,7 +238,8 @@ void clearCustomKeys();
 	- 성공시 true
 	- key 형식이 맞지 않으면 추가 실패시 false
 
-### 크래시 처리하기
+<a id="api-list-5"></a>
+### 크래시 처리하기 { #api-list-5 }
 
 ```
 typedef enum {
@@ -252,7 +268,8 @@ void setCrashCallback(const LogNCrashCallbackType cb, void* cbData = NULL);
 - openCrashCatcher 반환값
 	- 항상 false
 
-### 기타 설정
+<a id="api-list-6"></a>
+### 기타 설정 { #api-list-6 }
 
 ```
 const char* getUserId();

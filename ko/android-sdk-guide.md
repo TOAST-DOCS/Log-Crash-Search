@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > Android SDK 사용 가이드
+<!-- pre-align:aligned sig=2d04f196eb51 -->
+
+<a id="analytics-log-crash-search-android-sdk-guide"></a>
+## Analytics > Log & Crash Search > Android SDK 사용 가이드 { #analytics-log-crash-search-android-sdk-guide }
 
 > [Deprecated]
 > Log & Crash Android SDK 버전은 더 이상 지원되지 않습니다.
@@ -12,11 +15,13 @@ Log & Crash Android SDK 특·장점은 다음과 같습니다.
 - Log & Crash Search 에서 전송된 로그를 조회 및 검색이 가능합니다.
 - 멀티 쓰레딩 환경에서 동작합니다.
 
-## 지원 환경
+<a id="supporting-environment"></a>
+## 지원 환경 { #supporting-environment }
 
 - Android 2.3.3, API Level 10 이상
 
-## 다운로드
+<a id="download"></a>
+## 다운로드 { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)에서 Android SDK를 받을 수 있습니다.
 
@@ -24,9 +29,11 @@ Log & Crash Android SDK 특·장점은 다음과 같습니다.
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Android SDK] 클릭
 ```
 
-## 설치
+<a id="install"></a>
+## 설치 { #install }
 
-### 구성
+<a id="configuration"></a>
+### 구성 { #configuration }
 
 Android SDK는 다음과 같이 구성되어 있습니다.
 
@@ -36,7 +43,8 @@ libs/       ; Android SDK 라이브러리
 sample/     ; Android SDK 샘플
 ```
 
-### SDK 샘플
+<a id="sdk-sample"></a>
+### SDK 샘플 { #sdk-sample }
 
 같이 제공되는 sample/에 대해 설명합니다.
 
@@ -49,7 +57,8 @@ sample/     ; Android SDK 샘플
 6. debug, info, warn, error, fatal 버튼을 눌러 로그를 전송합니다.
 7. send crash, crash 버튼을 눌러 크래시 로그를 전송합니다. send crash 버튼은 크래시 로그만 보내는 기능입니다. crash 버튼은 강제로 crash를 발생시켜 앱 종료와 동시에 크래시 로그를 전송합니다.
 
-### 사용 예
+<a id="example"></a>
+### 사용 예 { #example }
 
 1.Android SDK의 libs/를 해당 프로젝트 libs/에 복사합니다.
 2.AndroidManifest.xml 파일에 권한을 추가합니다.
@@ -99,11 +108,13 @@ public class MainActivity extends Activity {
 .....
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 com.toast.android.logncrash.ToastLog class에서 제공하는 기능들을 설명합니다.
 
-### 초기화
+<a id="initialize"></a>
+### 초기화 { #initialize }
 
 ```
 public static final String DEFAULT_APP_KEY = "__app_key__";
@@ -136,13 +147,15 @@ public static boolean initialize(Application application, String collectorAddr, 
 	- 초기화 성공시 true
 	- 실패시 false
 
-### SendThread 잠금 해제
+<a id="unlock-sendthread"></a>
+### SendThread 잠금 해제 { #unlock-sendthread }
 ```
   	(void) startSendThread;
 ```
   - SendThread의 잠금 상태를 해제합니다.
 
-### 초기화 주의사항
+<a id="caution-for-initialization"></a>
+### 초기화 주의사항 { #caution-for-initialization }
   - Application onCreate에서 초기화를 실행하는 경우
   	- Application onCreate는 리시버, 서비스, 액티비티가 생성될 때 호출됨으로 의도하지 않은 호출이 발생할 수 있습니다.
 
@@ -155,7 +168,8 @@ public static boolean isInitialized()
 	- 초기화 되었으면 true
 	- 아니면 false
 
-### 로그 보내기
+<a id="send-logs"></a>
+### 로그 보내기 { #send-logs }
 
 ```
 public static void fatal(String message, Throwable t)
@@ -206,7 +220,8 @@ public static void crash(Throwable throwable, String errorCode, String message, 
 public static void crash(Throwable throwable, String errorCode, String message)
 ```
 
-### 커스텀 키 지정하기
+<a id="specify-custom-keys"></a>
+### 커스텀 키 지정하기 { #specify-custom-keys }
 
 ```
 public static void addCustomField(String key, String value)
@@ -226,7 +241,8 @@ public static void clearCustomFields()
 	- "Carrier", "CountyCode", "DeviceModel", "Locale", "NetworkType", "Rooted"
 
 
-### 기본 설정 관리
+<a id="manage-default-setting"></a>
+### 기본 설정 관리 { #manage-default-setting }
 
 ```
 public static String getAppKey()
@@ -251,7 +267,8 @@ public static void setLogType(String logType)
 
 - 로그 타입을 구하거나 새로 지정합니다.
 
-### 중복 제거 모드 설정
+<a id="remove-duplicates"></a>
+### 중복 제거 모드 설정 { #remove-duplicates }
 
 2.4.0 이상 SDK 부터 일반 로그에 중복 제거 로직이 적용되었습니다.
 
@@ -264,13 +281,15 @@ public static void setDuplicate(bool enable)
 true:(Default값) 중복 제거 로직 활성화<br>
 false: 중복 제거 로직 비활성화
 
-## SDK 샘플을 이용한 Proguard 테스트
+<a id="test-proguard-using-sdk-samples"></a>
+## SDK 샘플을 이용한 Proguard 테스트 { #test-proguard-using-sdk-samples }
 
 Android에서 제공하는 Proguard를 통해서 코드 난독화를 테스트하는 방법을 설명합니다.
 Proguard를 적용하기 위해서는 Release로 프로젝트를 생성해야 합니다. 이에 필요한 키스토어, Proguard 설정 등이 sample/에 포함되어 있습니다.
 
 
-### Eclipse를 사용하여 Proguard 테스트
+<a id="test-proguard-with-eclipse"></a>
+### Eclipse를 사용하여 Proguard 테스트 { #test-proguard-with-eclipse }
 
 1. libs/를 sample/libs/로 복사합니다.
 2. Eclipse를 구동해서 해당 프로젝트를 선택하고 메뉴에서 File - Export... 를 선택합니다.
@@ -286,7 +305,8 @@ Proguard를 적용하기 위해서는 Release로 프로젝트를 생성해야 �
 2. 앱에서 크래시 로그를 보냅니다. Proguard가 풀린 로그는 "DmpData" 필드에 "보기"를 클릭하시면 확인할 수 있습니다.
 3. ToastLogSample.clickCrash() 이름이 제대로 나오는지 확인합니다.
 
-### Ant 빌드를 사용하여 Proguard 테스트
+<a id="test-proguard-with-ant-build"></a>
+### Ant 빌드를 사용하여 Proguard 테스트 { #test-proguard-with-ant-build }
 
 1. libs/를 sample/libs/로 복사합니다.
 2. build.xml이 없는 경우 android update project -p . -n AndroidSDKSample 명령어로 생성해 줍니다.
@@ -294,7 +314,8 @@ Proguard를 적용하기 위해서는 Release로 프로젝트를 생성해야 �
 
 Ant를 이용하여 Release 빌드를 하는 경우 Eclipse Release 빌드와는 달리 mapping.txt 위치가 bin/proguard/mapping.txt 입니다.
 
-### AndroidStudio를 사용하여 Proguard 테스트
+<a id="test-proguard-with-androidstudio"></a>
+### AndroidStudio를 사용하여 Proguard 테스트 { #test-proguard-with-androidstudio }
 
 1. libs/를 sample/libs/로 복사합니다.
 2. AndroidStudio를 구동하여 메뉴에서 File - New - Import Project... 를 실행하여 새로운 위치에 AndroidStudio 프로젝트를 생성합니다.
@@ -304,7 +325,8 @@ Ant를 이용하여 Release 빌드를 하는 경우 Eclipse Release 빌드와는
 
 AndroidStudio를 이용하여 Release 빌드를 하면 mapping.txt 위치가 app/build/outputs/mapping/release/mapping.txt입니다.
 
-## JNI 적용 가이드
+<a id="guide-for-jni-application"></a>
+## JNI 적용 가이드 { #guide-for-jni-application }
 
 [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)를 이용하여 [JNI](http://en.wikipedia.org/wiki/Java_Native_Interface)를 사용시 Android SDK를 활용하는 방법에 대하여 설명합니다.
 Log & Crash Android SDK에서는 Java상에서 Exception을 Catch 할 수 있는 상황에서만 정상적으로 동작합니다. 그러기 위해서 작성한 Native Code에서 에러 발생시 에러를 전달하는 클래스를 생성하여야 합니다.

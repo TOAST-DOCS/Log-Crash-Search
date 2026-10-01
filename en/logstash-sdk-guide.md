@@ -1,29 +1,37 @@
-## Data & Analytics > Log & Crash Search > User Guide for Logstash SDK
+<!-- pre-align:aligned sig=130414ff6b2d -->
+
+<a id="data-analytics-log-crash-search-user-guide-for-logstash-sdk"></a>
+## Data & Analytics > Log & Crash Search > User Guide for Logstash SDK { #data-analytics-log-crash-search-user-guide-for-logstash-sdk }
 
 This document describes how to process different types of inputs and outputs by using Logstash. 
 
-## Download
+<a id="download"></a>
+## Download { #download }
 
 - Download Logstash.
 - $ wget      http://download.elastic.co/logstash/logstash/logstash-1.5.6.tar.gz
 - Unzip the files.
 - $ tar zxvf      logstash-1.5.6.tar.gz
 
-## Install and Execute 
+<a id="install-and-execute"></a>
+## Install and Execute { #install-and-execute }
 
 Refer to Configuring Logstash. 
 
 - Create configuration files for Logstash. 
 - Execute with bin/logstash -f <Configuration Files>
 
-## Configure Logstash 
+<a id="configure-logstash"></a>
+## Configure Logstash { #configure-logstash }
 
 Collecting and delivering logs by using Logstash are described as below: 
 
-### **Collect Log & Crash Collector Logs** 
+<a id="collect-log-crash-collector-logs"></a>
+### **Collect Log & Crash Collector Logs** { #collect-log-crash-collector-logs }
 
 Below shows how Log & Crash Collector Logs are collected with Logstash. 
 
+<a id="collect-log-crash-collector-logs-define-path-for-the-input-file-an-absolute-route-is-required-for-the-path"></a>
 #### \- Define path for the input, file: an absolute route is required for the path.  
 
 ```
@@ -35,6 +43,7 @@ input {
 }
 ```
 
+<a id="collect-log-crash-collector-logs-use-filter-and-multiline-to-combine-logs-in-many-lines"></a>
 #### - Use filter and multiline to combine logs in many lines.
 
 ```
@@ -56,10 +65,12 @@ filter {
 ...
 ```
 
-### **Deliver Logs to Log & Crash Collector**
+<a id="deliver-logs-to-log-crash-collector"></a>
+### **Deliver Logs to Log & Crash Collector** { #deliver-logs-to-log-crash-collector }
 
 Below shows how logs are sent to Log & Crash Collector with Logstash. 
 
+<a id="deliver-logs-to-log-crash-collector-convert-logstash-logs-to-the-log-crash-http-rest-api-format-by-using-filter-and-mutate"></a>
 #### \- Convert Logstash logs to the Log & Crash HTTP REST API format, by using filter and mutate. 
 
 ```
@@ -94,6 +105,7 @@ filter {
     - "logLevel": Optional, Log level
 ```
 
+<a id="deliver-logs-to-log-crash-collector-send-to-log-crash-collector-by-using-output-and-http"></a>
 #### - Send to Log & Crash Collector by using output and http.
 
 ```
@@ -111,10 +123,12 @@ output {
 - The URI must be /v2/log.
 ```
 
-### **Collect Apache Access/Error Logs** 
+<a id="collect-apache-accesserror-logs"></a>
+### **Collect Apache Access/Error Logs** { #collect-apache-accesserror-logs }
 
 Below shows how Apache Access/Error Logs are collected with Logstash. 
 
+<a id="collect-apache-accesserror-logs-define-path-for-input-and-file-define-type-to-tell-the-difference-between-access-and-error"></a>
 #### \- Define path for input and file. Define type to tell the difference between access and error.  
 
 ```
@@ -133,6 +147,7 @@ input {
 - The above path is used in the CAB DEV Web server. Correction is required if the log location is not correct.
 ```
 
+<a id="collect-apache-accesserror-logs-analyze-logs-by-using-filter-grok"></a>
 #### - Analyze logs by using filter, grok.
 
 ```
@@ -163,13 +178,15 @@ APACHEERRORLOG \[%{HTTPERRORDATE:timestamp}\] \[%{WORD:severity}\] %{GREEDYDATA:
 - The grok pattern adopted by a bit of logstash cooking has been modified.
 ```
 
-### **Collect Other Logs** 
+<a id="collect-other-logs"></a>
+### **Collect Other Logs** { #collect-other-logs }
 
 Collect other logs in reference of the following URL:
 
 - [A bit of logstash cooking](https://home.regit.org/2014/01/a-bit-of-logstash-cooking/)
 
-### **Environment Variables**
+<a id="environment-variables"></a>
+### **Environment Variables** { #environment-variables }
 
 Logstash supports the following environment variables. The memory volume of Logstash can be configured via LS_HEAP_SIZE. 
 

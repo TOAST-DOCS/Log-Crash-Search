@@ -1,6 +1,10 @@
-## Data & Analytics > Log & Crash Search > Lucene 쿼리 가이드
+<!-- pre-align:aligned sig=1db700fbea0a -->
 
-## 기본 주의 사항
+<a id="guide-for-lucene-query"></a>
+## Data & Analytics > Log & Crash Search > Lucene 쿼리 가이드 { #guide-for-lucene-query }
+
+<a id="basic-precautions"></a>
+## 기본 주의 사항 { #basic-precautions }
 
 큰따옴표(")와 물결표(~)의 위치 또는 유무에 따라 연산자로 사용될지, 아닐지가 결정됩니다.
 * ex) 근접 검색과 유사항목 검색
@@ -22,7 +26,8 @@
 URL에서의 특수문자(예약문자 포함)들은 인코딩하여 처리하여야합니다.
 * ex) '<' 특수문자는 %3C로 입력
 
-## 기본 검색
+<a id="basic-search"></a>
+## 기본 검색 { #basic-search }
 
 filedname:search word
 * 원하는 단일 필드(fieldname)에서 단일 용어(search word)를 검색합니다.
@@ -36,7 +41,8 @@ filedname:search word
 \_exists\_:fieldname
 * 해당 fieldname에 non-null인 값을 가진 로그를 검색합니다.
 
-## 범위 검색
+<a id="range-search"></a>
+## 범위 검색 { #range-search }
 
 | 문법 | 동작 |
 | --- | --- |
@@ -48,7 +54,8 @@ filedname:search word
 * 아래와 같이 좀 더 심플하게 조건을 넣을 수 있습니다.
     * ex) fieldname:>10
 
-## 부울 연산자
+<a id="boolean-operators"></a>
+## 부울 연산자 { #boolean-operators }
 
 | 연산자 | 의미 |
 | --- | --- |
@@ -60,7 +67,8 @@ NOT 연산자인 `-`의 경우 AND NOT의 의미로도 사용됩니다.
 * ex) logType:bulk -api
 * -> logType:bulk AND NOT api 와 동일
 
-## 와일드카드 검색
+<a id="wildcard-search"></a>
+## 와일드카드 검색 { #wildcard-search }
 
 *는 하나 이상의 임의의 문자들에 대응하여 검색합니다.
 * ex) body:performance\*
@@ -72,7 +80,8 @@ NOT 연산자인 `-`의 경우 AND NOT의 의미로도 사용됩니다.
 
 *와 ? 두 와일드카드는 글자 가운데에 적용하는 것이 가능합니다.
 
-## 근접 검색(Proximity search)
+<a id="proximity-search"></a>
+## 근접 검색(Proximity search) { #proximity-search }
 
 fiedname:"검색어A 검색어B"~n
 * 검색어A와 검색어B 사이에 최대 n개의 단어가 들어간 로그를 찾습니다.
@@ -80,7 +89,8 @@ fiedname:"검색어A 검색어B"~n
 
 ![lcs_lucene_guide_03](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_03.png)
 
-### 우선순위 부여 검색(Boosting)
+<a id="boosting"></a>
+### 우선순위 부여 검색(Boosting) { #boosting }
 
 fieldname:검색어A^n 검색어B
 * 일부 검색 키워드에 가중치를 두어 더 높은 순위로 결과를 가져올 수 있습니다.
@@ -89,12 +99,14 @@ fieldname:검색어A^n 검색어B
 
 default 가중치는 1입니다.
 
-## 정규식 검색
+<a id="regex-search"></a>
+## 정규식 검색 { #regex-search }
 
 일반적으로 알려진 정규식 검색이 가능합니다.
 * ex) dress 또는 press을 포함하는 문서를 찾으려면 /[dp]ress/ 로 작성
 
-## 유사항목 검색(Fuzzy search)
+<a id="fuzzy-search"></a>
+## 유사항목 검색(Fuzzy search) { #fuzzy-search }
 
 fieldname:검색어~n
 * 검색어와 유사한, n개의 글자까지 다른 결과까지 검색합니다.(최대 2개)
@@ -103,7 +115,8 @@ fieldname:검색어~n
 
 ![lcs_lucene_guide_04](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_04.png)
 
-## Object/Array 검색
+<a id="objectarray-search"></a>
+## Object/Array 검색 { #objectarray-search }
 
 각 필드의 타입이 Object와 Array일 경우 모두 문자열로 치환하여 저장합니다.
 다음의 예제 로그 중 Object와 Array 필드로 검색하기 위해 와일드카드 검색 기능을 사용합니다.

@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=2d04f196eb51 -->
+
 ﻿## Analytics > Log & Crash Search > Android SDK使用ガイド
 
 > [Deprecated]
@@ -12,11 +14,18 @@ Log & Crash Android SDKの特徴・利点は次のとおりです。
 - Log & Crash Searchから送られたログの照会および検索ができます。
 - マルチスレッド環境で動作します。
 
-## サポート環境
+<a id="analytics-log-crash-search-android-sdk-guide"></a>
+## Analytics > Log & Crash Search > Android SDK使用ガイド { #analytics-log-crash-search-android-sdk-guide }
+
+<!-- TODO: translate body -->
+
+<a id="supporting-environment"></a>
+## サポート環境 { #supporting-environment }
 
 - Android 2.3.3、API Level 10以上
 
-## ダウンロード
+<a id="download"></a>
+## ダウンロード { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)でAndroid SDKをダウンロードできます。
 
@@ -24,9 +33,11 @@ Log & Crash Android SDKの特徴・利点は次のとおりです。
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Android SDK]をクリック
 ```
 
-## インストール
+<a id="install"></a>
+## インストール { #install }
 
-### 構成
+<a id="configuration"></a>
+### 構成 { #configuration }
 
 Android SDKは、次のように構成されています。
 
@@ -36,7 +47,8 @@ libs/       ; Android SDKライブラリ
 sample/     ; Android SDKサンプル
 ```
 
-### SDKサンプル
+<a id="sdk-sample"></a>
+### SDKサンプル { #sdk-sample }
 
 一緒に提供されるsample/について説明します。
 
@@ -49,7 +61,8 @@ sample/     ; Android SDKサンプル
 6. debug、info、warn、error、fatalボタンを押してログを転送します。
 7. send crash、crashボタンを押してクラッシュログを転送します。send crashボタンはクラッシュログのみを転送する機能です。crashボタンは、強制的にcrashを発生させ、アプリ終了と同時にクラッシュログを転送します。
 
-### 使用例
+<a id="example"></a>
+### 使用例 { #example }
 
 1.Android SDKのlibs/を該当プロジェクトlibs/にコピーします。
 2.AndroidManifest.xmlファイルに権限を追加します。
@@ -99,11 +112,13 @@ public class MainActivity extends Activity {
 .....
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
 com.toast.android.logncrash.ToastLog classで、提供する機能を説明します。
 
-### 初期化
+<a id="initialize"></a>
+### 初期化 { #initialize }
 
 ```
 public static final String DEFAULT_APP_KEY = "__app_key__";
@@ -136,13 +151,15 @@ public static boolean initialize(Application application, String collectorAddr, 
 	- 初期化成功時はtrue
 	- 失敗時はfalse
 
-### SendThreadのロック解除
+<a id="unlock-sendthread"></a>
+### SendThreadのロック解除 { #unlock-sendthread }
 ```
   	(void) startSendThread;
 ```
   - SendThreadのロック状態を解除します。
 
-### 初期化の注意事項
+<a id="caution-for-initialization"></a>
+### 初期化の注意事項 { #caution-for-initialization }
   - Application onCreateで初期化を行う場合
   	- Application onCreateはレシーバー、サービス、アクティビティが作成される時に呼び出されるので、意図しない呼び出しが発生することがあります。
 
@@ -155,7 +172,8 @@ public static boolean isInitialized()
 	- 初期化されていればtrue
 	- 初期化されていなければfalse
 
-### ログの転送
+<a id="send-logs"></a>
+### ログの転送 { #send-logs }
 
 ```
 public static void fatal(String message, Throwable t)
@@ -206,7 +224,8 @@ public static void crash(Throwable throwable, String errorCode, String message, 
 public static void crash(Throwable throwable, String errorCode, String message)
 ```
 
-### カスタムキーを指定する
+<a id="specify-custom-keys"></a>
+### カスタムキーを指定する { #specify-custom-keys }
 
 ```
 public static void addCustomField(String key, String value)
@@ -226,7 +245,8 @@ public static void clearCustomFields()
 	- "Carrier", "CountyCode", "DeviceModel", "Locale", "NetworkType", "Rooted"
 
 
-### 基本設定管理
+<a id="manage-default-setting"></a>
+### 基本設定管理 { #manage-default-setting }
 
 ```
 public static String getAppKey()
@@ -251,7 +271,8 @@ public static void setLogType(String logType)
 
 - ログタイプの取得や新たな指定を行います。
 
-### 重複除去モードの設定
+<a id="remove-duplicates"></a>
+### 重複除去モードの設定 { #remove-duplicates }
 
 2.4.0以上のSDKから、一般ログに重複除去ロジックが適用されました。
 
@@ -264,13 +285,15 @@ public static void setDuplicate(bool enable)
 true：(Default値)重複除去ロジックを有効にする<br>
 false：重複除去ロジックを無効にする
 
-## SDKサンプルを利用したProguardテスト
+<a id="test-proguard-using-sdk-samples"></a>
+## SDKサンプルを利用したProguardテスト { #test-proguard-using-sdk-samples }
 
 Androidで提供するProguardで、コードの難読化をテストする方法を説明します。
 Proguardを適用するには、Releaseでプロジェクトを作成する必要があります。これに必要なキーストア、Proguard設定などがsample/に含まれています。
 
 
-### Eclipseを使用してProguardテスト
+<a id="test-proguard-with-eclipse"></a>
+### Eclipseを使用してProguardテスト { #test-proguard-with-eclipse }
 
 1. libs/をsample/libs/にコピーします。
 2. Eclipseを起動して該当プロジェクトを選択し、メニューからFile - Export…を選択します。
@@ -286,7 +309,8 @@ Proguardを適用するには、Releaseでプロジェクトを作成する必�
 2. アプリからクラッシュログを転送します。Proguardが解除されたログは"DmpData"フィールドの"参照"をクリックすると確認できます。
 3. ToastLogSample.clickCrash()の名前が正常に表示されるか確認します。
 
-### Antビルドを使用してProguardをテスト
+<a id="test-proguard-with-ant-build"></a>
+### Antビルドを使用してProguardをテスト { #test-proguard-with-ant-build }
 
 1. libs/をsample/libs/にコピーします。
 2. build.xmlがない場合、android update project -p . -n AndroidSDKSampleコマンドで作成します。
@@ -294,7 +318,8 @@ Proguardを適用するには、Releaseでプロジェクトを作成する必�
 
 Antを利用してReleaseビルドをする場合、Eclipse Releaseビルドとは異なり、mapping.txtの位置がbin/proguard/mapping.txtです。
 
-### AndroidStudioを使用してProguardテスト
+<a id="test-proguard-with-androidstudio"></a>
+### AndroidStudioを使用してProguardテスト { #test-proguard-with-androidstudio }
 
 1. libs/をsample/libs/にコピーします。
 2. AndroidStudioを起動し、メニューからFile - New - Import Project…を実行して、新しい位置にAndroidStudioプロジェクトを作成します。
@@ -304,7 +329,8 @@ Antを利用してReleaseビルドをする場合、Eclipse Releaseビルドと�
 
 AndroidStudioを利用してReleaseビルドをすると、mapping.txtの位置がapp/build/outputs/mapping/release/mapping.txtです。
 
-## JNI適用ガイド
+<a id="guide-for-jni-application"></a>
+## JNI適用ガイド { #guide-for-jni-application }
 
 [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)を利用して、[JNI](http://en.wikipedia.org/wiki/Java_Native_Interface)を使用する時に、Android SDKを活用する方法について説明します。
 Log & Crash Android SDKでは、Java上でExceptionをCatchできる状況でのみ正常に動作します。そのために作成したNative Codeでエラーが発生した時に、エラーを渡すクラスを作成する必要があります。

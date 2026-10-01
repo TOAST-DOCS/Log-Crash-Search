@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=eec5a9a734d6 -->
+
 ﻿## Analytics > Log & Crash Search > Log4J v2 SDK使用ガイド
 
 Log & Crash Log4J 2 SDKはLog & Crash Search収集サーバーにログを転送する機能を提供します。
@@ -7,11 +9,18 @@ Log & Crash Log4J SDKの特徴・利点は次のとおりです。
 - Log & Crash Searchで、転送されたログの照会および検索が可能です。
 - マルチスレッド環境で動作します。
 
-## サポート環境
+<a id="analytics-log-crash-search-log4j-v2-sdk-guide"></a>
+## Analytics > Log & Crash Search > Log4J v2 SDK 使用ガイド { #analytics-log-crash-search-log4j-v2-sdk-guide }
+
+<!-- TODO: translate body -->
+
+<a id="supporting-environment"></a>
+## サポート環境 { #supporting-environment }
 
 - Log4J 2.x
 
-## ダウンロード
+<a id="download"></a>
+## ダウンロード { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)でLog4J 2 SDKをダウンロードできます。
 
@@ -19,9 +28,11 @@ Log & Crash Log4J SDKの特徴・利点は次のとおりです。
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Log4J.v2 SDK]をクリック
 ```
 
-## インストール
+<a id="install"></a>
+## インストール { #install }
 
-### 構成
+<a id="configuration"></a>
+### 構成 { #configuration }
 
 Log4J SDKは次のように構成されています。
 
@@ -31,7 +42,8 @@ lib/        ; Log4J 2ライブラリ
 sample/     ; Log4J 2サンプル
 ```
 
-### SDKサンプル
+<a id="sdk-sample"></a>
+### SDKサンプル { #sdk-sample }
 
 一緒に提供されるsample/log4j2/について説明します。
 
@@ -47,7 +59,8 @@ sample/     ; Log4J 2サンプル
 3.EclipseメニューからProject - Properties - Java Build Path - Librariesを選択して、toast-logncrash-log4j2-sdk-<version>.jarを追加します。
 4.EclipseメニューからRun - Run As - JUnit Testを選択して実行します。
 
-## 使用例
+<a id="example"></a>
+## 使用例 { #example }
 
 1.Log4J SDKライブラリをProjectに追加します。
 例えばEclipseメニューProject - Properties - Java Build Path - Librariesを選択して、toast-logncrash-log4j2-sdk-<version>.jarを追加します。
@@ -162,9 +175,11 @@ try {
 }
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
-### log4j.xml設定項目
+<a id="setting-items-for-log4j2xml"></a>
+### log4j.xml設定項目 { #setting-items-for-log4j2xml }
 
 - collectorUrl：収集サーバーアドレス
 	HTTP： https://api-logncrash.nhncloudservice.com
@@ -175,17 +190,21 @@ try {
 - enable： Appenderを使用するかどうか。デフォルト値"true"
 - debug：デバッグを使用するかどうか。デフォルト値"false"
 
-## 制約事項
+<a id="constraints"></a>
+## 制約事項 { #constraints }
 
 - **log4j 1.2**バージョンでは動作しません。
 
-## FAQ
+<a id="faq"></a>
+## FAQ { #faq }
 
-### 性能向上のためにAsynchronous Loggerを使用するには
+<a id="how-can-i-use-asynchronous-logger-to-enhance-performance"></a>
+### 性能向上のためにAsynchronous Loggerを使用するには { #how-can-i-use-asynchronous-logger-to-enhance-performance }
 
 Asynchronous Loggers for Low-Latency Loggingを参照してください。
 
-### Java stack traceをLog4j 2(Log & Crash Search含む)にロギングするには
+<a id="how-can-a-java-stack-trace-be-logged-to-a-log4j-2-including-log-crash-search"></a>
+### Java stack traceをLog4j 2(Log & Crash Search含む)にロギングするには { #how-can-a-java-stack-trace-be-logged-to-a-log4j-2-including-log-crash-search }
 
 Log4j 2を利用してstack traceを出力するには、log.error(e.toString(),e);形式を使用します。log.error(e);の場合にはstack traceが出力されません。
 

@@ -1,59 +1,86 @@
-## Data & Analytics > Log & Crash Search > リリースノート
+<!-- pre-align:aligned sig=99d57f88ede8 -->
 
-### 2024. 02. 27.
+<a id="data-analytics-log-crash-search-release-notes"></a>
+## Data & Analytics > Log & Crash Search > リリースノート { #data-analytics-log-crash-search-release-notes }
+
+<a id="february-27-2024"></a>
+### 2024. 02. 27. { #february-27-2024 }
+<a id="february-27-2024-feature-updates"></a>
 #### 機能改善/変更
 * [Console]検索フィールドページの変更
   * ログ保管期間に該当する検索フィールド照会
  
-### 2023. 12. 19.
+<a id="december-19-2023"></a>
+### 2023. 12. 19. { #december-19-2023 }
+<a id="december-19-2023-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログ外部保管設定機能の変更
   * OBS / AWS S3各タイプごとに1つの設定が可能
 
-### 2023. 08. 29.
+<a id="august-29-2023"></a>
+### 2023. 08. 29. { #august-29-2023 }
+<a id="august-29-2023-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログアラーム設定時、一部フィールドの長さ制限を変更
   * アラームタイトルの長さ制限が20文字から80文字に変更
   * アラーム説明の長さ制限が80文字から255文字に変更
 
-### 2023. 05. 30.
+<a id="may-30-2023"></a>
+### 2023. 05. 30. { #may-30-2023 }
+<a id="may-30-2023-bug-fixes"></a>
 #### バグ修正
 * [Console]選択可能なフィールドでUserTxtDataフィールドが表示されないように変更
+<a id="may-30-2023-feature-updates"></a>
 #### 機能改善/変更
 * [Console]検索フィールドメニューでUserTxtDataフィールドがカスタムフィールドではなく、基本フィールドとして表示されるように変更
 
-### 2023. 04. 26.
-### バグ修正
+<a id="april-26-2023"></a>
+### 2023. 04. 26. { #april-26-2023 }
+<a id="bug-fixes"></a>
+### バグ修正 { #bug-fixes }
 * ユーザーベースのアラームが動作しないバグを修正
 
-### 2022. 12. 27.
+<a id="december-27-2022"></a>
+### 2022. 12. 27. { #december-27-2022 }
+<a id="december-27-2022-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログ検索自動更新機能の追加
 * [Console]ログ検索結果チャートをドラッグしてログ検索期間条件を設定できる機能を追加
 
-### 2022. 11. 29.
+<a id="november-29-2022"></a>
+### 2022. 11. 29. { #november-29-2022 }
+<a id="november-29-2022-bug-fixes"></a>
 #### バグ修正
 * [Console]ログ検索結果のログクリック検索機能を改善
   * txt*、bodyフィールドの単語をクリックして検索しても全フィールドの値が検索されるバグを修正
   * カスタムフィールドクリック検索を行った時、ハイライトが適用されないバグを修正
 
-### 2022. 09. 27.
+<a id="september-27-2022"></a>
+### 2022. 09. 27. { #september-27-2022 }
+<a id="september-27-2022-bug-fixes"></a>
 #### バグ修正
 * [Console]保存クエリリストメニューでクエリを連続削除 するとエラーページに移動するバグを修正
 
-### 2022. 08. 23.
+<a id="august-23-2022"></a>
+### 2022. 08. 23. { #august-23-2022 }
+<a id="august-23-2022-feature-updates"></a>
 #### 機能改善/変更
 * [Console]グローバルユーティリティ関数呼び出し方式の変更
 
-### 2022. 07. 26.
+<a id="july-26-2022"></a>
+### 2022. 07. 26. { #july-26-2022 }
+<a id="july-26-2022-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログ検索結果画面のUI/UX改善
     * 列挙型で表示形式提供
+<a id="july-26-2022-bug-fixes"></a>
 #### バグ修正
 * [Console]一部プラットフォームのクラッシュダンプデータがダウンロードできない問題を修正
 * [Console]ログアラーム設定メニューで2ページ以降のアラーム状態変更ボタンが動作しない問題を修正
 
-### 2022. 06. 30.
+<a id="june-30-2022"></a>
+### 2022. 06. 30. { #june-30-2022 }
+<a id="june-30-2022-feature-updates"></a>
 #### 機能改善/変更
 * [Console]選択されたフィールドダイアログUI/UX改善
     * フィールドダイアログ位置修正
@@ -62,7 +89,9 @@
 * [Console]バグ修正
     * クエリに特定文字が含まれたアラームの設定を修正すると、保存されたクエリとは異なるものが表示されるバグを修正
 
-### 2022. 05. 24.
+<a id="may-24-2022"></a>
+### 2022. 05. 24. { #may-24-2022 }
+<a id="may-24-2022-feature-updates"></a>
 #### 機能改善/変更
 * [Console] WebコンソールのUI/UX改善
     * Webコンソール内の時間を表示する方式を統一
@@ -70,30 +99,40 @@
 * [Console]バグ修正
     * アプリクラッシュイシュー詳細情報のエラーインスタンスメニューで、データが特定の値のときにエラーインスタンスリストが表示されないエラーを修正
 
-### 2022. 04. 26.
+<a id="april-26-2022"></a>
+### 2022. 04. 26. { #april-26-2022 }
+<a id="april-26-2022-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログアラーム設定ページUI/UXを改善
     * **アラーム設定追加**ダイアログボックスで**アラームタイプ**を **発生数**から**増減率**に変更すると画面が正常に表示されなかったバグを修正
 
-### 2022. 03. 29.
+<a id="march-29-2022"></a>
+### 2022. 03. 29. { #march-29-2022 }
+<a id="march-29-2022-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログ検索ページUI/UX改善
     * ログ検索「広げて表示」を行ったときのボタン位置を修正
     * ログ検索時、クエリオートコンプリート項目キーボードが選択できるように変更
 
-### 2022. 02. 22.
+<a id="february-22-2022"></a>
+### 2022. 02. 22. { #february-22-2022 }
+<a id="february-22-2022-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログ検索ページのUI/UXを改善
     * ログ検索結果「広げて表示」を行ったときの表示形式を変更
     * クラッシュログインの場合、ログ検索ページに**イシュー照会**ボタンを提供
 
-### 2022. 01. 25.
+<a id="january-25-2022"></a>
+### 2022. 01. 25. { #january-25-2022 }
+<a id="january-25-2022-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログ検索ページのUX改善
   * ログ検索結果テーブルヘッダ固定
   * 「選択したフィールド」内のフィールド名をクリックしたときに表示されるポップアップウィンドウの形態を変更
 
-### 2021. 11. 23
+<a id="november-23-2021"></a>
+### 2021. 11. 23 { #november-23-2021 }
+<a id="november-23-2021-feature-updates"></a>
 #### 機能改善/変更
 * [Console]新しいUI/UXが適用されたWebコンソールをデフォルトで適用し、既存Webコンソールに切り替え機能を削除
 * [Console]ログ検索ページUXの改善
@@ -101,117 +140,161 @@
     * 「選択したフィールド」領域内のフィールド名右側に該当フィールドの値の種類数を表示
     * 「選択したフィールド」内のフィールド名をクリックした時に表示されるモーダルウィンドウで該当フィールドの値の種類数が100を超える場合、正確な数を表示
 
-### 2021. 07. 27.
+<a id="july-27-2021"></a>
+### 2021. 07. 27. { #july-27-2021 }
+<a id="july-27-2021-feature-updates"></a>
 #### 機能改善/変更
 * [Console] Webコンソールの全体的なUI/UXの改善および変更
 
-### 2021. 04. 27.
+<a id="april-27-2021"></a>
+### 2021. 04. 27. { #april-27-2021 }
+<a id="april-27-2021-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログ検索APIを提供
 * [Console]ログのダウンロード時、運営管理者がプロジェクトに設定したフィールドにマスキングを適用
 
+<a id="april-27-2021-bug-fixes"></a>
 #### バグ修正
 * [Console]ログ検索ページ中の本文にhtmlが含まれている場合、htmlの内容が解析されて表示される現象を修正
 * [Console]多数のクラッシュイシュー状態を同時に変更する場合に発生するエラーを修正
 
-### 2020. 12. 15.
+<a id="december-15-2020"></a>
+### 2020. 12. 15. { #december-15-2020 }
+<a id="december-15-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console]アラーム設定のうち、タイトルと説明の最大入力文字数を表示および制限
 * [Console]クラッシュアラームのうち、しきい値を0に修正すると保存できないバグを修正
 * [Console]ログ保管期間6か月、1年項目を削除、4か月を追加
 
-### 2020. 10. 27.
+<a id="october-27-2020"></a>
+### 2020. 10. 27. { #october-27-2020 }
+<a id="october-27-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console]セッションなしでアクセス可能なイベント詳細ページを新規サポート
     * ログアラーム発生時、従来のコンソールリンクの代わりにイベント詳細ページリンクをサポート
     * SMSにもイベント詳細ページリンクを追加
 
-### 2020. 10. 13.
+<a id="october-13-2020"></a>
+### 2020. 10. 13. { #october-13-2020 }
+<a id="october-13-2020-feature-updates"></a>
 #### 機能改善/変更
 * ログ(一般ログ、クラッシュログ)1件の容量制限を2MBから8MBへ変更
 
-### 2020. 09. 22.
+<a id="september-22-2020"></a>
+### 2020. 09. 22. { #september-22-2020 }
+<a id="september-22-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console]メール、Doorayアラームにおいて、添付されたTOAST Log & Crash SearchアクセスリンクでIAMコンソールをサポート
 
-### 2020. 08. 25
+<a id="august-25-2020"></a>
+### 2020. 08. 25 { #august-25-2020 }
+<a id="august-25-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console]アラームコールバック/Webフック(webhook)から複数の対象を入力して実行できるように改善
 
-### 2020. 07. 28.
+<a id="july-28-2020"></a>
+### 2020. 07. 28. { #july-28-2020 }
+<a id="july-28-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console]外部保管ログのデータ完全性検証機能を追加
     * [Console使用ガイド参考](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
 
-### 2020. 06. 23.
+<a id="june-23-2020"></a>
+### 2020. 06. 23. { #june-23-2020 }
+<a id="june-23-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console] Object、Arrayタイプのクエリー方式を変更
     * 文字列検索と同じ方法でクエリーを伝達する必要があります。
     * [Luceneクエリーガイド参考](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ja/lucene-query-guide/)
     
-### 2020. 05. 26.
+<a id="may-26-2020"></a>
+### 2020. 05. 26. { #may-26-2020 }
+<a id="may-26-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console] Bitcodeを適用したiOSアプリクラッシュ分析をサポート
     * 同じバージョン内でアーキテクチャごとにシンボルファイルをアップロードして分析できるように修正
 
-### 2020. 04. 28.
+<a id="april-28-2020"></a>
+### 2020. 04. 28. { #april-28-2020 }
+<a id="april-28-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console]ログ検索時、照会できる期間を最大3か月に制限
 * [API] Android NDKクラッシュ識別方式を変更
+<a id="april-28-2020-bug-fixes"></a>
 #### バグ修正
 * [Console]保存したクエリーの修正時、特定条件で保存されない問題を修正
 
 
-### 2020. 03. 24.
+<a id="march-24-2020"></a>
+### 2020. 03. 24. { #march-24-2020 }
+<a id="march-24-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console] 保存されたクエリーの削除に失敗した時のエラー文言を修正
 
-### 2020.02.25.
+<a id="february-25-2020"></a>
+### 2020.02.25. { #february-25-2020 }
+<a id="february-25-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console] SDKログ転送設定画面のツールチップ文言を修正
 * [Console] クエリー保存機能にLuceneクエリーの有効性検証プロセスを追加
+<a id="february-25-2020-bug-fixes"></a>
 #### バグ修正
 * [Console] シンボルファイルアップロード機能で特定Windowsシンボルファイルを処理できないバグを修正 
     * 複数回のビルドによりWindows PDBのage値が11を超過した場合、それ以降に抽出されたシンボルファイルはguidが34文字以上になる場合があります。guidフィールドの33文字制限を解除しました。
 * [Console] 30日が経過したログを検索する時、保存されたフィールドが正常に表示されないバグを修正
 
-### 2020.01.21.
+<a id="january-21-2020"></a>
+### 2020.01.21. { #january-21-2020 }
+<a id="january-21-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console] iOSクラッシュ発生位置を探す方法の変更
 * [Console] iOSクラッシュ追加情報表記 (TOAST SDK iOS 0.21.0以上のバージョンが必要です。)
 
-### 2019.10.29.
+<a id="october-29-2019"></a>
+### 2019.10.29. { #october-29-2019 }
+<a id="october-29-2019-feature-updates"></a>
 #### 機能改善/変更
 * [Console] S3アップロード機能を追加
 * [Console] 無効なアラームクエリーでアラームを有効にした時のエラー文言を変更
 
-### 2019.08.27.
+<a id="august-27-2019"></a>
+### 2019.08.27. { #august-27-2019 }
+<a id="august-27-2019-bug-fixes"></a>
 #### バグ修正
 - [Console]クエリーリストで、特定のクエリーが検索されない現象を修正
 
-### 2019.06.25.
+<a id="june-25-2019"></a>
+### 2019.06.25. { #june-25-2019 }
+<a id="june-25-2019-feature-updates"></a>
 #### 機能改善 / 変更
 * 一部iOSのクラッシュログのシンボリケーション結果が(null) ((null))になるイシューを修正
 * ログ(一般ログ、クラッシュログ)単件の容量制限を1MBから2MBに増加
 * アラーム受信者リストで、実際の電話番号が表示されるように修正
 
+<a id="june-25-2019-bug-fixes"></a>
 #### バグ修正
 * アラームの最終修正者がプロジェクトメンバーから除外された場合、修正されたアラームがリストで照会できない現象を修正
 
-### 2019.05.28.
+<a id="may-28-2019"></a>
+### 2019.05.28. { #may-28-2019 }
+<a id="may-28-2019-bug-fixes"></a>
 #### バグ修正
 * [Console] Windows 10、Internet Explorer 11環境で一部のページが正常に動作しない現象を修正
 * [Console]シンボルファイルをアップロードした時、一部のZIPファイルを解析できないイシューを修正
 * [Console] Webコンソールで言語を変更した時、特定部分が即時に反映されない現象を修正
 * [Console]アラームを設定した時、http/httpsコールバックのうち、httpsコールバックを設定できない現象を修正
 
-### 2019.03.27
+<a id="march-27-2019"></a>
+### 2019.03.27 { #march-27-2019 }
+<a id="march-27-2019-feature-updates"></a>
 #### 기능 개선 / 변경
 * [Console] iOS arm64e 기기에서 발생한 크래시 분석 지원 (호환이 되는 SDK가 필요합니다.)
 * [Console] Android NDK 에서 발생한 크래시 분석 지원 (호환이 되는 SDK가 필요합니다.)
 * [Console] 국제화 적용 (일본어)
 
-### 2019.01.15
+<a id="january-15-2019"></a>
+### 2019.01.15 { #january-15-2019 }
+<a id="january-15-2019-feature-updates"></a>
 #### 기능 개선 / 변경
 * [Console] User console 적용
 * [Console] Unity 에서 발생한 크래시를 지표에서 제외
@@ -219,7 +302,9 @@
 * [Console] 이슈트래커 등록 이후, 등록 이전 상태로 되돌리는 기능 추가
 * [Console] 심볼 파일 관리 화면에서 심볼리케이션에 사용되는 실제 심볼이름 강조 표기
 
-### 2018.11.27
+<a id="november-27-2018"></a>
+### 2018.11.27 { #november-27-2018 }
+<a id="november-27-2018-feature-updates"></a>
 #### 기능 개선 / 변경
 * [Console] 안드로이드 크래시 중 크래시가 발생한 부분이 unity 이며, 크래시 유형이 'java.lang.Error' 로 기록된 경우 예외 종류 정상적으로 판단하지 못하는 이슈 수정
     * 웹콘솔 > 크래시 > 이슈 조회에서 상세화면으로 진입이 되지 않는 이슈 수정
@@ -234,43 +319,57 @@
 * [Console] 웹콘솔 > 설정 > 심볼파일 업로드 화면에서 Android unity 심볼 파일 가이드 추가
 * [Console] Network insight URL 유효성 검증 변경
 
-### 2018.10.23
+<a id="october-23-2018"></a>
+### 2018.10.23 { #october-23-2018 }
+<a id="october-23-2018-feature-updates"></a>
 #### 기능 개선/ 변경
 * [Console] (구) 로그 알람 종료
     * [관련공지](https://toast.com/support/notice/detail/1453435858K00594)
 
-### 2018.09.18
+<a id="september-18-2018"></a>
+### 2018.09.18 { #september-18-2018 }
+<a id="september-18-2018-feature-updates"></a>
 #### 기능 개선/ 변경
 * [Console] 저장 쿼리 공유하기
 
-### 2018.09.04
+<a id="september-4-2018"></a>
+### 2018.09.04 { #september-4-2018 }
+<a id="september-4-2018-feature-updates"></a>
 #### 기능 개선/변경
 * [SDK][[logback-3.0.2](/Download/#data-analytics-log-crash-search)]
     * Logncrash Appender의 예약어 중 기본값이 없는 항목이 empty, null일 경우, 예약어 항목이 추가되지 않도록 개선
     * Logncrash REST API 타임아웃 설정
     * Logback의 AsyncAppender 사용
 
+<a id="september-4-2018-bug-fixes"></a>
 #### 버그 수정
 * [SDK][[logback-3.0.2](/Download/#data-analytics-log-crash-search)]
     * 일부 empty, null의 예약어 항목이 추가된 버그 수정
 
-### 2018.07.24
+<a id="july-24-2018"></a>
+### 2018.07.24 { #july-24-2018 }
 
+<a id="july-24-2018-feature-updates"></a>
 #### 기능 개선/변경
 * [Console] 설정 페이지 UI 변경
 
-### 2018.06.26
+<a id="june-26-2018"></a>
+### 2018.06.26 { #june-26-2018 }
 
+<a id="june-26-2018-bug-fixes"></a>
 #### 버그 수정
 * [SDK][[iOS-2.7.1](/Download/#data-analytics-log-crash-search)]
     * 중복하여 초기화 수행시 크래시 발생하던 버그 수정
 
-### 2018.06.05
+<a id="june-5-2018"></a>
+### 2018.06.05 { #june-5-2018 }
 
+<a id="june-5-2018-feature-updates"></a>
 #### 기능 개선/변경
 * [SDK][[Android-2.6.7](/Download/#data-analytics-log-crash-search)]
     * 저장된 로그의 경우, 필터를 거치지 않고 전송하도록 동작 변경
 
+<a id="june-5-2018-bug-fixes"></a>
 #### 버그 수정
 * [SDK][[iOS-2.7.0](/Download/#data-analytics-log-crash-search)]
     * SDK 내부 로직 개선
@@ -281,20 +380,25 @@
 * [SDK][[Unity-2.8.6](/Download/#data-analytics-log-crash-search)]
     * iOS 에서 Unity Crash Log 발생시 LogLevel 이 전부 FATAL로 설정되던 문제 수정
 
-### 2018.05.29
+<a id="may-29-2018"></a>
+### 2018.05.29 { #may-29-2018 }
 
 * [Console] iOS 크래시 심볼리케이션 중 중복된 이름의 Bundle(ex. Framework.UIKit, Accessibility.UIKit)이 존재 할 경우 심볼리케이션이 정상적으로 되지 않는 문제 수정
 
-### 2018.05.09
+<a id="may-09-2018"></a>
+### 2018.05.09 { #may-09-2018 }
 
+<a id="may-09-2018-bug-fixes"></a>
 #### 버그 수정
 
 * [SDK][[Unity-2.8.5](/Download/#data-analytics-log-crash-search)]
     * Unity Script에서 발생한 Crash logType 롤백
         * Unity Script에서 발생한 Crash를 HANDLED로 처리하는 로직이 적용되어 롤백합니다.
 
-### 2018.05.02 
+<a id="may-2-2018"></a>
+### 2018.05.02 { #may-2-2018 }
 
+<a id="may-2-2018-feature-updates"></a>
 #### 기능 개선/변경
 
 * [SDK][[AOS-2.6.6](/Download/#data-analytics-log-crash-search)]
@@ -304,6 +408,7 @@
 * [SDK][[Unity-2.8.4](/Download/#data-analytics-log-crash-search)]
     * Android Native SDK 호출 API 개선
 
+<a id="may-2-2018-bug-fixes"></a>
 #### 버그 수정
 
 * [SDK][[AOS-2.6.6](/Download/#data-analytics-log-crash-search)] 
@@ -313,30 +418,41 @@
     * 초기화 과정에서 UserID 의 값이 nil 일 때 Crash가 발생하던 문제 수정
     * 초기화 과정에서 enableSyncStart 의 값이 YES 일 경우 CPU 이용률이 100%까지 올라가는 문제 수정
 
-### 2018.04.24
+<a id="april-24-2018"></a>
+### 2018.04.24 { #april-24-2018 }
 
+<a id="april-24-2018-bug-fixes"></a>
 #### 버그수정
 * [Console] 앱 크래시 Gitlab 이슈 연동 시, 이슈 번호가 잘못 채번되는 문제 수정
 * [Console] 앱 크래시 용도의 심볼파일을 삭제 후 같은 버전으로 심볼파일 업로드 시, 정상적으로 심볼리케이션 되지 않는 문제 수정
 * [Console] SMS 알람에서 특정 문자가 알람 내용에 포함되어 있을 때 알람이 전송되지 않는 문제 수정
 * [Console] 앱 크래시에서 알람 수신자에 특정 국가코드가 포함되어 앱 크래시 SMS 알람이 전송되지 않는 문제 수정
 
-### 2018.01.22
+<a id="january-22-2018"></a>
+### 2018.01.22 { #january-22-2018 }
+<a id="january-22-2018-feature-updates"></a>
 #### 기능 개선/변경
 * [Console] Network Insights 신규 기능 출시
 
-### 2017.12.21
+<a id="december-21-2017"></a>
+### 2017.12.21 { #december-21-2017 }
+<a id="december-21-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [Console] 쿼리 기반 신규 알람 기능 추가
 
-### 2017.10.26
+<a id="october-26-2017"></a>
+### 2017.10.26 { #october-26-2017 }
+<a id="october-26-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [Console] 새로운 크래시 발생 시 알람 설정 기능 추가
 
+<a id="october-26-2017-bug-fixes"></a>
 #### 버그수정
 * [console] 세션 만료 시 에러 메시지를 노출하도록 수정
 
-### 2017.09.21
+<a id="september-21-2017"></a>
+### 2017.09.21 { #september-21-2017 }
+<a id="september-21-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [SDK] 초기화 과정에서 CrashHandler를 자동으로 등록하지 않는 함수 추가 (MultihandlerSample 참고)
 * [SDK] 외부에서 등록한 CrashHandler를 통해 Unity Crash를 전송할 수 있도록 변경 (MultihandlerSample 참고)
@@ -351,6 +467,7 @@
     * Unity 발생되는 ERROR 레벨의 로그들에 대해서 크래시로 분류 하지 않도록 수정됨
         * Log Search 화면에서 검색 및 조회 가능
 
+<a id="september-21-2017-bug-fixes"></a>
 #### 버그수정
 * [SDK] initialize를 여러번 호출하는 경우 SessionID가 갱신 되는 문제 수정
 * [SDK] BackKey로 Activity를 종료한 경우, SDK에서 마지막 Activity 상태를 저장하고 있어 Activity가 메모리에서 해제 되지 않는 문제 수정
@@ -362,16 +479,21 @@
 * [SDK] unity ios wrapper class에서 https 프로토콜이 지정되지 않던 문제 수정
     * 수정버전: [toast-logncrash-unity-2.8.3](/Download/#data-analytics-log-crash-search)
 
-### 2017.07.20
+<a id="july-20-2017"></a>
+### 2017.07.20 { #july-20-2017 }
+<a id="july-20-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [SDK] WebGL플랫폼 지원
     * 수정버전: [toast-logncrash-unity-2.7.4](/Download/#data-analytics-log-crash-search)
 * [Console] 크래시 목록 화면 softing option에서 사용자수 제거
 
+<a id="july-20-2017-bug-fixes"></a>
 #### 버그수정
 * [Console] 크래시 사용자 레이아웃 버그 수정
 
-### 2017.06.22
+<a id="june-22-2017"></a>
+### 2017.06.22 { #june-22-2017 }
+<a id="june-22-2017-bug-fixes"></a>
 #### 버그수정
 * [SDK] 중복제어 큐가 최대 사이즈가 넘은 경우, LFU 동작의 Delete 버그로 인해 Crash가 발생하는 현상 수정
     * 수정버전: [toast-logncrash-cpp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search) / [toast-logncrash-csharp-windows-sdk-2.5.4](/Download/#data-analytics-log-crash-search)/ [toast-logncrash-androidndk-sdk-2.6.2](/Download/#data-analytics-log-crash-search)
@@ -385,13 +507,17 @@
 * [SDK] 에러 내용을 errorCode와 txterrorCode 필드에 담아 전송하도록 변경
     * 수정버전: [toast-logncrash-logback-sdk-2.2.7](/Download/#data-analytics-log-crash-search) / [toast-logncrash-log4j-sdk-2.2.7](/Download/#data-analytics-log-crash-search)
 
-### 2017.06.19
+<a id="june-19-2017"></a>
+### 2017.06.19 { #june-19-2017 }
+<a id="june-19-2017-bug-fixes"></a>
 #### 버그수정
 * [SDK] SendThread에 Sleep이 없어 CPU 사용률이 99%가 되는 현상 수정
 * [SDK] 초당 100건의 로그를 보내는 경우, 메모리 해제가 정상적으로 되지 않는 현상 수정
     * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.6.1](/Download/#data-analytics-log-crash-search)
 
-### 2017.05.25
+<a id="may-25-2017"></a>
+### 2017.05.25 { #may-25-2017 }
+<a id="may-25-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [Console] 로그서치 필드명 자동완성 기능 추가
 * [Console] Crashes > 앱 크래시 지표 페이지 하단 테이블 UserID Column 표시 순서 변경 및 Gray 처리
@@ -401,12 +527,15 @@
 * [SDK] hotfield Enable/ Disable추가
     * 수정버전: [toast-logncrash-android-2.6.1](/Download/#data-analytics-log-crash-search) / [toast-logncrash-androidndk-sdk-2.6.1](/Download/#data-analytics-log-crash-search)
 
+<a id="may-25-2017-bug-fixes"></a>
 #### 버그 수정
 * [SDK] Unity Crash 재전송 시, Seesion 로그가 한 번 더 전송되는 동작 수정
 * [SDK] DevicID 필드가 누락되는 버그 수정
     * 수정버전: [toast-logncrash-ios-unity-mac-sdk-2.6.5.1](/Download/#data-analytics-log-crash-search)
 
-### 2017.04.20
+<a id="april-20-2017"></a>
+### 2017.04.20 { #april-20-2017 }
+<a id="april-20-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [Console] 앱크래시지표 화면 레이아웃 변경
     * 앱크래시지표 화면에 SDK버전 표시
@@ -430,18 +559,24 @@
     * [Toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search)
     *  Toast-logncrash-unity-ios-sdk / toast-logncrash-ios-mac-sdk 삭제
 
+<a id="april-20-2017-bug-fixes"></a>
 #### 버그 수정
 * 알람 주기가 1분이 아닌 경우 snooze 가 동작 하지 않는 무제 수정
-### 2017.03.23
+<a id="march-23-2017"></a>
+### 2017.03.23 { #march-23-2017 }
+<a id="march-23-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [Console] 덤프 분석에 실패한 크래시도 UNKNOWN 크래시 형태로 통계 정보를 제공 하도록 기능 개선
 * [Console] 스택 트레이스를 표시할 수 없을때, 스택 트레이스 화면에 안내 문구 표시
     * 심볼파일을 등록하지 않아서 스택 트레이스를 표시할 수 없을 때 (에러타입이 UNKNOWN일 때), 스택 트레이스 화면에 안내문구 표시
 
+<a id="march-23-2017-bug-fixes"></a>
 #### 버그 수정
 * [Console] 영문 크래시 서치 화면에서 Real Time Monitoring 탭 깨지는 현상
 
-### 2017.02.23
+<a id="february-23-2017"></a>
+### 2017.02.23 { #february-23-2017 }
+<a id="february-23-2017-feature-updates"></a>
 #### 기능 개선/변경
 * [API] [log Bulk upload](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/api-guide/) 기능 추가
     * REST API 로그 전송시 JSON array 형태로 로그 전송이 가능합니다.
@@ -451,6 +586,7 @@
 * [SDK] CrashCallback 기능 추가
     * [Windwos csharp SDK 2.5.2.1](/Download/#data-analytics-log-crash-search) / [Windows cpp SDK 2.5.2.1](/Download/#data-analytics-log-crash-search)
 
+<a id="february-23-2017-bug-fixes"></a>
 #### 버그 수정
 * [WEB] 저장된 쿼리 보기 페이지에서 쿼리 삭제 불가능한 문제 수정
 * [WEB] 이슈 상세에서 뒤로가기 클릭하면 이슈 목록 1페이지로 이동하지 않도록 pagination 개선
@@ -463,14 +599,19 @@
 * [SDK] Async 모드에서 customField 가 추가되지 않는 현상 수정
     * [Log4j-sdk-2.2.5](/Download/#data-analytics-log-crash-search)/ [Logback-sdk-2.2.5](/Download/#data-analytics-log-crash-search)
 
-### 2017.01.19
+<a id="january-19-2017"></a>
+### 2017.01.19 { #january-19-2017 }
+<a id="january-19-2017-feature-updates"></a>
 #### 기능 개선/변경
 * 앱 크래시 지표 버전 표시 기준 변경
     * 앱 크래시 지표 > 크래시가 발생하지 않았지만 실행수가 존재하는 버전도 표시 되도록 수정
+<a id="january-19-2017-bug-fixes"></a>
 #### 버그 수정
 * Log Search 화면에 로그 모두 보이기/숨기기 기능 수정
 
-### 2016.12.22
+<a id="december-22-2016"></a>
+### 2016.12.22 { #december-22-2016 }
+<a id="december-22-2016-feature-updates"></a>
 #### 기능 개선/변경
 * Web 화면에서 로그 파일 다운로드시 최대 10만개로 제한
     * 10만개 이상 시도시 팝업 알람
@@ -479,25 +620,33 @@
 * [SDK] Log Duplicate Queue Size가 최대 1,000개로 제한
     * 수정버전: Android-2.4.3, Android-NDK-2.4.5, iOS-2.4.1, unity-android-2.5.1, unity-ios-2.5.1
 
-### 2016.12.08
+<a id="december-8-2016"></a>
+### 2016.12.08 { #december-8-2016 }
+<a id="december-8-2016-feature-updates"></a>
 #### 기능 개선/변경
 * 이슈 조회 > 이슈 상세 > 코멘트, 히스토리 탭에서 내용을 등록한 사용자가 프로젝트 멤버에서 삭제 된 경우
   이메일 노출 부분에 "[삭제된 멤버]"로 표시
 
+<a id="december-8-2016-bug-fixes"></a>
 #### 버그 수정
 * 로그 알람 설정 시 필터링 규칙의 (비)포함 문자열에 "\"가 포함될 경우 로그 알람 목록이 조회되지 않는 버그 수정
 * 크래시 알람 신규 저장 시 멤버 리스트가 없을 경우 실패 알람이 뜨도록 수정
 
-### 2016.11.24
+<a id="november-24-2016"></a>
+### 2016.11.24 { #november-24-2016 }
 * [SDK] 일부 기기에서 host필드를 구하는데 사용되는 getaddrinfo 함수가 hang현상을 유발하여, host값은 내부 thread에서 구하도록 변경
   * 수정버전: Android-NDK 2.4.4
 
-### 2016.11.04
+<a id="november-4-2016"></a>
+### 2016.11.04 { #november-4-2016 }
+<a id="november-4-2016-bug-fixes"></a>
 #### 버그 수정
 * [SDK] Android 2.4.1 버전에서 AsyncTask가 Cancel 되지 못하는 버그가 있어, 해당 로직을 Thread로 변경
   * 수정버전: Android 2.4.2
 
-### 2016.10.20
+<a id="october-20-2016"></a>
+### 2016.10.20 { #october-20-2016 }
+<a id="october-20-2016-feature-updates"></a>
 #### 기능 개선/변경
 * 기기의 고유 ID 값인 DeviceID 수집
     * 신규 SDK을 통한 Crash Log 전송시 DeviceID가 수집되어 Console > Log & Crash Search > Crashes > 앱 크래시 지표 화면에서
@@ -509,7 +658,9 @@
     * 상세내용은 Developer's Guide 참고.
 * [Console] 앱 크래시 지표 화면 > '세션','사용자수' 타이틀 '실행 수' '크래시를 겪은 사용자'로 변경됨.
 
-### 2016.09.29
+<a id="september-29-2016"></a>
+### 2016.09.29 { #september-29-2016 }
+<a id="september-29-2016-feature-updates"></a>
 #### 기능 개선/변경
 * 알람 임계치 설정 및 http Callback 기능 추가
     * 알람 임계 값 비교 연산자 지원(>,>=,=,<=,<)
@@ -518,18 +669,23 @@
 * Log Search 화면에서 다운로드 가능한 UserTxtData 필드 추가
     * "UserTxtData" 필드는 Log Search 화면에서 [다운로드|보기] 표시 하여 필드 내용을 바로 확인이 가능
 
+<a id="september-29-2016-bug-fixes"></a>
 #### 버그 수정
 * [SDK] Exception이 발생한 경우 , 로그 전송 객체를 초기화 하지 못하여 반복적으로 초기화를 재시도 하던 버그 수정
     * 수정된 SDK: logback , log4j, log4j2
 * [SDK] init 함수에 UserID를 세팅하면 로그에 값이 정상적으로 추가되지 않던 버그 수정
     * 수정된 SDK: iOS
 
-### 2016.09.12
+<a id="september-12-2016"></a>
+### 2016.09.12 { #september-12-2016 }
+<a id="september-12-2016-bug-fixes"></a>
 #### 버그 수정
 * [SDK] Carrier와 Carrier 값이 null이 return되는 케이스에 대한 예외처리 코드 추가
     * 수정된 SDK: Unity(v.2.3.4)
 
-### 2016.08.22
+<a id="august-22-2016"></a>
+### 2016.08.22 { #august-22-2016 }
+<a id="august-22-2016-feature-updates"></a>
 #### 기능 개선/변경
 * Custom Field Default 옵션 및 길이 제한 변경
     * Custom 필드 생성시 analyzed(분석여부) false 로 변경
@@ -539,7 +695,9 @@
       로그 검색 화면에서 필드 값의 일부 문자열로 검색이 가능
 
 
-### 2016.08.18
+<a id="august-18-2016"></a>
+### 2016.08.18 { #august-18-2016 }
+<a id="august-18-2016-feature-updates"></a>
 #### 기능 개선/변경
 * Log 전송 ON / OFF 기능 추가
     * Log & Crash Search 로 전송되는 로그(일반로그/크래시로그/세션로그)에 대해 사용자가 콘솔에서
@@ -551,11 +709,14 @@
 * [API] UserBinaryData 필드 추가
     * 로그 파일이나 바이너리 파일을 위 필드로 전송시 로그 검색 화면에 다운로드 가능
 
+<a id="august-18-2016-bug-fixes"></a>
 #### 버그 수정
 * [Console] Crash 상세 페이지 로딩 속도 문제 수정
 
 
-### 2016.08.04
+<a id="august-4-2016"></a>
+### 2016.08.04 { #august-4-2016 }
+<a id="august-4-2016-feature-updates"></a>
 #### 기능 개선/변경
 * [SDK][Unity] 2.2.6 업데이트
     * SaveToFile 저장 포맷 변경
@@ -563,5 +724,6 @@
     * 파일 최대 저장 개수 100개 제한
     * 중복 제거 큐 100개 제한
 
+<a id="august-4-2016-bug-fixes"></a>
 #### 버그 수정
 * [API] 특정 필드에 json array나 object를 전송한 경우 string으로 변환 되는 현상 수정

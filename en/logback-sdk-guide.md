@@ -1,8 +1,12 @@
-## Data & Analytics > Log & Crash Search > Logback SDK Guide
+<!-- pre-align:aligned sig=fdc80d476a42 -->
+
+<a id="data-analytics-log-crash-search-logback-sdk-guide"></a>
+## Data & Analytics > Log & Crash Search > Logback SDK Guide { #data-analytics-log-crash-search-logback-sdk-guide }
 
 Log & Crash Logback SDK sends logs to a Log & Crash Search collector server. It allows to retrieve or search logs sent from Log & Crash Search and operates under a multi-threading environment. 
 
-## 1. Add Log & Crash Logback SDK
+<a id="add-log-crash-logback-sdk"></a>
+## 1. Add Log & Crash Logback SDK { #add-log-crash-logback-sdk }
 
 Add logncrash-java-sdk3-4.0.0.jar to dependency. 
 Download Log & Crash Logback SDK from  [NHN Cloud Document](http://docs.toast.com/en/Download/).
@@ -15,9 +19,11 @@ Click [DOCUMENTS] > [Download] > [Data & Analytics > Log & Crash Search] > [Logb
 - Log & Crash Logback SDK has dependency on the libraries of`logback-classic 1.5.3+, apache httpclient 5.3.1+, json 20240303+`.
 - It is recommended to apply the highest version to prevent any potential issues from redundant libraries.
 
-## 2. Add Dependency for Log & Crash Logback SDK
+<a id="add-dependency-for-log-crash-logback-sdk"></a>
+## 2. Add Dependency for Log & Crash Logback SDK { #add-dependency-for-log-crash-logback-sdk }
 
-### 2.1 Install Maven 
+<a id="1-install-maven"></a>
+### 2.1 Install Maven { #1-install-maven }
 
 Add dependency to pom.xml.  
 
@@ -38,7 +44,8 @@ Add dependency to pom.xml.
     <version>1.5.3</version>
 </dependency>
 ```
-### 2.2 Install Gradle 
+<a id="2-install-gradle"></a>
+### 2.2 Install Gradle { #2-install-gradle }
 
 ```gradle
 dependencies {  
@@ -48,7 +55,8 @@ dependencies {
 }
 ```
 
-## 3. Logger Setting and Options  
+<a id="logger-setting-and-options"></a>
+## 3. Logger Setting and Options { #logger-setting-and-options }
 
 Following description is based on logback.xml. 
 
@@ -84,7 +92,8 @@ Following description is based on logback.xml.
 </logger>
 ```
 
-### 3.1 AsyncAppender Option of Logback
+<a id="1-asyncappender-option-of-logback"></a>
+### 3.1 AsyncAppender Option of Logback { #1-asyncappender-option-of-logback }
 
 - For more details, see [Official Documents](https://logback.qos.ch/manual/appenders.html#AsyncAppender).
 
@@ -95,7 +104,8 @@ Following description is based on logback.xml.
 | neverBlock        | If it is set for False, while queues are full, the appender blocks application to prevent loss of messages. For True, messages are dropped in order not to stop application. |
 | maxFlushTime      | When LoggerContext is suspended, the stop method of AsyncAppender queues until an operation thread is timed out. With maxFlushTime, timeout can be set by the millisecond. Any events that fail to be processed within time set shall be deleted. |
 
-### 3.2 LogNCrashHttpAppender Option of Log & Crash Logback SDK
+<a id="2-logncrashhttpappender-option-of-log-crash-logback-sdk"></a>
+### 3.2 LogNCrashHttpAppender Option of Log & Crash Logback SDK { #2-logncrashhttpappender-option-of-log-crash-logback-sdk }
 
 For other values, except appKey, default information shall be entered, unless param is written as optional.   
 
@@ -109,7 +119,8 @@ For other values, except appKey, default information shall be entered, unless pa
 | category      | Specify the category of collected logs.                      |              |
 | errorCodeType | Set the type of error information collected when error occurs: default, action, message, or mdc. <br />- default: Use throwable information.<br />- action: Return errors including URL path information.  <br />- message: Return messages set for logger only.  <br />- mdc: Set value of errorCode item of MDC. | default      |
 
-### 3.3 User-defined Option 
+<a id="3-user-defined-option"></a>
+### 3.3 User-defined Option { #3-user-defined-option }
 
 Items not defined in LogNCrashHttpAppender of Log & Crash may be added by using MDC of slf4j. (However,`category` may be changed.) 
 
@@ -120,6 +131,7 @@ MDC.put("userIp", "127.0.0.1");
 MDC.clear();
 ```
 
+<a id="3-user-defined-option-reserved-words-which-cannot-be-changed-with-mdc-no-difference-between-upper-and-lower-cases"></a>
 #### Reserved words which cannot be changed with MDC (no difference between upper and lower cases)
 
  
@@ -129,7 +141,8 @@ MDC.clear();
 | form        | logType  | cookie         | body    | agent     | logLevel |
 | host        | referer  | sendTime       | dmpData | dmpFormat |          |
 
-## 4. Example of LogNCrash SDK 
+<a id="example-of-logncrash-sdk"></a>
+## 4. Example of LogNCrash SDK { #example-of-logncrash-sdk }
 
 Applied as follows in Java: 
 
@@ -161,13 +174,16 @@ public class LogNCrash {
 }
 ```
 
-## FAQs
+<a id="faqs"></a>
+## FAQs { #faqs }
 
-### Q. Can I send logs only with LogNCrashHttpAppender of Log & Crash Logback SDK?
+<a id="q-can-i-send-logs-only-with-logncrashhttpappender-of-log-crash-logback-sdk"></a>
+### Q. Can I send logs only with LogNCrashHttpAppender of Log & Crash Logback SDK? { #q-can-i-send-logs-only-with-logncrashhttpappender-of-log-crash-logback-sdk }
 
 It is possible, since LogNCrashHttpAppender of Log & Crash Logback SDK sends logs to a collector server, by using the sync method. Nevertheless, although logs may be lost to the minimum, performance degradation may occur to Application when the Log & Crash Logback system fails, it is recommended to apply Async Appender. 
 
-### Q. How can I use logncrash client in a batch program (project)?
+<a id="q-how-can-i-use-logncrash-client-in-a-batch-program-project"></a>
+### Q. How can I use logncrash client in a batch program (project)? { #q-how-can-i-use-logncrash-client-in-a-batch-program-project }
 
 Add a code that allows you to wait for seconds at the end of a batch program. 
 
@@ -180,7 +196,8 @@ try {
 In a Java batch program, the main thread is immediately closed, closing batch application before a demonstration thread of LogbackAsyncAppender is created to send logs. 
 When there is no remaining general thread, regardless of demonstration threads, JVM is immediately closed. Therefore, a code needs to be added that allows waiting at the end of a program, so that a program can be closed after all logs are delivered. 
 
-### Q. How can a Java stack trace be logged to a logback (including Log & Crash Search)?
+<a id="q-how-can-a-java-stack-trace-be-logged-to-a-logback-including-log-crash-search"></a>
+### Q. How can a Java stack trace be logged to a logback (including Log & Crash Search)? { #q-how-can-a-java-stack-trace-be-logged-to-a-logback-including-log-crash-search }
 
 To get an output of stack trace by using logback, use the log.error (e.getMessage(), e); type. SLF4J Logger, as a method parameter, does not support the logging method which receives Throwables only.  
 
@@ -193,7 +210,8 @@ try {
 }
 ```
 
-### Q. How can I safely close WAS?
+<a id="q-how-can-i-safely-close-was"></a>
+### Q. How can I safely close WAS? { #q-how-can-i-safely-close-was }
 
 When closing WAS (such as Tomcat) while error logs are sent, following exception may occur and WAS may not be closed properly.  
 

@@ -1,12 +1,17 @@
-## Data & Analytics > Log & Crash Search > API 가이드
-### Appkey와 SecretKey
+<!-- pre-align:aligned sig=956b0b576e08 -->
+
+<a id="data-analytics-log-crash-search-api-guide"></a>
+## Data & Analytics > Log & Crash Search > API 가이드 { #data-analytics-log-crash-search-api-guide }
+<a id="appkey-and-secretkey"></a>
+### Appkey와 SecretKey { #appkey-and-secretkey }
 Log & Crash Search API를 사용하려면 Appkey와 SecretKey가 필요합니다.
 
 Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키로 API 요청 시 서비스 식별과 유효성 검증에 사용됩니다. SecretKey는 API에 대한 접근을 제어하는 비밀 키입니다.
 
 Appkey 및 SecretKey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey)를 참고하세요.
 
-## 로그 수집 API
+<a id="collect-log-api"></a>
+## 로그 수집 API { #collect-log-api }
 
 HTTP 프로토콜을 사용해 Log & Crash 수집 서버에 로그를 전송할 수 있습니다.
 
@@ -215,7 +220,8 @@ resultList: array
     [out] 전송된 각 로그들의 결과 값
 ```
 
-### 샘플
+<a id="samples"></a>
+### 샘플 { #samples }
 
 [curl을 사용해 정상적으로 로그를 전송한 경우]
 
@@ -282,7 +288,8 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 ]'
 ```
 
-## 로그 검색 API
+<a id="log-search-api"></a>
+## 로그 검색 API { #log-search-api }
 
 > [주의] 이 API는 지원 종료될 예정입니다. 신규로 개발할 때는 아래 [v3 로그 검색 API](#v3-로그-검색-api) 사용을 권장합니다.
 
@@ -292,7 +299,8 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 
 ![lncs-api-01-20230925](https://static.toastoven.net/prod_logncrash/lncs-api-01-20230925.png)
 
-### 기본 정보
+<a id="basic-information"></a>
+### 기본 정보 { #basic-information }
 ```
 API Endpoint: https://api-lncs-search.nhncloudservice.com
 ```
@@ -300,7 +308,8 @@ API Endpoint: https://api-lncs-search.nhncloudservice.com
 검색은 최근 90일 이내의 로그만 가능하며, 시작 시간과 종료 시간의 범위는 31일을 초과할 수 없습니다.
 ```
 
-### Search API
+<a id="search-api"></a>
+### Search API { #search-api }
 Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 검색 결과(totalItems)에는 제한이 없으나, 페이징으로 조회 가능한 범위는 최대 100,000건(`pageNumber × pageSize ≤ 100,000`)까지입니다. 그보다 많은 로그를 조회하려면 Search API(Cursor 페이지네이션) 또는 Scroll API를 사용하세요.
 ```
 POST /api/v2/search/{appkey}
@@ -308,16 +317,19 @@ POST /api/v2/search/{appkey}
 Content-Type: application/json
 ```
 
+<a id="search-api-request-parameter"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 
+<a id="search-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명             | 필수 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | 프로젝트 SecretKey | O |
 
+<a id="search-api-request-body"></a>
 #### 요청 본문
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
@@ -345,6 +357,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="search-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -382,7 +395,8 @@ Content-Type: application/json
 </details>
 
 
-### Search API(Cursor 페이지네이션)
+<a id="search-api-cursor-pagination"></a>
+### Search API(Cursor 페이지네이션) { #search-api-cursor-pagination }
 Search API와 동일한 엔드포인트에서 URL 쿼리 파라미터 `?cursor`를 지정해 옵트인(opt-in)하면 cursor(search_after) 기반 페이지네이션을 사용할 수 있습니다. 깊은 페이지로 이동하더라도 `pageNumber × pageSize`의 result window 한계(기본 검색 API 100,000건)에 영향을 받지 않고 순차적으로 다음 페이지를 조회할 수 있습니다.
 
 ```
@@ -397,17 +411,20 @@ Content-Type: application/json
 > - 한 번의 호출에서 받을 수 있는 페이지 크기 제한(`pageSize` 최댓값 100)은 일반 Search API와 동일하게 적용됩니다.
 > - 마지막 페이지에 도달하면 응답 본문에 `nextCursor` 필드가 포함되지 않습니다.
 
+<a id="search-api-cursor-pagination-request-parameters"></a>
 #### 요청 파라미터
 | 이름 | 위치 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- | --- |
 | appkey | Path | String | 프로젝트 앱키 | O |
 | cursor | Query | - | cursor 기반 페이지네이션 옵트인 플래그. `?cursor`, `?cursor=true` 지정 시 활성화 | O |
 
+<a id="search-api-cursor-pagination-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명             | 필수 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | 프로젝트 SecretKey | O |
 
+<a id="search-api-cursor-pagination-request-body"></a>
 #### 요청 본문
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
@@ -451,6 +468,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="search-api-cursor-pagination-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -515,7 +533,8 @@ Content-Type: application/json
 </details>
 
 
-### Scroll Start API
+<a id="scroll-start-api"></a>
+### Scroll Start API { #scroll-start-api }
 Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지 지정 없이 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
 ```
 POST /api/v2/search/scroll/{appkey}
@@ -523,16 +542,19 @@ POST /api/v2/search/scroll/{appkey}
 Content-Type: application/json
 ```
 
+<a id="scroll-start-api-request-parameter"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 
+<a id="scroll-start-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명             | 필수 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | 프로젝트 SecretKey | O |
 
+<a id="scroll-start-api-request-body"></a>
 #### 요청 본문
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
@@ -558,6 +580,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="scroll-start-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -595,7 +618,8 @@ Content-Type: application/json
 </details>
 
 
-### Scroll Continue API
+<a id="scroll-continue-api"></a>
+### Scroll Continue API { #scroll-continue-api }
 Scroll Start API 또는 직전에 호출한 Scroll Continue API로부터 얻은 Scroll Key를 지정하여 로그 조회를 지속합니다.<br>
 Scroll Key는 1분간 유효합니다.
 ```
@@ -604,20 +628,24 @@ POST /api/v2/search/scroll/{appkey}/{scrollKey}
 Content-Type: application/json
 ```
 
+<a id="scroll-continue-api-request-parameter"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 | scrollKey | String | Scroll Key | O |
 
+<a id="scroll-continue-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명             | 필수 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | 프로젝트 SecretKey | O |
 
+<a id="scroll-continue-api-request-body"></a>
 #### 요청 본문
 Scroll Continue API는 요청 본문이 필요하지 않습니다.
 
+<a id="scroll-continue-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -652,22 +680,26 @@ Scroll Continue API는 요청 본문이 필요하지 않습니다.
 ```
 </details>
 
-### Available Token API
+<a id="available-token-api"></a>
+### Available Token API { #available-token-api }
 사용 가능한 토큰 수를 조회합니다.
 ```
 GET /api/v2/search/available-tokens/{appkey}
 ```
 
+<a id="available-token-api-request-parameter"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 
+<a id="available-token-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명             | 필수 |
 | --- | --- |----------------| --- |
 | X-LNCS-SECRET | String | 프로젝트 SecretKey | O |
 
+<a id="available-token-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -691,25 +723,29 @@ GET /api/v2/search/available-tokens/{appkey}
 </details>
 
 
-## v3 로그 검색 API
+<a id="v3-log-search-api"></a>
+## v3 로그 검색 API { #v3-log-search-api }
 
 저장된 로그를 Lucene 쿼리를 사용해 검색할 수 있으며, 크래시 분석용 Symbol 파일 업로드/조회/삭제 기능을 제공합니다.<br>
 로그 검색 API는 사용 패턴에 따라 시간당 요청할 수 있는 양을 제한합니다. 검색에 사용 가능한 리소스는 토큰으로 표현하며, 검색 API를 호출할 때마다 내부 기준에 따라 일정량이 차감됩니다. 토큰 잔량이 양수일 때 검색 API를 사용할 수 있습니다.<br>
 검색 시 차감되는 토큰 수는 검색 기간 및 용량, 쿼리의 복잡도에 따라 달라지며, 토큰은 시간이 경과함에 따라 자동으로 충전됩니다.<br>
 
-### 인증
+<a id="authentication"></a>
+### 인증 { #authentication }
 
 API 호출 및 인증을 위한 방법으로 User Access Key 토큰을 지원합니다.<br>
 토큰 발급 방법은 아래 링크를 참고하세요.
 
 [User Access Key Token](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/user-access-key-token/)
 
+<a id="authentication-example-http-header-for-an-api-request"></a>
 #### API 요청의 HTTP 헤더 예시
 ```
 X-NHN-Authorization: Bearer {Access Token}
 ```
 
-### Search API
+<a id="v3-log-search-api-search-api"></a>
+### Search API { #v3-log-search-api-search-api }
 Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 조회합니다. 검색 결과(totalItems)에는 제한이 없으나, 페이징으로 조회 가능한 범위는 최대 100,000건(`pageNumber × pageSize ≤ 100,000`)까지입니다. 그보다 많은 로그를 조회하려면 Cursor Search API 또는 Scroll API를 사용하세요.
 ```
 POST /v3/{appkey}/logs/search
@@ -717,16 +753,19 @@ POST /v3/{appkey}/logs/search
 Content-Type: application/json
 ```
 
+<a id="v3-log-search-api-search-api-request-parameters"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 
+<a id="v3-log-search-api-search-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
 
+<a id="v3-log-search-api-search-api-request-body"></a>
 #### 요청 본문
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
@@ -754,6 +793,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="v3-log-search-api-search-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -791,7 +831,8 @@ Content-Type: application/json
 </details>
 
 
-### Cursor Search API
+<a id="cursor-search-api"></a>
+### Cursor Search API { #cursor-search-api }
 cursor(opaque) 기반 페이지네이션으로 로그를 검색합니다.<br>
 깊은 페이지로 이동해도 `pageNumber × pageSize`의 result window 한계에 영향받지 않고 순차적으로 조회 가능합니다.
 
@@ -807,16 +848,19 @@ POST /v3/{appkey}/logs/cursor
 Content-Type: application/json
 ```
 
+<a id="cursor-search-api-request-parameters"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 
+<a id="cursor-search-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
 
+<a id="cursor-search-api-request-body"></a>
 #### 요청 본문
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
@@ -844,6 +888,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="cursor-search-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -883,7 +928,8 @@ Content-Type: application/json
 </details>
 
 
-### Scroll Start API
+<a id="v3-log-search-api-scroll-start-api"></a>
+### Scroll Start API { #v3-log-search-api-scroll-start-api }
 Lucene 쿼리를 사용하여 지정한 시간 범위의 로그를 페이지 지정 없이 모두 조회합니다. Scroll Continue API와 함께 사용하여 여러 차례에 걸쳐 조회할 수 있습니다.
 ```
 POST /v3/{appkey}/logs/scroll
@@ -891,16 +937,19 @@ POST /v3/{appkey}/logs/scroll
 Content-Type: application/json
 ```
 
+<a id="v3-log-search-api-scroll-start-api-request-parameters"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 
+<a id="v3-log-search-api-scroll-start-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
 
+<a id="v3-log-search-api-scroll-start-api-request-body"></a>
 #### 요청 본문
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
@@ -926,6 +975,7 @@ Content-Type: application/json
 ```
 </details>
 
+<a id="v3-log-search-api-scroll-start-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -963,7 +1013,8 @@ Content-Type: application/json
 </details>
 
 
-### Scroll Continue API
+<a id="v3-log-search-api-scroll-continue-api"></a>
+### Scroll Continue API { #v3-log-search-api-scroll-continue-api }
 Scroll Start API 또는 직전에 호출한 Scroll Continue API로부터 얻은 Scroll Key를 지정하여 로그 조회를 지속합니다.<br>
 Scroll Key는 1분간 유효합니다.
 ```
@@ -972,20 +1023,24 @@ POST /v3/{appkey}/logs/scroll/{scrollKey}
 Content-Type: application/json
 ```
 
+<a id="v3-log-search-api-scroll-continue-api-request-parameters"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 | scrollKey | String | Scroll Key | O |
 
+<a id="v3-log-search-api-scroll-continue-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
 
+<a id="v3-log-search-api-scroll-continue-api-request-body"></a>
 #### 요청 본문
 Scroll Continue API는 요청 본문이 필요하지 않습니다.
 
+<a id="v3-log-search-api-scroll-continue-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -1021,22 +1076,26 @@ Scroll Continue API는 요청 본문이 필요하지 않습니다.
 </details>
 
 
-### Available Token API
+<a id="v3-log-search-api-available-token-api"></a>
+### Available Token API { #v3-log-search-api-available-token-api }
 사용 가능한 토큰 수를 조회합니다.
 ```
 GET /v3/{appkey}/logs/available-token
 ```
 
+<a id="v3-log-search-api-available-token-api-request-parameters"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 
+<a id="v3-log-search-api-available-token-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
 
+<a id="v3-log-search-api-available-token-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -1060,7 +1119,8 @@ GET /v3/{appkey}/logs/available-token
 </details>
 
 
-### Symbol Upload API
+<a id="symbol-upload-api"></a>
+### Symbol Upload API { #symbol-upload-api }
 크래시 분석용 Symbol 파일을 업로드합니다.
 ```
 POST /v3/{appkey}/symbols?platform={platform}&version={version}&description={description}
@@ -1068,6 +1128,7 @@ POST /v3/{appkey}/symbols?platform={platform}&version={version}&description={des
 Content-Type: multipart/form-data
 ```
 
+<a id="symbol-upload-api-request-parameters"></a>
 #### 요청 파라미터
 | 이름 | 위치 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- | -- |
@@ -1076,16 +1137,19 @@ Content-Type: multipart/form-data
 | version | Query | String | Symbol 버전 | O |
 | description | Query | String | Symbol 설명(공백 등 특수 문자는 URL 인코딩 필요) |  |
 
+<a id="symbol-upload-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
 
+<a id="symbol-upload-api-request-body"></a>
 #### 요청 본문
 | 이름 | 형식 | 설명 | 필수 | 비고 |
 | --- | --- | --- | --- | --- |
 | symbolfile | Binary | Symbol 파일 | O | multipart/form-data 형식으로 전송 |
 
+<a id="symbol-upload-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -1113,12 +1177,14 @@ Content-Type: multipart/form-data
 </details>
 
 
-### Symbol List API
+<a id="symbol-list-api"></a>
+### Symbol List API { #symbol-list-api }
 업로드된 Symbol 파일 목록을 조회합니다. `platform`/`version` 값으로 필터링하며, 전체 조회 시 두 값 모두 `all`로 호출합니다.
 ```
 GET /v3/{appkey}/symbols/{platform}/{version}
 ```
 
+<a id="symbol-list-api-request-parameters"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
@@ -1126,11 +1192,13 @@ GET /v3/{appkey}/symbols/{platform}/{version}
 | platform | String | Symbol 플랫폼 필터(전체 조회 시 `all`) | O |
 | version | String | Symbol 버전 필터(전체 조회 시 `all`) | O |
 
+<a id="symbol-list-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
 
+<a id="symbol-list-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |
@@ -1158,23 +1226,27 @@ GET /v3/{appkey}/symbols/{platform}/{version}
 </details>
 
 
-### Symbol Delete API
+<a id="symbol-delete-api"></a>
+### Symbol Delete API { #symbol-delete-api }
 Symbol 파일을 단건 삭제합니다.
 ```
 DELETE /v3/{appkey}/symbols/{sid}
 ```
 
+<a id="symbol-delete-api-request-parameters"></a>
 #### 요청 파라미터
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | appkey | String | 프로젝트 앱키 | O |
 | sid | String | Symbol 파일 ID | O |
 
+<a id="symbol-delete-api-request-header"></a>
 #### 요청 헤더
 | 이름 | 형식 | 설명 | 필수 |
 | --- | --- | --- | --- |
 | X-NHN-Authorization | String | `Bearer {Access Token}` 형식의 User Access Key 토큰 | O |
 
+<a id="symbol-delete-api-response"></a>
 #### 응답
 | 이름 | 종류 | 형식 | 설명 |
 | --- | --- | --- | --- |

@@ -1,4 +1,7 @@
-## Data & Analytics > Log & Crash Search > コンソール使用ガイド
+<!-- pre-align:aligned sig=62aa7702009c -->
+
+<a id="data-analytics-log-crash-search-console-user-guide"></a>
+## Data & Analytics > Log & Crash Search > コンソール使用ガイド { #data-analytics-log-crash-search-console-user-guide }
 
 Log & Crash Searchは、次のような順序で使用できます。
 
@@ -9,14 +12,16 @@ Log & Crash Search SDKを通して、ログの転送を開始します。
 - ログ確認 
 ログを転送した後は、**ログ検索**または**アプリクラッシュ検索**画面でチャートや検索など、多様な方式でログを確認できます。
 
-## プロジェクト選択
+<a id="select-a-project"></a>
+## プロジェクト選択 { #select-a-project }
 
 コンソールに接続し、左側メニューを利用して組織(Organization)とプロジェクト(Project)を選択します。組織やプロジェクトがない場合は、作成する必要があります。
 - 左側メニューから**ORGANIZATION > PROJECT**をクリックします。
 
 組織とプロジェクトの作成方法は[NHN Cloudコンソール使用ガイド](https://docs.toast.com/ko/TOAST/ko/console-guide/)を参照してください。
 
-## サービス有効化
+<a id="enable-the-service"></a>
+## サービス有効化 { #enable-the-service }
 
 プロジェクト(Project)を選択した状態で、画面上部にある**サービス選択**ボタンをクリックして、**Data & Analytics**の下**Log & Crash Search**をクリックします。サービスが有効になると、サービス名の横に選択(v)表示が現れます。
 
@@ -25,14 +30,16 @@ Log & Crash Search SDKを通して、ログの転送を開始します。
 
 Log & Crash Searchが有効になると、左側メニューに**Data & Analytics > Log & Crash Search**メニューが現れ、Appkeyが作成されます。
 
-## Appkey確認
+<a id="check-appkey"></a>
+## Appkey確認 { #check-appkey }
 
 ログを転送するには、Appkeyを確認する必要があります。
 
 1. 左側のメニューから、**Data & Analytics > Log & Crash Search > ログ検索**をクリックします。
 2. コンソール画面上部の**URL & Appkey**ボタンをクリックすると、Log & Crash Search用Appkeyを確認できます。
 
-## ログ転送
+<a id="send-logs"></a>
+## ログ転送 { #send-logs }
 
 ログを転送するには、Log & Crash Search SDKが必要です。
 SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**Data & Analytics > Log & Crash Search**でダウンロードできます。
@@ -41,7 +48,8 @@ SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**Da
 > SDK使用時に、クラッシュログと一緒に送信されるセッションログは検索画面に表示されません。</br>
 > セッションログの送信時、[リソース提供ポリシー](https://docs.toast.com/ko/TOAST/ko/resource-policy/#log-crash-search)の日次ログ件数提供量には他のログと同じように合算して反映されますが、API呼び出し料金には反映されません。
 
-## ログ検索
+<a id="search-logs"></a>
+## ログ検索 { #search-logs }
 
 転送したログをLog Search機能を利用して検索してみましょう。
 
@@ -67,12 +75,14 @@ SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**Da
 データの長さが1,000,000文字を超えるフィールドを含むログは検索ができません。そのため、照会ができないログは問題が解決するまでログダウンロード機能を利用して照会をお願いします。
 >
 
-## アプリクラッシュ照会
+<a id="query-app-crashes"></a>
+## アプリクラッシュ照会 { #query-app-crashes }
 
 Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Crash Search > アプリクラッシュ検索**で確認できます。
 
 
-### イシュー照会
+<a id="query-issues"></a>
+### イシュー照会 { #query-issues }
 **イシュー照会**タブの**エラータイプ**で**Crashes**を選択すると、イシューを確認できます。
 
 ![lcs_03_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-01-20211028.png)
@@ -106,7 +116,8 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 |ヒストリーグラフ| イシュー発生件数をタイムラインチャートとワールドマップで表示します。|
 |マトリックス情報| ネットワーク、OSバージョン、デバイス、サービスプロバイダー、国情報を表示します。|
 
-### イシュートレンド
+<a id="issue-trend"></a>
+### イシュートレンド { #issue-trend }
 
 ![lcs_07_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-04-20211028.png)
 
@@ -116,7 +127,8 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 |検索条件| エラータイプ - Crashes / Handled選択 <br/> プラットフォーム - アプリプラットフォーム選択 |
 |トレンドグラフ| さまざまなトレンドグラフを見ることができます。 <br/> - クラッシュ数 <br/> - クラッシュが発生した端末<br/>- OSバージョン別イシュー <br/> - 端末別イシュー <br/> - 国別イシュー|
 
-### クラッシュレポート
+<a id="crash-report"></a>
+### クラッシュレポート { #crash-report }
 
 ![lcs_08_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-05-20211028.png)
 
@@ -128,7 +140,8 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 |クラッシュグラフ| 検索期間内のクラッシュ発生数を表示します。 |
 |クラッシュ指標| 検索期間内のアプリバージョン別セッション数/クラッシュ数/発生率(%)/前の期間のクラッシュ数/増加率(%)情報を提供します。|
 
-### ユーザー別イシュー照会
+<a id="query-issues-by-user"></a>
+### ユーザー別イシュー照会 { #query-issues-by-user }
 
 ユーザー別クラッシュ発生情報を提供します。
 
@@ -143,7 +156,8 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 |検索条件| エラータイプ - システムで発生させるCrash統計とExceptionブロックでユーザーが発生させるHandledに区分 <br/> プラットフォーム - アプリプラットフォーム <br/> アプリバージョン - アプリバージョン <br/> ユーザー - SDKでuser_idに指定したユーザーID <br/> 端末 - デバイス名|
 |ユーザー情報| アプリクラッシュユーザーの情報(デバイス、アプリバージョンなど)を表示します。 |
 
-### イシュー統計
+<a id="issue-statistics"></a>
+### イシュー統計 { #issue-statistics }
 ![lcs_12_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-07-20211028.png)
 
 |項目|説明|
@@ -153,12 +167,14 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 |クラッシュ別発生頻度円グラフ|	クラッシュ別の発生頻度を表示します。|
 |クラッシュ別発生頻度順位テーブル|	クラッシュ別の発生頻度順位を表示します。|
 
-## アラーム
+<a id="alarm"></a>
+## アラーム { #alarm }
 
 ログおよびクラッシュに対するアラーム設定およびアラーム送信履歴を確認できます。
 **Data & Analytics > Log & Crash Search > アラーム**をクリックします。
 
-### ログアラーム設定
+<a id="log-alarm-setting"></a>
+### ログアラーム設定 { #log-alarm-setting }
 
 ![lcs_13_202108](https://static.toastoven.net/prod_logncrash/lcs_13_202108_ja.png)
 
@@ -188,14 +204,16 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
     - SMSアラーム文言：アラーム送信時にSMSで送信する文言を入力します。
     - コールバックURL：アラーム送信時に呼び出されるURLを入力します。 http(s)://とメール、Doorayフックをサポートします。
 
-### ログアラーム履歴
+<a id="log-alarm-history"></a>
+### ログアラーム履歴 { #log-alarm-history }
 
 ![lcs_15_202108](https://static.toastoven.net/prod_logncrash/lcs_15_202108_ja.png)
 
 - 設定したアラームリストが表示されます。
 - リストをクリックすると、該当アラーム発生内容を確認できます。
 
-### クラッシュアラーム設定
+<a id="crash-alarm-setting"></a>
+### クラッシュアラーム設定 { #crash-alarm-setting }
 
 ![lcs_16_202108](https://static.toastoven.net/prod_logncrash/lcs_16_202108_ja.png)
 
@@ -211,7 +229,8 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 - SMS通知文言使用：有効にすると、障害内容の代わりにSMSアラーム文言に入力した内容がSMSで送信されます。
 - アラーム受信者：プロジェクトメンバーリストから、アラームを受信するユーザーのメール、 SMSを選択します。
 
-### クラッシュアラーム履歴
+<a id="crash-alarm-history"></a>
+### クラッシュアラーム履歴 { #crash-alarm-history }
 
 ![lcs_17_202108](https://static.toastoven.net/prod_logncrash/lcs_17_202108_ja.png)
 
@@ -221,7 +240,8 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 - 時間条件を設定して照会期間を調整できます。
 - アラーム時間、プラットフォーム、クラッシュタイプ、しきい値、イベント数、配信方法および送信状態を提供します。
 
-### ユーザーべースのアラーム設定
+<a id="user-defined-alarm-setting"></a>
+### ユーザーべースのアラーム設定 { #user-defined-alarm-setting }
 
 ![lcs_18_202108](https://static.toastoven.net/prod_logncrash/lcs_18_202108_ja.png)
 
@@ -235,7 +255,8 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 - SMSアラーム文言：有効にすると、障害内容の代わりにSMSアラーム文言に入力された内容がSMSで送信されます。
 - アラーム受信者：プロジェクトメンバーリストから、アラームを受信するユーザーのメール、SMSを選択します。
 
-### ユーザー基盤アラーム履歴
+<a id="user-defined-crash-alarm-history"></a>
+### ユーザー基盤アラーム履歴 { #user-defined-crash-alarm-history }
 
 ![lcs_20_ja_20200602](https://static.toastoven.net/prod_logncrash/lcs_20_ja_20200602.png)
 
@@ -245,14 +266,16 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 - 時間条件を設定して、照会期間を調節できます。
 - アラーム時間、プラットフォーム、しきい値、クラッシュ発生ユーザー比率、配信方法および転送状態を提供します。
 
-## 設定
+<a id="setting"></a>
+## 設定 { #setting }
 
 検索フィールド管理、課題トラッカー設定、シンボルファイル管理などのサービスに必要な設定を管理します。
 
 **Data & Analytics > Log & Crash Search > 設定**をクリックします。
 
 
-### 検索フィールド
+<a id="search-field"></a>
+### 検索フィールド { #search-field }
 
 ログ検索時に使用される検索フィールドを照会する機能です。システムフィールドである基本フィールドリストの他に、ユーザー転送フィールドであるユーザー指定フィールド(カスタムフィールド)を確認できます。
 
@@ -261,7 +284,8 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 1. ログ転送時、フィールド名がtxtで始まる場合、分析するかどうかがtrueに設定され、それ以外のフィールドは分析するかどうかがfalseに設定されます。分析するかどうかがfalseの場合、ログ検索の検索フィールドに登録して使用できます。
 2. ログファイルやバイナリファイルを転送して、**ログ検索**画面で**ダウンロード > 参照**リンクを利用したい場合、 UserBinaryDataまたはUserTxtDataという名前のフィールドにbase64エンコードされた値を入れて転送してください。
 
-### イシュートラッキング
+<a id="issue-tracking"></a>
+### イシュートラッキング { #issue-tracking }
 
 課題トラッカーを設定すると、**アプリクラッシュ検索 > イシュー照会**タブでイシューリストをクリックした時に表示されるError Detailページで、該当エラーを課題トラッカーに登録して管理できます。
 
@@ -276,7 +300,8 @@ Android、iOS端末のクラッシュ情報は、**Data & Analytics > Log & Cras
 - Issue Title Format：イシュータイトルにバージョンおよび位置情報を含めるかどうかを選択します。
 - テスト：設定が正常かどうかを確認します。
 
-### シンボルファイル
+<a id="symbol-file"></a>
+### シンボルファイル { #symbol-file }
 
 Symbolication fileが登録されていると、クラッシュログを確認できます。このメニューではSymbolication fileをアップロード、ダウンロードして削除できます。
 
@@ -292,7 +317,8 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 - Android NDKシンボリケーションファイルが許可する最大ファイルサイズを超える場合、原本‘lib.so’バイナリファイルのテキスト形式シンボルを含んでいる1つの‘lib.so.sym’を含むZIPファイル形式でアップロードできます。
 - Android Unityの場合、シンボルファイルの登録が必要ありません。ただし、ProGuard適用時にmapping.txt.のアップロードが必要です。
 
-### ログ保管期間
+<a id="log-retention-period"></a>
+### ログ保管期間 { #log-retention-period }
 
 ログ保管期間を照会できます。
 
@@ -301,7 +327,8 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 - ログ保管期間を変更するには[サポート](https://www.nhncloud.com/kr/support/inquiry/?alias=tab2_11)までお問い合わせください。
 - ログ保管期間の変更は、翌月1日00時に適用され,保管期間に応じて料金が発生します。
 
-### ログ転送設定
+<a id="log-transfer-configuration"></a>
+### ログ転送設定 { #log-transfer-configuration }
 
 サービスごとにログを送信するかどうかを設定します。
 
@@ -312,7 +339,8 @@ Symbolication fileが登録されていると、クラッシュログを確認�
     - 重複ログ、ログレベル、ログタイプ別にフィルタリングできます。
 - 設定を保存した後,アプリを再起動すると適用されます。
 
-### ログ外部保管設定
+<a id="external-log-storage-setting"></a>
+### ログ外部保管設定 { #external-log-storage-setting }
 
 ログ外部保管情報を設定します。
 
@@ -330,7 +358,8 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 - 設定したOBSでログが保存されます。
 - [NHN Cloud OBS API案内ガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
 
-## ネットワークインサイト
+<a id="network-insights"></a>
+## ネットワークインサイト { #network-insights }
 
 Log & Crash Search SDKで送信した遅延時間とエラー率をタイムラインチャートとURLリスト、マップで表示します。
 
@@ -339,7 +368,8 @@ Log & Crash Search SDKで送信した遅延時間とエラー率をタイムラ�
 - SDKでは、クライアントからURL設定画面で設定したURLまでのリクエストの遅延時間(Latency)とステータス(Status)をLog & Crash Searchに送信します。
 - モニタリング、指標画面で現在のプラットフォームとフィルタを設定し,遅延時間とエラー率を確認できます。
 
-### モニタリング
+<a id="monitoring"></a>
+### モニタリング { #monitoring }
 
 - 遅延時間とエラー率をタイムラインチャートとURLリストで表示します。
 
@@ -351,7 +381,8 @@ Log & Crash Search SDKで送信した遅延時間とエラー率をタイムラ�
 |チャート| 遅延時間とエラー率がタイムラインチャートに表示されます。 <br/>**現在のプラットフォーム** ドロップダウンメニューでiOS、Android、WindowsおよびWebGLごとに設定できます。 |
 |URL| URL設定で追加したURLごとに遅延時間とエラー率を表示します。|
 
-### マップ
+<a id="map"></a>
+### マップ { #map }
 
 - 遅延時間とエラー率をマップ上に表示します。
 
@@ -363,7 +394,8 @@ Log & Crash Search SDKで送信した遅延時間とエラー率をタイムラ�
 |フィルタ条件 | - 最近：最近15分、60分、24時間、48時間の時間別照会フィルタ、ユーザー指定は開始/終了日を選択して照会(最大48時間) <br/> - アプリバージョン:アプリバージョン別照会フィルタ <br/> - OSバージョン: OSバージョン別照会フィルタ <br/> - デバイス:デバイス名を入力<br/> - サービスプロバイダー:サービスプロバイダー名を入力<br/> - 国家:国別照会フィルタ <br/> - URL: URL別照会フィルタ|
 |マップ| 遅延時間とエラー率をマップ上に表示します。<br/>**現在のプラットフォーム**ドロップダウンメニューからiOS、Android、Windows、WebGLごとに設定できます。|
 
-### URL設定
+<a id="url-setting"></a>
+### URL設定 { #url-setting }
 
 - 遅延時間とエラー率を測定するWebサイトのURLを設定できます。
 

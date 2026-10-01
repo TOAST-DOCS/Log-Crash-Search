@@ -1,4 +1,7 @@
-## Data & Analytics > Log & Crash Search > Console User Guide
+<!-- pre-align:aligned sig=62aa7702009c -->
+
+<a id="data-analytics-log-crash-search-console-user-guide"></a>
+## Data & Analytics > Log & Crash Search > Console User Guide { #data-analytics-log-crash-search-console-user-guide }
 
 Log & Crash Search can be applied in the following order:
 
@@ -9,14 +12,16 @@ Start sending logs via Log & Crash Search SDK.
 - Check Logs  
 Go to **Log Search** or **App Crash Search** to find logs in many ways, like a chart or search function.
 
-## Select a Project
+<a id="select-a-project"></a>
+## Select a Project { #select-a-project }
 
 Access console and select an organization and project from menu on the left. When there is no organization or project available, create one.
 - Select **ORGANIZATION > PROJECT** from the menu on the left.
 
 See the [NHN Cloud Console Guide](https://docs.toast.com/en/TOAST/en/console-guide/) for how to create an organization and a project.
 
-## Enable the Service
+<a id="enable-the-service"></a>
+## Enable the Service { #enable-the-service }
 
 While a project is selected, click **Service** on top of the screen and go to **Log & Crash Search** under **Data & Analytics** and enable it. When a service is enabled, (v) is displayed by the service name.
 
@@ -25,14 +30,16 @@ While a project is selected, click **Service** on top of the screen and go to **
 
 When Log & Crash Search is enabled, **Data & Analytics > Log & Crash Search** shows on the menu, with the Appkey created.
 
-## Check Appkey
+<a id="check-appkey"></a>
+## Check Appkey { #check-appkey }
 
 To send logs, it is required to check Appkey.
 
 1. Click **Data & Analytics > Log & Crash Search > Log Search** on the left navigation menu.
 2. Click **URL & Appkey** on top of the screen and check Appkey.
 
-## Send Logs
+<a id="send-logs"></a>
+## Send Logs { #send-logs }
 
 To send a log, Log & Crash Search SDK is required.
 You can download an SDK from **Data & Analytics > Log & Crash Search** of [NHN Cloud Downloads](https://docs.toast.com/en/Download/)
@@ -41,7 +48,8 @@ You can download an SDK from **Data & Analytics > Log & Crash Search** of [NHN C
 > When using the SDK, session logs sent along with crash logs are not exposed on the search screen.</br>
 > When sending session logs, the count is added to and reflected in the number of daily log capacity of [Resource Provision Policy](https://docs.toast.com/en/TOAST/en/resource-policy/#log-crash-search) in the same way as other logs. However, it is not reflected in the API call charges.
 
-## Search Logs
+<a id="search-logs"></a>
+## Search Logs { #search-logs }
 
 Logs can be searched by using Log Search.
 
@@ -67,12 +75,14 @@ The search condition set by the user is reflected in the search query input wind
 Logs containing fields with a data length greater than 1,000,000 characters are not searchable. For logs that cannot be queried due to the issue, please use the log download function to retrieve the logs until the issue is resolved.
 >
 
-## Query App Crashes
+<a id="query-app-crashes"></a>
+## Query App Crashes { #query-app-crashes }
 
 Crash information of Android and iOS devices can be retrieved through **Data & Analytics > Log & Crash Search > App Crash Search**.
 
 
-### Query Issues
+<a id="query-issues"></a>
+### Query Issues { #query-issues }
 Select **Crashes** on **Error Type** of **Query Issues** to check issues.
 
 ![lcs_03_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-01-20211028.png)
@@ -105,7 +115,8 @@ Click an issue on the list to find its details.
 |History Graph| Trace the number of issue occurrences on a timeline chart and a world map.|
 |Matrix Data| Display information such as network, OS version, device, operator, and nation.|
 
-### Issue Trend
+<a id="issue-trend"></a>
+### Issue Trend { #issue-trend }
 
 ![lcs_07_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-04-20211028.png)
 
@@ -115,7 +126,8 @@ Click an issue on the list to find its details.
 |Search Criteria| Error Type - Select between Crashes / Handled <br/> Platform - Select app platform |
 |Trend Graph| You can see various trend graphs. <br/> - Number of crashes <br/> - Device where a crash occurred<br/>- Issues by OS version <br/> - Issues by device <br/> - Issues by country|
 
-### Crash Report
+<a id="crash-report"></a>
+### Crash Report { #crash-report }
 
 ![lcs_08_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-05-20211028.png)
 
@@ -127,7 +139,8 @@ Click an issue on the list to find its details.
 |Crash Graph| Shows the number of crashes within the search period. |
 |Crash Metrics| Provides information on the session count/crash count/occurrence rate (%)/crash count in the previous period/increase rate (%) by app version within the search period.|
 
-### Query Issues by User
+<a id="query-issues-by-user"></a>
+### Query Issues by User { #query-issues-by-user }
 
 Provide crash occurrence information per user.
 
@@ -142,7 +155,8 @@ Provide crash occurrence information per user.
 |Search Criteria| Error Type - Crash: statistics of crashes generated by the system, Handled: statistics of crashes generated by user in Exception block <br/> Platform - App platform <br/> App Version - App version <br/> User - User ID specified by user_id in SDK <br/> Device - Device Name|
 |User Information| Shows information about the app crash user (device, app version, etc.). |
 
-### Issue Statistics
+<a id="issue-statistics"></a>
+### Issue Statistics { #issue-statistics }
 ![lcs_12_201812](https://static.toastoven.net/prod_logncrash/lcs-appcrash-07-20211028.png)
 
 |Item|Description|
@@ -152,12 +166,14 @@ Provide crash occurrence information per user.
 |Pie Chart for Frequency of Crash Occurrence|Show frequency of each crash occurrence.|
 |Ranking Table for Frequency of Crash Occurrence |Show the ranks of frequency of crash occurrence.|
 
-## Alarm
+<a id="alarm"></a>
+## Alarm { #alarm }
 
 Set alarms for log and crash, and check history of alarm delivery.
 Click **Data & Analytics > Log & Crash Search > Alarms**.
 
-### Log Alarm Setting
+<a id="log-alarm-setting"></a>
+### Log Alarm Setting { #log-alarm-setting }
 
 ![lcs_13_202108](https://static.toastoven.net/prod_logncrash/lcs_13_202108_en.png)
 
@@ -187,14 +203,16 @@ Provide all log alarm functions:
     - SMS Alarm Messages: Enter SMS messages to send alarms with.
     - Callback URL: Enter URL to call when an alarm is sent. http(s)://, Email, and Dooray hook are supported.
 
-### Log Alarm History
+<a id="log-alarm-history"></a>
+### Log Alarm History { #log-alarm-history }
 
 ![lcs_15_202108](https://static.toastoven.net/prod_logncrash/lcs_15_202108_en.png)
 
 - A list of configured alarms is displayed.
 - Click the list to check the alarm occurrence history.
 
-### Crash Alarm Setting
+<a id="crash-alarm-setting"></a>
+### Crash Alarm Setting { #crash-alarm-setting }
 
 ![lcs_16_202108](https://static.toastoven.net/prod_logncrash/lcs_16_202108_en.png)
 
@@ -211,7 +229,8 @@ To set an alarm:
 - Alarm Recipients: Select email or SMS of users who decide to receive alarms from the list of project members.
 
 
-### Crash Alarm History
+<a id="crash-alarm-history"></a>
+### Crash Alarm History { #crash-alarm-history }
 
 ![lcs_17_202108](https://static.toastoven.net/prod_logncrash/lcs_17_202108_en.png)
 
@@ -221,7 +240,8 @@ Retrieves the history of crash alarm occurrences.
 - You can set time condition to adjust query period.
 - Information on alarm time, platform, crash type, threshold, event count, and delivery method/status is provided.
 
-### User-defined Alarm Setting
+<a id="user-defined-alarm-setting"></a>
+### User-defined Alarm Setting { #user-defined-alarm-setting }
 
 ![lcs_18_202108](https://static.toastoven.net/prod_logncrash/lcs_18_202108_en.png)
 
@@ -235,7 +255,8 @@ To set an alarm:
 - Use Alternative SMS Message: When enabled, custom alarm messages will be delivered via SMS, in place of default error messages,
 - Alarm Recipients: Select email or SMS of users who decide to receive alarms from the list of project members.
 
-### User-defined Crash Alarm History
+<a id="user-defined-crash-alarm-history"></a>
+### User-defined Crash Alarm History { #user-defined-crash-alarm-history }
 
 ![lcs_19_202108](https://static.toastoven.net/prod_logncrash/lcs_19_202108_en.png)
 
@@ -245,13 +266,15 @@ Retrieves the history of user-defined alarm occurrences.
 - Set time condition to control viewing range
 - Information on alarm time, platform, crash type, threshold, event count, and delivery method/status is provided.
 
-## Setting
+<a id="setting"></a>
+## Setting { #setting }
 
 Manage required service setting, such as search field, issue tracker, and symbol file.
 
 Click **Data & Analytics > Log & Crash Search > Setting**.
 
-### Search Field
+<a id="search-field"></a>
+### Search Field { #search-field }
 
 Can retrieve search fields for log search: customized fields can be added, to default system fields.
 
@@ -260,7 +283,8 @@ Can retrieve search fields for log search: customized fields can be added, to de
 1. During log transfer, if a field name starts with txt, whether to analyze or not is set to true. Otherwise, it is set to false. If it is false, it can be registered as a search field of log search.
 2. If you want to send a log or binary file and use the **Download > View** link on the **Log Search** page, include base64-encoded values in the UserBinaryData or UserTxtData field.
 
-### Issue Tracking
+<a id="issue-tracking"></a>
+### Issue Tracking { #issue-tracking }
 
 By setting up an issue tracker, errors can be registered and managed on the **Error Detail** page with the click of issue list of **App Crash Search > Retrieve Issues**.
 
@@ -275,7 +299,8 @@ By setting up an issue tracker, errors can be registered and managed on the **Er
 - Issue Title Format: Decide whether to include version and location information to the issue title.
 - Test: Check if the setting works fine.
 
-### Symbol File
+<a id="symbol-file"></a>
+### Symbol File { #symbol-file }
 
 It is required to register a symbol file to check a crash log. This menu helps upload/download/delete symbol files.
 
@@ -291,7 +316,8 @@ A symbol file must be at most 200MB in size.
 - In case of Android NDK, when a symbol file size exceeds the maximum size permitted, it is possible to upload a ZIP file which contains a single ‘lib.so.sym’ file that contains the text-format symbols of the original ‘lib.so’ binary file.
 - In case of Android Unity, registration of a symbol file is not required. However, when ProGuard is applied, it is necessary to upload your mapping.txt file.
 
-### Log Retention Period
+<a id="log-retention-period"></a>
+### Log Retention Period { #log-retention-period }
 
 Set the period of log retention. 
 
@@ -300,7 +326,8 @@ Set the period of log retention.
 - To change the log retention period, please contact [Customer Center](https://www.nhncloud.com/kr/support/inquiry/?alias=tab2_11).
 - Changes to the log retention period are applied at 00:00 on the 1st of the following month, and charges are incurred according to the retention period.
 
-### Log Transfer Configuration
+<a id="log-transfer-configuration"></a>
+### Log Transfer Configuration { #log-transfer-configuration }
 
 Set whether to send logs for each service.
 
@@ -311,7 +338,8 @@ Set whether to send logs for each service.
     - You can filter by duplicate log, log level, and log type.
 - After saving the settings, restart the app to apply the setting.
 
-### External Log Storage Setting
+<a id="external-log-storage-setting"></a>
+### External Log Storage Setting { #external-log-storage-setting }
 
 Set information for external log storage. 
 
@@ -329,7 +357,8 @@ Set information for external log storage.
 - Logs are saved at OBS as configured. 
 - [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
 
-## Network Insights
+<a id="network-insights"></a>
+## Network Insights { #network-insights }
 
 Show latency and error rate delivered by Log & Crash Search SDK, on a timeline chart, URL list, or map.
 
@@ -338,7 +367,8 @@ Click **Data & Analytics > Log & Crash Search > Network Insights**.
 - SDK delivers latency and status of a client request from screen of URL setting to URL, to Log & Crash Search
 - Set current platform and filter on the screen of monitoring and index, and check latency and error rate.
 
-### Monitoring
+<a id="monitoring"></a>
+### Monitoring { #monitoring }
 
 - Display latency and error rate on a timeline chart and URL list.
 
@@ -350,7 +380,8 @@ Click **Data & Analytics > Log & Crash Search > Network Insights**.
 | Chart| Latency and error rate is shown on timeline graph. <br/> You can select iOS, Android, Windows, or WebGL from **Current Platform** dropdown menu.|
 |URL| Latency and error rate per URL is shown in the table.|
 
-### Map
+<a id="map"></a>
+### Map { #map }
 
 - Display latency and error rate on a map.
 
@@ -362,7 +393,8 @@ Click **Data & Analytics > Log & Crash Search > Network Insights**.
 |Filter Conditions | - Recent: Retrieving filter of each time, such as recent 15 minutes, 60 minutes, 24 hours, or 48 hours. For user-defined conditions, retrieve by selecting start/end dates (up to 48 hours). <br/>- App Version: Retrieving filter per app version <br/>- OS Version: Retrieving filter per OS version <br/>- Device: Enter device name <br/>|
 | Map | Latency and error rate is shown on the map. <br/>You can select iOS, Android, Windows, or WebGL from **Current Platform** dropdown menu. |
 
-### URL Setting
+<a id="url-setting"></a>
+### URL Setting { #url-setting }
 
 - Add or remove URLs for latency and error rate monitoring. 
 

@@ -1,4 +1,7 @@
-## Analytics > Log & Crash Search > iOS SDK 사용 가이드
+<!-- pre-align:aligned sig=ecb9adf37221 -->
+
+<a id="analytics-log-crash-search-ios-sdk-guide"></a>
+## Analytics > Log & Crash Search > iOS SDK 사용 가이드 { #analytics-log-crash-search-ios-sdk-guide }
 
 > [Deprecated]
 > Log & Crash iOS SDK 버전은 더 이상 지원되지 않습니다.
@@ -16,10 +19,12 @@ Log & Crash iOS SDK 특·장점은 다음과 같습니다.
 - Log & Crash Search 에서 전송된 로그를 조회 및 검색이 가능합니다.
 - 멀티 쓰레딩 환경에서 동작합니다.
 
-## 지원 환경
+<a id="supporting-environment"></a>
+## 지원 환경 { #supporting-environment }
 - iOS 8.0 이상
 
-## 다운로드
+<a id="download"></a>
+## 다운로드 { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)에서 iOS SDK(native)를 받을 수 있습니다.
 
@@ -27,13 +32,16 @@ Log & Crash iOS SDK 특·장점은 다음과 같습니다.
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [iOS SDK] 클릭
 ```
 
-## SDK 사용방법
+<a id="how-to-use-sdks"></a>
+## SDK 사용방법 { #how-to-use-sdks }
 
-### 헤더 파일 추가
+<a id="add-header-files"></a>
+### 헤더 파일 추가 { #add-header-files }
 
 \#import <LogNCrashSDK/LogNCrashSDK.h\> 추가 합니다.
 
-### 초기화
+<a id="initialize"></a>
+### 초기화 { #initialize }
 
 ```
 (bool) init:(NSString *)server ofAppKey:(NSString*)appName withVersion:(NSString*)appVersion;
@@ -54,7 +62,8 @@ Log & Crash iOS SDK 특·장점은 다음과 같습니다.
 	- userId: 사용자 아이디
 	- 실패시 false
 
-### SendThread 잠금 해제
+<a id="unlock-sendthread"></a>
+### SendThread 잠금 해제 { #unlock-sendthread }
 
 ```
 	(void) startSendThread;
@@ -62,7 +71,8 @@ Log & Crash iOS SDK 특·장점은 다음과 같습니다.
 
 - SendThread의 잠금 상태를 해제합니다.
 
-### Host 잠금 설정
+<a id="lock-host"></a>
+### Host 잠금 설정 { #lock-host }
 
 ```
 	(void) enableHost;
@@ -71,7 +81,8 @@ Log & Crash iOS SDK 특·장점은 다음과 같습니다.
 - true : ip address를 구하여 host 필드에 저장합니다.
 - false: ip address를 구하지 않습니다.
 
-### 로그 보내기
+<a id="send-logs"></a>
+### 로그 보내기 { #send-logs }
 
 ```
 (void) debug:(NSString*)errorCode withMessage:(NSString*)message;
@@ -95,7 +106,8 @@ Log & Crash iOS SDK 특·장점은 다음과 같습니다.
 	- message: 로그 메세지
 	- location: 에러 위치
 
-### 커스텀 키 지정하기
+<a id="specify-custom-keys"></a>
+### 커스텀 키 지정하기 { #specify-custom-keys }
 
 ```
 (void) setCustomField:(NSString*)value forKey:(NSString*)key;
@@ -110,7 +122,8 @@ Log & Crash iOS SDK 특·장점은 다음과 같습니다.
 	- projectName, projectVersion, host, logType, logSource, sendTime, logTime, logLevel, UserID
 	- Platform, DeviceModel, NetworkType, Carrier, CountryCode, DmpData, errorCode, Location, body, SessionID
 
-### 중복 제거 모드 설정
+<a id="remove-duplicates"></a>
+### 중복 제거 모드 설정 { #remove-duplicates }
 
 2.4.0 이상 SDK 부터 일반 로그에 중복 제거 로직이 적용되었습니다.
 
@@ -123,7 +136,8 @@ public static void setLogDeduplicate(bool enable)
 true: (Default 값) 중복 제거 로직 활성화<br>
 false: 중복 제거 로직 비활성화
 
-### 기본 설정 관리
+<a id="manage-default-setting"></a>
+### 기본 설정 관리 { #manage-default-setting }
 
 ```
 (void) setUserId:(NSString*)userId;
@@ -143,7 +157,8 @@ false: 중복 제거 로직 비활성화
 
 - 로그 소스를 설정 합니다.
 
-## 자동수집되는 정보들
+<a id="automatically-collected-information"></a>
+## 자동수집되는 정보들 { #automatically-collected-information }
 
 아래 정보들은 Log & Crash SDK에 의해 자동으로 수집되며, Log & Crash Search 에서 확인할 수 있습니다. 로그전송 시점에 정보수집이 불가능한 경우 값을 볼 수 없는 경우가 발생할 수 있습니다.  
 
@@ -154,7 +169,8 @@ false: 중복 제거 로직 비활성화
 	\- CountryCode: 사용자의 텔레콤 서비스 제공자의 ISO 국가 코드
 	\- NetworkType: Wi-Fi 또는 Cellular (로그 전송이벤트 발생 시점에 네트워크 사용이 불가한 경우 "No Connection")
 
-## iOS Crash 해석하기
+<a id="interpret-ios-crashed"></a>
+## iOS Crash 해석하기 { #interpret-ios-crashed }
 - iOS에서 발생한 Crash의 경우 Crash 정보가 주소 값으로 수집되기 때문에 이를 해석하기 위한 Symbol 파일이 필요합니다.
 
 - Xcode를 실행하고 Windows > Organizer를 클릭합니다.
@@ -167,6 +183,7 @@ false: 중복 제거 로직 비활성화
 
 - .dSYM을 .zip으로 압축하여 웹 콘솔 > Analytic > Log & Crash Search > Settings > 심볼 파일 탭에 등록합니다.
 
-## iOS Unity Crash 주의 사항
+<a id="note-for-ios-unity-crash"></a>
+## iOS Unity Crash 주의 사항 { #note-for-ios-unity-crash }
 
 - 심볼이 없어 해석되지 않은 Crash 로그는 일반 로그로 취급됩니다.

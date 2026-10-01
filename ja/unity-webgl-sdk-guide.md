@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=45b1bfc767db -->
+
 ﻿## Analytics > Log & Crash Search > Unity WebGL SDK使用ガイド
 
 Log & Crash Unity SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。  
@@ -7,12 +9,19 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 - アプリで発生したクラッシュログを収集サーバーに転送します。
 - Log & Crash Searchで、転送されたログの照会および検索が可能です。
 
-## サポート環境
+<a id="analytics-log-crash-search-unity-webgl-sdk-user-guide"></a>
+## Analytics > Log & Crash Search > Unity WebGL SDK 使用ガイド { #analytics-log-crash-search-unity-webgl-sdk-user-guide }
+
+<!-- TODO: translate body -->
+
+<a id="supporting-environment"></a>
+## サポート環境 { #supporting-environment }
 
 - 共通
 	\- Unity3D v4.0以上
 
-## ダウンロード
+<a id="download"></a>
+## ダウンロード { #download }
 
 [TOAST Document](http://docs.toast.com/ko/Download/)でUnity SDKをダウンロードできます。
 
@@ -20,16 +29,19 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
 ```
 
-## インストール
+<a id="install"></a>
+## インストール { #install }
 
  - ダウンロードしたtoast-logncrash-unity-sdk.unitypackageをダブルクリックしてImportします。
 
-### サンプル説明
+<a id="sample-description"></a>
+### サンプル説明 { #sample-description }
 
 サンプルを実行するには、Assets > LogNCrash > Sample > SampleSceneをダブルクリックします。
 サンプルには初期化、ログ転送、エラー発生についての例が記述されています。
 
-## 使用例
+<a id="example"></a>
+## 使用例 { #example }
 
 1. LogNCrashSettingsによる初期化
 
@@ -84,9 +96,11 @@ namespace Toast.LogNCrash
 - Port：443
 - SendThreadLock：trueの場合、発生したログはStartSendThreadが呼び出されるまでサーバーに転送せず、キューに保存します。ただしNative Crashが発生した場合、ThreadLockを解除してログを転送します。
 
-## 詳細API
+<a id="api-details"></a>
+## 詳細API { #api-details }
 
-### カスタムフィールドの指定
+<a id="specify-custom-fields"></a>
+### カスタムフィールドの指定 { #specify-custom-fields }
 
 ```
 public static void AddCustomField(string key, string val)
@@ -120,7 +134,8 @@ public static void RemoveAllCustomFields()
         - @logType
 	- custom filedの値がNULLまたは空の場合、SDKsは該当フィールドをserverに転送しません。
 
-### 基本設定管理
+<a id="manage-default-setting"></a>
+### 基本設定管理 { #manage-default-setting }
 
 ```
 public static void SetLogSource(string value)
@@ -136,7 +151,8 @@ public static string GetLogType()
 
 - ログタイプの取得や新規指定を行います。
 
-### LEVELフィルタ
+<a id="filter-levels"></a>
+### LEVELフィルタ { #filter-levels }
 
 - Unity SDKでは、Default設定でFATALレベルのログだけを転送します。 Error、Warningレベルのログには変数値(時間、パス、進行度など)の挿入により多くのログが発生することがあります。
 	- Send Error：システムで発生したERRORレベルのログを転送します。
@@ -144,11 +160,13 @@ public static string GetLogType()
 	- Send Debug Error：ユーザーが発生させたERRORレベルのログを転送します。
 	- Send Debug Warning：ユーザーが発生させたWARNレベルのログを転送します。
 
-### API使用例
+<a id="example-of-api-use"></a>
+### API使用例 { #example-of-api-use }
 
 - html > index.htmlを参照してください。
 
-### IP Address収集設定
+<a id="collect-ip-address"></a>
+### IP Address収集設定 { #collect-ip-address }
 
 ```
 public static void SetEnableHost:(bool flag)
@@ -157,7 +175,8 @@ public static void SetEnableHost:(bool flag)
 - trueの場合、ip addressを取得し、hostフィールドに保存します。
 - falseの場合、hostフィールドに"-"を保存します。
 
-### ログ転送
+<a id="send-logs"></a>
+### ログ転送 { #send-logs }
 
 ```
 //send info log message
@@ -180,7 +199,8 @@ public static void Error(string strMsg)
 	- strMsg: string
 		- [in]転送するlogメッセージ
 
-### クラッシュコールバック
+<a id="crash-callbacks"></a>
+### クラッシュコールバック { #crash-callbacks }
 
 ```
 public void Crash_Send_Complete_Callback(string message) {
@@ -196,7 +216,8 @@ void Start() {
 ExceptionDelegateは、Unity Csharpで発生したCrashをサーバーに転送した後に呼び出されるコールバックです。
 ネイティブCrashの場合は呼び出されません。
 
-### ユーザーID設定
+<a id="set-user-ids"></a>
+### ユーザーID設定 { #set-user-ids }
 
 ```
 public static void SetUserId(string userID)
@@ -208,7 +229,8 @@ public static string GetUserID()
 	- userID: string
 		- [in]各ユーザーを区分するuser id。
 
-### 重複除去モード設定
+<a id="remove-duplicates"></a>
+### 重複除去モード設定 { #remove-duplicates }
 一般ログの場合、bodyとlogLevelが同じログが発生した場合、転送しません。
 クラッシュログの場合、stackTraceとconditionの値が同じログが発生した場合、転送しません。
 不要な場合は、初期化後に下記の関数を使って機能を無効化できます。
@@ -220,13 +242,16 @@ public static string GetUserID()
  - true：(Default値)重複除去ロジックを有効にする
  - false：重複除去ロジックを無効にする
 
-## WebGL API
+<a id="webgl-api"></a>
+## WebGL API { #webgl-api }
 
-### サポートしないAPI
+<a id="unsupported-api"></a>
+### サポートしないAPI { #unsupported-api }
 
 - WebGL SDKでは、asm.jsがtry-catchをサポートしないため、Handled Exceptionをサポートしません。
 
-### WebGL専用API
+<a id="webgl-only-api"></a>
+### WebGL専用API { #webgl-only-api }
 
 - 重複除去ログキューの最大サイズを指定します。
 
@@ -252,11 +277,13 @@ LogNCrash.setMaximumFileCount (100);
 LogNCrash.setMaximumSendCount (100);
 ```
 
-### Crashを収集するための設定
+<a id="settings-to-collect-crashes"></a>
+### Crashを収集するための設定 { #settings-to-collect-crashes }
 
 - WebGL SDKでCrashを収集するには、PlayerSettings > Publishing Settings > Enable ExceptionオプションがFullに設定されている必要があります。
 
-### 注意事項
+<a id="caution"></a>
+### 注意事項 { #caution }
 
 - Log & Crashは、メモリを転送するプロセスで、最大2000個のSendQueueにログを保存します。
 - Log & Crashは、ログの重複を除去するために、最大500個のDuplicateログを保存します。
@@ -264,7 +291,8 @@ LogNCrash.setMaximumSendCount (100);
 - したがって、充分なメモリが必要です。
 - サーバーのレスポンス速度を測定する場合、対象サーバーにCross-Domainが設定されている必要があります。
 
-## WebGL Buildする
+<a id="build"></a>
+## WebGL Buildする { #build }
 
 1.File->Build Settingsをクリック。
 
@@ -276,12 +304,14 @@ LogNCrash.setMaximumSendCount (100);
 
 2.Build settingsでBuild And Runをクリックします。
 
-## 外部CrashHandlerを使用する
+<a id="use-external-crashhandler"></a>
+## 外部CrashHandlerを使用する { #use-external-crashhandler }
 
 - 既存SDKでは初期化段階でlogMessageReceivedなどを使用してUnityのCrashHandlerをLogNCrash専用Callback関数に登録して使用しました。
 - 外部CrashHandlerのように使用する場合があり、一緒に適用できるように構造を修正しました。(MultihandlerSample参照)
 
-### 適用方法
+<a id="applications"></a>
+### 適用方法 { #applications }
 
 - LogNCrash.SetCrashHandler関数にfalseをパラメータとして渡し、自動的にCrashHandlerが登録されることを防ぎます。
 - Initialize関数の前に設定されている必要があります。
