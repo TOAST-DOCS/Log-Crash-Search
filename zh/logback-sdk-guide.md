@@ -5,7 +5,7 @@ Log & Crash Logback SDK sends logs to a Log & Crash Search collector server. It 
 ## 1. Add Log & Crash Logback SDK
 
 Add logncrash-java-sdk3-4.0.0.jar to dependency. 
-Download Log & Crash Logback SDK from  [NHN Cloud Document](http://docs.nhncloud.com/en/Download/).
+Download Log & Crash Logback SDK from  [NHN Cloud Document](/Download/).
 
 ```
 Click [DOCUMENTS] > [Download] > [Data & Analytics > Log & Crash Search] > [Logback SDK]

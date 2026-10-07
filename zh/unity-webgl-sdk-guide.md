@@ -14,7 +14,7 @@ Below describe benefits and features of Log & Crash Unity SDK.
 
 ## Download
 
-Go to [TOAST Document](http://docs.nhncloud.com/en/Download/) and download **Unity SDK**.
+Go to [TOAST Document](/Download/) and download **Unity SDK**.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK] 

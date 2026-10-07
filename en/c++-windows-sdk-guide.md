@@ -5,7 +5,7 @@
 
 > [Deprecated]
 > Log & Crash C++ Windows SDK is not supported any more.
-> Please use [TOAST SDK](http://docs.nhncloud.com/en/nhncloud-sdk/en/overview/).
+> Please use [TOAST SDK](/nhncloud-sdk/en/overview/).
 
 Log & Crash C++Windows SDK sends logs to a Log & Crash Search collector server.
 Below describe benefits and features of Log & Crash C++ Windows SDK.
@@ -24,7 +24,7 @@ Below describe benefits and features of Log & Crash C++ Windows SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.nhncloud.com/en/Download/) and download **C++ Windows SDK**.
+Go to [TOAST Document](/Download/) and download **C++ Windows SDK**.
 
 ```
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Windows SDK]

@@ -18,7 +18,7 @@ Below describe benefits and features of Log & Crash Log4J SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.nhncloud.com/en/Download/) and download **Log4J SDK**.
+Go to [TOAST Document](/Download/) and download **Log4J SDK**.
 
 ```
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Log4J SDK] 

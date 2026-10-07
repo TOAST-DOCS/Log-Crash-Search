@@ -732,7 +732,7 @@ GET /api/v2/search/available-tokens/{appkey}
 API呼び出し及び認証のための方法としてUser Access Keyトークンをサポートします。<br>
 トークンの発行方法については、以下のリンクを参照してください。
 
-[User Access Key Token](https://docs.nhncloud.com/ja/nhncloud/ja/public-api/user-access-key-token/)
+[User Access Key Token](/nhncloud/ja/public-api/user-access-key-token/)
 
 <a id="authentication-example-http-header-for-an-api-request"></a>
 #### APIリクエストのHTTPヘッダの例

@@ -21,7 +21,7 @@ Below describe benefits and features of Log & Crash Android SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.nhncloud.com/en/Download/) to download **AndroidNDK SDK**.
+Go to [TOAST Document](/Download/) to download **AndroidNDK SDK**.
 
 ```
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [AndroidNDK SDK]

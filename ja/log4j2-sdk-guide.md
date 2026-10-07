@@ -22,7 +22,7 @@ Log & Crash Log4J SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.nhncloud.com/ja/Download/)でLog4J 2 SDKをダウンロードできます。
+[TOAST Document](/Download/)でLog4J 2 SDKをダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Log4J.v2 SDK]をクリック

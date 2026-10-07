@@ -9,13 +9,13 @@ With NHN Cloud Log & Crash Search SDK, easy and strong remote log and crash anal
 ## Developer's Guide
 
 #### iOS
-* See [Guide for NHN Cloud Log & Crash Search iOS](https://docs.nhncloud.com/en/nhncloud-sdk/en/log-collector-ios/).
+* See [Guide for NHN Cloud Log & Crash Search iOS](/nhncloud-sdk/en/log-collector-ios/).
 
 #### Android
-* See [Guide for NHN Cloud Log & Crash Search Android](https://docs.nhncloud.com/en/nhncloud-sdk/en/log-collector-android/).
+* See [Guide for NHN Cloud Log & Crash Search Android](/nhncloud-sdk/en/log-collector-android/).
 
 #### Windows C++
-* See [Guide for NHN Cloud Log & Crash Search Windows C++](https://docs.nhncloud.com/en/nhncloud-sdk/en/log-collector-windows/).
+* See [Guide for NHN Cloud Log & Crash Search Windows C++](/nhncloud-sdk/en/log-collector-windows/).
 
 #### Others
 * For inquiries on other platforms, contact [NHN Cloud Customer Center](https://www.nhncloud.com/kr/support/inquiry).

@@ -4,7 +4,7 @@
 
 > [Deprecated]
 > Log & Crash iOS SDKバージョンは、今後サポートされません。
-> [TOAST SDK](http://docs.nhncloud.com/ja/nhncloud-sdk/ja/overview/)を利用してください。
+> [TOAST SDK](/nhncloud-sdk/ja/overview/)を利用してください。
 
 > [告知]
 > arm64eアーキテクチャを使用する新規端末(iPhone XS、XR、XS Max、iPad Pros 3rd)で発生したクラッシュログは、発生件数の集計のみ可能で、クラッシュ内容の分析はまだサポートされていません。
@@ -30,7 +30,7 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.nhncloud.com/ja/Download/)でiOS SDK(native)をダウンロードできます。
+[TOAST Document](/Download/)でiOS SDK(native)をダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [iOS SDK]をクリック
