@@ -15,7 +15,7 @@ NHN Cloud Log & Crash Search SDK를 적용하면 모바일 애플리케이션에
 
 <a id="developers-guide-ios"></a>
 #### iOS
-* [NHN Cloud Log & Crash Search iOS 가이드](https://docs.nhncloud.com/ko/nhncloud-sdk/ko/log-collector-ios/)를 참고하십시오.
+* [NHN Cloud Log & Crash Search iOS 가이드](https://docs.nhncloud.com/ko/nhncloud-sdk/ko/log-collector-ios/)를 참고하세요.
 
 <a id="developers-guide-android"></a>
 #### Android
