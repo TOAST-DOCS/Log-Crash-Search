@@ -18,7 +18,7 @@ Log & Crash Log4J SDK 특·장점은 다음과 같습니다.
 <a id="download"></a>
 ## 다운로드 { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)에서 Log4J SDK를 받을 수 있습니다.
+[TOAST Document](/Download/)에서 Log4J SDK를 받을 수 있습니다.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Log4J SDK] 클릭

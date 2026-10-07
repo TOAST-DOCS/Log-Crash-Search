@@ -25,7 +25,7 @@ Log & Crash AndroidNDK SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)でAndroid SDKをダウンロードできます。
+[TOAST Document](/Download/)でAndroid SDKをダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [AndroidNDK SDK]をクリック

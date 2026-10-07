@@ -18,7 +18,7 @@ Log & Crash Search SDK를 통해서 로그 전송을 시작합니다.
 콘솔에 접속하여 왼쪽 메뉴를 이용하여 조직(Organization)과 프로젝트(Project)를 선택합니다. 조직이나 프로젝트가 없다면 새로 만들어야 합니다.
 - 왼쪽 메뉴에서 **ORGANIZATION > PROJECT**를 클릭합니다.
 
-조직과 프로젝트를 만드는 자세한 방법은 [NHN Cloud 콘솔 사용 가이드](https://docs.toast.com/ko/TOAST/ko/console-guide/)를 참고하세요.
+조직과 프로젝트를 만드는 자세한 방법은 [NHN Cloud 콘솔 사용 가이드](/nhncloud/ko/console-guide/)를 참고하세요.
 
 <a id="enable-the-service"></a>
 ## 서비스 활성화 { #enable-the-service }
@@ -42,11 +42,11 @@ Log & Crash Search가 활성화되면 왼쪽 메뉴에 **Data & Analytics > Log 
 ## 로그 전송 { #send-logs }
 
 로그를 전송하려면 Log & Crash Search SDK가 필요합니다.
-SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 **Data & Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
+SDK는 [NHN Cloud Downloads](/Download/) 페이지의 **Data & Analytics > Log & Crash Search**에서 다운로드할 수 있습니다.
 
 > [참고]  
 > SDK 사용 시 크래시 로그와 함께 전송되는 세션 로그는 검색 화면에 노출되지 않습니다.</br>
-> 세션 로그 전송 시 [리소스 제공 정책](https://docs.toast.com/ko/TOAST/ko/resource-policy/#log-crash-search)의 일일 로그 건수 제공량에는 다른 로그와 동일하게 합산하여 반영되지만, API 호출 요금에는 반영되지 않습니다.
+> 세션 로그 전송 시 [리소스 제공 정책](/nhncloud/ko/resource-policy/#log-crash-search)의 일일 로그 건수 제공량에는 다른 로그와 동일하게 합산하여 반영되지만, API 호출 요금에는 반영되지 않습니다.
 
 <a id="search-logs"></a>
 ## 로그 검색 { #search-logs }
@@ -62,7 +62,7 @@ SDK는 [NHN Cloud Downloads](https://docs.toast.com/ko/Download/) 페이지의 *
 
 | 항목 | 설명 |
 |---|---|
-| 검색 쿼리 입력 | 쿼리 필드 검색은 Lucene 문법을 사용할 수 있습니다. <br/> (참고: https://docs.toast.com/ko/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)|
+| 검색 쿼리 입력 | 쿼리 필드 검색은 Lucene 문법을 사용할 수 있습니다. <br/> (참고: [Lucene 쿼리 가이드](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/))|
 | 검색 대상 기간 | 검색 쿼리의 기간 조건을 설정할 수 있습니다. |
 | 로그 검색 결과 > 차트 | 로그 검색 결과를 막대 그래프로 출력하며, 막대 그래프 바를 클릭하면 해당 바의 로그 기간만큼 재검색하여 로그를 확인할 수 있습니다. |
 | 로그 결과 다운로드 | 로그 검색 결과를 원하는 포맷으로 다운로드할 수 있습니다. 또한 크래시 덤프 데이터만 별도로 다운로드가 가능합니다. |
@@ -347,7 +347,7 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 
 - 외부 OBS에 로그를 보관할 수 있습니다.
 
-1. [AWS S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1)를 이용해 자격 증명 등록 및 조회로 액세스 키(accessKey)와 비밀 키(secretKey)를 가져옵니다.
+1. [AWS S3 API](/Storage/Object%20Storage/ko/s3-api-guide/#_1)를 이용해 자격 증명 등록 및 조회로 액세스 키(accessKey)와 비밀 키(secretKey)를 가져옵니다.
 2. **로그 외부 보관 설정**에서 **보관 설정**을 클릭합니다.
 3. 액세스 키와 비밀 키를 비롯한 데이터들 입력합니다.
 4. 외부 로그 변조 알림에 대한 정보들은 설정 추가/수정/삭제 시 전부 필요합니다.
@@ -355,7 +355,7 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
     - 연동 검증을 위해 설정한 버킷에 임시 파일이 생성됩니다.
 
 - 설정한 OBS로 로그가 저장됩니다.
-- [NHN Cloud OBS API 안내 가이드](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
+- [NHN Cloud OBS API 안내 가이드](/Storage/Object%20Storage/ko/s3-api-guide/)
 
 <a id="network-insights"></a>
 ## 네트워크 인사이트 { #network-insights }

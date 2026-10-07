@@ -736,7 +736,7 @@ GET /api/v2/search/available-tokens/{appkey}
 API 호출 및 인증을 위한 방법으로 User Access Key 토큰을 지원합니다.<br>
 토큰 발급 방법은 아래 링크를 참고하세요.
 
-[User Access Key Token](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/user-access-key-token/)
+[User Access Key Token](/nhncloud/ko/public-api/user-access-key-token/)
 
 <a id="authentication-example-http-header-for-an-api-request"></a>
 #### API 요청의 HTTP 헤더 예시

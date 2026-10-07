@@ -18,7 +18,7 @@ Below describe benefits and features of Log & Crash Log4J v2 SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Log4J 2 SDK**.[DOCUMENTS] > 
+Go to [TOAST Document](/Download/) and download **Log4J 2 SDK**.[DOCUMENTS] > 
 
 ```
 Click [Download] > [Analytics > Log & Crash Search] > [Log4J.v2 SDK] 

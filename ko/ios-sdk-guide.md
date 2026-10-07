@@ -5,7 +5,7 @@
 
 > [Deprecated]
 > Log & Crash iOS SDK 버전은 더 이상 지원되지 않습니다.
-> [TOAST SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)를 이용해 주시기 바랍니다.
+> [TOAST SDK](/nhncloud-sdk/ko/overview/)를 이용해 주시기 바랍니다.
 
 > [공지]
 > arm64e 아키텍처를 사용하는 신규기기(iPhone XS, XR, XS Max, iPad Pros 3rd)에서 발생한 크래시 로그는 발생 건수의 집계만 가능하며, 크래시 내용의 분석은 아직 지원되지 않고 있습니다.
@@ -26,7 +26,7 @@ Log & Crash iOS SDK 특·장점은 다음과 같습니다.
 <a id="download"></a>
 ## 다운로드 { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)에서 iOS SDK(native)를 받을 수 있습니다.
+[TOAST Document](/Download/)에서 iOS SDK(native)를 받을 수 있습니다.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [iOS SDK] 클릭

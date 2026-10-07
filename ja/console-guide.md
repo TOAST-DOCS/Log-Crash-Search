@@ -18,7 +18,7 @@ Log & Crash Search SDKを通して、ログの転送を開始します。
 コンソールに接続し、左側メニューを利用して組織(Organization)とプロジェクト(Project)を選択します。組織やプロジェクトがない場合は、作成する必要があります。
 - 左側メニューから**ORGANIZATION > PROJECT**をクリックします。
 
-組織とプロジェクトの作成方法は[NHN Cloudコンソール使用ガイド](https://docs.toast.com/ko/TOAST/ko/console-guide/)を参照してください。
+組織とプロジェクトの作成方法は[NHN Cloudコンソール使用ガイド](/nhncloud/ja/console-guide/)を参照してください。
 
 <a id="enable-the-service"></a>
 ## サービス有効化 { #enable-the-service }
@@ -42,11 +42,11 @@ Log & Crash Searchが有効になると、左側メニューに**Data & Analytic
 ## ログ転送 { #send-logs }
 
 ログを転送するには、Log & Crash Search SDKが必要です。
-SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**Data & Analytics > Log & Crash Search**でダウンロードできます。
+SDKは[NHN Cloud Downloads](/Download/)ページの**Data & Analytics > Log & Crash Search**でダウンロードできます。
 
 > [参考]  
 > SDK使用時に、クラッシュログと一緒に送信されるセッションログは検索画面に表示されません。</br>
-> セッションログの送信時、[リソース提供ポリシー](https://docs.toast.com/ko/TOAST/ko/resource-policy/#log-crash-search)の日次ログ件数提供量には他のログと同じように合算して反映されますが、API呼び出し料金には反映されません。
+> セッションログの送信時、[リソース提供ポリシー](/nhncloud/ja/resource-policy/#log-crash-search)の日次ログ件数提供量には他のログと同じように合算して反映されますが、API呼び出し料金には反映されません。
 
 <a id="search-logs"></a>
 ## ログ検索 { #search-logs }
@@ -62,7 +62,7 @@ SDKは[NHN Cloud Downloads](https://docs.toast.com/ko/Download/)ページの**Da
 
 | 項目 | 説明 |
 |---|---|
-| 検索クエリー入力 | クエリーフィールド検索はLucene文法を使用できます。 <br/> (参照：https://docs.toast.com/ko/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)|
+| 検索クエリー入力 | クエリーフィールド検索はLucene文法を使用できます。 <br/> (参照：[Luceneクエリガイド](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ja/lucene-query-guide/))|
 | 検索対象期間 | 検索クエリーの期間条件を設定できます。 |
 | ログ検索結果 > チャート | ログ検索結果を棒グラフで表示し、棒グラフのバーをクリックするとそのバーのログ期間を再検索してログを確認できます。 |
 | ログ結果ダウンロード | ログ検索結果を任意のフォーマットでダウンロードできます。またクラッシュダンプデータのみ別途ダウンロードが可能です。 |
@@ -348,7 +348,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 
 - 外部OBSにログを保管できます。
 
-1. [AWS S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1)を利用して認証情報の登録および照会でアクセスキー(accessKey)と秘密鍵(secretKey)を取得します。
+1. [AWS S3 API](/Storage/Object%20Storage/ja/s3-api-guide/#_1)を利用して認証情報の登録および照会でアクセスキー(accessKey)と秘密鍵(secretKey)を取得します。
 2. **ログ外部保管設定**で**保管設定**をクリックします。
 3. アクセスキーと秘密鍵をはじめとするデータを入力します。
 4. 外部ログ改ざん通知に関する情報は、設定の追加/修正/削除時に全て必要です。
@@ -356,7 +356,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
     - 連動検証のために設定したバケットに一時ファイルが作成されます。
 
 - 設定したOBSでログが保存されます。
-- [NHN Cloud OBS API案内ガイド](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
+- [NHN Cloud OBS API案内ガイド](/Storage/Object%20Storage/ja/s3-api-guide/)
 
 <a id="network-insights"></a>
 ## ネットワークインサイト { #network-insights }

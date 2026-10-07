@@ -23,7 +23,7 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)でUnity SDKをダウンロードできます。
+[TOAST Document](/Download/)でUnity SDKをダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]

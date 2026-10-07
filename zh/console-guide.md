@@ -14,7 +14,7 @@ Go to **Log Search** or **App Crash Search** to find logs in many ways, like a c
 Access console and select an organization and project from menu on the left. When there is no organization or project available, create one.
 - Select **ORGANIZATION > PROJECT** from the menu on the left.
 
-See the [NHN Cloud Console Guide](https://docs.toast.com/en/TOAST/en/console-guide/) for how to create an organization and a project.
+See the [NHN Cloud Console Guide](/nhncloud/en/console-guide/) for how to create an organization and a project.
 
 ## Enable the Service
 
@@ -35,11 +35,11 @@ To send logs, it is required to check Appkey.
 ## Send Logs
 
 To send a log, Log & Crash Search SDK is required.
-You can download an SDK from **Data & Analytics > Log & Crash Search** of [NHN Cloud Downloads](https://docs.toast.com/en/Download/)
+You can download an SDK from **Data & Analytics > Log & Crash Search** of [NHN Cloud Downloads](/Download/)
 
 > [Note]  
 > When using the SDK, session logs sent along with crash logs are not exposed on the search screen.</br>
-> When sending session logs, the count is added to and reflected in the number of daily log capacity of [Resource Provision Policy](https://docs.toast.com/en/TOAST/en/resource-policy/#log-crash-search) in the same way as other logs. However, it is not reflected in the API call charges.
+> When sending session logs, the count is added to and reflected in the number of daily log capacity of [Resource Provision Policy](/nhncloud/en/resource-policy/#log-crash-search) in the same way as other logs. However, it is not reflected in the API call charges.
 
 ## Search Logs
 
@@ -54,7 +54,7 @@ Details of the **Log Search** screen are as below.
 
 | Item | Description |
 |---|---|
-| Search Query Input | Can apply Lucene grammar for the search of query field. <br/> (Reference: https://docs.toast.com/ko/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)|
+| Search Query Input | Can apply Lucene grammar for the search of query field. <br/> (Reference: [Lucene Query Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/en/lucene-query-guide/))|
 | Time Conditions for Search Query | Configure time conditions for search queries. |
 | Log Search Result > Chart | The log search result is output as a bar graph. If you click a bar of the bar graph, you can check the log by re-searching for the log period of the bar. |
 | Log Result Download | You can download log search results in a format you want. Also, you can download only crash dump data separately. |
@@ -319,7 +319,7 @@ Set information for external log storage.
 
 - Logs can be stored at an external OBS. 
 
-1. Visit [AWS S3 API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/#_1) and register/query credential to import access key and secret key. 
+1. Visit [AWS S3 API](/Storage/Object%20Storage/en/s3-api-guide/#_1) and register/query credential to import access key and secret key. 
 2. From the **External Log Storage Settings**, click **Storage Settings**.
 3. Enter data, including access key and secret key.
 4. All of the information about external log tampering notifications is required when adding/editing/deleting settings.
@@ -327,7 +327,7 @@ Set information for external log storage.
     - A temporary file is created in the bucket you set up for integration verification. 
 
 - Logs are saved at OBS as configured. 
-- [Guide for NHN Cloud OBS API](https://docs.toast.com/ko/Storage/Object%20Storage/ko/s3-api-guide/)
+- [Guide for NHN Cloud OBS API](/Storage/Object%20Storage/en/s3-api-guide/)
 
 ## Network Insights
 

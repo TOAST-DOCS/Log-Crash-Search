@@ -197,7 +197,7 @@
 <a id="july-28-2020-feature-updates"></a>
 #### 기능 개선/변경
 * [Console] 외부 보관 로그에 대한 무결성 검증 기능 추가
-    * [Console 사용 가이드 참고](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
+    * [Console 사용 가이드 참고](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/console-guide/)
 
 <a id="june-23-2020"></a>
 ### 2020. 06. 23. { #june-23-2020 }
