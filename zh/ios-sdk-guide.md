@@ -2,7 +2,7 @@
 
 > [Deprecated] 
 > Log & Crash iOS SDK is not supported any more. 
-> Please use [TOAST SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/). 
+> Please use [TOAST SDK](http://docs.nhncloud.com/en/nhncloud-sdk/en/overview/). 
 
 > [Notice]
 > Crash logs from new devices using the arm64e architecture (iPhone XS, XR, XS Max, and iPad Pros 3rd) can only count the number of occurrences, and analysis of crash content is not yet supported.
@@ -22,7 +22,7 @@ Below describe benefits and features of Log & Crash iOS SDK.
 
 ## Download
 
-Go to [TOAST Document](http://docs.toast.com/en/Download/) to download **iOS SDK(native)**.
+Go to [TOAST Document](http://docs.nhncloud.com/en/Download/) to download **iOS SDK(native)**.
 
 ```
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [iOS SDK] 

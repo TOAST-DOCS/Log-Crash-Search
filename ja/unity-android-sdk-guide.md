@@ -4,7 +4,7 @@
 
 > [Deprecated]
 > Log & Crash Unity Android SDKバージョンは、今後サポートされません。
-> [TOAST SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)を利用してください。
+> [TOAST SDK](http://docs.nhncloud.com/ja/nhncloud-sdk/ja/overview/)を利用してください。
 
 Log & Crash Unity SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。
 Log & Crash Unity SDKの特徴・利点は次のとおりです。
@@ -29,7 +29,7 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)でUnity SDKをダウンロードできます。
+[TOAST Document](http://docs.nhncloud.com/ja/Download/)でUnity SDKをダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
