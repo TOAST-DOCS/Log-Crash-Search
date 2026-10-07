@@ -23,7 +23,7 @@ NHN Cloud Log & Crash Search SDK를 적용하면 모바일 애플리케이션에
 
 <a id="developers-guide-windows-c"></a>
 #### Windows C++
-* [NHN Cloud Log & Crash Search Windows C++ 가이드](https://docs.nhncloud.com/ko/nhncloud-sdk/ko/log-collector-windows/)를 참고하십시오.
+* [NHN Cloud Log & Crash Search Windows C++ 가이드](https://docs.nhncloud.com/ko/nhncloud-sdk/ko/log-collector-windows/)를 참고하세요.
 
 <a id="developers-guide-others"></a>
 #### 기타
