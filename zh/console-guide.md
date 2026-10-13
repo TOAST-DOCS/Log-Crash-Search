@@ -39,7 +39,7 @@ You can download an SDK from **Data & Analytics > Log & Crash Search** of [NHN C
 
 > [Note]  
 > When using the SDK, session logs sent along with crash logs are not exposed on the search screen.</br>
-> When sending session logs, the count is added to and reflected in the number of daily log capacity of [Resource Provision Policy](/nhncloud/zh/resource-policy/#log-crash-search) in the same way as other logs. However, it is not reflected in the API call charges.
+> When sending session logs, the count is added to and reflected in the number of daily log capacity of [Resource Provision Policy](/nhncloud/zh/resource-policy/#resource-provision-policy-for-log-crash-search-service) in the same way as other logs. However, it is not reflected in the API call charges.
 
 ## Search Logs
 
@@ -319,7 +319,7 @@ Set information for external log storage.
 
 - Logs can be stored at an external OBS. 
 
-1. Visit [AWS S3 API](/Storage/Object%20Storage/zh/s3-api-guide/#_1) and register/query credential to import access key and secret key. 
+1. Visit [AWS S3 API](/Storage/Object%20Storage/zh/s3-api-guide/#s3-api-credentials) and register/query credential to import access key and secret key. 
 2. From the **External Log Storage Settings**, click **Storage Settings**.
 3. Enter data, including access key and secret key.
 4. All of the information about external log tampering notifications is required when adding/editing/deleting settings.

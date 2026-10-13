@@ -152,7 +152,7 @@ SDK는 [NHN Cloud Downloads](/Download/) 페이지의 **Data & Analytics > Log &
 
 - 외부 OBS에 로그를 보관할 수 있습니다.
 
-1. [AWS S3 API](/Storage/Object%20Storage/ko/s3-api-guide/#_1)를 이용해 자격 증명 등록 및 조회로 액세스 키(accessKey)와 비밀 키(secretKey)를 가져옵니다.
+1. [AWS S3 API](/Storage/Object%20Storage/ko/s3-api-guide/#s3-api-credential)를 이용해 자격 증명 등록 및 조회로 액세스 키(accessKey)와 비밀 키(secretKey)를 가져옵니다.
 2. **로그 외부 보관 설정**에서 **보관 설정**을 클릭합니다.
 3. 액세스 키와 비밀 키를 비롯한 데이터들 입력합니다.
 4. 외부 로그 변조 알림에 대한 정보들은 설정 추가/수정/삭제 시 전부 필요합니다.

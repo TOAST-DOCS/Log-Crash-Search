@@ -46,7 +46,7 @@ SDK는 [NHN Cloud Downloads](/Download/) 페이지의 **Data & Analytics > Log &
 
 > [참고]  
 > SDK 사용 시 크래시 로그와 함께 전송되는 세션 로그는 검색 화면에 노출되지 않습니다.</br>
-> 세션 로그 전송 시 [리소스 제공 정책](/nhncloud/ko/resource-policy/#log-crash-search)의 일일 로그 건수 제공량에는 다른 로그와 동일하게 합산하여 반영되지만, API 호출 요금에는 반영되지 않습니다.
+> 세션 로그 전송 시 [리소스 제공 정책](/nhncloud/ko/resource-policy/#resource-provision-policy-for-log-crash-search-service)의 일일 로그 건수 제공량에는 다른 로그와 동일하게 합산하여 반영되지만, API 호출 요금에는 반영되지 않습니다.
 
 <a id="search-logs"></a>
 ## 로그 검색 { #search-logs }
@@ -347,7 +347,7 @@ Symbolication file이 등록 되어 있어야 크래시 로그를 확인할 수 
 
 - 외부 OBS에 로그를 보관할 수 있습니다.
 
-1. [AWS S3 API](/Storage/Object%20Storage/ko/s3-api-guide/#_1)를 이용해 자격 증명 등록 및 조회로 액세스 키(accessKey)와 비밀 키(secretKey)를 가져옵니다.
+1. [AWS S3 API](/Storage/Object%20Storage/ko/s3-api-guide/#s3-api-credential)를 이용해 자격 증명 등록 및 조회로 액세스 키(accessKey)와 비밀 키(secretKey)를 가져옵니다.
 2. **로그 외부 보관 설정**에서 **보관 설정**을 클릭합니다.
 3. 액세스 키와 비밀 키를 비롯한 데이터들 입력합니다.
 4. 외부 로그 변조 알림에 대한 정보들은 설정 추가/수정/삭제 시 전부 필요합니다.

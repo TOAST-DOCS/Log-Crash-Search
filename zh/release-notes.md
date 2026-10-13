@@ -413,7 +413,7 @@
 * [Console] Changed alarm delivery format (shows alarm name, instead of project name)
 * [SDK] Added more features
     * To ensure AddCustomField between the Init function and log delivery, added SendThread Lock
-        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
+        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Changed features
     * Send Exception, errorCode, and RequestHeader fields in the analyzable format on console
 		* Changed field names into txtException, txterrorCode, and txtRequestHeader

@@ -46,7 +46,7 @@ SDKは[NHN Cloud Downloads](/Download/)ページの**Data & Analytics > Log & Cr
 
 > [参考]  
 > SDK使用時に、クラッシュログと一緒に送信されるセッションログは検索画面に表示されません。</br>
-> セッションログの送信時、[リソース提供ポリシー](/nhncloud/ja/resource-policy/#log-crash-search)の日次ログ件数提供量には他のログと同じように合算して反映されますが、API呼び出し料金には反映されません。
+> セッションログの送信時、[リソース提供ポリシー](/nhncloud/ja/resource-policy/#resource-provision-policy-for-log-crash-search-service)の日次ログ件数提供量には他のログと同じように合算して反映されますが、API呼び出し料金には反映されません。
 
 <a id="search-logs"></a>
 ## ログ検索 { #search-logs }
@@ -348,7 +348,7 @@ Symbolication fileが登録されていると、クラッシュログを確認�
 
 - 外部OBSにログを保管できます。
 
-1. [AWS S3 API](/Storage/Object%20Storage/ja/s3-api-guide/#_1)を利用して認証情報の登録および照会でアクセスキー(accessKey)と秘密鍵(secretKey)を取得します。
+1. [AWS S3 API](/Storage/Object%20Storage/ja/s3-api-guide/#s3-api-credential)を利用して認証情報の登録および照会でアクセスキー(accessKey)と秘密鍵(secretKey)を取得します。
 2. **ログ外部保管設定**で**保管設定**をクリックします。
 3. アクセスキーと秘密鍵をはじめとするデータを入力します。
 4. 外部ログ改ざん通知に関する情報は、設定の追加/修正/削除時に全て必要です。
