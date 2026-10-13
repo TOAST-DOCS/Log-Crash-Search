@@ -324,7 +324,7 @@
 <a id="october-23-2018-feature-updates"></a>
 #### Feature Updates
 * [Console] Closed log alarms (old)
-    * [Relevant Notice](https://toast.com/support/notice/detail/1453435858K00594)
+    * [Relevant Notice](https://www.nhncloud.com/kr/support/notice/1453435858K00594)
 
 <a id="september-18-2018"></a>
 ### September 18, 2018 { #september-18-2018 }

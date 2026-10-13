@@ -324,7 +324,7 @@
 <a id="october-23-2018-feature-updates"></a>
 #### 기능 개선/ 변경
 * [Console] (구) 로그 알람 종료
-    * [관련공지](https://toast.com/support/notice/detail/1453435858K00594)
+    * [관련공지](https://www.nhncloud.com/kr/support/notice/1453435858K00594)
 
 <a id="september-18-2018"></a>
 ### 2018.09.18 { #september-18-2018 }

@@ -291,7 +291,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 <a id="log-search-api"></a>
 ## 로그 검색 API { #log-search-api }
 
-> [주의] 이 API는 지원 종료될 예정입니다. 신규로 개발할 때는 아래 [v3 로그 검색 API](#v3-로그-검색-api) 사용을 권장합니다.
+> [주의] 이 API는 지원 종료될 예정입니다. 신규로 개발할 때는 아래 [v3 로그 검색 API](#v3-log-search-api) 사용을 권장합니다.
 
 저장된 로그를 Lucene 쿼리를 사용해 검색할 수 있습니다.<br>
 로그 검색 API는 사용 패턴에 따라 시간당 요청할 수 있는 양을 제한합니다. 검색에 사용 가능한 리소스는 토큰으로 표현하며, 검색 API를 호출할 때마다 내부 기준에 따라 일정량이 차감됩니다. 토큰 잔량이 양수일 때 검색 API를 사용할 수 있습니다.<br>
