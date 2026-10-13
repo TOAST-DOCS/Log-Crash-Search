@@ -26,7 +26,7 @@ Log & Crash iOS SDK 특·장점은 다음과 같습니다.
 <a id="download"></a>
 ## 다운로드 { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)에서 iOS SDK(native)를 받을 수 있습니다.
+[TOAST Document](https://docs.nhncloud.com/ko/Download/)에서 iOS SDK(native)를 받을 수 있습니다.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [iOS SDK] 클릭
