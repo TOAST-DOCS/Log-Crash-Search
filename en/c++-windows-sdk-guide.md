@@ -24,7 +24,7 @@ Below describe benefits and features of Log & Crash C++ Windows SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **C++ Windows SDK**.
+Go to [TOAST Document](https://docs.nhncloud.com/en/Download/) and download **C++ Windows SDK**.
 
 ```
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Windows SDK]
