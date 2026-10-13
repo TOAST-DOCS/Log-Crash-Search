@@ -137,7 +137,7 @@
 ### July 28, 2020
 #### Feature Updates
 * [Console] Added the feature of integrity validation for logs that are externally stored
-    * [See Console User Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/zh/console-guide/#_27)
+    * [See Console User Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/zh/console-guide/)
 
 ### June 23, 2020
 #### Feature Updates

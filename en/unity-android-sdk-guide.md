@@ -5,7 +5,7 @@
 
 > [Deprecated]
 > Log & Crash Unity Android SDK is not supported any more.
-> Please use [TOAST SDK](https://docs.nhncloud.com/en/nhncloud-sdk/en/overview/).
+> Please use [TOAST SDK](/nhncloud-sdk/en/overview/).
 
 Log & Crash Unity SDK sends logs to a Log & Crash Search collector server.
 

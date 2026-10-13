@@ -4,7 +4,7 @@
 
 > [Deprecated]
 > Log & Crash Unity iOS SDKバージョンは、今後サポートされません。
-> [TOAST SDK](https://docs.nhncloud.com/ja/nhncloud-sdk/ja/overview/)をご利用ください。
+> [TOAST SDK](/nhncloud-sdk/ja/overview/)をご利用ください。
 
 Log & Crash Unity SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。  
 Log & Crash Unity SDKの特徴・利点は次のとおりです。
