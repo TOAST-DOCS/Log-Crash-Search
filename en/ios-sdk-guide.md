@@ -5,7 +5,7 @@
 
 > [Deprecated] 
 > Log & Crash iOS SDK is not supported any more. 
-> Please use [TOAST SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/). 
+> Please use [TOAST SDK](https://docs.nhncloud.com/en/TOAST/en/toast-sdk/overview/). 
 
 > [Notice]
 > Crash logs from new devices using the arm64e architecture (iPhone XS, XR, XS Max, and iPad Pros 3rd) can only count the number of occurrences, and analysis of crash content is not yet supported.

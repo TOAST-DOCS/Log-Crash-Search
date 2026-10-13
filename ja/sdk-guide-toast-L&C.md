@@ -15,15 +15,15 @@ NHN Cloud Log & Crash Search SDKを適用すると、モバイルアプリケー
 
 <a id="developers-guide-ios"></a>
 #### iOS
-* [NHN Cloud Log & Crash Search iOSガイド](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-ios/)を参照してください。
+* [NHN Cloud Log & Crash Search iOSガイド](https://docs.nhncloud.com/ko/TOAST/ko/toast-sdk/log-collector-ios/)を参照してください。
 
 <a id="developers-guide-android"></a>
 #### Android
-* [NHN Cloud Log & Crash Search Androidガイド](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-android/)を参照してください。
+* [NHN Cloud Log & Crash Search Androidガイド](https://docs.nhncloud.com/ko/TOAST/ko/toast-sdk/log-collector-android/)を参照してください。
 
 <a id="developers-guide-windows-c"></a>
 #### Windows C++
-* [NHN Cloud Log & Crash Search Windows C++ ガイド](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-windows/)を参照してください。
+* [NHN Cloud Log & Crash Search Windows C++ ガイド](https://docs.nhncloud.com/ko/TOAST/ko/toast-sdk/log-collector-windows/)を参照してください。
 
 <a id="developers-guide-others"></a>
 #### その他
