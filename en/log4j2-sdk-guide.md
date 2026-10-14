@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=eec5a9a734d6 -->
 
 <a id="analytics-log-crash-search-log4j-v2-sdk-guide"></a>
