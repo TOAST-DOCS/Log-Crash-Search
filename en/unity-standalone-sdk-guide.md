@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=47ff50812460 -->
 
 <a id="analytics-log-crash-search-unity-standalone-sdk-user-guide"></a>
