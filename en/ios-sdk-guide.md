@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=ecb9adf37221 -->
 
 <a id="analytics-log-crash-search-ios-sdk-guide"></a>
