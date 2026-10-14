@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=b6b3abc56554 -->
 
 ﻿## Analytics > Log & Crash Search > AndroidNDK SDK使用ガイド
