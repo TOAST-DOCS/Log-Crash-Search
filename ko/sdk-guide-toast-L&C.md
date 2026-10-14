@@ -15,16 +15,16 @@ NHN Cloud Log & Crash Search SDK를 적용하면 모바일 애플리케이션에
 
 <a id="developers-guide-ios"></a>
 #### iOS
-* [NHN Cloud Log & Crash Search iOS 가이드](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-ios/)를 참고하십시오.
+* [NHN Cloud Log & Crash Search iOS 가이드](https://docs.nhncloud.com/ko/nhncloud-sdk/ko/log-collector-ios/)를 참고하세요.
 
 <a id="developers-guide-android"></a>
 #### Android
-* [NHN Cloud Log & Crash Search Android 가이드](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-android/)를 참고하십시오.
+* [NHN Cloud Log & Crash Search Android 가이드](https://docs.nhncloud.com/ko/nhncloud-sdk/ko/log-collector-android/)를 참고하세요.
 
 <a id="developers-guide-windows-c"></a>
 #### Windows C++
-* [NHN Cloud Log & Crash Search Windows C++ 가이드](https://docs.toast.com/ko/TOAST/ko/toast-sdk/log-collector-windows/)를 참고하십시오.
+* [NHN Cloud Log & Crash Search Windows C++ 가이드](https://docs.nhncloud.com/ko/nhncloud-sdk/ko/log-collector-windows/)를 참고하세요.
 
 <a id="developers-guide-others"></a>
 #### 기타
-* 기타 플랫폼에 대한 문의는 [NHN Cloud 고객 센터](https://toast.com/support/inquiry?alias=tab3_11)로 해 주시기 바랍니다.
+* 기타 플랫폼에 대한 문의는 [NHN Cloud 고객 센터](https://www.nhncloud.com/kr/support/inquiry)로 해 주시기 바랍니다.

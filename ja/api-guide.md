@@ -291,7 +291,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.nhncloud
 <a id="log-search-api"></a>
 ## ログ検索API { #log-search-api }
 
-> [注意] このAPIはサポート終了する予定です。新規で開発する場合は、以下の[v3 ログ検索API](#v3-ログ検索-api)の使用を推奨します。
+> [注意] このAPIはサポート終了する予定です。新規で開発する場合は、以下の[v3 ログ検索API](#v3-log-search-api)の使用を推奨します。
 
 保存されたログをLuceneクエリを使用して検索できます。</br>
 ログ検索APIは、使用パターンによって1時間あたりにリクエストできる量を制限します。検索に使用可能なリソースはトークンで表現し、検索APIを呼び出すたびに内部基準に基づいて一定量が差し引かれます。トークンの残量が正の場合、検索APIを使用できます。</br>
@@ -732,7 +732,7 @@ GET /api/v2/search/available-tokens/{appkey}
 API呼び出し及び認証のための方法としてUser Access Keyトークンをサポートします。<br>
 トークンの発行方法については、以下のリンクを参照してください。
 
-[User Access Key Token](https://docs.nhncloud.com/ja/nhncloud/ja/public-api/user-access-key-token/)
+[User Access Key Token](/nhncloud/ja/public-api/user-access-key-token/)
 
 <a id="authentication-example-http-header-for-an-api-request"></a>
 #### APIリクエストのHTTPヘッダの例

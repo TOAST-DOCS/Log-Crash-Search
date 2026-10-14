@@ -284,7 +284,7 @@ $ curl -H "content-type:application/json" -XPOST 'https://api-logncrash.gov-nhnc
 
 ## 로그 검색 API
 
-> [주의] 이 API는 지원 종료될 예정입니다. 신규로 개발할 때는 아래 [v3 로그 검색 API](#v3-로그-검색-api) 사용을 권장합니다.
+> [주의] 이 API는 지원 종료될 예정입니다. 신규로 개발할 때는 아래 [v3 로그 검색 API](#v3-log-search-api) 사용을 권장합니다.
 
 저장된 로그를 Lucene 쿼리를 사용해 검색할 수 있습니다.<br>
 로그 검색 API는 사용 패턴에 따라 시간당 요청할 수 있는 양을 제한합니다. 검색에 사용 가능한 리소스는 토큰으로 표현하며, 검색 API를 호출할 때마다 내부 기준에 따라 일정량이 차감됩니다. 토큰 잔량이 양수일 때 검색 API를 사용할 수 있습니다.<br>
@@ -691,7 +691,8 @@ GET /api/v2/search/available-tokens/{appkey}
 </details>
 
 
-## v3 로그 검색 API
+<a id="v3-log-search-api"></a>
+## v3 로그 검색 API { #v3-log-search-api }
 
 저장된 로그를 Lucene 쿼리를 사용해 검색할 수 있으며, 크래시 분석용 Symbol 파일 업로드/조회/삭제 기능을 제공합니다.<br>
 로그 검색 API는 사용 패턴에 따라 시간당 요청할 수 있는 양을 제한합니다. 검색에 사용 가능한 리소스는 토큰으로 표현하며, 검색 API를 호출할 때마다 내부 기준에 따라 일정량이 차감됩니다. 토큰 잔량이 양수일 때 검색 API를 사용할 수 있습니다.<br>
@@ -702,7 +703,7 @@ GET /api/v2/search/available-tokens/{appkey}
 API 호출 및 인증을 위한 방법으로 User Access Key 토큰을 지원합니다.<br>
 토큰 발급 방법은 아래 링크를 참고하세요.
 
-[User Access Key Token](https://docs.gov-nhncloud.com/ko/nhncloud/ko/public-api/user-access-key-token/)
+[User Access Key Token](/nhncloud/ko/public-api/user-access-key-token-gov/)
 
 #### API 요청의 HTTP 헤더 예시
 ```
