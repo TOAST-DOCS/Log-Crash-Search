@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=bcd1c8ae042b -->
 
 ﻿## Analytics > Log & Crash Search > C++ Windows SDK使用ガイド
