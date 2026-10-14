@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=fdc80d476a42 -->
 
 <a id="data-analytics-log-crash-search-logback-sdk-guide"></a>
