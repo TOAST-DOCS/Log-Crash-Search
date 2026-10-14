@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=efdbe95782ee -->
 
 ﻿## Analytics > Log & Crash Search > Unity Android SDK使用ガイド
