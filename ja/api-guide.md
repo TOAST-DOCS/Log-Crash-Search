@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=956b0b576e08 -->
 
 <a id="data-analytics-log-crash-search-api-guide"></a>
