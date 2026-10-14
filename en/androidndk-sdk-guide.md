@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=b6b3abc56554 -->
 
 <a id="analytics-log-crash-search-androidndk-sdk-guide"></a>
