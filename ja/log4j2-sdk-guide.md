@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=eec5a9a734d6 -->
 
 ﻿## Analytics > Log & Crash Search > Log4J v2 SDK使用ガイド
