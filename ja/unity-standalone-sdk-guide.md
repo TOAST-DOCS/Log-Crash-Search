@@ -2,8 +2,8 @@
 
 <!-- pre-align:aligned sig=47ff50812460 -->
 
-﻿## Analytics > Log & Crash Search > Unity Standalone SDK使用ガイド
-
+<a id="analytics-log-crash-search-unity-standalone-sdk-user-guide"></a>
+## Analytics > Log & Crash Search > Unity Standalone SDK 使用ガイド { #analytics-log-crash-search-unity-standalone-sdk-user-guide }
 
 Log & Crash Unity SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。  
 Log & Crash Unity SDKの特徴・利点は次のとおりです。
@@ -11,11 +11,6 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 - ログを収集サーバーに転送します。
 - アプリで発生したクラッシュログを収集サーバーに転送します。
 - Log & Crash Searchで、転送されたログの照会および検索が可能です。
-
-<a id="analytics-log-crash-search-unity-standalone-sdk-user-guide"></a>
-## Analytics > Log & Crash Search > Unity Standalone SDK 使用ガイド { #analytics-log-crash-search-unity-standalone-sdk-user-guide }
-
-<!-- TODO: translate body -->
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }

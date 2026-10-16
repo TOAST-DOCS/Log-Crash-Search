@@ -2,7 +2,8 @@
 
 <!-- pre-align:aligned sig=ecb9adf37221 -->
 
-﻿## Analytics > Log & Crash Search > iOS SDK使用ガイド
+<a id="analytics-log-crash-search-ios-sdk-guide"></a>
+## Analytics > Log & Crash Search > iOS SDK 使用ガイド { #analytics-log-crash-search-ios-sdk-guide }
 
 > [Deprecated]
 > Log & Crash iOS SDKバージョンは、今後サポートされません。
@@ -19,11 +20,6 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 - アプリで発生したクラッシュログを収集サーバーに転送します。
 - Log & Crash Searchで、転送されたログを照会および検索ができます。
 - マルチスレッド環境で動作します。
-
-<a id="analytics-log-crash-search-ios-sdk-guide"></a>
-## Analytics > Log & Crash Search > iOS SDK 使用ガイド { #analytics-log-crash-search-ios-sdk-guide }
-
-<!-- TODO: translate body -->
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }

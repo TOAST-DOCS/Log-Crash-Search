@@ -2,7 +2,8 @@
 
 <!-- pre-align:aligned sig=2d04f196eb51 -->
 
-﻿## Analytics > Log & Crash Search > Android SDK使用ガイド
+<a id="analytics-log-crash-search-android-sdk-guide"></a>
+## Analytics > Log & Crash Search > Android SDK使用ガイド { #analytics-log-crash-search-android-sdk-guide }
 
 > [Deprecated]
 > Log & Crash Android SDKバージョンは、今後はサポートされません。
@@ -15,11 +16,6 @@ Log & Crash Android SDKの特徴・利点は次のとおりです。
 - アプリで発生したクラッシュログを収集サーバーに転送します。
 - Log & Crash Searchから送られたログの照会および検索ができます。
 - マルチスレッド環境で動作します。
-
-<a id="analytics-log-crash-search-android-sdk-guide"></a>
-## Analytics > Log & Crash Search > Android SDK使用ガイド { #analytics-log-crash-search-android-sdk-guide }
-
-<!-- TODO: translate body -->
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }

@@ -298,12 +298,10 @@ void setUserId(const char* userId);
 <a id="guide-to-create-symbol-files"></a>
 ## Guide to Create Symbol Files { #guide-to-create-symbol-files }
 
-- To interpret crashes occurred in Log & Crash Windows SDK, symbol files need to be created and uploaded to Console.
-
 <a id="overview"></a>
 ### Overview { #overview }
 
-<!-- TODO: translate body -->
+- To interpret crashes occurred in Log & Crash Windows SDK, symbol files need to be created and uploaded to Console.
 
 <a id="requirements"></a>
 ### Requirements { #requirements }
