@@ -18,6 +18,7 @@ Go to **Log Search** or **App Crash Search** to find logs in many ways, like a c
 ## Select a Project { #select-a-project }
 
 Access console and select an organization and project from menu on the left. When there is no organization or project available, create one.
+
 - Select **ORGANIZATION > PROJECT** from the menu on the left.
 
 See the [NHN Cloud Console Guide](/nhncloud/en/console-guide/) for how to create an organization and a project.
@@ -64,7 +65,7 @@ Details of the **Log Search** screen are as below.
 
 | Item | Description |
 |---|---|
-| Search Query Input | Can apply Lucene grammar for the search of query field. <br/> (Reference: [Lucene Query Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/en/lucene-query-guide/))|
+| Search Query Input | Can apply Lucene grammar for the search of query field. <br/> (Reference: [Lucene Query Guide](./lucene-query-guide/))|
 | Time Conditions for Search Query | Configure time conditions for search queries. |
 | Log Search Result > Chart | The log search result is output as a bar graph. If you click a bar of the bar graph, you can check the log by re-searching for the log period of the bar. |
 | Log Result Download | You can download log search results in a format you want. Also, you can download only crash dump data separately. |

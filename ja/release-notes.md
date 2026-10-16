@@ -199,7 +199,7 @@
 <a id="july-28-2020-feature-updates"></a>
 #### 機能改善/変更
 * [Console]外部保管ログのデータ完全性検証機能を追加
-    * [Console使用ガイド参考](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ja/console-guide/)
+    * [Console使用ガイド参考](./console-guide/)
 
 <a id="june-23-2020"></a>
 ### 2020. 06. 23. { #june-23-2020 }
@@ -207,7 +207,7 @@
 #### 機能改善/変更
 * [Console] Object、Arrayタイプのクエリー方式を変更
     * 文字列検索と同じ方法でクエリーを伝達する必要があります。
-    * [Luceneクエリーガイド参考](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ja/lucene-query-guide/)
+    * [Luceneクエリーガイド参考](./lucene-query-guide/)
     
 <a id="may-26-2020"></a>
 ### 2020. 05. 26. { #may-26-2020 }
@@ -580,7 +580,7 @@
 ### 2017.02.23 { #february-23-2017 }
 <a id="february-23-2017-feature-updates"></a>
 #### 기능 개선/변경
-* [API] [log Bulk upload](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ja/api-guide/) 機能追加
+* [API] [log Bulk upload](./api-guide/) 機能追加
     * REST APIでログを送信する際、JSON array形式でログを送信できます。
 * [API] long,doubleオプション追加
     * REST APIでログ送信時にlong、doubleで始まるフィールドを使用した場合、long、double型として保存されます

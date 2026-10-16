@@ -18,6 +18,7 @@ Log & Crash Search SDKを通して、ログの転送を開始します。
 ## プロジェクト選択 { #select-a-project }
 
 コンソールに接続し、左側メニューを利用して組織(Organization)とプロジェクト(Project)を選択します。組織やプロジェクトがない場合は、作成する必要があります。
+
 - 左側メニューから**ORGANIZATION > PROJECT**をクリックします。
 
 組織とプロジェクトの作成方法は[NHN Cloudコンソール使用ガイド](/nhncloud/ja/console-guide/)を参照してください。
@@ -64,7 +65,7 @@ SDKは[NHN Cloud Downloads](/Download/)ページの**Data & Analytics > Log & Cr
 
 | 項目 | 説明 |
 |---|---|
-| 検索クエリー入力 | クエリーフィールド検索はLucene文法を使用できます。 <br/> (参照：[Luceneクエリガイド](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ja/lucene-query-guide/))|
+| 検索クエリー入力 | クエリーフィールド検索はLucene文法を使用できます。 <br/> (参照：[Luceneクエリガイド](./lucene-query-guide/))|
 | 検索対象期間 | 検索クエリーの期間条件を設定できます。 |
 | ログ検索結果 > チャート | ログ検索結果を棒グラフで表示し、棒グラフのバーをクリックするとそのバーのログ期間を再検索してログを確認できます。 |
 | ログ結果ダウンロード | ログ検索結果を任意のフォーマットでダウンロードできます。またクラッシュダンプデータのみ別途ダウンロードが可能です。 |
