@@ -2,23 +2,14 @@
 
 <!-- pre-align:aligned sig=badf397da372 -->
 
-﻿## Analytics > Log & Crash Search > Log4J SDK使用ガイド
+<a id="analytics-log-crash-search-log4j-sdk-guide"></a>
+## Analytics > Log & Crash Search > Log4J SDK 使用ガイド { #analytics-log-crash-search-log4j-sdk-guide }
 
 Log & Crash Log4J SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。
 Log & Crash Log4J SDKの特徴・利点は次のとおりです。
 
 - ログを収集サーバーに転送します。
 - Log & Crash Searchで、転送されたログの照会および検索が可能です。
-- マルチスレッド環境で動作します。
-
-<a id="analytics-log-crash-search-log4j-sdk-guide"></a>
-## Analytics > Log & Crash Search > Log4J SDK 使用ガイド { #analytics-log-crash-search-log4j-sdk-guide }
-
-Log & Crash Log4J SDKは、Log & Crash Search収集サーバーにログを送信する機能を提供します。
-Log & Crash Log4J SDKの特長は次のとおりです。
-
-- ログを収集サーバーに送信します。
-- Log & Crash Searchで送信されたログを照会および検索できます。
 - マルチスレッド環境で動作します。
 
 <a id="supporting-environment"></a>
