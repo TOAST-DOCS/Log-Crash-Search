@@ -16,6 +16,7 @@ Log & Crash Search SDK를 통해서 로그 전송을 시작합니다.
 ## 프로젝트 선택 { #select-a-project }
 
 콘솔에 접속하여 왼쪽 메뉴를 이용하여 조직(Organization)과 프로젝트(Project)를 선택합니다. 조직이나 프로젝트가 없다면 새로 만들어야 합니다.
+
 - 왼쪽 메뉴에서 **ORGANIZATION > PROJECT**를 클릭합니다.
 
 조직과 프로젝트를 만드는 자세한 방법은 [NHN Cloud 콘솔 사용 가이드](/nhncloud/ko/console-guide/)를 참고하세요.

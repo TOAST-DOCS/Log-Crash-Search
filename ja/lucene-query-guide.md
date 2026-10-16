@@ -9,6 +9,7 @@
 ## 基本注意事項 { #basic-precautions }
 
 ダブルクォーテーション(")とチルダ(~)の位置や有無によって、演算子として使用するかどうかが決定されます。
+
 * 例)近似検索と類似項目検索
 また、基本的に検索語がダブルクォーテーション(")で囲まれている場合、囲まれている部分全体を1つの構文として検索します。
 * 例) body:normal AND performance
@@ -20,27 +21,34 @@
 * → bodyフィールドの値に"normal AND performanceがあるログを検索
 
 ![lcs_lucene_guide_02](https://static.toastoven.net/prod_logncrash/lcs_lucene_guide_02.png)
+
 * "normal AND performance"に該当するテキストがないため、ログ結果が0
 
 検索時、特殊文字を使用する時に文字の前にバックスラッシュまたは、\を入力してエスケープ処理します。
+
 * 対象特殊文字: ```+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /```
 
 URL内の特殊文字(予約文字含む)は、エンコードする必要があります。
+
 * 例) '<'特殊文字は%3Cと入力
 
 <a id="basic-search"></a>
 ## 基本検索 { #basic-search }
 
 filedname:search word
+
 * 任意の単一フィールド(fieldname)で、単一の用語(search word)を検索します。
 
 フィールド名がlog.type、log.timeまたはlog.versionなどの形式の場合は、下記のように一括検索が可能です。
+
 * 例) log.*:alpha
 
 !\_exists\_:fieldname
+
 * 該当fieldnameに値がないか(null)、該当fieldnameを持たないログを検索します。
 
 \_exists\_:fieldname
+
 * 該当fieldnameにnon-nullの値を持たないログを検索します。
 
 <a id="range-search"></a>
@@ -66,6 +74,7 @@ filedname:search word
 | NOT, !, - | NOT演算子 |
 
 NOT演算子`-`の場合、AND NOTの意味で使います。
+
 * 例) logType:bulk -api
 * → logType:bulk AND NOT apiと同じ
 
@@ -78,6 +87,7 @@ NOT演算子`-`の場合、AND NOTの意味で使います。
 * performanceで始まるbodyがあるログを検索します。
 
 ?は、任意の1文字を検索します。
+
 * 例) body:performance?
 * performanceで始まり、任意の1文字に対応するbodyフィールドがあるログを検索します。
 
@@ -87,6 +97,7 @@ NOT演算子`-`の場合、AND NOTの意味で使います。
 ## 近似検索(Proximity search) { #proximity-search }
 
 fiedname:"検索語A 検索語B"~n
+
 * 検索語Aと検索語Bの間に最大n個の単語があるログを探します。
 * 例) body:"normal cron"~2
 
@@ -96,6 +107,7 @@ fiedname:"検索語A 検索語B"~n
 ### 重み付け検索(Boosting) { #boosting }
 
 fieldname:検索語A^n 検索語B
+
 * 一部検索キーワードに重みを用いて、より高い順位で結果を取得できます。
 * 例) body:normal^2 cron
 * 重みは0より大きい実数のみ可能で、1未満の数値も指定できます。
@@ -106,12 +118,14 @@ fieldname:検索語A^n 検索語B
 ## 正規表現検索 { #regex-search }
 
 一般的に知られている正規表現検索が可能です。
+
 * 例) dressまたはpressを含む文書を検索する場合は、/[dp]ress/と入力
 
 <a id="fuzzy-search"></a>
 ## あいまい項目検索(Fuzzy search) { #fuzzy-search }
 
 fieldname:検索語~n
+
 * 検索語と類似した、n個の文字まで他の結果を検索します。(最大2個)
 * デフォルトの文字数は2です。
 * 例) logSource:logncrash-logS**ur**rce~2

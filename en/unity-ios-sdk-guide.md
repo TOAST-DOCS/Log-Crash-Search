@@ -12,6 +12,7 @@
 Log & Crash Unity SDK sends logs to a Log & Crash Search collector server.
 
 Below describe benefits and features of Log & Crash Unity SDK.
+
 - Send logs to a collector server.
 - Send crash logs occurred in an app to a collector server.
 - Retrieve and search logs sent from Log & Crash Search.
@@ -314,6 +315,7 @@ false: Remove duplicates is disabled.
 - ATS is provided to secure safe communication between apps and networks introduced in iOS9 and OSX10.11, by allowing safely encrypted https communications only and blocking unsafe https/http communications. In Log & Crash Search where communication using http protocol is under trial, settings must be added as below to info.plist.
 
 For detailed settings, refer to the link as below:
+
 - Apple Developer [iOS 9.0](https://developer.apple.com/library/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 
 1. How to Allow All https
