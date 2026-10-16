@@ -3,10 +3,10 @@
 <!-- pre-align:aligned sig=1db700fbea0a -->
 
 <a id="guide-for-lucene-query"></a>
-## Data & Analytics > Log & Crash Search > Lucene 쿼리 가이드 { #guide-for-lucene-query }
+## Data & Analytics > Log & Crash Search > Lucene Query Guide { #guide-for-lucene-query }
 
 <a id="basic-precautions"></a>
-## 기본 주의 사항 { #basic-precautions }
+## Basic Precautions { #basic-precautions }
 
 It depends on the location or availability of double quotes (") or tilde (~) to serve as an operator or not.
 * e.g.) Proximity searches and fuzzy searches

@@ -290,7 +290,7 @@ false: Remove duplicates is disabled
 ![](http://static.toastoven.net/prod_logncrash/image023.png)
 - Select **Android Platform** and click **Player Settings**.
   ![](http://static.toastoven.net/prod_logncrash/image028.png)
-- **Internet Access**는 **Require**, **Write Access**는 **External(SDCard)**로 설정합니다.
+- Set **Internet Access** to **Require** and **Write Access** to **External(SDCard)**.
   ![](http://static.toastoven.net/prod_logncrash/image029.png)
 
 2. Click **Build And Run** in the **Build settings**.
