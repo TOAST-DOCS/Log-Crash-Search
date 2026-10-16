@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=47ff50812460 -->
 
 ﻿## Analytics > Log & Crash Search > Unity Standalone SDK使用ガイド

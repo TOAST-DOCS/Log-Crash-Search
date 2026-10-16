@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=99d57f88ede8 -->
 
 <a id="data-analytics-log-crash-search-release-notes"></a>

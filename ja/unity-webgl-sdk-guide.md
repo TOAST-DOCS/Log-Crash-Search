@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=45b1bfc767db -->
 
 ﻿## Analytics > Log & Crash Search > Unity WebGL SDK使用ガイド

@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=3c5d3c0528c4 -->
 
 <a id="analytics-log-crash-search-unity-ios-sdk-guide"></a>

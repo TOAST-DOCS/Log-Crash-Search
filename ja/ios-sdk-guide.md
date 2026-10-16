@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=ecb9adf37221 -->
 
 ﻿## Analytics > Log & Crash Search > iOS SDK使用ガイド

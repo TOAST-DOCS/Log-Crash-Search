@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=45b1bfc767db -->
 
 <a id="analytics-log-crash-search-unity-webgl-sdk-user-guide"></a>

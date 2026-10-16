@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=3c5d3c0528c4 -->
 
 ﻿## Analytics > Log & Crash Search > Unity iOS SDK使用ガイド

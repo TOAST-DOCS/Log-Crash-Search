@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=efdbe95782ee -->
 
 <a id="analytics-log-crash-search-unity-android-sdk-guide"></a>

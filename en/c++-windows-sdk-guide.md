@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=bcd1c8ae042b -->
 
 <a id="analytics-log-crash-search-c-windows-sdk-guide"></a>
