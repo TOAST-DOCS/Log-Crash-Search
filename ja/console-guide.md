@@ -18,6 +18,7 @@ Log & Crash Search SDKを通して、ログの転送を開始します。
 ## プロジェクト選択 { #select-a-project }
 
 コンソールに接続し、左側メニューを利用して組織(Organization)とプロジェクト(Project)を選択します。組織やプロジェクトがない場合は、作成する必要があります。
+
 - 左側メニューから**ORGANIZATION > PROJECT**をクリックします。
 
 組織とプロジェクトの作成方法は[NHN Cloudコンソール使用ガイド](/nhncloud/ja/console-guide/)を参照してください。

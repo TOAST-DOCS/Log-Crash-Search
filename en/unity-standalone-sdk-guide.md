@@ -8,6 +8,7 @@
 Log & Crash Unity SDK sends logs to a Log & Crash Search collector server.
 
 Below describe benefits and features of Log & Crash Unity SDK.
+
 - Send logs to a collector server.
 - Send crash logs occurred in an app to a collector server.
 - Retrieve and search logs sent from Log & Crash Search.

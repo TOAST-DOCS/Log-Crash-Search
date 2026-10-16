@@ -65,6 +65,7 @@ sample/     ; Log4Jサンプル
 ## 使用例 { #example }
 
 1.Log4J SDKライブラリをProjectに追加します。
+
 - 例えば、EclipseメニューProject - Properties - Java Build Path - Librariesを選択してtoast-logncrash-log4j-sdk-<version>.jarを追加します。
 
 2.Mavenを使用する場合、 pom.xmlにdependencyを追加します。

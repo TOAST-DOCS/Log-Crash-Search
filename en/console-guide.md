@@ -18,6 +18,7 @@ Go to **Log Search** or **App Crash Search** to find logs in many ways, like a c
 ## Select a Project { #select-a-project }
 
 Access console and select an organization and project from menu on the left. When there is no organization or project available, create one.
+
 - Select **ORGANIZATION > PROJECT** from the menu on the left.
 
 See the [NHN Cloud Console Guide](/nhncloud/en/console-guide/) for how to create an organization and a project.
