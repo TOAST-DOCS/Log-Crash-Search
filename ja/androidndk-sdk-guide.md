@@ -15,7 +15,13 @@ Log & Crash AndroidNDK SDKの特徴・利点は次のとおりです。
 <a id="analytics-log-crash-search-androidndk-sdk-guide"></a>
 ## Analytics > Log & Crash Search > AndroidNDK SDK 使用ガイド { #analytics-log-crash-search-androidndk-sdk-guide }
 
-<!-- TODO: translate body -->
+Log & Crash AndroidNDK SDKは、Log & Crash Search収集サーバーにログを送信する機能を提供します。  
+Log & Crash AndroidNDK SDKの特長は次のとおりです。  
+
+- ログを収集サーバーに送信します。
+- アプリで発生したクラッシュログを収集サーバーに送信します。
+- Log & Crash Searchで送信されたログを照会および検索できます。
+- マルチスレッド環境で動作します。
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }

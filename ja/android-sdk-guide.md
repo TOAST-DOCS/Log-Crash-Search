@@ -19,7 +19,17 @@ Log & Crash Android SDKの特徴・利点は次のとおりです。
 <a id="analytics-log-crash-search-android-sdk-guide"></a>
 ## Analytics > Log & Crash Search > Android SDK使用ガイド { #analytics-log-crash-search-android-sdk-guide }
 
-<!-- TODO: translate body -->
+> [Deprecated]
+> Log & Crash Android SDKバージョンはサポートが終了しました。
+> [TOAST SDK](/nhncloud-sdk/ja/overview/)をご利用ください。
+
+Log & Crash Android SDKは、Log & Crash Search収集サーバーにログを送信する機能を提供します。
+Log & Crash Android SDKの特長は次のとおりです。
+
+- ログを収集サーバーに送信します。
+- アプリで発生したクラッシュログを収集サーバーに送信します。
+- Log & Crash Searchで送信されたログの照会および検索ができます。
+- マルチスレッド環境で動作します。
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }

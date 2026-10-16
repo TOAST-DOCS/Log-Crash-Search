@@ -19,7 +19,17 @@ Log & Crash C++ Windows SDKの特徴・利点は次のとおりです。
 <a id="analytics-log-crash-search-c-windows-sdk-guide"></a>
 ## Analytics > Log & Crash Search > C++ Windows SDK 使用ガイド { #analytics-log-crash-search-c-windows-sdk-guide }
 
-<!-- TODO: translate body -->
+> [Deprecated]
+> Log & Crash C++ Windows SDKバージョンはサポートが終了しました。
+> [TOAST SDK](/nhncloud-sdk/ja/overview/)をご利用ください。
+
+Log & Crash C++ Windows SDKは、Log & Crash Search収集サーバーにログを送信する機能を提供します。  
+Log & Crash C++ Windows SDKの特長は次のとおりです。
+
+- ログを収集サーバーに送信します。
+- アプリで発生したクラッシュログを収集サーバーに送信します。
+- Log & Crash Searchで送信されたログを照会および検索できます。
+- マルチスレッド環境で動作します。
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }

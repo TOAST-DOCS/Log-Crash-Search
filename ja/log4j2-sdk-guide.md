@@ -14,7 +14,12 @@ Log & Crash Log4J SDKの特徴・利点は次のとおりです。
 <a id="analytics-log-crash-search-log4j-v2-sdk-guide"></a>
 ## Analytics > Log & Crash Search > Log4J v2 SDK 使用ガイド { #analytics-log-crash-search-log4j-v2-sdk-guide }
 
-<!-- TODO: translate body -->
+Log & Crash Log4J 2 SDKは、Log & Crash Search収集サーバーにログを送信する機能を提供します。
+Log & Crash Log4J SDKの特長は次のとおりです。
+
+- ログを収集サーバーに送信します。
+- Log & Crash Searchで送信されたログを照会および検索できます。
+- マルチスレッド環境で動作します。
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }
