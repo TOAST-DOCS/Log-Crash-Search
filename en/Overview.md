@@ -1,4 +1,7 @@
-## Data & Analytics > Log & Crash Search > Overview
+<!-- pre-align:aligned sig=c96bea70065a -->
+
+<a id="data-analytics-log-crash-search-overview"></a>
+## Data & Analytics > Log & Crash Search > Overview { #data-analytics-log-crash-search-overview }
 
 Log & Crash Search collects and searches logs from client and server. 
 
@@ -6,7 +9,8 @@ By analyzing and carrying out statistics of crash in mobile apps, data of differ
 
 Below describe benefits and features of Log & Crash Search. 
 
-## Benefits
+<a id="benefits"></a>
+## Benefits { #benefits }
 
 - Separate the game server from the log server in order to prevent potential problems caused by the large volume of logs. 
 - Collect errors occurred in all deployed clients at one point to retrieve and analyze them. 
@@ -15,7 +19,8 @@ Below describe benefits and features of Log & Crash Search.
 - Enable the use without stop even with increasing log volume. 
 - Support for errors, crash dumps, web application logs, and user-defined (customized) message types, which are available on Windows, Linux and Java.
 
-## Main Features
+<a id="main-features"></a>
+## Main Features { #main-features }
 
 [Table 1] describes the main features of Log & Crash Search.
 

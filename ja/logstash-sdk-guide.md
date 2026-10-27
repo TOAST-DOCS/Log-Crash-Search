@@ -1,29 +1,37 @@
-## Data & Analytics > Log & Crash Search > Logstash SDK使用ガイド
+<!-- pre-align:aligned sig=130414ff6b2d -->
+
+<a id="data-analytics-log-crash-search-user-guide-for-logstash-sdk"></a>
+## Data & Analytics > Log & Crash Search > Logstash SDK使用ガイド { #data-analytics-log-crash-search-user-guide-for-logstash-sdk }
 
 Logstashを利用して多様なInputとOutputを処理する方法を説明します。
 
-## ダウンロード
+<a id="download"></a>
+## ダウンロード { #download }
 
 - Logstashをダウンロードします。
 - $ wget http://download.elastic.co/logstash/logstash/logstash-1.5.6.tar.gz
 - 圧縮を解凍します。
 - $ tar zxvf logstash-1.5.6.tar.gz
 
-## インストールおよび実行
+<a id="install-and-execute"></a>
+## インストールおよび実行 { #install-and-execute }
 
 Configuring Logstashを参照してください。
 
 - Logstash設定ファイルを作成します。
 - bin/logstash -f <設定ファイル>で実行します。
 
-## Logstash設定
+<a id="configure-logstash"></a>
+## Logstash設定 { #configure-logstash }
 
 Logstashを使用してLogを収集、転送する方法を説明します。
 
-### Log & Crash Collector Logの収集
+<a id="collect-log-crash-collector-logs"></a>
+### Log & Crash Collector Logの収集 { #collect-log-crash-collector-logs }
 
 Logstashを利用して、Log & Crash Collector Logを収集する方法を説明します。
 
+<a id="collect-log-crash-collector-logs-define-path-for-the-input-file-an-absolute-route-is-required-for-the-path"></a>
 #### - input, fileもpathを定義します。 Pathには絶対パスを使用する必要があります。
 
 ```
@@ -35,6 +43,7 @@ input {
 }
 ```
 
+<a id="collect-log-crash-collector-logs-use-filter-and-multiline-to-combine-logs-in-many-lines"></a>
 #### - filter, multilineを使用して、複数行に出力されるLogをマージする処理をします。
 
 ```
@@ -56,10 +65,12 @@ filter {
 ...
 ```
 
-### Log & Crash Collectorに転送
+<a id="deliver-logs-to-log-crash-collector"></a>
+### Log & Crash Collectorに転送 { #deliver-logs-to-log-crash-collector }
 
 Logstashを使用して、Log & Crash CollectorにLogを転送する方法を説明します。
 
+<a id="deliver-logs-to-log-crash-collector-convert-logstash-logs-to-the-log-crash-http-rest-api-format-by-using-filter-and-mutate"></a>
 #### - filter、mutateを使用してLogstash LogをLog & Crash HTTP REST API形式に変換します。
 
 ```
@@ -94,6 +105,7 @@ filter {
     - "logLevel"：オプション。ログレベル
 ```
 
+<a id="deliver-logs-to-log-crash-collector-send-to-log-crash-collector-by-using-output-and-http"></a>
 #### - output、httpを使用してLog & Crash Collectorに転送します。
 
 ```
@@ -111,10 +123,12 @@ output {
 - URIは/v2/logである必要があります。
 ```
 
-### Apache Access/Error Log収集
+<a id="collect-apache-accesserror-logs"></a>
+### Apache Access/Error Log収集 { #collect-apache-accesserror-logs }
 
 Logstashを利用して、Apache Access/Error Logを収集する方法を説明します。
 
+<a id="collect-apache-accesserror-logs-define-path-for-input-and-file-define-type-to-tell-the-difference-between-access-and-error"></a>
 #### - input、fileにpathを定義します。 typeを定義してaccess/errorを区分します。
 
 ```
@@ -133,6 +147,7 @@ input {
 -上のpathは、CAB DEV Webサーバーで使用される値です。Logの位置が合っていなければ修正する必要があります。
 ```
 
+<a id="collect-apache-accesserror-logs-analyze-logs-by-using-filter-grok"></a>
 #### - filter, grokを使用してlogを分析します。
 
 ```
@@ -163,13 +178,15 @@ APACHEERRORLOG \[%{HTTPERRORDATE:timestamp}\] \[%{WORD:severity}\] %{GREEDYDATA:
 - A bit of logstash cookingで使用されたgrok patternを修正しました。
 ```
 
-### 他のLogを収集
+<a id="collect-other-logs"></a>
+### 他のLogを収集 { #collect-other-logs }
 
 他のログを収集するには、次のURLを参照してください。
 
 - [A bit of logstash cooking](https://home.regit.org/2014/01/a-bit-of-logstash-cooking/)
 
-### 環境変数
+<a id="environment-variables"></a>
+### 環境変数 { #environment-variables }
 logstashは、次の環境変数をサポートします。logstashが使用するメモリ量は、LS_HEAP_SIZE環境変数を通して設定できます。
 
  - LS_HEAP_SIZE="xxx" size for the -Xmx${LS_HEAP_SIZE} maximum Java heap size option, default is "500m"
