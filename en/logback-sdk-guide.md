@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=fdc80d476a42 -->
 
 <a id="data-analytics-log-crash-search-logback-sdk-guide"></a>
@@ -9,7 +11,7 @@ Log & Crash Logback SDK sends logs to a Log & Crash Search collector server. It 
 ## 1. Add Log & Crash Logback SDK { #add-log-crash-logback-sdk }
 
 Add logncrash-java-sdk3-4.0.0.jar to dependency. 
-Download Log & Crash Logback SDK from  [NHN Cloud Document](http://docs.toast.com/en/Download/).
+Download Log & Crash Logback SDK from  [NHN Cloud Document](/Download/).
 
 ```
 Click [DOCUMENTS] > [Download] > [Data & Analytics > Log & Crash Search] > [Logback SDK]

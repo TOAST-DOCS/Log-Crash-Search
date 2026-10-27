@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=3c5d3c0528c4 -->
 
 <a id="analytics-log-crash-search-unity-ios-sdk-guide"></a>
@@ -5,11 +7,12 @@
 
 > [Deprecated]
 > Log & Crash Unity iOS SDK is not supported any more.
-> Please use [TOAST SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/).
+> Please use [TOAST SDK](/nhncloud-sdk/en/overview/).
 
 Log & Crash Unity SDK sends logs to a Log & Crash Search collector server.
 
 Below describe benefits and features of Log & Crash Unity SDK.
+
 - Send logs to a collector server.
 - Send crash logs occurred in an app to a collector server.
 - Retrieve and search logs sent from Log & Crash Search.
@@ -26,7 +29,7 @@ Below describe benefits and features of Log & Crash Unity SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Unity SDK**.
+Go to [TOAST Document](/Download/) and download **Unity SDK**.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]

@@ -1,10 +1,13 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=2d04f196eb51 -->
 
-﻿## Analytics > Log & Crash Search > Android SDK使用ガイド
+<a id="analytics-log-crash-search-android-sdk-guide"></a>
+## Analytics > Log & Crash Search > Android SDK使用ガイド { #analytics-log-crash-search-android-sdk-guide }
 
 > [Deprecated]
 > Log & Crash Android SDKバージョンは、今後はサポートされません。
-> [TOAST SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)をご利用ください。
+> [TOAST SDK](/nhncloud-sdk/ja/overview/)をご利用ください。
 
 Log & Crash Android SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。
 Log & Crash Android SDKの特徴・利点は次のとおりです。
@@ -14,11 +17,6 @@ Log & Crash Android SDKの特徴・利点は次のとおりです。
 - Log & Crash Searchから送られたログの照会および検索ができます。
 - マルチスレッド環境で動作します。
 
-<a id="analytics-log-crash-search-android-sdk-guide"></a>
-## Analytics > Log & Crash Search > Android SDK使用ガイド { #analytics-log-crash-search-android-sdk-guide }
-
-<!-- TODO: translate body -->
-
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }
 
@@ -27,7 +25,7 @@ Log & Crash Android SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)でAndroid SDKをダウンロードできます。
+[TOAST Document](/Download/)でAndroid SDKをダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Android SDK]をクリック

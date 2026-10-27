@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=bcd1c8ae042b -->
 
 <a id="analytics-log-crash-search-c-windows-sdk-guide"></a>
@@ -5,7 +7,7 @@
 
 > [Deprecated]
 > Log & Crash C++ Windows SDK is not supported any more.
-> Please use [TOAST SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/).
+> Please use [TOAST SDK](/nhncloud-sdk/en/overview/).
 
 Log & Crash C++Windows SDK sends logs to a Log & Crash Search collector server.
 Below describe benefits and features of Log & Crash C++ Windows SDK.
@@ -24,7 +26,7 @@ Below describe benefits and features of Log & Crash C++ Windows SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **C++ Windows SDK**.
+Go to [TOAST Document](/Download/) and download **C++ Windows SDK**.
 
 ```
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Windows SDK]
@@ -296,12 +298,10 @@ void setUserId(const char* userId);
 <a id="guide-to-create-symbol-files"></a>
 ## Guide to Create Symbol Files { #guide-to-create-symbol-files }
 
-- To interpret crashes occurred in Log & Crash Windows SDK, symbol files need to be created and uploaded to Console.
-
 <a id="overview"></a>
 ### Overview { #overview }
 
-<!-- TODO: translate body -->
+- To interpret crashes occurred in Log & Crash Windows SDK, symbol files need to be created and uploaded to Console.
 
 <a id="requirements"></a>
 ### Requirements { #requirements }

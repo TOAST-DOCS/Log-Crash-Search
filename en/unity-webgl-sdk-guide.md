@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=45b1bfc767db -->
 
 <a id="analytics-log-crash-search-unity-webgl-sdk-user-guide"></a>
@@ -6,6 +8,7 @@
 Log & Crash Unity SDK sends logs to a Log & Crash Search collector server.
 
 Below describe benefits and features of Log & Crash Unity SDK.
+
 - Send logs to a collector server.
 - Send crash logs occurred in an app to a collector server.
 - Retrieve and search logs sent from Log & Crash Search.
@@ -19,7 +22,7 @@ Below describe benefits and features of Log & Crash Unity SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Unity SDK**.
+Go to [TOAST Document](/Download/) and download **Unity SDK**.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]

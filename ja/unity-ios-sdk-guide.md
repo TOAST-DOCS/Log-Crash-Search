@@ -1,10 +1,13 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=3c5d3c0528c4 -->
 
-﻿## Analytics > Log & Crash Search > Unity iOS SDK使用ガイド
+<a id="analytics-log-crash-search-unity-ios-sdk-guide"></a>
+## Analytics > Log & Crash Search > Unity iOS SDK 使用ガイド { #analytics-log-crash-search-unity-ios-sdk-guide }
 
 > [Deprecated]
 > Log & Crash Unity iOS SDKバージョンは、今後サポートされません。
-> [TOAST SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)をご利用ください。
+> [TOAST SDK](/nhncloud-sdk/ja/overview/)をご利用ください。
 
 Log & Crash Unity SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。  
 Log & Crash Unity SDKの特徴・利点は次のとおりです。
@@ -12,11 +15,6 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 - ログを収集サーバーに転送します。
 - アプリで発生したクラッシュログを収集サーバーに転送します。
 - Log & Crash Searchで、転送されたログの照会および検索が可能です。
-
-<a id="analytics-log-crash-search-unity-ios-sdk-guide"></a>
-## Analytics > Log & Crash Search > Unity iOS SDK 使用ガイド { #analytics-log-crash-search-unity-ios-sdk-guide }
-
-<!-- TODO: translate body -->
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }
@@ -30,7 +28,7 @@ Log & Crash Unity SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)でUnity SDKをダウンロードできます。
+[TOAST Document](/Download/)でUnity SDKをダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
@@ -318,6 +316,7 @@ false：重複除去ロジックを無効にする
 - ATSは、iOS9、OS X 10.11で導入されたアプリとネットワーク間の安全な通信を保障するための機能で、安全に暗号化されたhttps通信のみを許可し、安全ではない水準のhttps/http通信を遮断する機能です。Log & Crash Searchではhttpプロトコルを使用して通信を試行する際、info.plistに下記のような設定を追加する必要があります。
 
 詳細な設定は、下記のリンクを参照してください。
+
 - https://developer.apple.com/library/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html
 
 

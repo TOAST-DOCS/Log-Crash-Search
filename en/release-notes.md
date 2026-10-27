@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=99d57f88ede8 -->
 
 <a id="data-analytics-log-crash-search-release-notes"></a>
@@ -198,7 +200,7 @@
 <a id="july-28-2020-feature-updates"></a>
 #### Feature Updates
 * [Console] Added the feature of integrity validation for logs that are externally stored
-    * [See Console User Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
+    * [See Console User Guide](./console-guide/)
 
 <a id="june-23-2020"></a>
 ### June 23, 2020 { #june-23-2020 }
@@ -206,7 +208,7 @@
 #### Feature Updates
 * [Console] Changed the query method for Object and Array types
     * Queries must be delivered in the same way as the string search.
-    * [See Guide for Lucene Query](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
+    * [See Guide for Lucene Query](./lucene-query-guide/)
 
 <a id="may-26-2020"></a>
 ### May 26, 2020 { #may-26-2020 }
@@ -324,7 +326,7 @@
 <a id="october-23-2018-feature-updates"></a>
 #### Feature Updates
 * [Console] Closed log alarms (old)
-    * [Relevant Notice](https://toast.com/support/notice/detail/1453435858K00594)
+    * [Relevant Notice](https://www.nhncloud.com/kr/support/notice/1453435858K00594)
 
 <a id="september-18-2018"></a>
 ### September 18, 2018 { #september-18-2018 }
@@ -547,7 +549,7 @@
 * [Console] Changed alarm delivery format (shows alarm name, instead of project name)
 * [SDK] Added more features
     * To ensure AddCustomField between the Init function and log delivery, added SendThread Lock
-        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
+        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Changed features
     * Send Exception, errorCode, and RequestHeader fields in the analyzable format on console
 		* Changed field names into txtException, txterrorCode, and txtRequestHeader
@@ -579,7 +581,7 @@
 ### February 23, 2017 { #february-23-2017 }
 <a id="february-23-2017-feature-updates"></a>
 #### Feature Updates
-* [API] [log Bulk upload](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/api-guide/) is available
+* [API] [log Bulk upload](./api-guide/) is available
     * Sending REST API logs is available in the JSON array format.
 * [API] Added Long/ Double Options
     * In sending REST API logs, fields starting with long or double can be saved in long or double type.

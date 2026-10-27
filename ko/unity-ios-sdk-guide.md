@@ -5,7 +5,7 @@
 
 > [Deprecated]
 > Log & Crash Unity iOS SDK 버전은 더 이상 지원되지 않습니다.
-> [TOAST SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)를 이용해 주시기 바랍니다.
+> [TOAST SDK](/nhncloud-sdk/ko/overview/)를 이용해 주시기 바랍니다.
 
 Log & Crash Unity SDK는 Log & Crash Search 수집 서버에 로그를 보내는 기능을 제공합니다.  
 Log & Crash Unity SDK 특·장점은 다음과 같습니다.
@@ -26,7 +26,7 @@ Log & Crash Unity SDK 특·장점은 다음과 같습니다.
 <a id="download"></a>
 ## 다운로드 { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)에서 Unity SDK를 받을 수 있습니다.
+[TOAST Document](/Download/)에서 Unity SDK를 받을 수 있습니다.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
@@ -314,6 +314,7 @@ false: 중복 제거 로직 비활성화
 - ATS는 iOS9,OS X 10.11에서 도입된 앱과 네트워크 간의 안전한 통신을 보장하기 위한 기능으로 안전하게 암호화된 https통신만 허용하고 안전하지 않는 수준의 https/http  통신을 차단하는 기능로, Log & Crash Search 에서는 http 프로토콜을 사용하여 통신을 시도중으로 info.plist에 아래와 같은 설정을 추가하셔야 합니다.
 
 자세한 설정은 아래 링크를 참고하세요
+
 - https://developer.apple.com/library/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html
 
 

@@ -1,6 +1,9 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=b6b3abc56554 -->
 
-﻿## Analytics > Log & Crash Search > AndroidNDK SDK使用ガイド
+<a id="analytics-log-crash-search-androidndk-sdk-guide"></a>
+## Analytics > Log & Crash Search > AndroidNDK SDK 使用ガイド { #analytics-log-crash-search-androidndk-sdk-guide }
 
 Log & Crash AndroidNDK SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。  
 Log & Crash AndroidNDK SDKの特徴・利点は次のとおりです。  
@@ -9,11 +12,6 @@ Log & Crash AndroidNDK SDKの特徴・利点は次のとおりです。
 - アプリで発生したクラッシュログを収集サーバーに転送します。
 - Log & Crash Searchから転送されたログを照会および検索できます。
 - マルチスレッド環境で動作します。
-
-<a id="analytics-log-crash-search-androidndk-sdk-guide"></a>
-## Analytics > Log & Crash Search > AndroidNDK SDK 使用ガイド { #analytics-log-crash-search-androidndk-sdk-guide }
-
-<!-- TODO: translate body -->
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }
@@ -25,7 +23,7 @@ Log & Crash AndroidNDK SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)でAndroid SDKをダウンロードできます。
+[TOAST Document](/Download/)でAndroid SDKをダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [AndroidNDK SDK]をクリック

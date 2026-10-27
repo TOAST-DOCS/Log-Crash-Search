@@ -1,10 +1,13 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=ecb9adf37221 -->
 
-﻿## Analytics > Log & Crash Search > iOS SDK使用ガイド
+<a id="analytics-log-crash-search-ios-sdk-guide"></a>
+## Analytics > Log & Crash Search > iOS SDK 使用ガイド { #analytics-log-crash-search-ios-sdk-guide }
 
 > [Deprecated]
 > Log & Crash iOS SDKバージョンは、今後サポートされません。
-> [TOAST SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)を利用してください。
+> [TOAST SDK](/nhncloud-sdk/ja/overview/)を利用してください。
 
 > [告知]
 > arm64eアーキテクチャを使用する新規端末(iPhone XS、XR、XS Max、iPad Pros 3rd)で発生したクラッシュログは、発生件数の集計のみ可能で、クラッシュ内容の分析はまだサポートされていません。
@@ -18,11 +21,6 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 - Log & Crash Searchで、転送されたログを照会および検索ができます。
 - マルチスレッド環境で動作します。
 
-<a id="analytics-log-crash-search-ios-sdk-guide"></a>
-## Analytics > Log & Crash Search > iOS SDK 使用ガイド { #analytics-log-crash-search-ios-sdk-guide }
-
-<!-- TODO: translate body -->
-
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }
 - iOS 8.0以上
@@ -30,7 +28,7 @@ Log & Crash iOS SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)でiOS SDK(native)をダウンロードできます。
+[TOAST Document](/Download/)でiOS SDK(native)をダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [iOS SDK]をクリック

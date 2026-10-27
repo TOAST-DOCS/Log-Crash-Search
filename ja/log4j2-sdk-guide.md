@@ -1,6 +1,9 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=eec5a9a734d6 -->
 
-﻿## Analytics > Log & Crash Search > Log4J v2 SDK使用ガイド
+<a id="analytics-log-crash-search-log4j-v2-sdk-guide"></a>
+## Analytics > Log & Crash Search > Log4J v2 SDK 使用ガイド { #analytics-log-crash-search-log4j-v2-sdk-guide }
 
 Log & Crash Log4J 2 SDKはLog & Crash Search収集サーバーにログを転送する機能を提供します。
 Log & Crash Log4J SDKの特徴・利点は次のとおりです。
@@ -8,11 +11,6 @@ Log & Crash Log4J SDKの特徴・利点は次のとおりです。
 - ログを収集サーバーに転送します。
 - Log & Crash Searchで、転送されたログの照会および検索が可能です。
 - マルチスレッド環境で動作します。
-
-<a id="analytics-log-crash-search-log4j-v2-sdk-guide"></a>
-## Analytics > Log & Crash Search > Log4J v2 SDK 使用ガイド { #analytics-log-crash-search-log4j-v2-sdk-guide }
-
-<!-- TODO: translate body -->
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }
@@ -22,7 +20,7 @@ Log & Crash Log4J SDKの特徴・利点は次のとおりです。
 <a id="download"></a>
 ## ダウンロード { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)でLog4J 2 SDKをダウンロードできます。
+[TOAST Document](/Download/)でLog4J 2 SDKをダウンロードできます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Log4J.v2 SDK]をクリック

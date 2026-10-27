@@ -18,7 +18,7 @@ Log & Crash Log4J SDK 특·장점은 다음과 같습니다.
 <a id="download"></a>
 ## 다운로드 { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)에서 Log4J SDK를 받을 수 있습니다.
+[TOAST Document](/Download/)에서 Log4J SDK를 받을 수 있습니다.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Log4J SDK] 클릭
@@ -59,6 +59,7 @@ sample/     ; Log4J 샘플
 ## 사용 예 { #example }
 
 1.Log4J SDK 라이브러리를 Project에 추가합니다.
+
 - 예를 들어 Eclipse 메뉴 Project - Properties - Java Build Path - Libraries 를 선택하여 toast-logncrash-log4j-sdk-<version>.jar 를 추가합니다.
 
 2.Maven을 사용하는 경우, pom.xml에 dependency를 추가합니다.

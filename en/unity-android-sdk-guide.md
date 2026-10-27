@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=efdbe95782ee -->
 
 <a id="analytics-log-crash-search-unity-android-sdk-guide"></a>
@@ -5,11 +7,12 @@
 
 > [Deprecated]
 > Log & Crash Unity Android SDK is not supported any more.
-> Please use [TOAST SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/).
+> Please use [TOAST SDK](/nhncloud-sdk/en/overview/).
 
 Log & Crash Unity SDK sends logs to a Log & Crash Search collector server.
 
 Below describe benefits and features of Log & Crash Unity SDK.
+
 - Send logs to a collector server.
 - Send crash logs occurred in an app to a collector server.
 - Retrieve and search logs sent from Log & Crash Search.
@@ -25,7 +28,7 @@ Below describe benefits and features of Log & Crash Unity SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.toast.com/en/Download/) and download **Unity SDK**.
+Go to [TOAST Document](/Download/) and download **Unity SDK**.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Unity SDK]
@@ -288,7 +291,7 @@ false: Remove duplicates is disabled
 ![](http://static.toastoven.net/prod_logncrash/image023.png)
 - Select **Android Platform** and click **Player Settings**.
   ![](http://static.toastoven.net/prod_logncrash/image028.png)
-- **Internet Access**는 **Require**, **Write Access**는 **External(SDCard)**로 설정합니다.
+- Set **Internet Access** to **Require** and **Write Access** to **External(SDCard)**.
   ![](http://static.toastoven.net/prod_logncrash/image029.png)
 
 2. Click **Build And Run** in the **Build settings**.

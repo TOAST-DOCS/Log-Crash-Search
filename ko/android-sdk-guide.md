@@ -5,7 +5,7 @@
 
 > [Deprecated]
 > Log & Crash Android SDK 버전은 더 이상 지원되지 않습니다.
-> [TOAST SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)를 이용해 주시기 바랍니다.
+> [TOAST SDK](/nhncloud-sdk/ko/overview/)를 이용해 주시기 바랍니다.
 
 Log & Crash Android SDK는 Log & Crash Search 수집 서버에 로그를 보내는 기능을 제공합니다.
 Log & Crash Android SDK 특·장점은 다음과 같습니다.
@@ -23,7 +23,7 @@ Log & Crash Android SDK 특·장점은 다음과 같습니다.
 <a id="download"></a>
 ## 다운로드 { #download }
 
-[TOAST Document](http://docs.toast.com/ko/Download/)에서 Android SDK를 받을 수 있습니다.
+[TOAST Document](/Download/)에서 Android SDK를 받을 수 있습니다.
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Android SDK] 클릭

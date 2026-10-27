@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=956b0b576e08 -->
 
 <a id="data-analytics-log-crash-search-api-guide"></a>
@@ -736,7 +738,7 @@ The number of tokens deducted per search varies depending on the search period, 
 The User Access Key token is supported as a method for API calls and authentication.<br>
 For information on how to issue a token, see the link below.
 
-[User Access Key Token](https://docs.nhncloud.com/en/nhncloud/en/public-api/user-access-key-token/)
+[User Access Key Token](/nhncloud/en/public-api/user-access-key-token/)
 
 <a id="authentication-example-http-header-for-an-api-request"></a>
 #### Example HTTP Header for an API Request

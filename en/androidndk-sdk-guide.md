@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=b6b3abc56554 -->
 
 <a id="analytics-log-crash-search-androidndk-sdk-guide"></a>
@@ -21,7 +23,7 @@ Below describe benefits and features of Log & Crash Android SDK.
 <a id="download"></a>
 ## Download { #download }
 
-Go to [TOAST Document](http://docs.toast.com/en/Download/) to download **AndroidNDK SDK**.
+Go to [TOAST Document](/Download/) to download **AndroidNDK SDK**.
 
 ```
 Click [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [AndroidNDK SDK]

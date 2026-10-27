@@ -1,10 +1,13 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=bcd1c8ae042b -->
 
-﻿## Analytics > Log & Crash Search > C++ Windows SDK使用ガイド
+<a id="analytics-log-crash-search-c-windows-sdk-guide"></a>
+## Analytics > Log & Crash Search > C++ Windows SDK 使用ガイド { #analytics-log-crash-search-c-windows-sdk-guide }
 
 > [Deprecated]
 > Log & Crash C++ Windows SDKバージョンは今後はサポートされません。
-> [TOAST SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)をご利用ください。
+> [TOAST SDK](/nhncloud-sdk/ja/overview/)をご利用ください。
 
 Log & Crash C++ Windows SDKは、Log & Crash Search収集サーバーにログを転送する機能を提供します。  
 Log & Crash C++ Windows SDKの特徴・利点は次のとおりです。
@@ -13,11 +16,6 @@ Log & Crash C++ Windows SDKの特徴・利点は次のとおりです。
 - アプリで発生したクラッシュログを収集サーバーに転送します。
 - Log & Crash Searchで転送されたログを照会および検索できます。
 - マルチスレッド環境で動作します。
-
-<a id="analytics-log-crash-search-c-windows-sdk-guide"></a>
-## Analytics > Log & Crash Search > C++ Windows SDK 使用ガイド { #analytics-log-crash-search-c-windows-sdk-guide }
-
-<!-- TODO: translate body -->
 
 <a id="supporting-environment"></a>
 ## サポート環境 { #supporting-environment }
