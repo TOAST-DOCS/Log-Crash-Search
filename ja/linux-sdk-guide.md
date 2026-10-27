@@ -1,33 +1,40 @@
-## Analytics > Log & Crash Search > Linux SDK Guide
+<!-- pre-align:aligned sig=91e5466c6a88 -->
 
-Log & Crash C++ Linux SDK는 Log & Crash Search 수집 서버에 로그를 보내는 기능을 제공합니다.
-Log & Crash C++ Linux SDK 특·장점은 다음과 같습니다.
+<a id="analytics-log-crash-search-linux-sdk-guide"></a>
+## Analytics > Log & Crash Search > Linux SDK Guide { #analytics-log-crash-search-linux-sdk-guide }
 
-- 로그를 수집 서버로 보냅니다.
-- C++ Linux SDK는 크래서 로그를 수집하지 않습니다.
-- Log & Crash Search 에서 전송된 로그를 조회 및 검색이 가능합니다.
-- 멀티 쓰레딩 환경에서 동작합니다.
+Log & Crash C++ Linux SDKは、Log & Crash Searchの収集サーバーにログを送信する機能を提供します。
+Log & Crash C++ Linux SDKの特長は次のとおりです。
 
-## 지원 환경
+- ログを収集サーバーに送信します。
+- C++ Linux SDKはクラッシュログを収集しません。
+- Log & Crash Searchで送信されたログの照会および検索が可能です。
+- マルチスレッド環境で動作します。
+
+<a id="section-1"></a>
+## サポート環境 { #section-1 }
 
 - Linux, glibc >= 2.0.0
 - 32bit/64bit
 - openssl >= 1.0.1e
 - libcurl >= 7.19.7
 
-## 다운로드
+<a id="section-2"></a>
+## ダウンロード { #section-2 }
 
-Toast Cloud에서 C++ Linux SDK를 받을 수 있습니다.
+Toast CloudでC++ Linux SDKを入手できます。
 
 ```
 [DOCUMENTS] > [Download] > [Analytics > Log & Crash Search] > [Linux SDK] 클릭
 ```
 
-## 설치
+<a id="section-3"></a>
+## インストール { #section-3 }
 
-### 구성
+<a id="section-3-1"></a>
+### 構成 { #section-3-1 }
 
-C++ Linux SDK는 다음과 같이 구성되어 있습니다.
+C++ Linux SDKは次のように構成されています。
 
 ```
 ...
@@ -39,23 +46,25 @@ linux-sdk-sample/			; C++ Linux SDK 샘플
 ...
 ```
 
-### SDK 샘플
+<a id="sdk"></a>
+### SDK サンプル { #sdk }
 
-같이 제공되는 linux-sdk-sample/에 대해서 설명합니다.
+同梱のlinux-sdk-sample/について説明します。
 
 1. linux-sdk-sample/ 디렉토리로 이동합니다.
-2. sample.cpp을 열어서 발급받은 앱키로 수정합니다.
-3. make를 실행해서 sample-x86, sample-x86_64 실행 파일을 생성합니다.
-	- 개별적으로 빌드하기 위해서는 make sample-x86, make sample-x86_64 명령어를 사용해 주세요.
-	- x86, x86_64 빌드 환경에 대해서는 사용하시는 Linux 배포본 문서를 참고해 주세요.
-4. 빌드된 실행 파일을 실행합니다.
+2. sample.cppを開き、発行されたアプリキーに修正します。
+3. makeを実行して、sample-x86、sample-x86_64実行ファイルを生成します。
+	- 個別にビルドするには、make sample-x86、make sample-x86_64コマンドを使用してください。
+	- x86、x86_64のビルド環境については、使用しているLinuxディストリビューションのドキュメントを参照してください。
+4. ビルドされた実行ファイルを実行します。
 
-## 사용 예
+<a id="section-4"></a>
+## 使用例 { #section-4 }
 
-1. include/toast/를 인클루드 패쓰에 넣어줍니다.
-2. 타겟에 따라 lib32/liblogncrash_linux.a 또는 lib64/liblogncrash_linux.a를 링크해 줍니다.
-	- liblogncrash_linux.a는 내부적으로 pthread를 사용하고 있습니다. 따라서 -lpthread link option이 필요합니다.
-3. toast/logncrash.h 를 인클루드해 주고 ToastLog class를 사용합니다.
+1. include/toast/をインクルードパスに追加します。
+2. ターゲットに応じて、lib32/liblogncrash_linux.aまたはlib64/liblogncrash_linux.aをリンクします。
+	- liblogncrash_linux.aは内部的にpthreadを使用しています。そのため、-lpthread link optionが必要です。
+3. toast/logncrash.hをインクルードし、ToastLog classを使用します。
 
 ```
 ...
@@ -77,11 +86,13 @@ linux-sdk-sample/			; C++ Linux SDK 샘플
      DestroyToastLog();
 ```
 
-## API List
+<a id="api-list"></a>
+## API List { #api-list }
 
-toast::logncrash::ToastLog class에서 제공하는 기능들을 설명합니다.
+toast::logncrash::ToastLog classで提供する機能について説明します。
 
-### ToastLog 인스턴스 할당/해제
+<a id="toastlog"></a>
+### ToastLogインスタンスの割り当て/解放 { #toastlog }
 
 ```
 toast::logncrash::ToastLog* GetToastLog();
@@ -89,11 +100,12 @@ toast::logncrash::ToastLog* GetToastLog();
 void DestroyToastLog();
 ```
 
-- ToastLog instance를 할당하고 해제합니다.
-- 싱글톤 방식으로 하나의 인스턴스만 반환됩니다.
-- 반환된 ToastLog instance에 대해서 delete를 하면 안됩니다. 제거하기 위해서는 반드시 DestroyToastLog()를 호출하셔야 합니다.
+- ToastLog instanceを割り当て、解放します。
+- シングルトン方式で1つのインスタンスのみが返されます。
+- 返されたToastLog instanceに対してdeleteを行わないでください。削除するには、必ずDestroyToastLog()を呼び出す必要があります。
 
-### 초기화/해제
+<a id="api-list-1"></a>
+### 初期化/解除 { #api-list-1 }
 
 ```
 #define LOGNCRASH_VERSION         "1.0.0"
@@ -124,25 +136,26 @@ int32_t initialize(
 void destroy();
 ```
 
-- ToastLog를 초기화하고 해제합니다.
-- ToastLog 기능이 제대로 동작하기 위해서는 반드시 initialize()가 호출되어야 합니다.
-- 파라미터
-	- appKey: 앱키
-	- version: 앱 버전
-	- collectorAddr: 수집서버 주소
-		- Log & Crash 수집서버: https://api-logncrash.nhncloudservice.com
-	- collectorPort: 수집서버 포트
-	- logSource: 로그 소스
-	- logType: 로그 타입
-- initialize() 반환값
-	- LOGNCRASH_LOG_OK: 0, 초기화 성공
-	- LOGNCRASH_LOG_ERROR: -1, 내부 에러 코드
-	- LOGNCRASH_LOG_ERROR_APPKEY: -2, 앱키가 잘못된 경우
-	- LOGNCRASH_LOG_ERROR_VERSION: -3, 버전이 잘못된 경우
-	- LOGNCRASH_LOG_ERROR_ADDRESS: -4, 수집 서버 주소가 잘못된 경우
-	- LOGNCRASH_LOG_ERROR_PORT: -5, 수집 서버 포트가 잘못된 경우
+- ToastLogを初期化および解放します。
+- ToastLog機能が正常に動作するには、必ずinitialize()を呼び出す必要があります。
+- パラメータ
+	- appKey: アプリキー
+	- version: アプリバージョン
+	- collectorAddr: 収集サーバーアドレス
+		- Log & Crashの収集サーバー: https://api-logncrash.nhncloudservice.com
+	- collectorPort: 収集サーバーポート
+	- logSource: ログソース
+	- logType: ログタイプ
+- initialize()の戻り値
+	- LOGNCRASH_LOG_OK: 0、初期化成功
+	- LOGNCRASH_LOG_ERROR: -1, 内部エラーコード
+	- LOGNCRASH_LOG_ERROR_APPKEY: -2、アプリケーションキーが無効な場合
+	- LOGNCRASH_LOG_ERROR_VERSION: -3, バージョンが正しくない場合
+	- LOGNCRASH_LOG_ERROR_ADDRESS: -4、収集サーバーのアドレスが誤っている場合
+	- LOGNCRASH_LOG_ERROR_PORT: -5、収集サーバーのポートが正しくない場合
 
-### 로그 보내기
+<a id="api-list-2"></a>
+### ログ送信 { #api-list-2 }
 
 ```
 bool sendLog(
@@ -152,16 +165,16 @@ bool sendLog(
     const char* location = NULL);
 ```
 
-- 지정된 logLevel로 로그를 보냅니다.
-- 파라미터
-	- logLevel: 전송할 logLevel. setLogLevel()로 지정된 logLevel보다 큰 logLevel은 전송이 안됩니다.
-	- message: 전송할 메시지
-	- errorCode: 에러 코드. NULL이나 ""을 쓰면 전송되지 않습니다.
-	- location: 에러 위치. NULL이나 ""을 쓰면 전송되지 않습니다.
-- 반환값
-	- 성공시 true
-	- logLevel이 크거나, message가 비어있는 경우 false
-- 참고
+- 指定されたlogLevelでログを送信します。
+- パラメータ
+	- logLevel: 送信するlogLevel。setLogLevel()で指定したlogLevelより大きいlogLevelは送信されません。
+	- message: 送信するメッセージ
+	- errorCode: エラーコード。NULLまたは""を指定した場合、送信されません。
+	- location: エラーの位置。NULLまたは""を指定すると送信されません。
+- 戻り値
+	- 成功した場合はtrue
+	- logLevelが大きい場合、またはmessageが空の場合はfalse
+- 参考
 	- setLogLevel(), getLogLevel();
 
 ```
@@ -176,13 +189,14 @@ bool error(const char* message, const char* errorCode = NULL, const char* locati
 bool fatal(const char* message, const char* errorCode = NULL, const char* location = NULL);
 ```
 
-- 정해진 DEBUG, INFO, WARN, ERROR, FATAL 로그를 보냅니다.
-- logLevel이 고정되어 있다는 점 이외에는 sendLog()와 같습니다.
-- 반환값
-	- 성공시 true
-	- logLevel이 크거나, message가 비어있는 경우 false
+- DEBUG、INFO、WARN、ERROR、FATALのログを送信します。
+- logLevelが固定されている点以外は、sendLog()と同じです。
+- 戻り値
+	- 成功した場合はtrue
+	- logLevelが大きい場合、またはmessageが空の場合はfalse
 
-### 로그 레벨 지정하기
+<a id="api-list-3"></a>
+### ログレベルの指定 { #api-list-3 }
 
 ```
 typedef enum {
@@ -199,10 +213,11 @@ LogNCrashLogLevel getLogLevel();
 void setLogLevel(const LogNCrashLogLevel logLevel);
 ```
 
-- ToastLog instance의 logLevel을 구하거나 지정합니다.
-- ToastLog 기본값은 LOGNCRASH_INFO입니다. 따라서 debug() 함수를 사용하시려면 setLogLevel(LOGNCRASH_DEBUG)로 설정해주셔야 합니다.
+- ToastLog instanceのlogLevelを取得または設定します。
+- ToastLogのデフォルト値はLOGNCRASH_INFOです。したがって、debug()関数を使用するには、setLogLevel(LOGNCRASH_DEBUG)で設定する必要があります。
 
-### 커스텀 키 지정하기
+<a id="api-list-4"></a>
+### カスタムキーを指定する { #api-list-4 }
 
 ```
 bool addCustomKey(const char* key, const char* value);
@@ -212,18 +227,19 @@ void removeCustomKey(const char* key);
 void clearCustomKeys();
 ```
 
-- 커스텀 키를 추가, 삭제, 전부 삭제 기능을 제공합니다.
-- 커스텀 키는 대소문자로 시작하고 대소문자, 숫자, '-', '\_'만 사용하실수 있습니다. ( [A-Za-z][A-Za-z0-9-_]* )
-- 커스텀 키는 최대 64 문자입니다.
-- 커스텀 키에 대소문자 관계없이 다음 이름은 사용하실 수 없습니다.
+- カスタムキーの追加、削除、全削除機能を提供します。
+- カスタムキーは大文字または小文字で始まり、大文字、小文字、数字、「-」、「\_」のみ使用できます。( [A-Za-z][A-Za-z0-9-_]* )
+- カスタムキーは最大64文字です。
+- カスタムキーには大文字・小文字に関係なく、次の名前は使用できません。
 	- projectname, projectversion, host, body, logsource, logtype
 	- logType, sendTime, logLevel, userId, platform
 	- dmpdata, dmpreport
-- addCustomKey() 반환값
-	- 성공시 true
-	- key 형식이 맞지 않으면 추가 실패시 false
+- addCustomKey()の戻り値
+	- 成功した場合はtrue
+	- keyの形式が合わない場合、追加失敗時はfalse
 
-### 크래시 처리하기
+<a id="api-list-5"></a>
+### クラッシュ処理 { #api-list-5 }
 
 ```
 typedef enum {
@@ -248,11 +264,12 @@ void closeCrashCatcher();
 void setCrashCallback(const LogNCrashCallbackType cb, void* cbData = NULL);
 ```
 
-- Linux SDK는 크래시 로그 수집을 하지 않습니다.
-- openCrashCatcher 반환값
-	- 항상 false
+- Linux SDKはクラッシュログの収集を行いません。
+- openCrashCatcherの戻り値
+	- 常にfalse
 
-### 기타 설정
+<a id="api-list-6"></a>
+### その他の設定 { #api-list-6 }
 
 ```
 const char* getUserId();
@@ -260,7 +277,7 @@ const char* getUserId();
 void setUserId(const char* userId);
 ```
 
-- 사용자 ID를 구하거나 지정합니다.
+- ユーザーIDを取得または設定します。
 
 ```
 void enableHostField();
@@ -268,7 +285,7 @@ void enableHostField();
 void disableHostField();
 ```
 
-- Host 필드를 활성화하거나 비활성화합니다.
+- Host フィールドを有効化または無効化します。
 
 ```
 void enablePlatformField();
@@ -276,4 +293,4 @@ void enablePlatformField();
 void disablePlatformField();
 ```
 
-- Platform 필드를 활성화하거나 비활성화합니다.
+- Platform フィールドを有効または無効にします。

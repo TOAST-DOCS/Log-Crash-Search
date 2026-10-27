@@ -137,13 +137,13 @@
 ### July 28, 2020
 #### Feature Updates
 * [Console] Added the feature of integrity validation for logs that are externally stored
-    * [See Console User Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/console-guide/#_27)
+    * [See Console User Guide](/Data%20&%20Analytics/Log%20&%20Crash%20Search/zh/console-guide/)
 
 ### June 23, 2020
 #### Feature Updates
 * [Console] Changed the query method for Object and Array types
     * Queries must be delivered in the same way as the string search.
-    * [See Guide for Lucene Query](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/lucene-query-guide/)
+    * [See Guide for Lucene Query](/Data%20&%20Analytics/Log%20&%20Crash%20Search/zh/lucene-query-guide/)
 
 ### May 26, 2020
 #### Feature Updates
@@ -232,7 +232,7 @@
 ### October 23, 2018
 #### Feature Updates
 * [Console] Closed log alarms (old)
-    * [Relevant Notice](https://toast.com/support/notice/detail/1453435858K00594)
+    * [Relevant Notice](https://www.nhncloud.com/kr/support/notice/1453435858K00594)
 
 ### September 18, 2018
 #### Feature Updates
@@ -413,7 +413,7 @@
 * [Console] Changed alarm delivery format (shows alarm name, instead of project name)
 * [SDK] Added more features
     * To ensure AddCustomField between the Init function and log delivery, added SendThread Lock
-        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
+        * Updated Version: [toast-logncrash-ios-unity-mac-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-unity-sdk-2.6.0](/Download/#data-analytics-log-crash-search) / [toast-logncrash-android-2.6.0](/Download/#data-analytics-log-crash-search)
 * [SDK] Changed features
     * Send Exception, errorCode, and RequestHeader fields in the analyzable format on console
 		* Changed field names into txtException, txterrorCode, and txtRequestHeader
@@ -439,7 +439,7 @@
 
 ### February 23, 2017
 #### Feature Updates
-* [API] [log Bulk upload](/Data%20&%20Analytics/Log%20&%20Crash%20Search/ko/api-guide/) is available
+* [API] [log Bulk upload](/Data%20&%20Analytics/Log%20&%20Crash%20Search/zh/api-guide/) is available
     * Sending REST API logs is available in the JSON array format.
 * [API] Added Long/ Double Options
     * In sending REST API logs, fields starting with long or double can be saved in long or double type.

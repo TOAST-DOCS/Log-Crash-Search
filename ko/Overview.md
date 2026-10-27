@@ -1,10 +1,14 @@
-## Data & Analytics > Log & Crash Search > 개요
+<!-- pre-align:aligned sig=c96bea70065a -->
+
+<a id="data-analytics-log-crash-search-overview"></a>
+## Data & Analytics > Log & Crash Search > 개요 { #data-analytics-log-crash-search-overview }
 
 Log & Crash Search는 클라이언트와 서버의 로그를 수집하여 원하는 로그를 검색하고 조회하는 시스템입니다.   
 모바일 앱에서 발생하는 크래시를 분석하고 통계 작업을 수행하여 크래시 발생 원인에 대한 다양한 정보도 제공합니다.  
 Log & Crash Search 특·장점은 다음과 같습니다.  
 
-## 특장점
+<a id="benefits"></a>
+## 특장점 { #benefits }
 
 * 게임 서버와 로그 서버를 분리함으로써 대량의 로그로 인한 문제점을 제거할 수 있습니다.
 * 배포된 모든 클라이언트에서 발생하는 오류를 한 곳에 모아서 조회하고 분석이 가능합니다.
@@ -13,7 +17,8 @@ Log & Crash Search 특·장점은 다음과 같습니다.
 * 사용량 증가에 따른 로그량이 증가 하더라도 서비스 정지 없이 이용 가능 합니다.
 * 오류, 크래쉬 덤프, 웹 어플리케이션 로그, 커스텀 메시지 형식 등을 지원하며 Windows, Linux와 Java 환경에서 사용 가능합니다.
 
-## 주요기능
+<a id="main-features"></a>
+## 주요기능 { #main-features }
 Log & Crash Search의 주요 기능은 [표 1]과 같습니다.
 
 [표 1] Log & Crash Search 주요 기능
